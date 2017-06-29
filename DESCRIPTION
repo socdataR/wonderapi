@@ -1,0 +1,20 @@
+Package: socdatar
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Authors@R: c(
+  person("Joyce", "Robbins", email="", role = "cre"),
+  person("Elin", "Waring", email="elin.waring@gmail.com", role = "cre"))
+Maintainer: Joyce Robbins <yourself@somewhere.net>
+            Elin Waring elin.waring@gmail.com
+Description: Let us work with natality data
+    Interface with the federal data.
+Depends:
+    R (>= 3.1.2)
+Imports:
+    wondr
+Remotes:
+    hrbrmstr/wondr
+License: GPL
+Encoding: UTF-8
+LazyData: true
