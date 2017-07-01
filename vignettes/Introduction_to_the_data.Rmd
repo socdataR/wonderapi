@@ -1,0 +1,66 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+# Introduction to the CDC Natality data
+
+The CDC natality data is documented in detail on the [CDC website] 
+(https://wonder.cdc.gov/wonder/help/natality.html).  As always when working with data you need to pay careful attention to data
+definitions.  In particular in the case of this data there are at least three time periods which changed the treatment of 
+specific variables.  In this package we will use human readable variable names.   Here is the list of variables.
+
+  Variable                    | Years available | Comments
+  --------------------------------------------------------------------------
+  Location                   |                | Mother's place of residence  
+  Maternal Hispanic Origin   |                 |  
+  Marital Status             |                |  
+  Age of Mother              ||  
+  Maternal Race              ||  
+  Maternal Education         ||  
+  Year of birth
+  Sex of child
+  Birth weight
+  Plurality or multiple birth  
+  Gestational age at birth  
+  Month
+  Weekday  
+  Month prenatal care began
+  Live birth order 
+  Birthplace 
+  Delivery method  
+  Medical attendant  
+  Hypertension-chronic
+  Hypertension-pregnancy
+  Eclampsia
+  Tobacco use
+  Anemia 
+  Cardiac disease
+  Hydramnios  |  | Hydramnios/Oligohydramnios
+  Incompentent Cervix |   |  
+  Lung disease   |  |  
+  
+  The CDC has a structured API and this package will make it more readable and therefor easier to use for beginners.
+  
+  CDC Term |   Word
+  --------------------
+   B_    | By
+   M_   | Measures
+   V_    |  Values
+   F_    | Finder
+   I_   |  Information
+   VM_   | Values for non standard age adjusted rates
+   O_     |  Other 
+   O_age |  Other Age  
+   O_ucd  | Underlying cause of death  
+   O_V1_fmode  | V1 is year month field, f refers to finder  
+   O_   | 
+   
+   
+   
+   

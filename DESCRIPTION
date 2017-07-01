@@ -11,6 +11,8 @@ Depends:
     R (>= 3.1.2)
 Imports:
     wondr
+    xml2
+    purrr
 Remotes:
     hrbrmstr/wondr
 License: GPL
