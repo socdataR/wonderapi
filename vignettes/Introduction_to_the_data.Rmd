@@ -16,31 +16,31 @@ definitions.  In particular in the case of this data there are at least three ti
 specific variables.  In this package we will use human readable variable names.   Here is the list of variables.
 
   Variable                    | Years available | Comments
-  --------------------------------------------------------------------------
+  ----------------------------|-----------------|---------------------------
   Location                   |                | Mother's place of residence  
   Maternal Hispanic Origin   |                 |  
   Marital Status             |                |  
   Age of Mother              ||  
   Maternal Race              ||  
   Maternal Education         ||  
-  Year of birth
-  Sex of child
-  Birth weight
-  Plurality or multiple birth  
-  Gestational age at birth  
-  Month
-  Weekday  
-  Month prenatal care began
-  Live birth order 
-  Birthplace 
-  Delivery method  
-  Medical attendant  
-  Hypertension-chronic
-  Hypertension-pregnancy
-  Eclampsia
-  Tobacco use
-  Anemia 
-  Cardiac disease
+  Year of birth |  |  
+  Sex of child |  |  
+  Birth weight |  |  
+  Plurality or multiple birth |  |    
+  Gestational age at birth   |  |  
+  Month |  |  
+  Weekday   |  |  
+  Month prenatal care began |  |  
+  Live birth order  |  |  
+  Birthplace  |  |  
+  Delivery method   |  |  
+  Medical attendant   |  |  
+  Hypertension-chronic |  |  
+  Hypertension-pregnancy |  |  
+  Eclampsia |  |  
+  Tobacco use |  |  
+  Anemia  |  |  
+  Cardiac disease |  |  
   Hydramnios  |  | Hydramnios/Oligohydramnios
   Incompentent Cervix |   |  
   Lung disease   |  |  
@@ -48,7 +48,7 @@ specific variables.  In this package we will use human readable variable names. 
   The CDC has a structured API and this package will make it more readable and therefor easier to use for beginners.
   
   CDC Term |   Word
-  --------------------
+  ---------|-----------
    B_    | By
    M_   | Measures
    V_    |  Values

@@ -1,4 +1,4 @@
-#' natality package
+#' natality
 #' @description
 #'  It provides easy access to CDC wonder natality data primarily for sociological topics. It leverages the wondr package's
 #'  general approach to make a more specific and human readable set of functions to build queries, retrieve data, and
@@ -15,3 +15,4 @@ NULL
 #' @export
 
 magrittr::`%>%`
+
