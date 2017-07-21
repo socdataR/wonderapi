@@ -12,7 +12,9 @@
 # }) %>%
 #     tibble::as.tibble()
 
-# The above script works for the example since each row of the table has the same number of columns (See the <data-table ...> node here: https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-resp.xml
+# The above script works for the example since each row of the table has the same number of columns
+# (See the <data-table ...> node here:
+# https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-resp.xml
 
 # This function is designed to work for query results with varying number of columns per row
 
