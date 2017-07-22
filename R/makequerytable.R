@@ -25,7 +25,9 @@ getrows <- function(row, numcol) {
     # the values ("v")
     l <- cells %>% html_attr("l") %>% na.omit()
     v <- cells %>% html_attr("v") %>% na.omit()
-    c(rep(NA, numcol - len), l, v)
+    # convert to numeric, divide % by 100
+    v <- as.character(round(((grepl("\\%", v)*-.99 + 1) * parse_number(v)), 3))
+    return(c(rep(NA, numcol - len), l, v))
 }
 
 replaceNAs <- function (x) {
@@ -37,25 +39,36 @@ replaceNAs <- function (x) {
     return(x)
 }
 
+
 makequerytable <- function(query_result) {
-    allrows <- query_result %>% html_nodes("r")
-    numcol <-  allrows[1] %>% html_nodes("c") %>% length()
+    allrows <- query_result %>% xml_nodes("r")
+    firstrow <- allrows[1] %>% xml_nodes("c")
+    numcol <-  firstrow %>% length()
+    numl <- firstrow %>% xml_attr("l") %>%
+        na.omit() %>% length()
+    numv <- firstrow %>% xml_attr("v") %>%
+        na.omit() %>% length()
+    if (!(numl + numv == numcol)) stop ("number of labels + number of measures does not equal number of columns")
+
     querytable <- allrows %>%
-        map(getrows, numcol) %>%
-        sapply(c) %>% t() %>% data.frame() %>%
+        sapply(getrows, numcol) %>% t() %>%
+        data.frame(stringsAsFactors = FALSE) %>%
         replaceNAs()
+
+    firstv <- numcol - numv + 1 # first measure column
+    querytable[,firstv:numcol] <- map_df(querytable[,firstv:numcol], as.numeric)
     # (inspiration: https://stackoverflow.com/questions/4227223/r-list-to-data-frame)
 
     # determine column names (byvariables, then measures)
     byvariables <- query_result %>%
-        html_node("byvariables") %>%
-        html_nodes("variable") %>%
-        html_attr("code")
+        xml_node("byvariables") %>%
+        xml_nodes("variable") %>%
+        xml_attr("code")
 
     measures <- query_result %>%
-        html_node("measure-selections") %>%
-        html_nodes("measure") %>%
-        html_attr("code")
+        xml_node("measure-selections") %>%
+        xml_nodes("measure") %>%
+        xml_attr("code")
 
     colvars <- c(byvariables, measures)
     lookup <- read_csv("D66lookuptable.csv")
@@ -66,3 +79,4 @@ makequerytable <- function(query_result) {
 
     return(querytable)
 }
+
