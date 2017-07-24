@@ -4,5 +4,5 @@
 .Ruserdata
 .gitignore
 .Rbuildignore
-NatQuery2.R
+/images
 query_result.xml
