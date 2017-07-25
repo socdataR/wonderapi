@@ -4,5 +4,5 @@
 .Ruserdata
 .gitignore
 .Rbuildignore
-/images
+\images
 query_result.xml
