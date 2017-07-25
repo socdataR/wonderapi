@@ -19,6 +19,6 @@ form <- html_form(session)[[3]]
 webdata <- submit_form(session, form, submit = submit) %>%
     read_html(url2)
 
-return(webdata)
+return()
 }
 
