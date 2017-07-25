@@ -1,0 +1,721 @@
+label,name,value,desc
+Group Results By,B_1,D66.V22-level1,Census Region
+Group Results By,B_1,D66.V22-level2,Census Division
+Group Results By,B_1,D66.V37-level1,HHS Region
+Group Results By,B_1,D66.V21-level1,State
+Group Results By,B_1,D66.V21-level2,County
+Group Results By,B_1,D66.V4,Hispanic Origin
+Group Results By,B_1,D66.V2,Race
+Group Results By,B_1,D66.V27,Marital Status
+Group Results By,B_1,D66.V1,Age of Mother 9
+Group Results By,B_1,D66.V38,Age of Mother 10
+Group Results By,B_1,D66.V39,Age of Mother 13
+Group Results By,B_1,D66.V40,Age of Mother Year
+Group Results By,B_1,D66.V5,Education
+Group Results By,B_1,D66.V20,Year
+Group Results By,B_1,D66.V25,Month
+Group Results By,B_1,D66.V26,Weekday
+Group Results By,B_1,D66.V3,Gender
+Group Results By,B_1,D66.V8,Month Prenatal Care Began
+Group Results By,B_1,D66.V9,Birth Weight 12
+Group Results By,B_1,D66.V35,Birth Weight 14
+Group Results By,B_1,D66.V41,Birth Weight 100 gram increments
+Group Results By,B_1,D66.V7,Plurality or Multiple Birth
+Group Results By,B_1,D66.V28,Live Birth Order
+Group Results By,B_1,D66.V30,Birthplace
+Group Results By,B_1,D66.V31,Delivery Method
+Group Results By,B_1,D66.V29,Medical Attendant
+Group Results By,B_1,D66.V6,LMP Gestational Age 10
+Group Results By,B_1,D66.V23,LMP Gestational Age 11
+Group Results By,B_1,D66.V24,LMP Gestational Age Weekly
+Group Results By,B_1,D66.V32,OE Gestational Age 10
+Group Results By,B_1,D66.V33,OE Gestational Age 11
+Group Results By,B_1,D66.V34,OE Gestational Age Weekly
+Group Results By,B_1,D66.V16,Chronic Hypertension
+Group Results By,B_1,D66.V14,Diabetes
+Group Results By,B_1,D66.V17,Pregnancy-associated Hypertension
+Group Results By,B_1,D66.V18,Eclampsia
+Group Results By,B_1,D66.V10,Tobacco Use
+And By,B_2,\*None\*,None
+And By,B_2,D66.V22-level1,Census Region
+And By,B_2,D66.V22-level2,Census Division
+And By,B_2,D66.V37-level1,HHS Region
+And By,B_2,D66.V21-level1,State
+And By,B_2,D66.V21-level2,County
+And By,B_2,D66.V4,Hispanic Origin
+And By,B_2,D66.V2,Race
+And By,B_2,D66.V27,Marital Status
+And By,B_2,D66.V1,Age of Mother 9
+And By,B_2,D66.V38,Age of Mother 10
+And By,B_2,D66.V39,Age of Mother 13
+And By,B_2,D66.V40,Age of Mother Year
+And By,B_2,D66.V5,Education
+And By,B_2,D66.V20,Year
+And By,B_2,D66.V25,Month
+And By,B_2,D66.V26,Weekday
+And By,B_2,D66.V3,Gender
+And By,B_2,D66.V8,Month Prenatal Care Began
+And By,B_2,D66.V9,Birth Weight 12
+And By,B_2,D66.V35,Birth Weight 14
+And By,B_2,D66.V41,Birth Weight 100 gram increments
+And By,B_2,D66.V7,Plurality or Multiple Birth
+And By,B_2,D66.V28,Live Birth Order
+And By,B_2,D66.V30,Birthplace
+And By,B_2,D66.V31,Delivery Method
+And By,B_2,D66.V29,Medical Attendant
+And By,B_2,D66.V6,LMP Gestational Age 10
+And By,B_2,D66.V23,LMP Gestational Age 11
+And By,B_2,D66.V24,LMP Gestational Age Weekly
+And By,B_2,D66.V32,OE Gestational Age 10
+And By,B_2,D66.V33,OE Gestational Age 11
+And By,B_2,D66.V34,OE Gestational Age Weekly
+And By,B_2,D66.V16,Chronic Hypertension
+And By,B_2,D66.V14,Diabetes
+And By,B_2,D66.V17,Pregnancy-associated Hypertension
+And By,B_2,D66.V18,Eclampsia
+And By,B_2,D66.V10,Tobacco Use
+And By,B_3,\*None\*,None
+And By,B_3,D66.V22-level1,Census Region
+And By,B_3,D66.V22-level2,Census Division
+And By,B_3,D66.V37-level1,HHS Region
+And By,B_3,D66.V21-level1,State
+And By,B_3,D66.V21-level2,County
+And By,B_3,D66.V4,Hispanic Origin
+And By,B_3,D66.V2,Race
+And By,B_3,D66.V27,Marital Status
+And By,B_3,D66.V1,Age of Mother 9
+And By,B_3,D66.V38,Age of Mother 10
+And By,B_3,D66.V39,Age of Mother 13
+And By,B_3,D66.V40,Age of Mother Year
+And By,B_3,D66.V5,Education
+And By,B_3,D66.V20,Year
+And By,B_3,D66.V25,Month
+And By,B_3,D66.V26,Weekday
+And By,B_3,D66.V3,Gender
+And By,B_3,D66.V8,Month Prenatal Care Began
+And By,B_3,D66.V9,Birth Weight 12
+And By,B_3,D66.V35,Birth Weight 14
+And By,B_3,D66.V41,Birth Weight 100 gram increments
+And By,B_3,D66.V7,Plurality or Multiple Birth
+And By,B_3,D66.V28,Live Birth Order
+And By,B_3,D66.V30,Birthplace
+And By,B_3,D66.V31,Delivery Method
+And By,B_3,D66.V29,Medical Attendant
+And By,B_3,D66.V6,LMP Gestational Age 10
+And By,B_3,D66.V23,LMP Gestational Age 11
+And By,B_3,D66.V24,LMP Gestational Age Weekly
+And By,B_3,D66.V32,OE Gestational Age 10
+And By,B_3,D66.V33,OE Gestational Age 11
+And By,B_3,D66.V34,OE Gestational Age Weekly
+And By,B_3,D66.V16,Chronic Hypertension
+And By,B_3,D66.V14,Diabetes
+And By,B_3,D66.V17,Pregnancy-associated Hypertension
+And By,B_3,D66.V18,Eclampsia
+And By,B_3,D66.V10,Tobacco Use
+And By,B_4,\*None\*,None
+And By,B_4,D66.V22-level1,Census Region
+And By,B_4,D66.V22-level2,Census Division
+And By,B_4,D66.V37-level1,HHS Region
+And By,B_4,D66.V21-level1,State
+And By,B_4,D66.V21-level2,County
+And By,B_4,D66.V4,Hispanic Origin
+And By,B_4,D66.V2,Race
+And By,B_4,D66.V27,Marital Status
+And By,B_4,D66.V1,Age of Mother 9
+And By,B_4,D66.V38,Age of Mother 10
+And By,B_4,D66.V39,Age of Mother 13
+And By,B_4,D66.V40,Age of Mother Year
+And By,B_4,D66.V5,Education
+And By,B_4,D66.V20,Year
+And By,B_4,D66.V25,Month
+And By,B_4,D66.V26,Weekday
+And By,B_4,D66.V3,Gender
+And By,B_4,D66.V8,Month Prenatal Care Began
+And By,B_4,D66.V9,Birth Weight 12
+And By,B_4,D66.V35,Birth Weight 14
+And By,B_4,D66.V41,Birth Weight 100 gram increments
+And By,B_4,D66.V7,Plurality or Multiple Birth
+And By,B_4,D66.V28,Live Birth Order
+And By,B_4,D66.V30,Birthplace
+And By,B_4,D66.V31,Delivery Method
+And By,B_4,D66.V29,Medical Attendant
+And By,B_4,D66.V6,LMP Gestational Age 10
+And By,B_4,D66.V23,LMP Gestational Age 11
+And By,B_4,D66.V24,LMP Gestational Age Weekly
+And By,B_4,D66.V32,OE Gestational Age 10
+And By,B_4,D66.V33,OE Gestational Age 11
+And By,B_4,D66.V34,OE Gestational Age Weekly
+And By,B_4,D66.V16,Chronic Hypertension
+And By,B_4,D66.V14,Diabetes
+And By,B_4,D66.V17,Pregnancy-associated Hypertension
+And By,B_4,D66.V18,Eclampsia
+And By,B_4,D66.V10,Tobacco Use
+And By,B_5,\*None\*,None
+And By,B_5,D66.V22-level1,Census Region
+And By,B_5,D66.V22-level2,Census Division
+And By,B_5,D66.V37-level1,HHS Region
+And By,B_5,D66.V21-level1,State
+And By,B_5,D66.V21-level2,County
+And By,B_5,D66.V4,Hispanic Origin
+And By,B_5,D66.V2,Race
+And By,B_5,D66.V27,Marital Status
+And By,B_5,D66.V1,Age of Mother 9
+And By,B_5,D66.V38,Age of Mother 10
+And By,B_5,D66.V39,Age of Mother 13
+And By,B_5,D66.V40,Age of Mother Year
+And By,B_5,D66.V5,Education
+And By,B_5,D66.V20,Year
+And By,B_5,D66.V25,Month
+And By,B_5,D66.V26,Weekday
+And By,B_5,D66.V3,Gender
+And By,B_5,D66.V8,Month Prenatal Care Began
+And By,B_5,D66.V9,Birth Weight 12
+And By,B_5,D66.V35,Birth Weight 14
+And By,B_5,D66.V41,Birth Weight 100 gram increments
+And By,B_5,D66.V7,Plurality or Multiple Birth
+And By,B_5,D66.V28,Live Birth Order
+And By,B_5,D66.V30,Birthplace
+And By,B_5,D66.V31,Delivery Method
+And By,B_5,D66.V29,Medical Attendant
+And By,B_5,D66.V6,LMP Gestational Age 10
+And By,B_5,D66.V23,LMP Gestational Age 11
+And By,B_5,D66.V24,LMP Gestational Age Weekly
+And By,B_5,D66.V32,OE Gestational Age 10
+And By,B_5,D66.V33,OE Gestational Age 11
+And By,B_5,D66.V34,OE Gestational Age Weekly
+And By,B_5,D66.V16,Chronic Hypertension
+And By,B_5,D66.V14,Diabetes
+And By,B_5,D66.V17,Pregnancy-associated Hypertension
+And By,B_5,D66.V18,Eclampsia
+And By,B_5,D66.V10,Tobacco Use
+States,F_D66.V21,\*All\*,   *All*  (The United States)
+States,F_D66.V21,01,+ 01  (Alabama)  
+States,F_D66.V21,02,+ 02  (Alaska)  
+States,F_D66.V21,04,+ 04  (Arizona)  
+States,F_D66.V21,05,+ 05  (Arkansas)  
+States,F_D66.V21,06,+ 06  (California)  
+States,F_D66.V21,08,+ 08  (Colorado)  
+States,F_D66.V21,09,+ 09  (Connecticut)  
+States,F_D66.V21,10,+ 10  (Delaware)  
+States,F_D66.V21,11,+ 11  (District of Columbia)  
+States,F_D66.V21,12,+ 12  (Florida)  
+States,F_D66.V21,13,+ 13  (Georgia)  
+States,F_D66.V21,15,+ 15  (Hawaii)  
+States,F_D66.V21,16,+ 16  (Idaho)  
+States,F_D66.V21,17,+ 17  (Illinois)  
+States,F_D66.V21,18,+ 18  (Indiana)  
+States,F_D66.V21,19,+ 19  (Iowa)  
+States,F_D66.V21,20,+ 20  (Kansas)  
+States,F_D66.V21,21,+ 21  (Kentucky)  
+States,F_D66.V21,22,+ 22  (Louisiana)  
+States,F_D66.V21,23,+ 23  (Maine)  
+States,F_D66.V21,24,+ 24  (Maryland)  
+States,F_D66.V21,25,+ 25  (Massachusetts)  
+States,F_D66.V21,26,+ 26  (Michigan)  
+States,F_D66.V21,27,+ 27  (Minnesota)  
+States,F_D66.V21,28,+ 28  (Mississippi)  
+States,F_D66.V21,29,+ 29  (Missouri)  
+States,F_D66.V21,30,+ 30  (Montana)  
+States,F_D66.V21,31,+ 31  (Nebraska)  
+States,F_D66.V21,32,+ 32  (Nevada)  
+States,F_D66.V21,33,+ 33  (New Hampshire)  
+States,F_D66.V21,34,+ 34  (New Jersey)  
+States,F_D66.V21,35,+ 35  (New Mexico)  
+States,F_D66.V21,36,+ 36  (New York)  
+States,F_D66.V21,37,+ 37  (North Carolina)  
+States,F_D66.V21,38,+ 38  (North Dakota)  
+States,F_D66.V21,39,+ 39  (Ohio)  
+States,F_D66.V21,40,+ 40  (Oklahoma)  
+States,F_D66.V21,41,+ 41  (Oregon)  
+States,F_D66.V21,42,+ 42  (Pennsylvania)  
+States,F_D66.V21,44,+ 44  (Rhode Island)  
+States,F_D66.V21,45,+ 45  (South Carolina)  
+States,F_D66.V21,46,+ 46  (South Dakota)  
+States,F_D66.V21,47,+ 47  (Tennessee)  
+States,F_D66.V21,48,+ 48  (Texas)  
+States,F_D66.V21,49,+ 49  (Utah)  
+States,F_D66.V21,50,+ 50  (Vermont)  
+States,F_D66.V21,51,+ 51  (Virginia)  
+States,F_D66.V21,53,+ 53  (Washington)  
+States,F_D66.V21,54,+ 54  (West Virginia)  
+States,F_D66.V21,55,+ 55  (Wisconsin)  
+States,F_D66.V21,56,+ 56  (Wyoming)  
+Census Regions,F_D66.V22,\*All\*,   *All*  (The United States)
+Census Regions,F_D66.V22,CENS-R1,+ CENS-R1  (Census Region 1: Northeast)  
+Census Regions,F_D66.V22,CENS-R2,+ CENS-R2  (Census Region 2: Midwest)  
+Census Regions,F_D66.V22,CENS-R3,+ CENS-R3  (Census Region 3: South)  
+Census Regions,F_D66.V22,CENS-R4,+ CENS-R4  (Census Region 4: West)  
+HHS Regions,F_D66.V37,\*All\*,   *All*  (The United States)
+HHS Regions,F_D66.V37,HHS1,"+ HHS1  (HHS Region #1  CT, ME, MA, NH, RI, VT)  "
+HHS Regions,F_D66.V37,HHS2,"+ HHS2  (HHS Region #2  NJ, NY)  "
+HHS Regions,F_D66.V37,HHS3,"+ HHS3  (HHS Region #3  DE, DC, MD, PA, VA, WV)  "
+HHS Regions,F_D66.V37,HHS4,"+ HHS4  (HHS Region #4  AL, FL, GA, KY, MS, NC, SC, TN)  "
+HHS Regions,F_D66.V37,HHS5,"+ HHS5  (HHS Region #5  IL, IN, MI, MN, OH, WI)  "
+HHS Regions,F_D66.V37,HHS6,"+ HHS6  (HHS Region #6  AR, LA, NM, OK, TX)  "
+HHS Regions,F_D66.V37,HHS7,"+ HHS7  (HHS Region #7  IA, KS, MO, NE)  "
+HHS Regions,F_D66.V37,HHS8,"+ HHS8  (HHS Region #8  CO, MT, ND, SD, UT, WY)  "
+HHS Regions,F_D66.V37,HHS9,"+ HHS9  (HHS Region #9  AZ, CA, HI, NV)  "
+HHS Regions,F_D66.V37,HHS10,"+ HHS10  (HHS Region #10  AK, ID, OR, WA)  "
+Precision,O_precision,0, 0 
+Precision,O_precision,1, 1 
+Precision,O_precision,2, 2 
+Precision,O_precision,3, 3 
+Precision,O_precision,4, 4 
+Precision,O_precision,5, 5 
+Precision,O_precision,6, 6 
+Precision,O_precision,7, 7 
+Precision,O_precision,8, 8 
+Precision,O_precision,9, 9 
+Calculate Rates Per,O_rate_per,1000," 1,000 "
+Calculate Rates Per,O_rate_per,10000," 10,000 "
+Calculate Rates Per,O_rate_per,100000," 100,000 "
+Calculate Rates Per,O_rate_per,1000000," 1,000,000 "
+Data Access Timeout,O_timeout,60, 1 
+Data Access Timeout,O_timeout,120, 2 
+Data Access Timeout,O_timeout,180, 3 
+Data Access Timeout,O_timeout,240, 4 
+Data Access Timeout,O_timeout,300, 5 
+Data Access Timeout,O_timeout,360, 6 
+Data Access Timeout,O_timeout,420, 7 
+Data Access Timeout,O_timeout,480, 8 
+Data Access Timeout,O_timeout,540, 9 
+Data Access Timeout,O_timeout,600, 10 
+Data Access Timeout,O_timeout,660, 11 
+Data Access Timeout,O_timeout,720, 12 
+Data Access Timeout,O_timeout,780, 13 
+Data Access Timeout,O_timeout,840, 14 
+Data Access Timeout,O_timeout,900, 15 
+Age of Mother 9,V_D66.V1,\*All\*, All Ages 
+Age of Mother 9,V_D66.V1,15, Under 15 years 
+Age of Mother 9,V_D66.V1,15-19, 15-19 years 
+Age of Mother 9,V_D66.V1,20-24, 20-24 years 
+Age of Mother 9,V_D66.V1,25-29, 25-29 years 
+Age of Mother 9,V_D66.V1,30-34, 30-34 years 
+Age of Mother 9,V_D66.V1,35-39, 35-39 years 
+Age of Mother 9,V_D66.V1,40-44, 40-44 years 
+Age of Mother 9,V_D66.V1,45-49, 45-49 years 
+Age of Mother 9,V_D66.V1,50+, 50 years and over 
+Tobacco Use,V_D66.V10,\*All\*, All Values 
+Tobacco Use,V_D66.V10,1, Yes 
+Tobacco Use,V_D66.V10,2, No 
+Tobacco Use,V_D66.V10,9, Not Stated 
+Tobacco Use,V_D66.V10,10, Not Reported 
+Diabetes,V_D66.V14,\*All\*, All Values 
+Diabetes,V_D66.V14,1, Yes 
+Diabetes,V_D66.V14,2, No 
+Diabetes,V_D66.V14,9, Not Stated 
+Diabetes,V_D66.V14,10, Not Reported 
+Chronic Hypertension,V_D66.V16,\*All\*, All Values 
+Chronic Hypertension,V_D66.V16,1, Yes 
+Chronic Hypertension,V_D66.V16,2, No 
+Chronic Hypertension,V_D66.V16,9, Not Stated 
+Chronic Hypertension,V_D66.V16,10, Not Reported 
+Pregnancy-associated Hypertension,V_D66.V17,\*All\*, All Values 
+Pregnancy-associated Hypertension,V_D66.V17,1, Yes 
+Pregnancy-associated Hypertension,V_D66.V17,2, No 
+Pregnancy-associated Hypertension,V_D66.V17,9, Not Stated 
+Pregnancy-associated Hypertension,V_D66.V17,10, Not Reported 
+Eclampsia,V_D66.V18,\*All\*, All Values 
+Eclampsia,V_D66.V18,1, Yes 
+Eclampsia,V_D66.V18,2, No 
+Eclampsia,V_D66.V18,9, Not Stated 
+Eclampsia,V_D66.V18,10, Not Reported 
+Race,V_D66.V2,\*All\*, All Races 
+Race,V_D66.V2,1002-5, American Indian or Alaska Native 
+Race,V_D66.V2,A-PI, Asian or Pacific Islander 
+Race,V_D66.V2,2054-5, Black or African American 
+Race,V_D66.V2,2106-3, White 
+Year,V_D66.V20,\*All\*, All Years 
+Year,V_D66.V20,2007, 2007 
+Year,V_D66.V20,2008, 2008 
+Year,V_D66.V20,2009, 2009 
+Year,V_D66.V20,2010, 2010 
+Year,V_D66.V20,2011, 2011 
+Year,V_D66.V20,2012, 2012 
+Year,V_D66.V20,2013, 2013 
+Year,V_D66.V20,2014, 2014 
+Year,V_D66.V20,2015, 2015 
+LMP Gestational Age 11,V_D66.V23,\*All\*, All Weeks 
+LMP Gestational Age 11,V_D66.V23,01, Under 20 weeks 
+LMP Gestational Age 11,V_D66.V23,02, 20-27 weeks 
+LMP Gestational Age 11,V_D66.V23,03, 28-31 weeks 
+LMP Gestational Age 11,V_D66.V23,04, 32-33 weeks 
+LMP Gestational Age 11,V_D66.V23,05, 34-36 weeks 
+LMP Gestational Age 11,V_D66.V23,06, 37-38 weeks 
+LMP Gestational Age 11,V_D66.V23,07, 39 weeks 
+LMP Gestational Age 11,V_D66.V23,08, 40 weeks 
+LMP Gestational Age 11,V_D66.V23,09, 41 weeks 
+LMP Gestational Age 11,V_D66.V23,10, 42 or more weeks 
+LMP Gestational Age 11,V_D66.V23,11, Unknown 
+LMP Gestational Age Weekly,V_D66.V24,\*All\*, All Weeks 
+LMP Gestational Age Weekly,V_D66.V24,17, 17 weeks 
+LMP Gestational Age Weekly,V_D66.V24,18, 18 weeks 
+LMP Gestational Age Weekly,V_D66.V24,19, 19 weeks 
+LMP Gestational Age Weekly,V_D66.V24,20, 20 weeks 
+LMP Gestational Age Weekly,V_D66.V24,21, 21 weeks 
+LMP Gestational Age Weekly,V_D66.V24,22, 22 weeks 
+LMP Gestational Age Weekly,V_D66.V24,23, 23 weeks 
+LMP Gestational Age Weekly,V_D66.V24,24, 24 weeks 
+LMP Gestational Age Weekly,V_D66.V24,25, 25 weeks 
+LMP Gestational Age Weekly,V_D66.V24,26, 26 weeks 
+LMP Gestational Age Weekly,V_D66.V24,27, 27 weeks 
+LMP Gestational Age Weekly,V_D66.V24,28, 28 weeks 
+LMP Gestational Age Weekly,V_D66.V24,29, 29 weeks 
+LMP Gestational Age Weekly,V_D66.V24,30, 30 weeks 
+LMP Gestational Age Weekly,V_D66.V24,31, 31 weeks 
+LMP Gestational Age Weekly,V_D66.V24,32, 32 weeks 
+LMP Gestational Age Weekly,V_D66.V24,33, 33 weeks 
+LMP Gestational Age Weekly,V_D66.V24,34, 34 weeks 
+LMP Gestational Age Weekly,V_D66.V24,35, 35 weeks 
+LMP Gestational Age Weekly,V_D66.V24,36, 36 weeks 
+LMP Gestational Age Weekly,V_D66.V24,37, 37 weeks 
+LMP Gestational Age Weekly,V_D66.V24,38, 38 weeks 
+LMP Gestational Age Weekly,V_D66.V24,39, 39 weeks 
+LMP Gestational Age Weekly,V_D66.V24,40, 40 weeks 
+LMP Gestational Age Weekly,V_D66.V24,41, 41 weeks 
+LMP Gestational Age Weekly,V_D66.V24,42, 42 weeks 
+LMP Gestational Age Weekly,V_D66.V24,43, 43 weeks 
+LMP Gestational Age Weekly,V_D66.V24,44, 44 weeks 
+LMP Gestational Age Weekly,V_D66.V24,45, 45 weeks 
+LMP Gestational Age Weekly,V_D66.V24,46, 46 weeks 
+LMP Gestational Age Weekly,V_D66.V24,47, 47 weeks 
+LMP Gestational Age Weekly,V_D66.V24,99, Unknown 
+Month,V_D66.V25,\*All\*, All Months 
+Month,V_D66.V25,1, January 
+Month,V_D66.V25,2, February 
+Month,V_D66.V25,3, March 
+Month,V_D66.V25,4, April 
+Month,V_D66.V25,5, May 
+Month,V_D66.V25,6, June 
+Month,V_D66.V25,7, July 
+Month,V_D66.V25,8, August 
+Month,V_D66.V25,9, September 
+Month,V_D66.V25,10, October 
+Month,V_D66.V25,11, November 
+Month,V_D66.V25,12, December 
+Weekday,V_D66.V26,\*All\*, All Days 
+Weekday,V_D66.V26,1, Sunday 
+Weekday,V_D66.V26,2, Monday 
+Weekday,V_D66.V26,3, Tuesday 
+Weekday,V_D66.V26,4, Wednesday 
+Weekday,V_D66.V26,5, Thursday 
+Weekday,V_D66.V26,6, Friday 
+Weekday,V_D66.V26,7, Saturday 
+Weekday,V_D66.V26,9, Unknown 
+Marital Status,V_D66.V27,\*All\*, All 
+Marital Status,V_D66.V27,1, Married 
+Marital Status,V_D66.V27,2, Unmarried 
+Marital Status,V_D66.V27,9, Unknown or not Stated 
+Live Birth Order,V_D66.V28,\*All\*, All Orders 
+Live Birth Order,V_D66.V28,01, 1st child born alive to mother 
+Live Birth Order,V_D66.V28,02, 2nd child born alive to mother 
+Live Birth Order,V_D66.V28,03, 3rd child born alive to mother 
+Live Birth Order,V_D66.V28,04, 4th child born alive to mother 
+Live Birth Order,V_D66.V28,05, 5th child born alive to mother 
+Live Birth Order,V_D66.V28,06, 6th child and over born alive to mother 
+Live Birth Order,V_D66.V28,99, Unknown or not stated 
+Medical Attendant,V_D66.V29,\*All\*, All Attendants 
+Medical Attendant,V_D66.V29,1, Doctor of Medicine(MD) 
+Medical Attendant,V_D66.V29,2, Doctor of Osteopathy(DO) 
+Medical Attendant,V_D66.V29,3, Certified Nurse Midwife(CNM) 
+Medical Attendant,V_D66.V29,4, Other Midwife 
+Medical Attendant,V_D66.V29,5, Other 
+Medical Attendant,V_D66.V29,9, Unknown or not stated 
+Gender,V_D66.V3,\*All\*, All Genders 
+Gender,V_D66.V3,F, Female 
+Gender,V_D66.V3,M, Male 
+Birthplace,V_D66.V30,\*All\*, All Locations 
+Birthplace,V_D66.V30,1, In Hospital 
+Birthplace,V_D66.V30,2, Freestanding Birth Center 
+Birthplace,V_D66.V30,3, Clinic/Doctor's Office 
+Birthplace,V_D66.V30,4, Residence 
+Birthplace,V_D66.V30,5, Other 
+Birthplace,V_D66.V30,9, Unknown 
+Delivery Method,V_D66.V31,\*All\*, All Methods 
+Delivery Method,V_D66.V31,1, Vaginal 
+Delivery Method,V_D66.V31,2, Cesarean 
+Delivery Method,V_D66.V31,9, Not Stated 
+OE Gestational Age 10,V_D66.V32,\*All\*, All Weeks 
+OE Gestational Age 10,V_D66.V32,01, Under 20 weeks 
+OE Gestational Age 10,V_D66.V32,02, 20 - 27 weeks 
+OE Gestational Age 10,V_D66.V32,03, 28 - 31 weeks 
+OE Gestational Age 10,V_D66.V32,04, 32 - 35 weeks 
+OE Gestational Age 10,V_D66.V32,05, 36 weeks 
+OE Gestational Age 10,V_D66.V32,06, 37 - 39 weeks 
+OE Gestational Age 10,V_D66.V32,07, 40 weeks 
+OE Gestational Age 10,V_D66.V32,08, 41 weeks 
+OE Gestational Age 10,V_D66.V32,09, 42 weeks or more 
+OE Gestational Age 10,V_D66.V32,10, Unknown 
+OE Gestational Age 11,V_D66.V33,\*All\*, All Weeks 
+OE Gestational Age 11,V_D66.V33,01, Under 20 weeks 
+OE Gestational Age 11,V_D66.V33,02, 20-27 weeks 
+OE Gestational Age 11,V_D66.V33,03, 28-31 weeks 
+OE Gestational Age 11,V_D66.V33,04, 32-33 weeks 
+OE Gestational Age 11,V_D66.V33,05, 34-36 weeks 
+OE Gestational Age 11,V_D66.V33,06, 37-38 weeks 
+OE Gestational Age 11,V_D66.V33,07, 39 weeks 
+OE Gestational Age 11,V_D66.V33,08, 40 weeks 
+OE Gestational Age 11,V_D66.V33,09, 41 weeks 
+OE Gestational Age 11,V_D66.V33,10, 42 or more weeks 
+OE Gestational Age 11,V_D66.V33,11, Unknown 
+OE Gestational Age Weekly,V_D66.V34,\*All\*, All Weeks 
+OE Gestational Age Weekly,V_D66.V34,17, 17 weeks 
+OE Gestational Age Weekly,V_D66.V34,18, 18 weeks 
+OE Gestational Age Weekly,V_D66.V34,19, 19 weeks 
+OE Gestational Age Weekly,V_D66.V34,20, 20 weeks 
+OE Gestational Age Weekly,V_D66.V34,21, 21 weeks 
+OE Gestational Age Weekly,V_D66.V34,22, 22 weeks 
+OE Gestational Age Weekly,V_D66.V34,23, 23 weeks 
+OE Gestational Age Weekly,V_D66.V34,24, 24 weeks 
+OE Gestational Age Weekly,V_D66.V34,25, 25 weeks 
+OE Gestational Age Weekly,V_D66.V34,26, 26 weeks 
+OE Gestational Age Weekly,V_D66.V34,27, 27 weeks 
+OE Gestational Age Weekly,V_D66.V34,28, 28 weeks 
+OE Gestational Age Weekly,V_D66.V34,29, 29 weeks 
+OE Gestational Age Weekly,V_D66.V34,30, 30 weeks 
+OE Gestational Age Weekly,V_D66.V34,31, 31 weeks 
+OE Gestational Age Weekly,V_D66.V34,32, 32 weeks 
+OE Gestational Age Weekly,V_D66.V34,33, 33 weeks 
+OE Gestational Age Weekly,V_D66.V34,34, 34 weeks 
+OE Gestational Age Weekly,V_D66.V34,35, 35 weeks 
+OE Gestational Age Weekly,V_D66.V34,36, 36 weeks 
+OE Gestational Age Weekly,V_D66.V34,37, 37 weeks 
+OE Gestational Age Weekly,V_D66.V34,38, 38 weeks 
+OE Gestational Age Weekly,V_D66.V34,39, 39 weeks 
+OE Gestational Age Weekly,V_D66.V34,40, 40 weeks 
+OE Gestational Age Weekly,V_D66.V34,41, 41 weeks 
+OE Gestational Age Weekly,V_D66.V34,42, 42 weeks 
+OE Gestational Age Weekly,V_D66.V34,43, 43 weeks 
+OE Gestational Age Weekly,V_D66.V34,44, 44 weeks 
+OE Gestational Age Weekly,V_D66.V34,45, 45 weeks 
+OE Gestational Age Weekly,V_D66.V34,46, 46 weeks 
+OE Gestational Age Weekly,V_D66.V34,47, 47 weeks 
+OE Gestational Age Weekly,V_D66.V34,99, Unknown 
+Birth Weight 14,V_D66.V35,\*All\*, All Weights 
+Birth Weight 14,V_D66.V35,01, 499 grams or less 
+Birth Weight 14,V_D66.V35,02, 500 - 749 grams 
+Birth Weight 14,V_D66.V35,03, 750 - 999 grams 
+Birth Weight 14,V_D66.V35,04, 1000 - 1249 grams 
+Birth Weight 14,V_D66.V35,05, 1250 - 1499 grams 
+Birth Weight 14,V_D66.V35,06, 1500 - 1999 grams 
+Birth Weight 14,V_D66.V35,07, 2000 - 2499 grams 
+Birth Weight 14,V_D66.V35,08, 2500 - 2999 grams 
+Birth Weight 14,V_D66.V35,09, 3000 - 3499 grams 
+Birth Weight 14,V_D66.V35,10, 3500 - 3999 grams 
+Birth Weight 14,V_D66.V35,11, 4000 - 4499 grams 
+Birth Weight 14,V_D66.V35,12, 4500 - 4999 grams 
+Birth Weight 14,V_D66.V35,13, 5000 - 8165 grams 
+Birth Weight 14,V_D66.V35,14, Not stated 
+Age of Mother 10,V_D66.V38,\*All\*, All Ages 
+Age of Mother 10,V_D66.V38,15-, Under 15 years 
+Age of Mother 10,V_D66.V38,15-17, 15 - 17 years 
+Age of Mother 10,V_D66.V38,18-19, 18 - 19 years 
+Age of Mother 10,V_D66.V38,20-24, 20-24 years 
+Age of Mother 10,V_D66.V38,25-29, 25-29 years 
+Age of Mother 10,V_D66.V38,30-34, 30-34 years 
+Age of Mother 10,V_D66.V38,35-39, 35-39 years 
+Age of Mother 10,V_D66.V38,40-44, 40-44 years 
+Age of Mother 10,V_D66.V38,45-49, 45-49 years 
+Age of Mother 10,V_D66.V38,50+, 50 years and over 
+Age of Mother 13,V_D66.V39,\*All\*, All Ages 
+Age of Mother 13,V_D66.V39,15-, Under 15 years 
+Age of Mother 13,V_D66.V39,15, 15 years 
+Age of Mother 13,V_D66.V39,16, 16 years 
+Age of Mother 13,V_D66.V39,17, 17 years 
+Age of Mother 13,V_D66.V39,18, 18 years 
+Age of Mother 13,V_D66.V39,19, 19 years 
+Age of Mother 13,V_D66.V39,20-24, 20-24 years 
+Age of Mother 13,V_D66.V39,25-29, 25-29 years 
+Age of Mother 13,V_D66.V39,30-34, 30-34 years 
+Age of Mother 13,V_D66.V39,35-39, 35-39 years 
+Age of Mother 13,V_D66.V39,40-44, 40-44 years 
+Age of Mother 13,V_D66.V39,45-49, 45-49 years 
+Age of Mother 13,V_D66.V39,50+, 50 years and over 
+Hispanic Origin,V_D66.V4,\*All\*, All Origins 
+Hispanic Origin,V_D66.V4,2148-5, Mexican 
+Hispanic Origin,V_D66.V4,2180-8, Puerto Rican 
+Hispanic Origin,V_D66.V4,2182-4, Cuban 
+Hispanic Origin,V_D66.V4,4, Central or South American 
+Hispanic Origin,V_D66.V4,5, Other and Unknown Hispanic 
+Hispanic Origin,V_D66.V4,6, Non-Hispanic White 
+Hispanic Origin,V_D66.V4,7, Non-Hispanic Black 
+Hispanic Origin,V_D66.V4,8, Non-Hispanic other races 
+Hispanic Origin,V_D66.V4,9, Origin unknown or not stated 
+Age of Mother Year,V_D66.V40,\*All\*, All Ages 
+Age of Mother Year,V_D66.V40,10-12, 10-12 years 
+Age of Mother Year,V_D66.V40,13, 13 years 
+Age of Mother Year,V_D66.V40,14, 14 years 
+Age of Mother Year,V_D66.V40,15, 15 years 
+Age of Mother Year,V_D66.V40,16, 16 years 
+Age of Mother Year,V_D66.V40,17, 17 years 
+Age of Mother Year,V_D66.V40,18, 18 years 
+Age of Mother Year,V_D66.V40,19, 19 years 
+Age of Mother Year,V_D66.V40,20, 20 years 
+Age of Mother Year,V_D66.V40,21, 21 years 
+Age of Mother Year,V_D66.V40,22, 22 years 
+Age of Mother Year,V_D66.V40,23, 23 years 
+Age of Mother Year,V_D66.V40,24, 24 years 
+Age of Mother Year,V_D66.V40,25, 25 years 
+Age of Mother Year,V_D66.V40,26, 26 years 
+Age of Mother Year,V_D66.V40,27, 27 years 
+Age of Mother Year,V_D66.V40,28, 28 years 
+Age of Mother Year,V_D66.V40,29, 29 years 
+Age of Mother Year,V_D66.V40,30, 30 years 
+Age of Mother Year,V_D66.V40,31, 31 years 
+Age of Mother Year,V_D66.V40,32, 32 years 
+Age of Mother Year,V_D66.V40,33, 33 years 
+Age of Mother Year,V_D66.V40,34, 34 years 
+Age of Mother Year,V_D66.V40,35, 35 years 
+Age of Mother Year,V_D66.V40,36, 36 years 
+Age of Mother Year,V_D66.V40,37, 37 years 
+Age of Mother Year,V_D66.V40,38, 38 years 
+Age of Mother Year,V_D66.V40,39, 39 years 
+Age of Mother Year,V_D66.V40,40, 40 years 
+Age of Mother Year,V_D66.V40,41, 41 years 
+Age of Mother Year,V_D66.V40,42, 42 years 
+Age of Mother Year,V_D66.V40,43, 43 years 
+Age of Mother Year,V_D66.V40,44, 44 years 
+Age of Mother Year,V_D66.V40,45, 45 years 
+Age of Mother Year,V_D66.V40,46, 46 years 
+Age of Mother Year,V_D66.V40,47, 47 years 
+Age of Mother Year,V_D66.V40,48, 48 years 
+Age of Mother Year,V_D66.V40,49, 49 years 
+Age of Mother Year,V_D66.V40,50+, 50 years and over 
+Birth Weight 100 gram increments,V_D66.V41,\*All\*, All Weights 
+Birth Weight 100 gram increments,V_D66.V41,1, 100 - 199 grams 
+Birth Weight 100 gram increments,V_D66.V41,2, 200 - 299 grams 
+Birth Weight 100 gram increments,V_D66.V41,3, 300 - 399 grams 
+Birth Weight 100 gram increments,V_D66.V41,4, 400 - 499 grams 
+Birth Weight 100 gram increments,V_D66.V41,5, 500 - 599 grams 
+Birth Weight 100 gram increments,V_D66.V41,6, 600 - 699 grams 
+Birth Weight 100 gram increments,V_D66.V41,7, 700 - 799 grams 
+Birth Weight 100 gram increments,V_D66.V41,8, 800 - 899 grams 
+Birth Weight 100 gram increments,V_D66.V41,9, 900 - 999 grams 
+Birth Weight 100 gram increments,V_D66.V41,10, 1000 - 1099 grams 
+Birth Weight 100 gram increments,V_D66.V41,11, 1100 - 1199 grams 
+Birth Weight 100 gram increments,V_D66.V41,12, 1200 - 1299 grams 
+Birth Weight 100 gram increments,V_D66.V41,13, 1300 - 1399 grams 
+Birth Weight 100 gram increments,V_D66.V41,14, 1400 - 1499 grams 
+Birth Weight 100 gram increments,V_D66.V41,15, 1500 - 1599 grams 
+Birth Weight 100 gram increments,V_D66.V41,16, 1600 - 1699 grams 
+Birth Weight 100 gram increments,V_D66.V41,17, 1700 - 1799 grams 
+Birth Weight 100 gram increments,V_D66.V41,18, 1800 - 1899 grams 
+Birth Weight 100 gram increments,V_D66.V41,19, 1900 - 1999 grams 
+Birth Weight 100 gram increments,V_D66.V41,20, 2000 - 2099 grams 
+Birth Weight 100 gram increments,V_D66.V41,21, 2100 - 2199 grams 
+Birth Weight 100 gram increments,V_D66.V41,22, 2200 - 2299 grams 
+Birth Weight 100 gram increments,V_D66.V41,23, 2300 - 2399 grams 
+Birth Weight 100 gram increments,V_D66.V41,24, 2400 - 2499 grams 
+Birth Weight 100 gram increments,V_D66.V41,25, 2500 - 2599 grams 
+Birth Weight 100 gram increments,V_D66.V41,26, 2600 - 2699 grams 
+Birth Weight 100 gram increments,V_D66.V41,27, 2700 - 2799 grams 
+Birth Weight 100 gram increments,V_D66.V41,28, 2800 - 2899 grams 
+Birth Weight 100 gram increments,V_D66.V41,29, 2900 - 2999 grams 
+Birth Weight 100 gram increments,V_D66.V41,30, 3000 - 3099 grams 
+Birth Weight 100 gram increments,V_D66.V41,31, 3100 - 3199 grams 
+Birth Weight 100 gram increments,V_D66.V41,32, 3200 - 3299 grams 
+Birth Weight 100 gram increments,V_D66.V41,33, 3300 - 3399 grams 
+Birth Weight 100 gram increments,V_D66.V41,34, 3400 - 3499 grams 
+Birth Weight 100 gram increments,V_D66.V41,35, 3500 - 3599 grams 
+Birth Weight 100 gram increments,V_D66.V41,36, 3600 - 3699 grams 
+Birth Weight 100 gram increments,V_D66.V41,37, 3700 - 3799 grams 
+Birth Weight 100 gram increments,V_D66.V41,38, 3800 - 3899 grams 
+Birth Weight 100 gram increments,V_D66.V41,39, 3900 - 3999 grams 
+Birth Weight 100 gram increments,V_D66.V41,40, 4000 - 4099 grams 
+Birth Weight 100 gram increments,V_D66.V41,41, 4100 - 4199 grams 
+Birth Weight 100 gram increments,V_D66.V41,42, 4200 - 4299 grams 
+Birth Weight 100 gram increments,V_D66.V41,43, 4300 - 4399 grams 
+Birth Weight 100 gram increments,V_D66.V41,44, 4400 - 4499 grams 
+Birth Weight 100 gram increments,V_D66.V41,45, 4500 - 4599 grams 
+Birth Weight 100 gram increments,V_D66.V41,46, 4600 - 4699 grams 
+Birth Weight 100 gram increments,V_D66.V41,47, 4700 - 4799 grams 
+Birth Weight 100 gram increments,V_D66.V41,48, 4800 - 4899 grams 
+Birth Weight 100 gram increments,V_D66.V41,49, 4900 - 4999 grams 
+Birth Weight 100 gram increments,V_D66.V41,50, 5000 - 5099 grams 
+Birth Weight 100 gram increments,V_D66.V41,51, 5100 - 5199 grams 
+Birth Weight 100 gram increments,V_D66.V41,52, 5200 - 5299 grams 
+Birth Weight 100 gram increments,V_D66.V41,53, 5300 - 5399 grams 
+Birth Weight 100 gram increments,V_D66.V41,54, 5400 - 5499 grams 
+Birth Weight 100 gram increments,V_D66.V41,55, 5500 - 5599 grams 
+Birth Weight 100 gram increments,V_D66.V41,56, 5600 - 5699 grams 
+Birth Weight 100 gram increments,V_D66.V41,57, 5700 - 5799 grams 
+Birth Weight 100 gram increments,V_D66.V41,58, 5800 - 5899 grams 
+Birth Weight 100 gram increments,V_D66.V41,59, 5900 - 5999 grams 
+Birth Weight 100 gram increments,V_D66.V41,60, 6000 - 6099 grams 
+Birth Weight 100 gram increments,V_D66.V41,61, 6100 - 6199 grams 
+Birth Weight 100 gram increments,V_D66.V41,62, 6200 - 6299 grams 
+Birth Weight 100 gram increments,V_D66.V41,63, 6300 - 6399 grams 
+Birth Weight 100 gram increments,V_D66.V41,64, 6400 - 6499 grams 
+Birth Weight 100 gram increments,V_D66.V41,65, 6500 - 6599 grams 
+Birth Weight 100 gram increments,V_D66.V41,66, 6600 - 6699 grams 
+Birth Weight 100 gram increments,V_D66.V41,67, 6700 - 6799 grams 
+Birth Weight 100 gram increments,V_D66.V41,68, 6800 - 6899 grams 
+Birth Weight 100 gram increments,V_D66.V41,69, 6900 - 6999 grams 
+Birth Weight 100 gram increments,V_D66.V41,70, 7000 - 7099 grams 
+Birth Weight 100 gram increments,V_D66.V41,71, 7100 - 7199 grams 
+Birth Weight 100 gram increments,V_D66.V41,72, 7200 - 7299 grams 
+Birth Weight 100 gram increments,V_D66.V41,73, 7300 - 7399 grams 
+Birth Weight 100 gram increments,V_D66.V41,74, 7400 - 7499 grams 
+Birth Weight 100 gram increments,V_D66.V41,75, 7500 - 7599 grams 
+Birth Weight 100 gram increments,V_D66.V41,76, 7600 - 7699 grams 
+Birth Weight 100 gram increments,V_D66.V41,77, 7700 - 7799 grams 
+Birth Weight 100 gram increments,V_D66.V41,78, 7800 - 7899 grams 
+Birth Weight 100 gram increments,V_D66.V41,79, 7900 - 7999 grams 
+Birth Weight 100 gram increments,V_D66.V41,80, 8000 - 8099 grams 
+Birth Weight 100 gram increments,V_D66.V41,81, 8100 - 8165 grams 
+Birth Weight 100 gram increments,V_D66.V41,99, Not stated 
+Education,V_D66.V5,\*All\*, All Groups 
+Education,V_D66.V5,1, 8th grade or less 
+Education,V_D66.V5,2, 9th through 12th grade with no diploma 
+Education,V_D66.V5,3, High school graduate or GED completed 
+Education,V_D66.V5,4," Some college credit, but not a degree "
+Education,V_D66.V5,5," Associate degree (AA, AS) "
+Education,V_D66.V5,6," Bachelor's degree (BA, AB, BS) "
+Education,V_D66.V5,7," Master's degree (MA, MS) "
+Education,V_D66.V5,8," Doctorate (PHD, EdD) or Professional Degree (MD, DDS, DVM, LLB, JD) "
+Education,V_D66.V5,Unk, Unknown/Not on certificate 
+Education,V_D66.V5,999, Excluded 
+LMP Gestational Age 10,V_D66.V6,\*All\*, All Weeks 
+LMP Gestational Age 10,V_D66.V6,01, Under 20 weeks 
+LMP Gestational Age 10,V_D66.V6,02, 20 - 27 weeks 
+LMP Gestational Age 10,V_D66.V6,03, 28 - 31 weeks 
+LMP Gestational Age 10,V_D66.V6,04, 32 - 35 weeks 
+LMP Gestational Age 10,V_D66.V6,05, 36 weeks 
+LMP Gestational Age 10,V_D66.V6,06, 37 - 39 weeks 
+LMP Gestational Age 10,V_D66.V6,07, 40 weeks 
+LMP Gestational Age 10,V_D66.V6,08, 41 weeks 
+LMP Gestational Age 10,V_D66.V6,09, 42 weeks or more 
+LMP Gestational Age 10,V_D66.V6,10, Unknown 
+Plurality or Multiple Birth,V_D66.V7,\*All\*, All Pluralities 
+Plurality or Multiple Birth,V_D66.V7,1, Single 
+Plurality or Multiple Birth,V_D66.V7,2, Twin 
+Plurality or Multiple Birth,V_D66.V7,3, Triplet 
+Plurality or Multiple Birth,V_D66.V7,4, Quadruplet 
+Plurality or Multiple Birth,V_D66.V7,5, Quintuplet or higher 
+Month Prenatal Care Began,V_D66.V8,\*All\*, All Months 
+Month Prenatal Care Began,V_D66.V8,00, No prenatal care 
+Month Prenatal Care Began,V_D66.V8,01, 1st month 
+Month Prenatal Care Began,V_D66.V8,02, 2nd month 
+Month Prenatal Care Began,V_D66.V8,03, 3rd month 
+Month Prenatal Care Began,V_D66.V8,04, 4th month 
+Month Prenatal Care Began,V_D66.V8,05, 5th month 
+Month Prenatal Care Began,V_D66.V8,06, 6th month 
+Month Prenatal Care Began,V_D66.V8,07, 7th month 
+Month Prenatal Care Began,V_D66.V8,08, 8th month 
+Month Prenatal Care Began,V_D66.V8,09, 9th month 
+Month Prenatal Care Began,V_D66.V8,10, 10th month 
+Month Prenatal Care Began,V_D66.V8,99, Not stated/Not on certificate 
+Month Prenatal Care Began,V_D66.V8,98, Excluded 
+Birth Weight 12,V_D66.V9,\*All\*, All Weights 
+Birth Weight 12,V_D66.V9,01, 499 grams or less 
+Birth Weight 12,V_D66.V9,02, 500 - 999 grams 
+Birth Weight 12,V_D66.V9,03, 1000 - 1499 grams 
+Birth Weight 12,V_D66.V9,04, 1500 - 1999 grams 
+Birth Weight 12,V_D66.V9,05, 2000 - 2499 grams 
+Birth Weight 12,V_D66.V9,06, 2500 - 2999 grams 
+Birth Weight 12,V_D66.V9,07, 3000 - 3499 grams 
+Birth Weight 12,V_D66.V9,08, 3500 - 3999 grams 
+Birth Weight 12,V_D66.V9,09, 4000 - 4499 grams 
+Birth Weight 12,V_D66.V9,10, 4500 - 4999 grams 
+Birth Weight 12,V_D66.V9,11, 5000 - 8165 grams 
+Birth Weight 12,V_D66.V9,12, Not stated 
