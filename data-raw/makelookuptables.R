@@ -1,4 +1,12 @@
 # create five lookup tables needed to make codebook
+# A SAMPLE QUERY RESULT is used to create:
+# 1. varlookup, 2. measurelookup, and 3. paramlookup.
+# (All query results contain a "dataset" node with info on the whole dataset, not just the specific query).
+
+# Scraping the ONLINE HTML FORM is used to create:
+# 4. selectlookup and 5. inputlookup
+# selectlookp is necessary for determing by variable options
+# not sure if inputlookup is necessary now, but it may be
 library(xml2)
 library(tidyverse)
 
