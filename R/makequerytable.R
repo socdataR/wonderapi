@@ -18,15 +18,24 @@
 
 # This function is designed to work for query results with varying number of columns per row
 
-getrows <- function(row, numcol) {
-    cells <- row %>% html_nodes("c")
-    len <- length(cells)
+getrows <- function(thisrow, numcol) {
+    cells <- thisrow %>% xml_nodes("c")
     # assuming all the labels ("l") are to the left of all
     # the values ("v")
-    l <- cells %>% html_attr("l") %>% na.omit()
-    v <- cells %>% html_attr("v") %>% na.omit()
+    l <- cells %>% xml_attr("l") %>% na.omit()
+    v <- vector()
+    for (i in seq_along(cells)) {
+        v <- c(v, cells[i] %>% xml_attr("v"))
+        if (xml_length(cells[i]) > 0) {
+            v <- c(v, cells[i] %>% xml_child() %>% xml_attr("v"))
+        }
+    }
+    v <- v %>% na.omit()
+    if (length(v) == 0) stop()
     # convert to numeric, divide % by 100
     v <- as.character(round(((grepl("\\%", v)*-.99 + 1) * parse_number(v)), 3))
+ #   print(c(rep(NA, numcol - length(c(l,v)), l, v))
+    len <- length(c(l, v))
     return(c(rep(NA, numcol - len), l, v))
 }
 
@@ -41,23 +50,32 @@ replaceNAs <- function (x) {
 
 
 makequerytable <- function(query_result) {
-    allrows <- query_result %>% xml_nodes("r")
+    allrows <- query_result %>%
+        xml_find_all("//r")
+
+    # remove total rows
+    dt <- vector()
+    for (i in seq_along(allrows)) {
+        ifelse (allrows[i] %>% xml_nodes("c") %>%
+        xml_has_attr("dt") %>% sum() > 0, dt[i] <- TRUE,
+        dt[i] <- FALSE)
+    }
+    allrows <- allrows[!dt]
+
     firstrow <- allrows[1] %>% xml_nodes("c")
-    numcol <-  firstrow %>% length()
+    numcol <-  length(firstrow) +
+        length(firstrow %>% xml_children()) # standard deviation
+    # measures are children
     numl <- firstrow %>% xml_attr("l") %>%
         na.omit() %>% length()
-    numv <- firstrow %>% xml_attr("v") %>%
-        na.omit() %>% length()
-    if (!(numl + numv == numcol)) stop ("number of labels + number of measures does not equal number of columns")
 
-    querytable <- allrows %>%
-        sapply(getrows, numcol) %>% t() %>%
-        data.frame(stringsAsFactors = FALSE) %>%
-        replaceNAs()
+    querytable <- do.call(rbind, map(allrows, getrows,
+                                     numcol)) %>%
+        as.data.frame(stringsAsFactors = FALSE) %>%
+                   replaceNAs()
 
-    firstv <- numcol - numv + 1 # first measure column
-    querytable[,firstv:numcol] <- map_df(querytable[,firstv:numcol], as.numeric)
-    # (inspiration: https://stackoverflow.com/questions/4227223/r-list-to-data-frame)
+    firstv <- numcol - numl # first measure column
+    querytable[,firstv:numcol] <- lapply(querytable[,firstv:numcol], as.numeric)
 
     # determine column names (byvariables, then measures)
     byvariables <- query_result %>%
@@ -70,13 +88,16 @@ makequerytable <- function(query_result) {
         xml_nodes("measure") %>%
         xml_attr("code")
 
-    colvars <- c(byvariables, measures)
-    lookup <- read_csv("D66lookuptable.csv")
+    varlookup <- read_csv("data/D66varlookup.csv")
     # the lookup table is created by makelookuptable()
-    colvar_index <- map_int(colvars,
-                            ~which(lookup$code == .x)[1])
-    colnames(querytable) <- lookup$label[colvar_index]
-
+    var_index <- map_int(byvariables,
+                            ~which(varlookup$code == .x)[1])
+    var_labels <- varlookup$label[var_index]
+    measlookup <- read_csv("data/D66measurelookup.csv")
+    meas_index <- map_int(measures,
+                          ~which(measlookup$code == .x)[1])
+    meas_labels <- measlookup$label[meas_index]
+    colnames(querytable) <- c(var_labels, meas_labels)
     return(querytable)
 }
 
