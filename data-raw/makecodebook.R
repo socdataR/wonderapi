@@ -2,6 +2,57 @@ library(rvest)
 library(tidyverse)
 library(stringr)
 # functions
+check_and_assign <- function(field) {
+    if (length(field) > 0) {
+        return(field)
+    }
+    else
+        return("NULL")
+}
+
+unpack <- function(item) {
+    name <- check_and_assign(item$name)
+    value <- check_and_assign(item$value)
+    type <- check_and_assign(item$type)
+    data.frame(name, value, type, stringsAsFactors = FALSE)
+}
+
+process_item <- function(thisrow) {
+    lettercode <- strsplit(thisrow["name"], "_")[[1]][1]
+    switch(lettercode,
+           B = {
+               index <- which(selectlookup$name == thisrow["name"])
+               cat(thisrow["name"],
+                   paste0("'",selectlookup$label[index[1]],
+                          "'\n"))
+               cat("Options: \n")
+               if (thisrow["name"] == "B_1") {
+                   for (i in seq_along(index)) {
+                       cat(" ", selectlookup$value[i],
+                           "\t", selectlookup$desc[i], "\n")
+                   }
+               }
+               else {
+                   cat("\tsame as above\n")
+               }
+           },
+           M = {
+               index <- which(measurelookup$code == thisrow["value"])
+               cat(thisrow["name"],
+                   paste0("'",measurelookup$label[index[1]],
+                          "'\n"))
+           },
+           cat("I don't know how to process fields starting with", lettercode,".\n")
+    )
+
+}
+
+inputlookup <- read_csv(paste0("data/", dbcode,
+                               "inputlookup.csv"))
+selectlookup <- read_csv(paste0("data/", dbcode,
+                                "selectlookup.csv"))
+measurelookup <- read_csv(paste0("data/", dbcode,
+                                 "measurelookup.csv"))
 
 dbname <- "natality-current"
 dbcode <- "D66"
@@ -15,117 +66,16 @@ submit <-  "action-I Agree"
 # dbcode <- "D76"
 # submit <-  "action-I Agree"
 
-firstB <- TRUE
 webdata <- agree_and_scrape(dbname, dbcode, submit)
 
-# inspiration from:
 # https://github.com/krlmlr/kimisc/blob/master/R/list_to_df.R
 
 webform <- webdata %>% html_form()
-fields <- webform[[3]]$fields
-form_df <- data.frame(name = names(fields), stringsAsFactors = F)
-form_df$value <- map(fields, ~.x$value)
-form_df$type <- map(fields, ~.x$type)
+
+form_df <- map_df(webform[[3]]$fields, unpack)
 
 form_df <- form_df %>% filter(str_detect(name, "_")) %>%
     filter(type != "hidden")
 
-testrow <- form_df[1,]
-
-precode <- strsplit(testrow$name, "_")[[1]][1]
-
-switch(precode,
-       B = {
-           if (firstB) {
-               cat("By variables")
-
-},
-    print("I don't recognize that precode.")
-)
-
-# if section <> NA print section
-
-# look at first letter of name
-# if B call byvariables(name, firstB)
-
-
-
-
-# Source of this and following quotes:
-# # https://wonder.cdc.gov/wonder/help/WONDER-API.html
-# "B_	are 'by-variables' or those parameters selected in the 'Group Results By' and the 'And By' drop-down lists in the 'Request Form.' These 'by-variables' are the cross-tabulations, stratifications or indexes to the query results. Expect the results data table to show a row for each category in the by-variables, and a column for each measure. For example, if you wish to compare data by sex, then 'group results by' gender, to get a row for females and a row for males in the output."
-
-
-
-# if M call measures(name, firstM)
-
-# "M_	are measures to return, the default measures plus any optional measures."
-
-# "V_	are variable values to limit in the 'where' clause of the query, found in multiple select list boxes and advanced finder text entry boxes in the 'Request Form.'"
-
-# "F_	are values highlighted in a 'Finder' control for hierarchical lists, such the 'Regions/Divisions/States/Counties hierarchical' list."
-
-# "I_	are the contents of the 'Currently selected' information areas next to 'Finder' controls in the 'Request Form.'"
-
-# "VM_	are values for non-standard age adjusted rates (see mortality online databases)."
-
-# "O_	are other parameters, such as radio buttons, checkboxes, and lists that are not data categories (Calculate Rates Per). Among the things an 'O_' may specify:
-#     'O_age' sets which field is used for age groups in the Detailed Mortality 1999-2013 (D76) online database example, such as whether the radio button is set to use the single-year age groups;
-# 'O_ucd' sets which field to use for underlying cause of death in the Detailed Mortality 1999-2013 (D76) online database example, such as	whether the radio button is set to use the ICD chapters, or the ICD 113 selected causes or the ICD 130 selected causes for infants;
-# 'O_V1_fmode' in the example files sets the 'mode' for 'Finder' control selections that specify values under the specified data variable field. In the examples, the 'V1' field refers to the D76.V1 'Year/Month' field. The 'fmode' value specifies whether to pull selections from the Finder's select list, or to pull selections from the 'Advanced Finder' text entries. For example, when 'freg' is the value, then the 'Finder' control is in 'regular' mode, and the 'F_' values are used as query criteria. Change 'freg' to 'fadv' when using the 'V_' values, per an advanced mode 'Finder' control. In the example files, the 'O_V1_fmode' value controls whether we use values specified under 'F_D76.V1' or 'V_D76.V1' as query criteria, in the examples. When 'Finder' is regular mode, then the values under the example 'F_D76.V1' specify each year separately"
-
-# take apart hmtl form
-# get input elements
-inputnodes <- webdata %>% html_nodes("input")
-type <- inputnodes %>% html_attr("type")
-name <- inputnodes %>% html_attr("name")
-value <- inputnodes %>% html_attr("value")
-id <- inputnodes %>% html_attr("id")
-
-input_df <- data.frame(type, name, value, id,
-                       stringsAsFactors = FALSE)
-
-# get all labels
-labels <- webdata %>% html_nodes("label")
-forfield <- labels %>% html_attr("for")
-labeltext <- labels %>% html_text() %>%
-    # get rid of long help links
-    str_replace_all("\\(http.*\\)", "")
-
-label_df <- data.frame(id = forfield, label = labeltext,
-                       stringsAsFactors = FALSE) %>%
-    na.omit()
-
-# add labels to input data frame
-input_df <- left_join(input_df, label_df, by = "id") %>%
-    select(-id) %>%
-    arrange(name, value) %>% unique()
-
-write_csv(input_df, paste0("data/",dbcode,"inputlookup.csv"))
-
-
-getattr <- function(selectnode) {
-    name <- selectnode %>% html_attr("name")
-    id <- selectnode %>% html_attr("id")
-    optnodes <- selectnode %>% html_nodes("option")
-    value <- optnodes %>% html_attr("value") %>%
-        # so *All* doesn't lose asterisks and go italic
-        str_replace_all("\\*", "\\\\*")
-    desc <- optnodes %>% html_text()
-    data.frame(name, id, value, desc,
-               stringsAsFactors = FALSE)
-}
-
-# get select elements
-select_df <- webdata %>% html_nodes("select") %>%
-    map_df(getattr) %>%
-    left_join(label_df, by = "id") %>%
-    select(label, name, value, desc, -id) %>%
-    arrange(name)
-
-write_csv(select_df, paste0("data/",dbcode,"selectlookup.csv"))
-
-
-
-
+apply(form_df[1:20,], 1, process_item)
 
