@@ -20,57 +20,46 @@ unpack <- function(item) {
     df
 }
 
-process_item <- function(thisrow) {
-    lettercode <- strsplit(thisrow$name, "_")[[1]][1]
-    switch(lettercode,
-           B = {
-               index <- which(selectlookup$name == thisrow$name)
-               cat(thisrow$name,
-                   paste0("'",selectlookup$label[index[1]],
-                          "'\n"))
-               cat("Options: \n")
-               if (thisrow$name == "B_1") {
-                   for (i in seq_along(index)) {
-                       cat(" ", selectlookup$value[i],
-                           "\t", selectlookup$desc[i], "\n")
-                   }
-               }
-               else {
-                   cat("\tsame as above\n")
-               }
-           },
-           M = {
-               index <- which(measurelookup$code == thisrow$value)
-               cat(thisrow$name,
-                   paste0("'",measurelookup$label[index[1]],
-                          "'\n"))
-           },
-
+process_item2 <- function(thisrow) {
+    lookupname <- thisrow$name
+    precode <- strsplit(thisrow$name, "_")[[1]][1]
+    switch(precode,
            O = {
-               switch(thisrow$type,
-                      checkbox = return(),
-                      hidden = return(),
-                      NULL = cat("has options \n"),
-                      radio = {
-                          index <- which(inputlookup$name == thisrow$name &
-                                             inputlookup$value == thisrow$value)
-                          cat(thisrow$name, thisrow$value,
-                              paste0("'",inputlookup$label[index[1]], "'\n"))
-                          },
-                       text = {
-                           index <- which(inputlookup$name == thisrow$name &
-                                    inputlookup$value == thisrow$value)
-                           cat(thisrow$name, thisrow$value,
-                               paste0("'",inputlookup$label[index[1]],
-                                      "'\n"))
-                       }
-                )
+               if (thisrow$type == "radio") {
+                   lookupname <- paste0(thisrow$name,
+                                          thisrow$value)
+                   }
+               },
+           F = {
+               thisrow$name <- strsplit(thisrow$name,
+                                        "_")[[1]][2]
+               cat("Finder control (hierarchical list) \n")
            },
-           cat("I don't know how to process fields starting with", lettercode,"\n")
-            )
+           V = {
+               thisrow$name <- strsplit(thisrow$name,
+                                        "_")[[1]][2]
+           }
+    )
+    index <- which(labellookup$code == lookupname)
+    cat("Parameter:\n")
+    if (thisrow$type == "radio") {
+        cat(thisrow$name, "\nValues:\t", thisrow$value, "\t",
+            labellookup$label[index], "\n")
     }
-
-
+    else {
+        cat(thisrow$name, "\t", labellookup$label[index], "\n")
+    }
+    if (length(thisrow$options) > 1) {
+        cat("Values:\n")
+        opt <- thisrow$options
+        for (i in seq_along(opt)) {
+            optname <- str_replace_all(names(opt[i]),
+                                        "\\(.*?\\)","")
+            cat("\t\t", opt[i], "\t", optname, "\n")
+        }
+    }
+    cat("\n")
+}
 
 
 dbname <- "natality-current"
@@ -102,11 +91,21 @@ webform <- webdata %>% html_form()
 
 form_df <- map_df(webform[[3]]$fields, unpack)
 
+# remove location variables not accessible through API
+ignore <- c("O_location", "F_D66.V21", "F_D66.V22",
+            "F_D66.V37", "V_D66.V21", "V_D66.V22", "V_D66.V37")
+
 form_df <- form_df %>%
-    filter(!(type %in% c("button", "submit")))
-#%>%
-#    filter(str_detect(name, "_"))
+    filter(!(type %in% c("button", "submit", "hidden"))) %>%
+    filter(!(name %in% ignore)) %>%
+    filter(!(str_detect(name, "O_") & type == "checkbox"))
 
-apply(form_df, 1, process_item)
+# not sure how to do this in pipe since options is a list column
 
+
+labellookup <- read_csv("data/labellookup.csv")
+
+sink("data/codebook.txt")
+apply(form_df, 1, process_item2)
+sink()
 
