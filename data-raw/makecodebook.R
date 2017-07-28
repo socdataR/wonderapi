@@ -14,19 +14,22 @@ unpack <- function(item) {
     name <- check_and_assign(item$name)
     value <- check_and_assign(item$value)
     type <- check_and_assign(item$type)
-    data.frame(name, value, type, stringsAsFactors = FALSE)
+    options <- check_and_assign(item$options) %>% list()
+    df <- data.frame(name, value, type, stringsAsFactors = FALSE)
+    df$options <- options
+    df
 }
 
 process_item <- function(thisrow) {
-    lettercode <- strsplit(thisrow["name"], "_")[[1]][1]
+    lettercode <- strsplit(thisrow$name, "_")[[1]][1]
     switch(lettercode,
            B = {
-               index <- which(selectlookup$name == thisrow["name"])
-               cat(thisrow["name"],
+               index <- which(selectlookup$name == thisrow$name)
+               cat(thisrow$name,
                    paste0("'",selectlookup$label[index[1]],
                           "'\n"))
                cat("Options: \n")
-               if (thisrow["name"] == "B_1") {
+               if (thisrow$name == "B_1") {
                    for (i in seq_along(index)) {
                        cat(" ", selectlookup$value[i],
                            "\t", selectlookup$desc[i], "\n")
@@ -37,22 +40,38 @@ process_item <- function(thisrow) {
                }
            },
            M = {
-               index <- which(measurelookup$code == thisrow["value"])
-               cat(thisrow["name"],
+               index <- which(measurelookup$code == thisrow$value)
+               cat(thisrow$name,
                    paste0("'",measurelookup$label[index[1]],
                           "'\n"))
            },
-           cat("I don't know how to process fields starting with", lettercode,".\n")
-    )
 
-}
+           O = {
+               switch(thisrow$type,
+                      checkbox = return(),
+                      hidden = return(),
+                      NULL = cat("has options \n"),
+                      radio = {
+                          index <- which(inputlookup$name == thisrow$name &
+                                             inputlookup$value == thisrow$value)
+                          cat(thisrow$name, thisrow$value,
+                              paste0("'",inputlookup$label[index[1]], "'\n"))
+                          },
+                       text = {
+                           index <- which(inputlookup$name == thisrow$name &
+                                    inputlookup$value == thisrow$value)
+                           cat(thisrow$name, thisrow$value,
+                               paste0("'",inputlookup$label[index[1]],
+                                      "'\n"))
+                       }
+                )
+           },
+           cat("I don't know how to process fields starting with", lettercode,"\n")
+            )
+    }
 
-inputlookup <- read_csv(paste0("data/", dbcode,
-                               "inputlookup.csv"))
-selectlookup <- read_csv(paste0("data/", dbcode,
-                                "selectlookup.csv"))
-measurelookup <- read_csv(paste0("data/", dbcode,
-                                 "measurelookup.csv"))
+
+
 
 dbname <- "natality-current"
 dbcode <- "D66"
@@ -66,7 +85,16 @@ submit <-  "action-I Agree"
 # dbcode <- "D76"
 # submit <-  "action-I Agree"
 
-webdata <- agree_and_scrape(dbname, dbcode, submit)
+inputlookup <- read_csv(paste0("data/", dbcode,
+                               "inputlookup.csv"))
+selectlookup <- read_csv(paste0("data/", dbcode,
+                                "selectlookup.csv"))
+measurelookup <- read_csv(paste0("data/", dbcode,
+                                 "measurelookup.csv"))
+
+
+# webdata <- agree_and_scrape(dbname, dbcode, submit)
+webdata <- read_html("data/webdata.html")
 
 # https://github.com/krlmlr/kimisc/blob/master/R/list_to_df.R
 
@@ -74,8 +102,11 @@ webform <- webdata %>% html_form()
 
 form_df <- map_df(webform[[3]]$fields, unpack)
 
-form_df <- form_df %>% filter(str_detect(name, "_")) %>%
-    filter(type != "hidden")
+form_df <- form_df %>%
+    filter(!(type %in% c("button", "submit")))
+#%>%
+#    filter(str_detect(name, "_"))
 
-apply(form_df[1:20,], 1, process_item)
+apply(form_df, 1, process_item)
+
 
