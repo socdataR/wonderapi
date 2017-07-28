@@ -1,0 +1,1106 @@
+Parameter:
+B_1 	 Group Results By 
+Values:
+		 D76.V10-level1 	 Census Region 
+		 D76.V10-level2 	 Census Division 
+		 D76.V27-level1 	 HHS Region 
+		 D76.V9-level1 	 State 
+		 D76.V9-level2 	 County 
+		 D76.V19 	 2013 Urbanization 
+		 D76.V11 	 2006 Urbanization 
+		 D76.V5 	 Age Groups 
+		 D76.V7 	 Gender 
+		 D76.V17 	 Hispanic Origin 
+		 D76.V8 	 Race 
+		 D76.V1-level1 	 Year 
+		 D76.V1-level2 	 Month 
+		 D76.V24 	 Weekday 
+		 D76.V20 	 Autopsy 
+		 D76.V21 	 Place of Death 
+		 D76.V28 	 15 Leading Causes of Death 
+		 D76.V29 	 15 Leading Causes of Death  
+		 D76.V2-level1 	 ICD Chapter 
+		 D76.V2-level2 	 ICD Sub-Chapter 
+		 D76.V2-level3 	 Cause of death 
+		 D76.V4 	 ICD-10 113 Cause List 
+		 D76.V12 	 ICD-10 130 Cause List  
+		 D76.V22 	 Injury Intent 
+		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
+		 D76.V25 	 Drug/Alcohol Induced Causes 
+
+Parameter:
+B_2 	 And By 
+Values:
+		 *None* 	 None 
+		 D76.V10-level1 	 Census Region 
+		 D76.V10-level2 	 Census Division 
+		 D76.V27-level1 	 HHS Region 
+		 D76.V9-level1 	 State 
+		 D76.V9-level2 	 County 
+		 D76.V19 	 2013 Urbanization 
+		 D76.V11 	 2006 Urbanization 
+		 D76.V5 	 Age Groups 
+		 D76.V7 	 Gender 
+		 D76.V17 	 Hispanic Origin 
+		 D76.V8 	 Race 
+		 D76.V1-level1 	 Year 
+		 D76.V1-level2 	 Month 
+		 D76.V24 	 Weekday 
+		 D76.V20 	 Autopsy 
+		 D76.V21 	 Place of Death 
+		 D76.V28 	 15 Leading Causes of Death 
+		 D76.V29 	 15 Leading Causes of Death  
+		 D76.V2-level1 	 ICD Chapter 
+		 D76.V2-level2 	 ICD Sub-Chapter 
+		 D76.V2-level3 	 Cause of death 
+		 D76.V4 	 ICD-10 113 Cause List 
+		 D76.V12 	 ICD-10 130 Cause List  
+		 D76.V22 	 Injury Intent 
+		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
+		 D76.V25 	 Drug/Alcohol Induced Causes 
+
+Parameter:
+B_3 	 And By 
+Values:
+		 *None* 	 None 
+		 D76.V10-level1 	 Census Region 
+		 D76.V10-level2 	 Census Division 
+		 D76.V27-level1 	 HHS Region 
+		 D76.V9-level1 	 State 
+		 D76.V9-level2 	 County 
+		 D76.V19 	 2013 Urbanization 
+		 D76.V11 	 2006 Urbanization 
+		 D76.V5 	 Age Groups 
+		 D76.V7 	 Gender 
+		 D76.V17 	 Hispanic Origin 
+		 D76.V8 	 Race 
+		 D76.V1-level1 	 Year 
+		 D76.V1-level2 	 Month 
+		 D76.V24 	 Weekday 
+		 D76.V20 	 Autopsy 
+		 D76.V21 	 Place of Death 
+		 D76.V28 	 15 Leading Causes of Death 
+		 D76.V29 	 15 Leading Causes of Death  
+		 D76.V2-level1 	 ICD Chapter 
+		 D76.V2-level2 	 ICD Sub-Chapter 
+		 D76.V2-level3 	 Cause of death 
+		 D76.V4 	 ICD-10 113 Cause List 
+		 D76.V12 	 ICD-10 130 Cause List  
+		 D76.V22 	 Injury Intent 
+		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
+		 D76.V25 	 Drug/Alcohol Induced Causes 
+
+Parameter:
+B_4 	 And By 
+Values:
+		 *None* 	 None 
+		 D76.V10-level1 	 Census Region 
+		 D76.V10-level2 	 Census Division 
+		 D76.V27-level1 	 HHS Region 
+		 D76.V9-level1 	 State 
+		 D76.V9-level2 	 County 
+		 D76.V19 	 2013 Urbanization 
+		 D76.V11 	 2006 Urbanization 
+		 D76.V5 	 Age Groups 
+		 D76.V7 	 Gender 
+		 D76.V17 	 Hispanic Origin 
+		 D76.V8 	 Race 
+		 D76.V1-level1 	 Year 
+		 D76.V1-level2 	 Month 
+		 D76.V24 	 Weekday 
+		 D76.V20 	 Autopsy 
+		 D76.V21 	 Place of Death 
+		 D76.V28 	 15 Leading Causes of Death 
+		 D76.V29 	 15 Leading Causes of Death  
+		 D76.V2-level1 	 ICD Chapter 
+		 D76.V2-level2 	 ICD Sub-Chapter 
+		 D76.V2-level3 	 Cause of death 
+		 D76.V4 	 ICD-10 113 Cause List 
+		 D76.V12 	 ICD-10 130 Cause List  
+		 D76.V22 	 Injury Intent 
+		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
+		 D76.V25 	 Drug/Alcohol Induced Causes 
+
+Parameter:
+B_5 	 And By 
+Values:
+		 *None* 	 None 
+		 D76.V10-level1 	 Census Region 
+		 D76.V10-level2 	 Census Division 
+		 D76.V27-level1 	 HHS Region 
+		 D76.V9-level1 	 State 
+		 D76.V9-level2 	 County 
+		 D76.V19 	 2013 Urbanization 
+		 D76.V11 	 2006 Urbanization 
+		 D76.V5 	 Age Groups 
+		 D76.V7 	 Gender 
+		 D76.V17 	 Hispanic Origin 
+		 D76.V8 	 Race 
+		 D76.V1-level1 	 Year 
+		 D76.V1-level2 	 Month 
+		 D76.V24 	 Weekday 
+		 D76.V20 	 Autopsy 
+		 D76.V21 	 Place of Death 
+		 D76.V28 	 15 Leading Causes of Death 
+		 D76.V29 	 15 Leading Causes of Death  
+		 D76.V2-level1 	 ICD Chapter 
+		 D76.V2-level2 	 ICD Sub-Chapter 
+		 D76.V2-level3 	 Cause of death 
+		 D76.V4 	 ICD-10 113 Cause List 
+		 D76.V12 	 ICD-10 130 Cause List  
+		 D76.V22 	 Injury Intent 
+		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
+		 D76.V25 	 Drug/Alcohol Induced Causes 
+
+Parameter:
+M_1 	 Deaths 
+
+Parameter:
+M_2 	 Population 
+
+Parameter:
+M_3 	 Crude Rate 
+
+Parameter:
+M_32 	 95% Confidence Interval 
+
+Parameter:
+M_31 	 Standard Error 
+
+Parameter:
+M_9 	 Percent of Total Deaths 
+
+Parameter:
+O_title 	 Title 
+
+Parameter:
+O_rate_per 	 Calculate Rates Per 
+Values:
+		 1000 	  1,000  
+		 10000 	  10,000  
+		 100000 	  100,000  
+		 1000000 	  1,000,000  
+
+Parameter:
+O_aar_pop 	 Standard Population 
+Values:
+		 0000 	  2000 U.S. Std. Population  
+		 1940 	  1940 U.S. Std. Million  
+		 1970 	  1970 U.S. Std. Million  
+		 2000 	  2000 U.S. Std. Million  
+
+Parameter:
+VM_D76.M6_D76.V1_S 	  
+Values:
+		 *All* 	  All Years  
+		 1999 	  1999  
+		 2000 	  2000  
+		 2001 	  2001  
+		 2002 	  2002  
+		 2003 	  2003  
+		 2004 	  2004  
+		 2005 	  2005  
+		 2006 	  2006  
+		 2007 	  2007  
+		 2008 	  2008  
+		 2009 	  2009  
+		 2010 	  2010  
+		 2011 	  2011  
+		 2012 	  2012  
+		 2013 	  2013  
+		 2014 	  2014  
+		 2015 	  2015  
+
+Parameter:
+VM_D76.M6_D76.V7 	  
+Values:
+		 *All* 	  All Genders  
+		 F 	  Female  
+		 M 	  Male  
+
+Parameter:
+VM_D76.M6_D76.V17 	  
+Values:
+		 *All* 	  All Origins  
+		 2135-2 	  Hispanic or Latino  
+		 2186-2 	  Not Hispanic or Latino  
+		 NS 	  Not Stated  
+
+Parameter:
+VM_D76.M6_D76.V8 	  
+Values:
+		 *All* 	  All Races  
+		 1002-5 	  American Indian or Alaska Native  
+		 A-PI 	  Asian or Pacific Islander  
+		 2054-5 	  Black or African American  
+		 2106-3 	  White  
+
+Parameter:
+VM_D76.M6_D76.V10 	  
+
+Parameter:
+D76.V9 	  
+
+Finder control (hierarchical list) 
+Parameter:
+D76.V9 	  
+Values:
+		 *All* 	    *All*   
+		 01 	 + 01     
+		 02 	 + 02     
+		 04 	 + 04     
+		 05 	 + 05     
+		 06 	 + 06     
+		 08 	 + 08     
+		 09 	 + 09     
+		 10 	 + 10     
+		 11 	 + 11     
+		 12 	 + 12     
+		 13 	 + 13     
+		 15 	 + 15     
+		 16 	 + 16     
+		 17 	 + 17     
+		 18 	 + 18     
+		 19 	 + 19     
+		 20 	 + 20     
+		 21 	 + 21     
+		 22 	 + 22     
+		 23 	 + 23     
+		 24 	 + 24     
+		 25 	 + 25     
+		 26 	 + 26     
+		 27 	 + 27     
+		 28 	 + 28     
+		 29 	 + 29     
+		 30 	 + 30     
+		 31 	 + 31     
+		 32 	 + 32     
+		 33 	 + 33     
+		 34 	 + 34     
+		 35 	 + 35     
+		 36 	 + 36     
+		 37 	 + 37     
+		 38 	 + 38     
+		 39 	 + 39     
+		 40 	 + 40     
+		 41 	 + 41     
+		 42 	 + 42     
+		 44 	 + 44     
+		 45 	 + 45     
+		 46 	 + 46     
+		 47 	 + 47     
+		 48 	 + 48     
+		 49 	 + 49     
+		 50 	 + 50     
+		 51 	 + 51     
+		 53 	 + 53     
+		 54 	 + 54     
+		 55 	 + 55     
+		 56 	 + 56     
+
+Parameter:
+D76.V10 	  
+
+Finder control (hierarchical list) 
+Parameter:
+D76.V10 	  
+Values:
+		 *All* 	    *All*   
+		 CENS-R1 	 + CENS-R1     
+		 CENS-R2 	 + CENS-R2     
+		 CENS-R3 	 + CENS-R3     
+		 CENS-R4 	 + CENS-R4     
+
+Parameter:
+D76.V27 	  
+
+Finder control (hierarchical list) 
+Parameter:
+D76.V27 	  
+Values:
+		 *All* 	    *All*   
+		 HHS1 	 + HHS1     
+		 HHS2 	 + HHS2     
+		 HHS3 	 + HHS3     
+		 HHS4 	 + HHS4     
+		 HHS5 	 + HHS5     
+		 HHS6 	 + HHS6     
+		 HHS7 	 + HHS7     
+		 HHS8 	 + HHS8     
+		 HHS9 	 + HHS9     
+		 HHS10 	 + HHS10     
+
+Parameter:
+O_urban 
+Values:	 D76.V19 	 2013 Urbanization 
+
+Parameter:
+O_urban 
+Values:	 D76.V11 	 2006 Urbanization 
+
+Parameter:
+D76.V19 	  
+Values:
+		 *All* 	  All Categories  
+		 1 	  Large Central Metro  
+		 2 	  Large Fringe Metro  
+		 3 	  Medium Metro  
+		 4 	  Small Metro  
+		 5 	  Micropolitan   
+		 6 	  NonCore   
+
+Parameter:
+D76.V11 	  
+Values:
+		 *All* 	  All Categories  
+		 1 	  Large Central Metro  
+		 2 	  Large Fringe Metro  
+		 3 	  Medium Metro  
+		 4 	  Small Metro  
+		 5 	  Micropolitan   
+		 6 	  NonCore   
+
+Parameter:
+O_age 
+Values:	 D76.V5 	 Ten-Year Age Groups 
+
+Parameter:
+O_age 
+Values:	 D76.V51 	 Five-Year Age Groups 
+
+Parameter:
+O_age 
+Values:	 D76.V52 	 Single-Year Ages 
+
+Parameter:
+O_age 
+Values:	 D76.V6 	 Infant Age Groups 
+
+Parameter:
+D76.V5 	  
+Values:
+		 *All* 	  All Ages  
+		 1 	  < 1 year  
+		 1-4 	  1-4 years  
+		 5-14 	  5-14 years  
+		 15-24 	  15-24 years  
+		 25-34 	  25-34 years  
+		 35-44 	  35-44 years  
+		 45-54 	  45-54 years  
+		 55-64 	  55-64 years  
+		 65-74 	  65-74 years  
+		 75-84 	  75-84 years  
+		 85+ 	  85+ years  
+		 NS 	  Not Stated  
+
+Parameter:
+D76.V51 	  
+Values:
+		 *All* 	  All Ages  
+		 1 	  < 1 year  
+		 1-4 	  1-4 years  
+		 5-9 	  5-9 years  
+		 10-14 	  10-14 years  
+		 15-19 	  15-19 years  
+		 20-24 	  20-24 years  
+		 25-29 	  25-29 years  
+		 30-34 	  30-34 years  
+		 35-39 	  35-39 years  
+		 40-44 	  40-44 years  
+		 45-49 	  45-49 years  
+		 50-54 	  50-54 years  
+		 55-59 	  55-59 years  
+		 60-64 	  60-64 years   
+		 65-69 	  65-69 years  
+		 70-74 	  70-74 years  
+		 75-79 	  75-79 years  
+		 80-84 	  80-84 years  
+		 85-89 	  85-89 years  
+		 90-94 	  90-94 years  
+		 95-99 	  95-99 years  
+		 100+ 	  100+ years  
+		 NS 	  Not Stated  
+
+Parameter:
+D76.V52 	  
+Values:
+		 *All* 	  All Ages  
+		 0 	  < 1 year  
+		 1 	  1 year  
+		 2 	  2 years  
+		 3 	  3 years  
+		 4 	  4 years  
+		 5 	  5 years  
+		 6 	  6 years  
+		 7 	  7 years  
+		 8 	  8 years  
+		 9 	  9 years  
+		 10 	  10 years  
+		 11 	  11 years  
+		 12 	  12 years  
+		 13 	  13 years  
+		 14 	  14 years  
+		 15 	  15 years  
+		 16 	  16 years  
+		 17 	  17 years  
+		 18 	  18 years  
+		 19 	  19 years  
+		 20 	  20 years  
+		 21 	  21 years  
+		 22 	  22 years  
+		 23 	  23 years  
+		 24 	  24 years  
+		 25 	  25 years  
+		 26 	  26 years  
+		 27 	  27 years  
+		 28 	  28 years  
+		 29 	  29 years  
+		 30 	  30 years  
+		 31 	  31 years  
+		 32 	  32 years  
+		 33 	  33 years  
+		 34 	  34 years  
+		 35 	  35 years  
+		 36 	  36 years  
+		 37 	  37 years  
+		 38 	  38 years  
+		 39 	  39 years  
+		 40 	  40 years  
+		 41 	  41 years  
+		 42 	  42 years  
+		 43 	  43 years  
+		 44 	  44 years  
+		 45 	  45 years  
+		 46 	  46 years  
+		 47 	  47 years  
+		 48 	  48 years  
+		 49 	  49 years  
+		 50 	  50 years  
+		 51 	  51 years  
+		 52 	  52 years  
+		 53 	  53 years  
+		 54 	  54 years  
+		 55 	  55 years  
+		 56 	  56 years  
+		 57 	  57 years  
+		 58 	  58 years  
+		 59 	  59 years  
+		 60 	  60 years  
+		 61 	  61 years  
+		 62 	  62 years  
+		 63 	  63 years  
+		 64 	  64 years  
+		 65 	  65 years  
+		 66 	  66 years  
+		 67 	  67 years  
+		 68 	  68 years  
+		 69 	  69 years  
+		 70 	  70 years  
+		 71 	  71 years  
+		 72 	  72 years  
+		 73 	  73 years  
+		 74 	  74 years  
+		 75 	  75 years  
+		 76 	  76 years  
+		 77 	  77 years  
+		 78 	  78 years  
+		 79 	  79 years  
+		 80 	  80 years  
+		 81 	  81 years  
+		 82 	  82 years  
+		 83 	  83 years  
+		 84 	  84 years  
+		 85 	  85 years  
+		 86 	  86 years  
+		 87 	  87 years  
+		 88 	  88 years  
+		 89 	  89 years  
+		 90 	  90 years  
+		 91 	  91 years  
+		 92 	  92 years  
+		 93 	  93 years  
+		 94 	  94 years  
+		 95 	  95 years  
+		 96 	  96 years  
+		 97 	  97 years  
+		 98 	  98 years  
+		 99 	  99 years  
+		 100 	  100+ years  
+		 NS 	  Not Stated  
+
+Parameter:
+D76.V6 	  
+Values:
+		 00 	  All Infant Ages  
+		 1d 	  < 1 day  
+		 1-6d 	  1-6 days  
+		 7-27d 	  7-27 days  
+		 28-364d 	  28-364 days  
+
+Parameter:
+D76.V7 	  
+Values:
+		 *All* 	  All Genders  
+		 F 	  Female  
+		 M 	  Male  
+
+Parameter:
+D76.V17 	  
+Values:
+		 *All* 	  All Origins  
+		 2135-2 	  Hispanic or Latino  
+		 2186-2 	  Not Hispanic or Latino  
+		 NS 	  Not Stated  
+
+Parameter:
+D76.V8 	  
+Values:
+		 *All* 	  All Races  
+		 1002-5 	  American Indian or Alaska Native  
+		 A-PI 	  Asian or Pacific Islander  
+		 2054-5 	  Black or African American  
+		 2106-3 	  White  
+
+Parameter:
+D76.V1 	  
+
+Finder control (hierarchical list) 
+Parameter:
+D76.V1 	  
+Values:
+		 *All* 	    *All*   
+		 1999 	 + 1999     
+		 2000 	 + 2000     
+		 2001 	 + 2001     
+		 2002 	 + 2002     
+		 2003 	 + 2003     
+		 2004 	 + 2004     
+		 2005 	 + 2005     
+		 2006 	 + 2006     
+		 2007 	 + 2007     
+		 2008 	 + 2008     
+		 2009 	 + 2009     
+		 2010 	 + 2010     
+		 2011 	 + 2011     
+		 2012 	 + 2012     
+		 2013 	 + 2013     
+		 2014 	 + 2014     
+		 2015 	 + 2015     
+
+Parameter:
+D76.V24 	  
+Values:
+		 *All* 	  All Weekdays  
+		 1 	  Sunday  
+		 2 	  Monday  
+		 3 	  Tuesday  
+		 4 	  Wednesday  
+		 5 	  Thursday  
+		 6 	  Friday  
+		 7 	  Saturday  
+		 9 	  Unknown  
+
+Parameter:
+D76.V20 	  
+Values:
+		 *All* 	  All Values  
+		 N 	  No  
+		 Y 	  Yes  
+		 U 	  Unknown  
+
+Parameter:
+D76.V21 	  
+Values:
+		 *All* 	  All Places  
+		 1 	  Medical Facility - Inpatient  
+		 2 	  Medical Facility - Outpatient or ER  
+		 3 	  Medical Facility - Dead on Arrival  
+		 10 	  Medical Facility - Status unknown  
+		 4 	  Decedent's home  
+		 5 	  Hospice facility  
+		 6 	  Nursing home/long term care  
+		 7 	  Other  
+		 9 	  Place of death unknown  
+
+Parameter:
+O_ucd 
+Values:	 D76.V2 	 ICD-10 Codes 
+
+Parameter:
+O_ucd 
+Values:	 D76.V12 	 ICD-10 130 Cause List (Infants) 
+
+Parameter:
+O_ucd 
+Values:	 D76.V25 	 Drug/Alcohol Induced Causes 
+
+Parameter:
+O_ucd 
+Values:	 D76.V4 	 ICD-10 113 Cause List 
+
+Parameter:
+O_ucd 
+Values:	 D76.V22 	  
+
+Parameter:
+D76.V2 	  
+
+Finder control (hierarchical list) 
+Parameter:
+D76.V2 	  
+Values:
+		 *All* 	    *All*   
+		 A00-B99 	 + A00-B99     
+		 C00-D48 	 + C00-D48     
+		 D50-D89 	 + D50-D89     
+		 E00-E88 	 + E00-E88     
+		 F01-F99 	 + F01-F99     
+		 G00-G98 	 + G00-G98     
+		 H00-H57 	 + H00-H57     
+		 H60-H93 	 + H60-H93     
+		 I00-I99 	 + I00-I99     
+		 J00-J98 	 + J00-J98     
+		 K00-K92 	 + K00-K92     
+		 L00-L98 	 + L00-L98     
+		 M00-M99 	 + M00-M99     
+		 N00-N98 	 + N00-N98     
+		 O00-O99 	 + O00-O99     
+		 P00-P96 	 + P00-P96     
+		 Q00-Q99 	 + Q00-Q99     
+		 R00-R99 	 + R00-R99     
+		 U00-U99 	 + U00-U99     
+		 V01-Y89 	 + V01-Y89     
+
+Parameter:
+D76.V4 	  
+Values:
+		 *All* 	  All Causes of Death  
+		 GR113-001 	  #Salmonella infections   
+		 GR113-002 	  #Shigellosis and amebiasis   
+		 GR113-003 	  Certain other intestinal infections   
+		 GR113-004 	  #Tuberculosis   
+		 GR113-005 	     Respiratory tuberculosis   
+		 GR113-006 	     Other tuberculosis   
+		 GR113-007 	  #Whooping cough   
+		 GR113-008 	  #Scarlet fever and erysipelas   
+		 GR113-009 	  #Meningococcal infection   
+		 GR113-010 	  #Septicemia   
+		 GR113-011 	  #Syphilis   
+		 GR113-012 	  #Acute poliomyelitis   
+		 GR113-013 	  #Arthropod-borne viral encephalitis   
+		 GR113-014 	  #Measles   
+		 GR113-015 	  #Viral hepatitis   
+		 GR113-016 	  #Human immunodeficiency virus  disease   
+		 GR113-017 	  #Malaria   
+		 GR113-018 	  Other and unspecified infectious and parasitic diseases and their sequelae   
+		 GR113-019 	  #Malignant neoplasms   
+		 GR113-020 	     Malignant neoplasms of lip, oral cavity and pharynx   
+		 GR113-021 	     Malignant neoplasm of esophagus   
+		 GR113-022 	     Malignant neoplasm of stomach   
+		 GR113-023 	     Malignant neoplasms of colon, rectum and anus   
+		 GR113-024 	     Malignant neoplasms of liver and intrahepatic bile ducts   
+		 GR113-025 	     Malignant neoplasm of pancreas   
+		 GR113-026 	     Malignant neoplasm of larynx   
+		 GR113-027 	     Malignant neoplasms of trachea, bronchus and lung   
+		 GR113-028 	     Malignant melanoma of skin   
+		 GR113-029 	     Malignant neoplasm of breast   
+		 GR113-030 	     Malignant neoplasm of cervix uteri   
+		 GR113-031 	     Malignant neoplasms of corpus uteri and uterus, part unspecified   
+		 GR113-032 	     Malignant neoplasm of ovary   
+		 GR113-033 	     Malignant neoplasm of prostate   
+		 GR113-034 	     Malignant neoplasms of kidney and renal pelvis   
+		 GR113-035 	     Malignant neoplasm of bladder   
+		 GR113-036 	     Malignant neoplasms of meninges, brain and other parts of central nervous system   
+		 GR113-037 	     Malignant neoplasms of lymphoid, hematopoietic and related tissue   
+		 GR113-038 	        Hodgkin's disease   
+		 GR113-039 	        Non-Hodgkin's lymphoma   
+		 GR113-040 	        Leukemia   
+		 GR113-041 	        Multiple myeloma and immunoproliferative neoplasms   
+		 GR113-042 	        Other and unspecified malignant neoplasms of lymphoid, hematopoietic and related tissue   
+		 GR113-043 	     All other and unspecified malignant neoplasms   
+		 GR113-044 	  #In situ neoplasms, benign neoplasms and neoplasms of uncertain or unknown behavior   
+		 GR113-045 	  #Anemias   
+		 GR113-046 	  #Diabetes mellitus   
+		 GR113-047 	  #Nutritional deficiencies   
+		 GR113-048 	     Malnutrition   
+		 GR113-049 	     Other nutritional deficiencies   
+		 GR113-050 	  #Meningitis   
+		 GR113-051 	  #Parkinson's disease   
+		 GR113-052 	  #Alzheimer's disease   
+		 GR113-053 	  Major cardiovascular diseases   
+		 GR113-054 	     #Diseases of heart   
+		 GR113-055 	        Acute rheumatic fever and chronic rheumatic heart diseases   
+		 GR113-056 	        Hypertensive heart disease   
+		 GR113-057 	        Hypertensive heart and renal disease   
+		 GR113-058 	        Ischemic heart diseases   
+		 GR113-059 	           Acute myocardial infarction   
+		 GR113-060 	           Other acute ischemic heart diseases   
+		 GR113-061 	           Other forms of chronic ischemic heart disease   
+		 GR113-062 	              Atherosclerotic cardiovascular disease, so described   
+		 GR113-063 	              All other forms of chronic ischemic heart disease   
+		 GR113-064 	        Other heart diseases   
+		 GR113-065 	           Acute and subacute endocarditis   
+		 GR113-066 	           Diseases of pericardium and acute myocarditis   
+		 GR113-067 	           Heart failure   
+		 GR113-068 	           All other forms of heart disease   
+		 GR113-069 	     #Essential hypertension and hypertensive renal disease   
+		 GR113-070 	     #Cerebrovascular diseases   
+		 GR113-071 	     #Atherosclerosis   
+		 GR113-072 	     Other diseases of circulatory system   
+		 GR113-073 	        #Aortic aneurysm and dissection   
+		 GR113-074 	        Other diseases of arteries, arterioles and capillaries   
+		 GR113-075 	  Other disorders of circulatory system   
+		 GR113-076 	  #Influenza and pneumonia   
+		 GR113-077 	     Influenza   
+		 GR113-078 	     Pneumonia   
+		 GR113-079 	  Other acute lower respiratory infections   
+		 GR113-080 	     #Acute bronchitis and bronchiolitis   
+		 GR113-081 	     Other and unspecified acute lower respiratory infections   
+		 GR113-082 	  #Chronic lower respiratory diseases   
+		 GR113-083 	     Bronchitis, chronic and unspecified   
+		 GR113-084 	     Emphysema   
+		 GR113-085 	     Asthma   
+		 GR113-086 	     Other chronic lower respiratory diseases   
+		 GR113-087 	  #Pneumoconioses and chemical effects   
+		 GR113-088 	  #Pneumonitis due to solids and liquids   
+		 GR113-089 	  Other diseases of respiratory system   
+		 GR113-090 	  #Peptic ulcer   
+		 GR113-091 	  #Diseases of appendix   
+		 GR113-092 	  #Hernia   
+		 GR113-093 	  #Chronic liver disease and cirrhosis   
+		 GR113-094 	     Alcoholic liver disease   
+		 GR113-095 	     Other chronic liver disease and cirrhosis   
+		 GR113-096 	  #Cholelithiasis and other disorders of gallbladder   
+		 GR113-097 	  #Nephritis, nephrotic syndrome and nephrosis   
+		 GR113-098 	     Acute and rapidly progressive nephritic and nephrotic syndrome   
+		 GR113-099 	     Chronic glomerulonephritis, nephritis and nephropathy not specified as acute or chronic, and renal sclerosis unspecified   
+		 GR113-100 	     Renal failure   
+		 GR113-101 	     Other disorders of kidney   
+		 GR113-102 	  #Infections of kidney   
+		 GR113-103 	  #Hyperplasia of prostate   
+		 GR113-104 	  #Inflammatory diseases of female pelvic organs   
+		 GR113-105 	  #Pregnancy, childbirth and the puerperium   
+		 GR113-106 	     Pregnancy with abortive outcome   
+		 GR113-107 	     Other complications of pregnancy, childbirth and the puerperium   
+		 GR113-108 	  #Certain conditions originating in the perinatal period   
+		 GR113-109 	  #Congenital malformations, deformations and chromosomal abnormalities   
+		 GR113-110 	  Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified   
+		 GR113-111 	  All other diseases    
+		 GR113-112 	  #Accidents    
+		 GR113-113 	     Transport accidents   
+		 GR113-114 	        Motor vehicle accidents   
+		 GR113-115 	        Other land transport accidents   
+		 GR113-116 	        Water, air and space, and other and unspecified transport accidents and their sequelae   
+		 GR113-117 	     Nontransport accidents   
+		 GR113-118 	        Falls   
+		 GR113-119 	        Accidental discharge of firearms   
+		 GR113-120 	        Accidental drowning and submersion   
+		 GR113-121 	        Accidental exposure to smoke, fire and flames   
+		 GR113-122 	        Accidental poisoning and exposure to noxious substances   
+		 GR113-123 	        Other and unspecified nontransport accidents and their sequelae   
+		 GR113-124 	  #Intentional self-harm    
+		 GR113-125 	     Intentional self-harm  by discharge of firearms   
+		 GR113-126 	     Intentional self-harm  by other and unspecified means and their sequelae   
+		 GR113-127 	  #Assault    
+		 GR113-128 	     Assault  by discharge of firearms   
+		 GR113-129 	     Assault  by other and unspecified means and their sequelae   
+		 GR113-130 	  #Legal intervention   
+		 GR113-131 	  Events of undetermined intent   
+		 GR113-132 	     Discharge of firearms, undetermined intent   
+		 GR113-133 	     Other and unspecified events of undetermined intent and their sequelae   
+		 GR113-134 	  #Operations of war and their sequelae   
+		 GR113-135 	  #Complications of medical and surgical care   
+		 GR113-136 	  #Enterocolitis due to Clostridium difficile   
+
+Parameter:
+D76.V12 	  
+Values:
+		 *All* 	  All Causes of Death  
+		 GR130-001 	  Certain infectious and parasitic diseases   
+		 GR130-002 	     Certain intestinal infectious diseases   
+		 GR130-003 	     #Diarrhea and gastroenteritis of infectious origin   
+		 GR130-004 	     #Tuberculosis   
+		 GR130-005 	     #Tetanus   
+		 GR130-006 	     #Diphtheria   
+		 GR130-007 	     #Whooping cough   
+		 GR130-008 	     #Meningococcal infection   
+		 GR130-009 	     #Septicemia   
+		 GR130-010 	     #Congenital syphilis   
+		 GR130-011 	     #Gonococcal infection   
+		 GR130-012 	     Viral diseases   
+		 GR130-013 	        #Acute poliomyelitis   
+		 GR130-014 	        #Varicella    
+		 GR130-015 	        #Measles   
+		 GR130-016 	        #Human immunodeficiency virus  disease   
+		 GR130-017 	        #Mumps   
+		 GR130-018 	        Other and unspecified viral diseases   
+		 GR130-019 	     #Candidiasis   
+		 GR130-020 	     #Malaria   
+		 GR130-021 	     #Pneumocystosis   
+		 GR130-022 	     All other and unspecified infectious and parasitic diseases   
+		 GR130-023 	  Neoplasms   
+		 GR130-024 	     #Malignant neoplasms   
+		 GR130-025 	        Hodgkin's disease and non-Hodgkin's lymphomas   
+		 GR130-026 	        Leukemia   
+		 GR130-027 	        Other and unspecified malignant neoplasms   
+		 GR130-028 	     #In situ neoplasms, benign neoplasms and neoplasms of uncertain or unknown behavior   
+		 GR130-029 	  #Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism   
+		 GR130-030 	     Anemias   
+		 GR130-031 	     Hemorrhagic conditions and other diseases of blood and blood-forming organs   
+		 GR130-032 	     Certain disorders involving the immune mechanism   
+		 GR130-033 	  Endocrine, nutritional and metabolic diseases   
+		 GR130-034 	     #Short stature, not elsewhere classified   
+		 GR130-035 	     #Nutritional deficiencies   
+		 GR130-036 	     #Cystic fibrosis   
+		 GR130-037 	     #Volume depletion, disorders of fluid, electrolyte and acid-base balance   
+		 GR130-038 	     All other endocrine, nutritional and metabolic diseases   
+		 GR130-039 	  Diseases of the nervous system   
+		 GR130-040 	     #Meningitis   
+		 GR130-041 	     #Infantile spinal muscular atrophy, type I    
+		 GR130-042 	     #Infantile cerebral palsy   
+		 GR130-043 	     #Anoxic brain damage, not elsewhere classified   
+		 GR130-044 	     Other diseases of nervous system   
+		 GR130-045 	  #Diseases of the ear and mastoid process   
+		 GR130-046 	  #Diseases of the circulatory system   
+		 GR130-047 	     Pulmonary heart disease and diseases of pulmonary circulation   
+		 GR130-048 	     Pericarditis, endocarditis and myocarditis   
+		 GR130-049 	     Cardiomyopathy   
+		 GR130-050 	     Cardiac arrest   
+		 GR130-051 	     Cerebrovascular diseases   
+		 GR130-052 	     All other diseases of circulatory system   
+		 GR130-053 	  Diseases of the respiratory system   
+		 GR130-054 	     #Acute upper respiratory infections   
+		 GR130-055 	     #Influenza and pneumonia   
+		 GR130-056 	        Influenza   
+		 GR130-057 	        Pneumonia   
+		 GR130-058 	     #Acute bronchitis and acute bronchiolitis   
+		 GR130-059 	     #Bronchitis, chronic and unspecified   
+		 GR130-060 	     #Asthma   
+		 GR130-061 	     #Pneumonitis due to solids and liquids   
+		 GR130-062 	     Other and unspecified diseases of respiratory system   
+		 GR130-063 	  Diseases of the digestive system   
+		 GR130-064 	     #Gastritis, duodenitis, and noninfective enteritis and colitis   
+		 GR130-065 	     #Hernia of abdominal cavity and intestinal obstruction without hernia   
+		 GR130-066 	     All other and unspecified diseases of digestive system   
+		 GR130-067 	  Diseases of the genitourinary system   
+		 GR130-068 	     #Renal failure and other disorders of kidney   
+		 GR130-069 	     Other and unspecified diseases of genitourinary system   
+		 GR130-070 	  Certain conditions originating in the perinatal period   
+		 GR130-071 	     Newborn affected by maternal factors and by complications of pregnancy, labor and delivery   
+		 GR130-072 	        #Newborn affected by maternal hypertensive disorders   
+		 GR130-073 	        #Newborn affected by other maternal conditions which may be unrelated to present pregnancy   
+		 GR130-074 	        #Newborn affected by maternal complications of pregnancy   
+		 GR130-075 	           Newborn affected by incompetent cervix   
+		 GR130-076 	           Newborn affected by premature rupture of membranes   
+		 GR130-077 	           Newborn affected by multiple pregnancy   
+		 GR130-078 	           Newborn affected by other maternal complications of pregnancy   
+		 GR130-079 	        #Newborn affected by complications of placenta, cord and membranes   
+		 GR130-080 	           Newborn affected by complications involving placenta   
+		 GR130-081 	           Newborn affected by complications involving cord   
+		 GR130-082 	           Newborn affected by chorioamnionitis   
+		 GR130-083 	           Newborn affected by other and unspecified abnormalities of membranes   
+		 GR130-084 	        #Newborn affected by other complications of labor and delivery   
+		 GR130-085 	        #Newborn affected by noxious influences transmitted via placenta or breast milk   
+		 GR130-086 	     Disorders related to length of gestation and fetal malnutrition   
+		 GR130-087 	        #Slow fetal growth and fetal malnutrition   
+		 GR130-088 	        #Disorders related to short gestation and low birth weight, not elsewhere classified   
+		 GR130-089 	           Extremely low birth weight or extreme immaturity   
+		 GR130-090 	           Other low birth weight or preterm   
+		 GR130-091 	        #Disorders related to long gestation and high birth weight   
+		 GR130-092 	     #Birth trauma   
+		 GR130-093 	     #Intrauterine hypoxia and birth asphyxia   
+		 GR130-094 	        Intrauterine hypoxia   
+		 GR130-095 	        Birth asphyxia   
+		 GR130-096 	     #Respiratory distress of newborn   
+		 GR130-097 	     Other respiratory conditions originating in the perinatal period   
+		 GR130-098 	        #Congenital pneumonia   
+		 GR130-099 	        #Neonatal aspiration syndromes   
+		 GR130-100 	        #Interstitial emphysema and related conditions originating in the perinatal period   
+		 GR130-101 	        #Pulmonary hemorrhage originating in the perinatal period   
+		 GR130-102 	        #Chronic respiratory disease originating in the perinatal period   
+		 GR130-103 	        #Atelectasis   
+		 GR130-104 	        All other respiratory conditions originating in the perinatal period   
+		 GR130-105 	     Infections specific to the perinatal period   
+		 GR130-106 	        #Bacterial sepsis of newborn   
+		 GR130-107 	        #Omphalitis of newborn with or without mild hemorrhage   
+		 GR130-108 	        All other infections specific to the perinatal period   
+		 GR130-109 	     Hemorrhagic and hematological disorders of newborn   
+		 GR130-110 	        #Neonatal hemorrhage   
+		 GR130-111 	        #Hemorrhagic disease of newborn   
+		 GR130-112 	        #Hemolytic disease of newborn due to isoimmunization and other perinatal jaundice   
+		 GR130-113 	        #Hematological disorders   
+		 GR130-114 	     #Syndrome of infant of a diabetic mother and neonatal diabetes mellitus   
+		 GR130-115 	     #Necrotizing enterocolitis of newborn   
+		 GR130-116 	     #Hydrops fetalis not due to hemolytic disease   
+		 GR130-117 	     Other perinatal conditions   
+		 GR130-118 	  #Congenital malformations, deformations and chromosomal abnormalities   
+		 GR130-119 	     Anencephaly and similar malformations   
+		 GR130-120 	     Congenital hydrocephalus   
+		 GR130-121 	     Spina bifida   
+		 GR130-122 	     Other congenital malformations of nervous system   
+		 GR130-123 	     Congenital malformations of heart   
+		 GR130-124 	     Other congenital malformations of circulatory system   
+		 GR130-125 	     Congenital malformations of respiratory system   
+		 GR130-126 	     Congenital malformations of digestive system   
+		 GR130-127 	     Congenital malformations of genitourinary system   
+		 GR130-128 	     Congenital malformations and deformations of musculoskeletal system, limbs and integument   
+		 GR130-129 	     Down's syndrome   
+		 GR130-130 	     Edward's syndrome   
+		 GR130-131 	     Patau's syndrome   
+		 GR130-132 	     Other congenital malformations and deformations   
+		 GR130-133 	     Other chromosomal abnormalities, not elsewhere classified   
+		 GR130-134 	  Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified   
+		 GR130-135 	     #Sudden infant death syndrome   
+		 GR130-136 	     Other symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified   
+		 GR130-137 	  All other diseases   
+		 GR130-138 	  External causes of mortality   
+		 GR130-139 	     #Accidents    
+		 GR130-140 	        Transport accidents   
+		 GR130-141 	           Motor vehicle accidents   
+		 GR130-142 	           Other and unspecified transport accidents   
+		 GR130-143 	        Falls   
+		 GR130-144 	        Accidental discharge of firearms   
+		 GR130-145 	        Accidental drowning and submersion   
+		 GR130-146 	        Accidental suffocation and strangulation in bed   
+		 GR130-147 	        Other accidental suffocation and strangulation   
+		 GR130-148 	        Accidental inhalation and ingestion of food or other objects causing obstruction of respiratory tract   
+		 GR130-149 	        Accidents caused by exposure to smoke, fire and flames   
+		 GR130-150 	        Accidental poisoning and exposure to noxious substances   
+		 GR130-151 	        Other and unspecified accidents   
+		 GR130-152 	     #Assault    
+		 GR130-153 	        Assault  by hanging, strangulation and suffocation   
+		 GR130-154 	        Assault  by discharge of firearms   
+		 GR130-155 	        Neglect, abandonment and other maltreatment syndromes   
+		 GR130-156 	        Assault  by other and unspecified means   
+		 GR130-157 	     #Complications of medical and surgical care   
+		 GR130-158 	     Other external causes   
+		 GR130-999 	  All unspecified codes  
+
+Parameter:
+D76.V22 	  
+Values:
+		 *All* 	  All Causes of Death  
+		 1 	  Unintentional  
+		 2 	  Suicide  
+		 3 	  Homicide  
+		 4 	  Undetermined   
+		 5 	  Legal Intervention / Operations of War  
+		 9 	  Non-Injury, no intent classified  
+
+Parameter:
+D76.V23 	  
+Values:
+		 *All* 	  All Causes of Death  
+		 GRINJ-001 	  Cut/Pierce  
+		 GRINJ-002 	  Drowning  
+		 GRINJ-003 	  Fall  
+		 GRINJ-004 	  Fire/Flame  
+		 GRINJ-005 	  Hot object/Substance  
+		 GRINJ-006 	  Firearm  
+		 GRINJ-007 	  Machinery  
+		 GRINJ-008 	  Motor Vehicle Traffic  
+		 GRINJ-009 	  Other Pedal cyclist  
+		 GRINJ-010 	  Other Pedestrian  
+		 GRINJ-011 	  Other land transport  
+		 GRINJ-012 	  Other transport  
+		 GRINJ-013 	  Natural/Environmental  
+		 GRINJ-014 	  Overexertion  
+		 GRINJ-015 	  Poisoning  
+		 GRINJ-016 	  Struck by or against  
+		 GRINJ-017 	  Suffocation  
+		 GRINJ-018 	  Other specified, classifiable Injury  
+		 GRINJ-019 	  Other specified, not elsewhere classified Injury  
+		 GRINJ-020 	  Unspecified Injury  
+		 GR113 001-003 	  Non-Injury: Intestinal infections  
+		 GR113 005-006 	  Non-Injury: Tuberculosis  
+		 GR113-007 	  Non-Injury: Whooping cough  
+		 GR113-008 	  Non-Injury: Scarlet fever and erysipelas  
+		 GR113-009 	  Non-Injury: Meningococcal infection  
+		 GR113-010 	  Non-Injury: Septicemia  
+		 GR113-011 	  Non-Injury: Syphilis  
+		 GR113-012 	  Non-Injury: Acute poliomyelitis  
+		 GR113-013 	  Non-Injury: Arthropod-borne viral encephalitis  
+		 GR113-014 	  Non-Injury: Measles  
+		 GR113-015 	  Non-Injury: Viral hepatitis  
+		 GR113-016 	  Non-Injury: Human immunodeficiency virus  disease  
+		 GR113-017 	  Non-Injury: Malaria  
+		 GR113-018 	  Non-Injury: Other and unspecified infectious and parasitic diseases and their sequelae  
+		 GR113 020-043 	  Non-Injury: Malignant neoplasms   
+		 GR113-044 	  Non-Injury: In situ neoplasms, benign neoplasms and neoplasms of uncertain or unknown behavior  
+		 GR113-045 	  Non-Injury: Anemias  
+		 GR113-046 	  Non-Injury: Diabetes mellitus  
+		 GR113 048-049 	  Non-Injury: Nutritional Deficiencies  
+		 GR113-050 	  Non-Injury: Meningitis  
+		 GR113-051 	  Non-Injury: Parkinsons disease  
+		 GR113-052 	  Non-Injury: Alzheimers disease  
+		 GR113 055-068 	  Non-Injury: Diseases of Heart  
+		 GR113-069 	  Non-Injury: Essential  hypertension and hypertensive renal disease  
+		 GR113-070 	  Non-Injury: Cerebrovascular diseases, including stroke  
+		 GR113-071 	  Non-Injury: Atherosclerosis  
+		 GR113 073-074 	  Non-Injury: Other diseases of the circulatory system  
+		 GR113-075 	  Non-Injury: Other disorders of circulatory system  
+		 GR113 077-078 	  Non-Injury: Influenza & Pneumonia  
+		 GR113 079 	  Non-Injury: Other acute lower respiratory infections  
+		 GR113 082 	  Non-Injury: Chronic lower respiratory diseases  
+		 GR113-087 	  Non-Injury: Pneumoconioses and chemical effects  
+		 GR113-088 	  Non-Injury: Pneumonitis due to solids and liquids  
+		 GR113-089 	  Non-Injury: Other diseases of respiratory system  
+		 GR113-090 	  Non-Injury: Peptic ulcer  
+		 GR113-091 	  Non-Injury: Diseases of appendix  
+		 GR113-092 	  Non-Injury: Hernia  
+		 GR113 093 	  Non-Injury: Chronic liver disease and cirrhosis  
+		 GR113-096 	  Non-Injury: Cholelithiasis and other disorders of gallbladder  
+		 GR113 097 	  Non-Injury: Nephritis, nephrotic syndrome and nephrosis  
+		 GR113-102 	  Non-Injury: Infections of kidney  
+		 GR113-103 	  Non-Injury: Hyperplasia of prostate  
+		 GR113-104 	  Non-Injury: Inflammatory diseases of female pelvic organs  
+		 GR113-106 	  Non-Injury: Pregnancy with abortive outcome  
+		 GR113-107 	  Non-Injury: Other complications of pregnancy, childbirth and the puerperium  
+		 GR113-108 	  Non-Injury: Certain conditions originating in the perinatal period  
+		 GR113-109 	  Non-Injury: Congenital malformations, deformations and chromosomal abnormalities  
+		 GR113-110 	  Non-Injury: Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified  
+		 GR113-111 	  Non-Injury: All other diseases   
+		 GR113-135 	  Non-Injury: Complications of medical and surgical care  
+
+Parameter:
+D76.V25 	  
+Values:
+		 *All* 	  All Causes of Death  
+		 D 	  Drug-Induced Causes  
+		 A 	  Alcohol-Induced Causes  
+		 O 	  All Other Causes  
+
+Parameter:
+O_precision 	 Precision 
+Values:
+		 0 	  0  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8  
+		 9 	  9  
+
+Parameter:
+O_timeout 	 Data Access Timeout 
+Values:
+		 60 	  1  
+		 120 	  2  
+		 180 	  3  
+		 240 	  4  
+		 300 	  5  
+		 360 	  6  
+		 420 	  7  
+		 480 	  8  
+		 540 	  9  
+		 600 	  10  
+		 660 	  11  
+		 720 	  12  
+		 780 	  13  
+		 840 	  14  
+		 900 	  15  
+
+NULL
