@@ -56,7 +56,7 @@ O_ucdD76.V2,ICD-10 Codes
 O_ucdD76.V12,ICD-10 130 Cause List (Infants)
 O_ucdD76.V25,Drug/Alcohol Induced Causes
 O_ucdD76.V4,ICD-10 113 Cause List
-O_icdD76.V22,Injury Intent and Mechanism
+O_ucdD76.V22,Injury Intent and Mechanism
 D76.V2,Selected Items
 codes-D76.V2,ICD-10 Codes
 D76.V4,ICD-10 113 Cause List
