@@ -20,7 +20,7 @@ unpack <- function(item) {
     df
 }
 
-process_item2 <- function(thisrow) {
+process_item <- function(thisrow) {
     lookupname <- thisrow$name
     precode <- strsplit(thisrow$name, "_")[[1]][1]
     switch(precode,
@@ -62,30 +62,18 @@ process_item2 <- function(thisrow) {
 }
 
 
-dbname <- "natality-current"
-dbcode <- "D66"
-submit <-  "action-I Agree"
-
-# dbname <- "vaers"
-# dbcode <- "D8"
-# submit <-  "tab-request"
-
-# dbname <- <- "ucd-icd10"
-# dbcode <- "D76"
+# dbname <- "natality-current"
+# dbcode <- "D66"
 # submit <-  "action-I Agree"
 
-inputlookup <- read_csv(paste0("data/", dbcode,
-                               "inputlookup.csv"))
-selectlookup <- read_csv(paste0("data/", dbcode,
-                                "selectlookup.csv"))
-measurelookup <- read_csv(paste0("data/", dbcode,
-                                 "measurelookup.csv"))
+dbname <- "ucd-icd10"
+dbcode <- "D76"
+submit <- "action-I Agree"
 
+webdata <- agree_and_scrape(dbname, dbcode, submit)
+#webdata <- read_html("data/webdata.html")
 
-# webdata <- agree_and_scrape(dbname, dbcode, submit)
-webdata <- read_html("data/webdata.html")
-
-# https://github.com/krlmlr/kimisc/blob/master/R/list_to_df.R
+makelablelookup(webdata)
 
 webform <- webdata %>% html_form()
 
@@ -95,17 +83,16 @@ form_df <- map_df(webform[[3]]$fields, unpack)
 ignore <- c("O_location", "F_D66.V21", "F_D66.V22",
             "F_D66.V37", "V_D66.V21", "V_D66.V22", "V_D66.V37")
 
+
 form_df <- form_df %>%
     filter(!(type %in% c("button", "submit", "hidden"))) %>%
     filter(!(name %in% ignore)) %>%
     filter(!(str_detect(name, "O_") & type == "checkbox"))
 
-# not sure how to do this in pipe since options is a list column
+labellookup <- read_csv(paste0("data/", dbcode,
+                               "labellookup.csv"))
 
-
-labellookup <- read_csv("data/labellookup.csv")
-
-sink("data/codebook.txt")
-apply(form_df, 1, process_item2)
-sink()
+ sink(paste0("data/", dbcode, "codebook.txt"))
+ apply(form_df, 1, process_item)
+ sink()
 
