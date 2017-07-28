@@ -1,6 +1,7 @@
-# create five lookup tables needed to make codebook
+# create six lookup tables needed to make codebook
 # A SAMPLE QUERY RESULT is used to create:
-# 1. varlookup, 2. measurelookup, and 3. paramlookup.
+# 1. varlookup, 2. measurelookup, 3. paramlookup, and
+# 4. otherparamlookup
 # (All query results contain a "dataset" node with info on the whole dataset, not just the specific query).
 
 # Scraping the ONLINE HTML FORM is used to create:
@@ -41,7 +42,14 @@ get_param_attr <- function(node) {
         optcode <- NA
         optlabel <- NA
     }
-    tibble(code, label, optcode, optlabel)
+    data.frame(code, label, optcode, optlabel,
+               stringsAsFactors = FALSE)
+}
+
+get_otherparam_attr <- function(node) {
+    code <- node %>% xml_attr("code")
+    value <- node %>% xml_attr("value")
+    data.frame(code, value, stringsAsFactors = FALSE)
 }
 
 getattr <- function(selectnode) {
@@ -75,10 +83,16 @@ makequerylookuptables <- function(query_result) {
               paste0("data/", dbcode, "measurelookup.csv"))
 
     parameters <- query_result %>%
-        xml_find_all("response/request/other-parameters/parameter")
+        xml_find_all("response/request/other-parameters/parameter[@label]")
     paramlookup <- map_df(parameters, get_param_attr)
     write_csv(paramlookup,
               paste0("data/", dbcode, "paramlookup.csv"))
+
+    otherparams <- query_result %>%
+        xml_find_all("//dataset/variable/other-param-control")
+    otherparamlookup <- map_df(otherparams, get_otherparam_attr)
+    write_csv(otherparamlookup,
+              paste0("data/", dbcode, "otherparamlookup.csv"))
 }
 
 makeformlookuptables <- function(webdata) {
@@ -125,7 +139,7 @@ write_csv(select_df, paste0("data/",dbcode,"selectlookup.csv"))
 
 }
 
-query_result <- read_xml("query_result.xml")
+query_result <- read_xml("data/query_result.xml")
 
 makequerylookuptables(query_result)
 
