@@ -51,16 +51,3 @@ O_rate_per,Calculate Rates Per,1000000,"1,000,000"
 O_natality_archive_pops,Population Option,total_intercensal,Default intercensal populations for years 2007-2009
 O_natality_archive_pops,Population Option,total,Archive postcensal populations for years 2007-2009
 O_natality_archive_pops,Population Option,norates,No populations shown because rates were not selected.
-O_V22_fmode,NA,NA,NA
-O_oe_gestation,NA,NA,NA
-O_V21_fmode,NA,NA,NA
-O_V37_fmode,NA,NA,NA
-O_javascript,NA,NA,NA
-O_age,NA,NA,NA
-O_title,NA,NA,NA
-O_weight,NA,NA,NA
-O_gestation,NA,NA,NA
-O_location,NA,NA,NA
-O_labels_opt,NA,NA,NA
-O_show_rank,NA,NA,NA
-O_groups,NA,NA,NA
