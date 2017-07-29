@@ -4,7 +4,7 @@ agree_and_scrape <- function(dbname = "natality-current",
 
     url1 <- paste0("https://wonder.cdc.gov/",dbname,".html")
     url2 <- paste0("https://wonder.cdc.gov/controller/datarequest/", dbcode)
-# fix so dscode doesn't need to be passed -- it can be looked up from dbname
+# fix so dbcode doesn't need to be passed -- it can be looked up from dbname
 
 # determine where the I agree button is located:
 # read_html(url1) %>% html_form()
@@ -19,6 +19,6 @@ form <- html_form(session)[[3]]
 webdata <- submit_form(session, form, submit = submit) %>%
     read_html(url2)
 
-return()
+return(webdata)
 }
 
