@@ -640,7 +640,7 @@ Values:	 D76.V4 	 ICD-10 113 Cause List
 
 Parameter:
 O_ucd 
-Values:	 D76.V22 	  
+Values:	 D76.V22 	 Injury Intent and Mechanism 
 
 Parameter:
 D76.V2 	  
