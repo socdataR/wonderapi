@@ -61,38 +61,28 @@ process_item <- function(thisrow) {
     cat("\n")
 }
 
+make_codebook <- function(webdata) {
+    webform <- webdata %>% html_form()
+    form_df <- map_df(webform[[3]]$fields, unpack)
+    dbcode <- webform[[3]]$fields$dataset_code$value
 
-# dbname <- "natality-current"
-# dbcode <- "D66"
-# submit <-  "action-I Agree"
+    ignorefile <- paste0("data/", dbcode, "ignore.RData")
+    if (file.exists(ignorefile)) {
+        load(ignorefile)
+    }
+    else {
+        ignore <- ""
+    }
 
-dbname <- "ucd-icd10"
-dbcode <- "D76"
-submit <- "action-I Agree"
+    form_df <- form_df %>%
+        filter(!(type %in% c("button", "submit", "hidden"))) %>%
+        filter(!(name %in% ignore)) %>%
+        filter(!(str_detect(name, "O_") & type == "checkbox"))
 
-webdata <- agree_and_scrape(dbname, dbcode, submit)
-#webdata <- read_html("data/webdata.html")
+    labellookup <- read_csv(paste0("data/", dbcode,
+                                   "labellookup.csv"))
 
-makelablelookup(webdata)
-
-webform <- webdata %>% html_form()
-
-form_df <- map_df(webform[[3]]$fields, unpack)
-
-# remove location variables not accessible through API
-ignore <- c("O_location", "F_D66.V21", "F_D66.V22",
-            "F_D66.V37", "V_D66.V21", "V_D66.V22", "V_D66.V37")
-
-
-form_df <- form_df %>%
-    filter(!(type %in% c("button", "submit", "hidden"))) %>%
-    filter(!(name %in% ignore)) %>%
-    filter(!(str_detect(name, "O_") & type == "checkbox"))
-
-labellookup <- read_csv(paste0("data/", dbcode,
-                               "labellookup.csv"))
-
- sink(paste0("data/", dbcode, "codebook.txt"))
- apply(form_df, 1, process_item)
- sink()
-
+    sink(paste0("data/", dbcode, "codebook.txt"))
+    apply(form_df, 1, process_item)
+    sink()
+}

@@ -27,18 +27,22 @@ getrows <- function(thisrow, numcol) {
     for (i in seq_along(cells)) {
         v <- c(v, cells[i] %>% xml_attr("v"))
         if (xml_length(cells[i]) > 0) {
-            v <- c(v, cells[i] %>% xml_child() %>% xml_attr("v"))
+            v <- c(v, cells[i] %>% xml_child() %>%
+                       xml_attr("v"))
         }
     }
+
     v <- v %>% na.omit()
     if (length(v) == 0) stop()
+
     # convert to numeric, divide % by 100
-    v <- as.character(round(((grepl("\\%", v)*-.99 + 1) * parse_number(v)), 3))
- #   print(c(rep(NA, numcol - length(c(l,v)), l, v))
+    v <- as.character(round(((grepl("\\%", v)*-.99 + 1) *
+                                 parse_number(v)), 3))
     len <- length(c(l, v))
     return(c(rep(NA, numcol - len), l, v))
 }
 
+# tidyr::fill might do the same thing
 replaceNAs <- function (x) {
     for (i in seq_along(rownames(x))) {
         for (j in seq_along(colnames(x))) {
@@ -48,8 +52,17 @@ replaceNAs <- function (x) {
     return(x)
 }
 
+conditional_as.numeric <- function(.x) {
+#    ifelse(sum(nchar(str_replace_all(.x, "[0-9|.]", ""))) == 0,
+#           as.numeric(.x), .x)
+    if(sum(nchar(str_replace_all(.x, "[0-9|.]", ""))) == 0) {
+        as.numeric(.x)
+    } else {
+        .x
+    }
+}
 
-makequerytable <- function(query_result) {
+make_query_table <- function(query_result) {
     allrows <- query_result %>%
         xml_find_all("//r")
 
@@ -72,12 +85,30 @@ makequerytable <- function(query_result) {
     querytable <- do.call(rbind, map(allrows, getrows,
                                      numcol)) %>%
         as.data.frame(stringsAsFactors = FALSE) %>%
-                   replaceNAs()
+                   replaceNAs() %>%
+        map_df(conditional_as.numeric)
 
-    firstv <- numcol - numl # first measure column
-    querytable[,firstv:numcol] <- lapply(querytable[,firstv:numcol], as.numeric)
+# get column names (byvariables, then measures)
 
-    # determine column names (byvariables, then measures)
+    dbcode <- query_result %>% xml_node("dataset") %>%
+        xml_attr("code")
+
+    variablecodes <- query_result %>% xml_node("dataset") %>%
+        xml_find_all("variable[@code]") %>% xml_attr("code")
+
+    variablelabels <- query_result %>% xml_node("dataset") %>%
+        xml_find_all("variable[@code]") %>% xml_attr("label")
+
+    measurecodes <- query_result %>% xml_node("dataset") %>%
+        xml_nodes("measure") %>% xml_attr("code")
+
+    measurelabels <- query_result %>% xml_node("dataset") %>%
+        xml_nodes("measure") %>% xml_attr("label")
+
+     lookup <- data.frame(code = c(variablecodes, measurecodes),
+                        label = c(variablelabels, measurelabels),
+                        stringsAsFactors = FALSE)
+
     byvariables <- query_result %>%
         xml_node("byvariables") %>%
         xml_nodes("variable") %>%
@@ -88,16 +119,10 @@ makequerytable <- function(query_result) {
         xml_nodes("measure") %>%
         xml_attr("code")
 
-    varlookup <- read_csv("data/D66varlookup.csv")
-    # the lookup table is created by makelookuptable()
-    var_index <- map_int(byvariables,
-                            ~which(varlookup$code == .x)[1])
-    var_labels <- varlookup$label[var_index]
-    measlookup <- read_csv("data/D66measurelookup.csv")
-    meas_index <- map_int(measures,
-                          ~which(measlookup$code == .x)[1])
-    meas_labels <- measlookup$label[meas_index]
-    colnames(querytable) <- c(var_labels, meas_labels)
+    index <- c(byvariables, measures) %>%
+        map_int(~which(.x == lookup$code)[1])
+    table_col <- lookup$label[index]
+    colnames(querytable) <- table_col
     return(querytable)
 }
 
