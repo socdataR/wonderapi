@@ -10,11 +10,12 @@ Description: Let us work with CDC Wonder API data
 Depends:
     R (>= 3.1.2)
 Imports:
-    wondr,
-    xml2,
-    purrr,
     magrittr,
-    tibble
+    purrr,
+    stringr,
+    tibble,
+    xml2,
+    wondr
 Remotes:
     hrbrmstr/wondr
 Suggests:
