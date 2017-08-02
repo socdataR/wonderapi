@@ -1,6 +1,8 @@
 library(xml2)
 library(rvest)
 library(stringr)
+library(purrr)
+library(readr)
 #' makequerytable() takes as input query_result (XML output file of CDC wonder query request produced by wondr package) and returns a tibble
 
 #' It is intended to replace the script with the same purpose provided in the wondr package readme file
