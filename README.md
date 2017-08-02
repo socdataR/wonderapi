@@ -1,7 +1,6 @@
-# natality
-Analyses of CDC Births in the United States data
+# wonderapi
 
-This package provides functions to easily access United States natality data available from 1995-2015 through the [CDC Wonder API](https://wonder.cdc.gov/wonder/help/WONDER-API.html). 
+This package provides functions to easily access CDC Wonder ata available from 1995-2015 through the [CDC Wonder API](https://wonder.cdc.gov/wonder/help/WONDER-API.html). 
 
 The API provides access to the same data fields as the [CDC Wonder web interface](https://wonder.cdc.gov/), with the exception of location data, which is not available through the API.
 
