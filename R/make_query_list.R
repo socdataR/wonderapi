@@ -16,8 +16,7 @@ make_param_list <- function(param_node) {
 
 make_query_list <- function(filename) {
     dbcode <- strsplit(filename, "_")[[1]][1]
-    default_xml <- read_xml(paste0("data-raw/",
-                                        filename)) %>%
+    default_xml <- read_xml(paste0("data/", filename)) %>%
         xml_nodes("parameter")
     default_list <- sapply(default_xml, make_param_list)
     newname <- paste0("data/", dbcode, "querydefaults.RData")
