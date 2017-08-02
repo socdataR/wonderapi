@@ -1,6 +1,4 @@
-library(rvest)
-library(tidyverse)
-library(stringr)
+
 # functions
 check_and_assign <- function(field) {
     if (length(field) > 0) {

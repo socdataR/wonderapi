@@ -198,6 +198,6 @@ getData <- function(agree = FALSE, dbcode = "D66", querylist = NULL,
         if (is.null(querylist)) stop("if add == F provide a query list")
     }
     querylist <- c(agreelist, querylist)
-    make_query(querylist, dbcode) %>% make_query_table()
+    wondr::make_query(querylist, dbcode) %>% make_query_table()
 }
 
