@@ -31,7 +31,6 @@ label_to_code <- function(list_with_labels, dbcode) {
             list_with_codes[[i]][[2]] <- lookup$code[valueindex]
         }
     }
-    print(list_with_codes)
     list_with_codes
 }
 
@@ -74,7 +73,7 @@ getData <- function(agree = FALSE, dbcode = "D66",
         if (is.null(querylist)) stop("if add == F provide a query list")
     }
     querylist <- c(agreelist, querylist)
-    map(querylist, ~print(c(.x[[1]], .x[[2]])))
+#    map(querylist, ~print(c(.x[[1]], .x[[2]])))
     make_query(querylist, dbcode)
 }
 
