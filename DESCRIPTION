@@ -1,11 +1,11 @@
-Package: natality
+Package: wonderapi
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
 Authors@R: c(
   person("Joyce", "Robbins", email="joycerobbins1@gmail.com", role = "cre"),
   person("Elin", "Waring", email="elin.waring@gmail.com", role = "aut"))
-Description: Let us work with natality data
+Description: Let us work with CDC Wonder API data
     Interface with the federal data.
 Depends:
     R (>= 3.1.2)
