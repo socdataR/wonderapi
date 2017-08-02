@@ -255,7 +255,108 @@ Values:
 		 1000000 	  1,000,000  
 
 Parameter:
-D66.V4 	 Hispanic Origin 
+O_location 
+Values:	 D66.V21 	 States 
+
+Parameter:
+O_location 
+Values:	 D66.V22 	 Census Regions 
+
+Parameter:
+O_location 
+Values:	 D66.V37 	 HHS Regions 
+
+Parameter:
+V_D66.V21 	 Selected Items 
+
+Parameter:
+F_D66.V21 	 Selected Items 
+Values:
+		 *All* 	    *All*  (The United States) 
+		 01 	 + 01  (Alabama)   
+		 02 	 + 02  (Alaska)   
+		 04 	 + 04  (Arizona)   
+		 05 	 + 05  (Arkansas)   
+		 06 	 + 06  (California)   
+		 08 	 + 08  (Colorado)   
+		 09 	 + 09  (Connecticut)   
+		 10 	 + 10  (Delaware)   
+		 11 	 + 11  (District of Columbia)   
+		 12 	 + 12  (Florida)   
+		 13 	 + 13  (Georgia)   
+		 15 	 + 15  (Hawaii)   
+		 16 	 + 16  (Idaho)   
+		 17 	 + 17  (Illinois)   
+		 18 	 + 18  (Indiana)   
+		 19 	 + 19  (Iowa)   
+		 20 	 + 20  (Kansas)   
+		 21 	 + 21  (Kentucky)   
+		 22 	 + 22  (Louisiana)   
+		 23 	 + 23  (Maine)   
+		 24 	 + 24  (Maryland)   
+		 25 	 + 25  (Massachusetts)   
+		 26 	 + 26  (Michigan)   
+		 27 	 + 27  (Minnesota)   
+		 28 	 + 28  (Mississippi)   
+		 29 	 + 29  (Missouri)   
+		 30 	 + 30  (Montana)   
+		 31 	 + 31  (Nebraska)   
+		 32 	 + 32  (Nevada)   
+		 33 	 + 33  (New Hampshire)   
+		 34 	 + 34  (New Jersey)   
+		 35 	 + 35  (New Mexico)   
+		 36 	 + 36  (New York)   
+		 37 	 + 37  (North Carolina)   
+		 38 	 + 38  (North Dakota)   
+		 39 	 + 39  (Ohio)   
+		 40 	 + 40  (Oklahoma)   
+		 41 	 + 41  (Oregon)   
+		 42 	 + 42  (Pennsylvania)   
+		 44 	 + 44  (Rhode Island)   
+		 45 	 + 45  (South Carolina)   
+		 46 	 + 46  (South Dakota)   
+		 47 	 + 47  (Tennessee)   
+		 48 	 + 48  (Texas)   
+		 49 	 + 49  (Utah)   
+		 50 	 + 50  (Vermont)   
+		 51 	 + 51  (Virginia)   
+		 53 	 + 53  (Washington)   
+		 54 	 + 54  (West Virginia)   
+		 55 	 + 55  (Wisconsin)   
+		 56 	 + 56  (Wyoming)   
+
+Parameter:
+V_D66.V22 	 Selected Items 
+
+Parameter:
+F_D66.V22 	 Selected Items 
+Values:
+		 *All* 	    *All*  (The United States) 
+		 CENS-R1 	 + CENS-R1  (Census Region 1: Northeast)   
+		 CENS-R2 	 + CENS-R2  (Census Region 2: Midwest)   
+		 CENS-R3 	 + CENS-R3  (Census Region 3: South)   
+		 CENS-R4 	 + CENS-R4  (Census Region 4: West)   
+
+Parameter:
+V_D66.V37 	 Selected Items 
+
+Parameter:
+F_D66.V37 	 Selected Items 
+Values:
+		 *All* 	    *All*  (The United States) 
+		 HHS1 	 + HHS1  (HHS Region #1  CT, ME, MA, NH, RI, VT)   
+		 HHS2 	 + HHS2  (HHS Region #2  NJ, NY)   
+		 HHS3 	 + HHS3  (HHS Region #3  DE, DC, MD, PA, VA, WV)   
+		 HHS4 	 + HHS4  (HHS Region #4  AL, FL, GA, KY, MS, NC, SC, TN)   
+		 HHS5 	 + HHS5  (HHS Region #5  IL, IN, MI, MN, OH, WI)   
+		 HHS6 	 + HHS6  (HHS Region #6  AR, LA, NM, OK, TX)   
+		 HHS7 	 + HHS7  (HHS Region #7  IA, KS, MO, NE)   
+		 HHS8 	 + HHS8  (HHS Region #8  CO, MT, ND, SD, UT, WY)   
+		 HHS9 	 + HHS9  (HHS Region #9  AZ, CA, HI, NV)   
+		 HHS10 	 + HHS10  (HHS Region #10  AK, ID, OR, WA)   
+
+Parameter:
+V_D66.V4 	 Hispanic Origin 
 Values:
 		 *All* 	  All Origins  
 		 2148-5 	  Mexican  
@@ -269,7 +370,7 @@ Values:
 		 9 	  Origin unknown or not stated  
 
 Parameter:
-D66.V2 	 Race 
+V_D66.V2 	 Race 
 Values:
 		 *All* 	  All Races  
 		 1002-5 	  American Indian or Alaska Native  
@@ -278,7 +379,7 @@ Values:
 		 2106-3 	  White  
 
 Parameter:
-D66.V27 	 Marital Status 
+V_D66.V27 	 Marital Status 
 Values:
 		 *All* 	  All  
 		 1 	  Married  
@@ -302,7 +403,7 @@ O_age
 Values:	 D66.V40 	 Age of Mother Year 
 
 Parameter:
-D66.V1 	 Age of Mother 9 
+V_D66.V1 	 Age of Mother 9 
 Values:
 		 *All* 	  All Ages  
 		 15 	  Under 15 years  
@@ -316,7 +417,7 @@ Values:
 		 50+ 	  50 years and over  
 
 Parameter:
-D66.V38 	 Age of Mother 10 
+V_D66.V38 	 Age of Mother 10 
 Values:
 		 *All* 	  All Ages  
 		 15- 	  Under 15 years  
@@ -331,7 +432,7 @@ Values:
 		 50+ 	  50 years and over  
 
 Parameter:
-D66.V39 	 Age of Mother 13 
+V_D66.V39 	 Age of Mother 13 
 Values:
 		 *All* 	  All Ages  
 		 15- 	  Under 15 years  
@@ -349,7 +450,7 @@ Values:
 		 50+ 	  50 years and over  
 
 Parameter:
-D66.V40 	 Age of Mother Year 
+V_D66.V40 	 Age of Mother Year 
 Values:
 		 *All* 	  All Ages  
 		 10-12 	  10-12 years  
@@ -393,22 +494,22 @@ Values:
 		 50+ 	  50 years and over  
 
 Parameter:
-D66.V5 	 Education 
+V_D66.V5 	 Education 
 Values:
 		 *All* 	  All Groups  
 		 1 	  8th grade or less  
 		 2 	  9th through 12th grade with no diploma  
 		 3 	  High school graduate or GED completed  
 		 4 	  Some college credit, but not a degree  
-		 5 	  Associate degree   
-		 6 	  Bachelor's degree   
-		 7 	  Master's degree   
-		 8 	  Doctorate  or Professional Degree   
+		 5 	  Associate degree (AA, AS)  
+		 6 	  Bachelor's degree (BA, AB, BS)  
+		 7 	  Master's degree (MA, MS)  
+		 8 	  Doctorate (PHD, EdD) or Professional Degree (MD, DDS, DVM, LLB, JD)  
 		 Unk 	  Unknown/Not on certificate  
 		 999 	  Excluded  
 
 Parameter:
-D66.V20 	 Year 
+V_D66.V20 	 Year 
 Values:
 		 *All* 	  All Years  
 		 2007 	  2007  
@@ -422,7 +523,7 @@ Values:
 		 2015 	  2015  
 
 Parameter:
-D66.V25 	 Month 
+V_D66.V25 	 Month 
 Values:
 		 *All* 	  All Months  
 		 1 	  January  
@@ -439,7 +540,7 @@ Values:
 		 12 	  December  
 
 Parameter:
-D66.V26 	 Weekday 
+V_D66.V26 	 Weekday 
 Values:
 		 *All* 	  All Days  
 		 1 	  Sunday  
@@ -452,14 +553,14 @@ Values:
 		 9 	  Unknown  
 
 Parameter:
-D66.V3 	 Gender 
+V_D66.V3 	 Gender 
 Values:
 		 *All* 	  All Genders  
 		 F 	  Female  
 		 M 	  Male  
 
 Parameter:
-D66.V8 	 Month Prenatal Care Began 
+V_D66.V8 	 Month Prenatal Care Began 
 Values:
 		 *All* 	  All Months  
 		 00 	  No prenatal care  
@@ -489,7 +590,7 @@ O_weight
 Values:	 D66.V41 	 Birth Weight 100 gram increments 
 
 Parameter:
-D66.V9 	 Birth Weight 12 
+V_D66.V9 	 Birth Weight 12 
 Values:
 		 *All* 	  All Weights  
 		 01 	  499 grams or less  
@@ -506,7 +607,7 @@ Values:
 		 12 	  Not stated  
 
 Parameter:
-D66.V35 	 Birth Weight 14 
+V_D66.V35 	 Birth Weight 14 
 Values:
 		 *All* 	  All Weights  
 		 01 	  499 grams or less  
@@ -525,7 +626,7 @@ Values:
 		 14 	  Not stated  
 
 Parameter:
-D66.V41 	 Birth Weight 100 gram increments 
+V_D66.V41 	 Birth Weight 100 gram increments 
 Values:
 		 *All* 	  All Weights  
 		 1 	  100 - 199 grams  
@@ -612,7 +713,7 @@ Values:
 		 99 	  Not stated  
 
 Parameter:
-D66.V28 	 Live Birth Order 
+V_D66.V28 	 Live Birth Order 
 Values:
 		 *All* 	  All Orders  
 		 01 	  1st child born alive to mother  
@@ -624,7 +725,7 @@ Values:
 		 99 	  Unknown or not stated  
 
 Parameter:
-D66.V7 	 Plurality or Multiple Birth 
+V_D66.V7 	 Plurality or Multiple Birth 
 Values:
 		 *All* 	  All Pluralities  
 		 1 	  Single  
@@ -634,7 +735,7 @@ Values:
 		 5 	  Quintuplet or higher  
 
 Parameter:
-D66.V30 	 Birthplace 
+V_D66.V30 	 Birthplace 
 Values:
 		 *All* 	  All Locations  
 		 1 	  In Hospital  
@@ -645,7 +746,7 @@ Values:
 		 9 	  Unknown  
 
 Parameter:
-D66.V31 	 Delivery Method 
+V_D66.V31 	 Delivery Method 
 Values:
 		 *All* 	  All Methods  
 		 1 	  Vaginal  
@@ -653,12 +754,12 @@ Values:
 		 9 	  Not Stated  
 
 Parameter:
-D66.V29 	 Medical Attendant 
+V_D66.V29 	 Medical Attendant 
 Values:
 		 *All* 	  All Attendants  
-		 1 	  Doctor of Medicine  
-		 2 	  Doctor of Osteopathy  
-		 3 	  Certified Nurse Midwife  
+		 1 	  Doctor of Medicine(MD)  
+		 2 	  Doctor of Osteopathy(DO)  
+		 3 	  Certified Nurse Midwife(CNM)  
 		 4 	  Other Midwife  
 		 5 	  Other  
 		 9 	  Unknown or not stated  
@@ -676,7 +777,7 @@ O_gestation
 Values:	 D66.V24 	 LMP Gestational Age Weekly 
 
 Parameter:
-D66.V6 	 LMP Gestational Age 10 
+V_D66.V6 	 LMP Gestational Age 10 
 Values:
 		 *All* 	  All Weeks  
 		 01 	  Under 20 weeks  
@@ -691,7 +792,7 @@ Values:
 		 10 	  Unknown  
 
 Parameter:
-D66.V23 	 LMP Gestational Age 11 
+V_D66.V23 	 LMP Gestational Age 11 
 Values:
 		 *All* 	  All Weeks  
 		 01 	  Under 20 weeks  
@@ -707,7 +808,7 @@ Values:
 		 11 	  Unknown  
 
 Parameter:
-D66.V24 	 LMP Gestational Age Weekly 
+V_D66.V24 	 LMP Gestational Age Weekly 
 Values:
 		 *All* 	  All Weeks  
 		 17 	  17 weeks  
@@ -756,7 +857,7 @@ O_oe_gestation
 Values:	 D66.V34 	 OE Gestational Age Weekly 
 
 Parameter:
-D66.V32 	 OE Gestational Age 10 
+V_D66.V32 	 OE Gestational Age 10 
 Values:
 		 *All* 	  All Weeks  
 		 01 	  Under 20 weeks  
@@ -771,7 +872,7 @@ Values:
 		 10 	  Unknown  
 
 Parameter:
-D66.V33 	 OE Gestational Age 11 
+V_D66.V33 	 OE Gestational Age 11 
 Values:
 		 *All* 	  All Weeks  
 		 01 	  Under 20 weeks  
@@ -787,7 +888,7 @@ Values:
 		 11 	  Unknown  
 
 Parameter:
-D66.V34 	 OE Gestational Age Weekly 
+V_D66.V34 	 OE Gestational Age Weekly 
 Values:
 		 *All* 	  All Weeks  
 		 17 	  17 weeks  
@@ -824,7 +925,7 @@ Values:
 		 99 	  Unknown  
 
 Parameter:
-D66.V16 	 Chronic Hypertension 
+V_D66.V16 	 Chronic Hypertension 
 Values:
 		 *All* 	  All Values  
 		 1 	  Yes  
@@ -833,7 +934,7 @@ Values:
 		 10 	  Not Reported  
 
 Parameter:
-D66.V14 	 Diabetes 
+V_D66.V14 	 Diabetes 
 Values:
 		 *All* 	  All Values  
 		 1 	  Yes  
@@ -842,7 +943,7 @@ Values:
 		 10 	  Not Reported  
 
 Parameter:
-D66.V17 	 Pregnancy-associated Hypertension 
+V_D66.V17 	 Pregnancy-associated Hypertension 
 Values:
 		 *All* 	  All Values  
 		 1 	  Yes  
@@ -851,7 +952,7 @@ Values:
 		 10 	  Not Reported  
 
 Parameter:
-D66.V18 	 Eclampsia 
+V_D66.V18 	 Eclampsia 
 Values:
 		 *All* 	  All Values  
 		 1 	  Yes  
@@ -860,7 +961,7 @@ Values:
 		 10 	  Not Reported  
 
 Parameter:
-D66.V10 	 Tobacco Use 
+V_D66.V10 	 Tobacco Use 
 Values:
 		 *All* 	  All Values  
 		 1 	  Yes  
