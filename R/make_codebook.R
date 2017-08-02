@@ -21,27 +21,21 @@ unpack <- function(item) {
 }
 
 process_item <- function(thisrow) {
-    lookupname <- thisrow$name
     precode <- strsplit(thisrow$name, "_")[[1]][1]
     switch(precode,
-           O = {
-               if (thisrow$type == "radio") {
+           O = if (thisrow$type == "radio") {
                    lookupname <- paste0(thisrow$name,
                                           thisrow$value)
-                   }
-               },
-           F = {
-               thisrow$name <- strsplit(thisrow$name,
-                                        "_")[[1]][2]
-               cat("Finder control (hier. list)\n")
-               lookupname <- thisrow$name
+               } else {
+                   lookupname <- thisrow$name
 
-           },
-           V = {
-               thisrow$name <- strsplit(thisrow$name,
-                                        "_")[[1]][2]
-               lookupname <- thisrow$name
-           }
+               },
+           F = lookupname <- strsplit(thisrow$name,
+                                        "_")[[1]][2],
+           V = lookupname <- strsplit(thisrow$name,
+                                        "_")[[1]][2],
+           B = lookupname <- thisrow$name,
+           M = lookupname <- thisrow$name
     )
     index <- which(labellookup$code == lookupname)
     cat("Parameter:\n")
@@ -54,10 +48,11 @@ process_item <- function(thisrow) {
     }
     if (length(thisrow$options) > 1) {
         cat("Values:\n")
-        opt <- thisrow$options
+        opt <- thisrow$options %>% unlist()
         for (i in seq_along(opt)) {
-            optname <- str_replace_all(names(opt[i]),
-                                        "\\(.*?\\)","")
+#            optname <- str_replace_all(names(opt[i]),
+#                                        "\\(.*?\\)","")
+            optname <- names(opt[i])
             cat("\t\t", opt[i], "\t", optname, "\n")
         }
     }
@@ -69,12 +64,14 @@ make_codebook <- function(webdata) {
     form_df <- map_df(webform[[3]]$fields, unpack)
     dbcode <- webform[[3]]$fields$dataset_code$value
 
-    ignorefile <- paste0("data/", dbcode, "ignore.RData")
-    if (file.exists(ignorefile)) {
-        load(ignorefile)
-    } else {
-        ignore <- ""
-    }
+    # ignorefile <- paste0("data/", dbcode, "ignore.RData")
+    # if (file.exists(ignorefile)) {
+    #     load(ignorefile)
+    #     ignore <- ""
+    # } else {
+    #     ignore <- ""
+    # }
+
 
     form_df <- form_df %>%
         filter(!(type %in% c("button", "submit", "hidden"))) %>%
