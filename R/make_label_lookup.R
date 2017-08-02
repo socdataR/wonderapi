@@ -5,16 +5,16 @@ make_label_lookup <- function(webdata) {
 
     labels <- webdata %>% html_nodes("label")
     forfield <- labels %>% html_attr("for") %>%
-        str_replace_all("[$S|$C|$T|$R]", "")
+        stringr::str_replace_all("[$S|$C|$T|$R]", "")
 
     # fix typo in D76
     if (dbcode == "D76") {
-        forfield <- str_replace_all(forfield, "O_icd", "O_ucd")
+        forfield <- stringr::str_replace_all(forfield, "O_icd", "O_ucd")
     }
 
     labeltext <- labels %>% html_text() %>%
         # get rid of long help links
-        str_replace_all("\\(http.*\\)", "")
+        stringr::str_replace_all("\\(http.*\\)", "")
 
     label_df <- data.frame(code = forfield, label = labeltext,
                            stringsAsFactors = FALSE) %>%

@@ -48,7 +48,7 @@ process_item <- function(thisrow) {
         cat("Values:\n")
         opt <- thisrow$options %>% unlist()
         for (i in seq_along(opt)) {
-#            optname <- str_replace_all(names(opt[i]),
+#            optname <- stringr::str_replace_all(names(opt[i]),
 #                                        "\\(.*?\\)","")
             optname <- names(opt[i])
             cat("\t\t", opt[i], "\t", optname, "\n")
@@ -74,7 +74,7 @@ make_codebook <- function(webdata) {
     form_df <- form_df %>%
         filter(!(type %in% c("button", "submit", "hidden"))) %>%
         filter(!(name %in% ignore)) %>%
-        filter(!(str_detect(name, "O_") & type == "checkbox"))
+        filter(!(stringr::str_detect(name, "O_") & type == "checkbox"))
 
     labellookup <- read_csv(paste0("data/", dbcode,
                                    "labellookup.csv"))

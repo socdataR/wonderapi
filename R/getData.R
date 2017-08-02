@@ -56,9 +56,9 @@ replaceNAs <- function (x) {
 }
 
 conditional_as.numeric <- function(.x) {
-    #    ifelse(sum(nchar(str_replace_all(.x, "[0-9|.]", ""))) == 0,
+    #    ifelse(sum(nchar(stringr::str_replace_all(.x, "[0-9|.]", ""))) == 0,
     #           as.numeric(.x), .x)
-    if(sum(nchar(str_replace_all(.x, "[0-9|.]", ""))) == 0) {
+    if(sum(nchar(stringr::str_replace_all(.x, "[0-9|.]", ""))) == 0) {
         as.numeric(.x)
     } else {
         .x
