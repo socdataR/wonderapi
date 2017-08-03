@@ -3,4 +3,5 @@
 export("%>%")
 export(cdc_agree)
 export(create_output)
+export(getrows)
 importFrom(magrittr,"%>%")

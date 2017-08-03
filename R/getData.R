@@ -22,16 +22,16 @@
 #' @export
 
 getrows <- function(thisrow, numcol) {
-    cells <- thisrow %>% xml_nodes("c")
+    cells <- thisrow %>% rvest::xml_nodes("c")
     # assuming all the labels ("l") are to the left of all
     # the values ("v")
-    l <- cells %>% xml_attr("l") %>% na.omit()
+    l <- cells %>% xml2::xml_attr("l") %>% na.omit()
     v <- vector()
     for (i in seq_along(cells)) {
-        v <- c(v, cells[i] %>% xml_attr("v"))
-        if (xml_length(cells[i]) > 0) {
-            v <- c(v, cells[i] %>% xml_child() %>%
-                       xml_attr("v"))
+        v <- c(v, cells[i] %>% xml2::xml_attr("v"))
+        if (xml2::xml_length(cells[i]) > 0) {
+            v <- c(v, cells[i] %>% xml2::xml_child() %>%
+                       xml2::xml_attr("v"))
         }
     }
 
@@ -40,7 +40,7 @@ getrows <- function(thisrow, numcol) {
 
     # convert to numeric, divide % by 100
     v <- as.character(round(((grepl("\\%", v)*-.99 + 1) *
-                                 parse_number(v)), 3))
+                                 readr::parse_number(v)), 3))
     len <- length(c(l, v))
     return(c(rep(NA, numcol - len), l, v))
 }
@@ -56,8 +56,6 @@ replaceNAs <- function (x) {
 }
 
 conditional_as.numeric <- function(.x) {
-    #    ifelse(sum(nchar(stringr::str_replace_all(.x, "[0-9|.]", ""))) == 0,
-    #           as.numeric(.x), .x)
     if(sum(nchar(stringr::str_replace_all(.x, "[0-9|.]", ""))) == 0) {
         as.numeric(.x)
     } else {
@@ -67,63 +65,63 @@ conditional_as.numeric <- function(.x) {
 
 make_query_table <- function(query_result) {
     allrows <- query_result %>%
-        xml_find_all("//r")
+        xml2::xml_find_all("//r")
 
     # remove total rows
     dt <- vector()
     for (i in seq_along(allrows)) {
-        ifelse (allrows[i] %>% xml_nodes("c") %>%
-                    xml_has_attr("dt") %>% sum() > 0, dt[i] <- TRUE,
+        ifelse (allrows[i] %>% rvest::xml_nodes("c") %>%
+                    xml2::xml_has_attr("dt") %>% sum() > 0, dt[i] <- TRUE,
                 dt[i] <- FALSE)
     }
     allrows <- allrows[!dt]
 
-    firstrow <- allrows[1] %>% xml_nodes("c")
+    firstrow <- allrows[1] %>% rvest::xml_nodes("c")
     numcol <-  length(firstrow) +
-        length(firstrow %>% xml_children()) # standard deviation
+        length(firstrow %>% xml2::xml_children()) # standard deviation
     # measures are children
-    numl <- firstrow %>% xml_attr("l") %>%
+    numl <- firstrow %>% xml2::xml_attr("l") %>%
         na.omit() %>% length()
 
-    querytable <- do.call(rbind, map(allrows, getrows,
+    querytable <- do.call(rbind, purrr::map(allrows, getrows,
                                      numcol)) %>%
         as.data.frame(stringsAsFactors = FALSE) %>%
         replaceNAs() %>%
-        map_df(conditional_as.numeric)
+        purrr::map_df(conditional_as.numeric)
 
     # get column names (byvariables, then measures)
 
-    dbcode <- query_result %>% xml_node("dataset") %>%
-        xml_attr("code")
+    dbcode <- query_result %>% rvest::xml_node("dataset") %>%
+        xml2::xml_attr("code")
 
-    variablecodes <- query_result %>% xml_node("dataset") %>%
-        xml_find_all("variable[@code]") %>% xml_attr("code")
+    variablecodes <- query_result %>% rvest::xml_node("dataset") %>%
+        xml2::xml_find_all("variable[@code]") %>% xml2::xml_attr("code")
 
-    variablelabels <- query_result %>% xml_node("dataset") %>%
-        xml_find_all("variable[@code]") %>% xml_attr("label")
+    variablelabels <- query_result %>% rvest::xml_node("dataset") %>%
+        xml2::xml_find_all("variable[@code]") %>% xml2::xml_attr("label")
 
-    measurecodes <- query_result %>% xml_node("dataset") %>%
-        xml_nodes("measure") %>% xml_attr("code")
+    measurecodes <- query_result %>% rvest::xml_node("dataset") %>%
+        rvest::xml_nodes("measure") %>% xml2::xml_attr("code")
 
-    measurelabels <- query_result %>% xml_node("dataset") %>%
-        xml_nodes("measure") %>% xml_attr("label")
+    measurelabels <- query_result %>% rvest::xml_node("dataset") %>%
+        rvest::xml_nodes("measure") %>% xml2::xml_attr("label")
 
     lookup <- data.frame(code = c(variablecodes, measurecodes),
                          label = c(variablelabels, measurelabels),
                          stringsAsFactors = FALSE)
 
     byvariables <- query_result %>%
-        xml_node("byvariables") %>%
-        xml_nodes("variable") %>%
-        xml_attr("code")
+        rvest::xml_node("byvariables") %>%
+        rvest::xml_nodes("variable") %>%
+        xml2::xml_attr("code")
 
     measures <- query_result %>%
-        xml_node("measure-selections") %>%
-        xml_nodes("measure") %>%
-        xml_attr("code")
+        rvest::xml_node("measure-selections") %>%
+        rvest::xml_nodes("measure") %>%
+        xml2::xml_attr("code")
 
     index <- c(byvariables, measures) %>%
-        map_int(~which(.x == lookup$code)[1])
+        purrr::map_int(~which(.x == lookup$code)[1])
     table_col <- lookup$label[index]
     colnames(querytable) <- table_col
     return(querytable)
@@ -175,8 +173,11 @@ combine_lists <- function(list1, list2) {
 
 
 
-getData <- function(agree = FALSE, dbcode = "D66", querylist = NULL,
+getData <- function(agree = FALSE, db = "D66", querylist = NULL,
                     add = TRUE) {
+    index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
+    if (length(index) == 0) stop ("Database not recognized.")
+    dbcode <- dbnamelookup$dbcode[index]
     if (!agree) {
         stop("You must agree to CDC terms")
         } else {
@@ -184,9 +185,10 @@ getData <- function(agree = FALSE, dbcode = "D66", querylist = NULL,
             name = "accept_datause_restrictions",
             value = "true"
             ))
-    }
+        }
     if (add == TRUE) {
-        load(paste0("data/", dbcode, "querydefaults.RData"))
+        default_list_name <- paste0(dbcode, "querydefaults")
+        default_list <- get(default_list_name)
         if(is.null(querylist)) {
             querylist <- default_list
         } else {
@@ -198,6 +200,7 @@ getData <- function(agree = FALSE, dbcode = "D66", querylist = NULL,
         if (is.null(querylist)) stop("if add == F provide a query list")
     }
     querylist <- c(agreelist, querylist)
-    wondr::make_query(querylist, dbcode) %>% make_query_table()
+    save(querylist, file = "querylist.RData")
+    wondr::make_query(querylist, dbcode)
 }
 
