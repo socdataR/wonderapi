@@ -1,25 +1,59 @@
-# query
-# small change
-#' makequerytable() takes as input query_result (XML output file of CDC wonder query request produced by wondr package) and returns a tibble
+#' Request data from the CDC Wonder API
+#'
+#' calls the \href{https://wonder.cdc.gov}{CDC Wonder API} and returns a tidy data frame (tibble)
+#'
+#' @param agree Must be set to TRUE to actively agree to the CDC terms (default is FALSE). To see the terms for the particular dataset click on that dataset here: \url{https://wonder.cdc.gov}. \href{https://wonder.cdc.gov/ucd-icd10.html}{sample}
+#' @param db Indicate the database, either by label, name, or code.  To see the complete list of what's available, use \code{View(dbnamelookup)}
+#'
+#' @param querylist The query list supplied must be a list of lists of names and values. By default it is combined with the default query list for that database. To supply a full list and bypass the default query list, set \code{add} to \code{TRUE}. See here for instructions on how to create this list.
+#'
+#' @param add If \code{TRUE} (default) \code{querylist} is combined with the default query list. Set to \code{FALSE} to use \code{querylist} as a standalone list of query parameters.
+#'
+#' @examples
+#' mylist <- list(
+#'   list("Group Results By", "Race"),
+#'   list("Tobacco Use", "1")    # yes
+#' )
+#'
+#' mydata <- getData(TRUE, "D66", mylist)
+#' mydata
+#'
+#' @section References
+#' Inspired by this script from the \code{wondr} package, but provides more user-friendly options and better table display: /url{https://github.com/hrbrmstr/wondr/blob/master/README.md}
+#'
 
-#' It is intended to replace the script with the same purpose provided in the wondr package readme file
-#' https://github.com/hrbrmstr/wondr
-#' xml_find_all(query_result, ".//response/data-table/r") %>%
-#' map_df(function(row) {
-#'     xml_find_all(row, ".//c") %>%
-#'         xml_attrs() %>%
-#'         as.list() %>%
-#'         setNames(sprintf("V%d", 1:length(.))) %>%
-#'         as.data.frame(stringsAsFactors=FALSE)
-#' }) %>%
-#'     tibble::as.tibble()
-
-#' The above script works for the example since each row of the table has the same number of columns
-#' (See the <data-table ...> node here:
-#' https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-resp.xml
-
-#' This function is designed to work for query results with varying number of columns per row
 #' @export
+
+getData <- function(agree = FALSE, db = "D66", querylist = NULL,
+                    add = TRUE) {
+    index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
+    if (length(index) == 0) stop ("Database not recognized.")
+    dbcode <- dbnamelookup$dbcode[index]
+    if (!agree) {
+        stop("You must agree to CDC terms")
+    } else {
+        agreelist <- list(parameter = list(
+            name = "accept_datause_restrictions",
+            value = "true"
+        ))
+    }
+    if (add == TRUE) {
+        default_list_name <- paste0(dbcode, "querydefaults")
+        default_list <- get(default_list_name)
+        if(is.null(querylist)) {
+            querylist <- default_list
+        } else {
+            querylist <- label_to_code(querylist, dbcode)
+            querylist <- combine_lists(default_list,
+                                       querylist)
+        }
+    } else {
+        if (is.null(querylist)) stop("if add == F provide a query list")
+    }
+    querylist <- c(agreelist, querylist)
+    wondr::make_query(querylist, dbcode) %>%
+        make_query_table()
+}
 
 getrows <- function(thisrow, numcol) {
     cells <- thisrow %>% rvest::xml_nodes("c")
@@ -130,17 +164,17 @@ make_query_table <- function(query_result) {
 
 # list_2_tib is helpful for testing, not used by getData()
 list_2_tib <- function(listof2) {
-    name <- listof2 %>% map(~.x[[1]]) %>% unlist()
-    value <- listof2 %>% map(~.x[[2]]) %>% unlist()
+    name <- listof2 %>% purrr::map(~.x[[1]]) %>% unlist()
+    value <- listof2 %>% purrr::map(~.x[[2]]) %>% unlist()
     tibble(name, value)
 }
 
 label_to_code <- function(list_with_labels, dbcode) {
     list_with_codes <- list_with_labels
-    lookup <- read_csv(paste0("data/", dbcode,
-                              "labellookup.csv"))
+    filename <- paste0(dbcode, "labellookup")
+    lookup <- get(filename)
     for (i in seq_along(list_with_labels)) {
-        nameindex <- which(lookup$label == list_with_labels[[i]][[1]])
+        nameindex <- which(lookup$label == list_with_labels[[i]][[1]])[1]
         if (length(nameindex) > 0) {
             code <- lookup$code[nameindex]
             if (substring(code, 1, 1) == "D") {
@@ -160,10 +194,12 @@ label_to_code <- function(list_with_labels, dbcode) {
 combine_lists <- function(list1, list2) {
 
     combined_list <- list1
-    param_names1 <- list1 %>% map(~.x[[1]]) %>% unlist()
-    param_names2 <- list2 %>% map(~.x[[1]]) %>% unlist()
+    param_names1 <- list1 %>% purrr::map(~.x[[1]]) %>%
+        unlist()
+    param_names2 <- list2 %>% purrr::map(~.x[[1]]) %>%
+        unlist()
     for (i in seq_along(param_names2)) {
-        index <- which(param_names1 == param_names2[i])
+        index <- which(param_names1 == param_names2[i])[1]
         if (length(index) > 0) {
             combined_list[[index]][[2]] <- list2[[i]][[2]]
         }
@@ -172,35 +208,4 @@ combine_lists <- function(list1, list2) {
 }
 
 
-
-getData <- function(agree = FALSE, db = "D66", querylist = NULL,
-                    add = TRUE) {
-    index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
-    if (length(index) == 0) stop ("Database not recognized.")
-    dbcode <- dbnamelookup$dbcode[index]
-    if (!agree) {
-        stop("You must agree to CDC terms")
-        } else {
-        agreelist <- list(parameter = list(
-            name = "accept_datause_restrictions",
-            value = "true"
-            ))
-        }
-    if (add == TRUE) {
-        default_list_name <- paste0(dbcode, "querydefaults")
-        default_list <- get(default_list_name)
-        if(is.null(querylist)) {
-            querylist <- default_list
-        } else {
-            querylist <- label_to_code(querylist, dbcode)
-            querylist <- combine_lists(default_list,
-                                       querylist)
-        }
-    } else {
-        if (is.null(querylist)) stop("if add == F provide a query list")
-    }
-    querylist <- c(agreelist, querylist)
-    save(querylist, file = "querylist.RData")
-    wondr::make_query(querylist, dbcode)
-}
 
