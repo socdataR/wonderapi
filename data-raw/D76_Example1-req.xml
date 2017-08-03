@@ -90,14 +90,6 @@
 		<value>D76.M3</value>
 	</parameter>
 	<parameter>
-		<name>M_41</name>
-		<value>D76.M41</value>
-	</parameter>
-	<parameter>
-		<name>M_42</name>
-		<value>D76.M42</value>
-	</parameter>
-	<parameter>
 		<name>O_V10_fmode</name>
 		<value>freg</value>
 	</parameter>
