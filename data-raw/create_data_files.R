@@ -9,7 +9,7 @@ dbnamelookup <- data.frame(dblabel = c("Births", "Detailed Mortality"),
                            dbagree = c("action-I Agree", "action-I Agree"),
                            stringsAsFactors = FALSE)
 
-save(dbnamelookup, file = "data/dbnamelookup.Rdata")
+devtools::use_data(dbnamelookup, internal = TRUE)
 
 # add label lookups
 db_to_add <- c("D66", "D76")
