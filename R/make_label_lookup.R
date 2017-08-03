@@ -24,5 +24,5 @@ make_label_lookup <- function(db) {
                            stringsAsFactors = FALSE) %>% na.omit()
     objname <- paste0(dbcode, "labellookup")
     assign(objname, labellookup)
-    save(list = objname, file = paste0("data/", objname, ".Rdata"))
+    save(list = objname, file = paste0("data/", objname, ".rda"))
 }

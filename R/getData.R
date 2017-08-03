@@ -38,8 +38,9 @@ getData <- function(agree = FALSE, db = "D66", querylist = NULL,
         ))
     }
     if (add == TRUE) {
-        default_list_name <- paste0(dbcode, "querydefaults")
-        default_list <- get(default_list_name)
+#        default_list_name <- paste0(dbcode, "querydefaults")
+#        default_list <- get(default_list_name)
+        default_list <- D66querydefaults
         if(is.null(querylist)) {
             querylist <- default_list
         } else {
