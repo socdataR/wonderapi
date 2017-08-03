@@ -12,10 +12,12 @@ Depends:
 Imports:
     magrittr,
     purrr,
+    readr,
+    rvest,
     stringr,
     tibble,
-    xml2,
-    wondr
+    wondr,
+    xml2
 Remotes:
     hrbrmstr/wondr
 Suggests:
