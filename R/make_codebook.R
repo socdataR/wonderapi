@@ -62,10 +62,9 @@ make_codebook <- function(webdata) {
     form_df <- map_df(webform[[3]]$fields, unpack)
     dbcode <- webform[[3]]$fields$dataset_code$value
 
-    # ignorefile <- paste0("data/", dbcode, "ignore.RData")
+    # ignorefile <- paste0("data/", dbcode, "ignore.Rdata")
     # if (file.exists(ignorefile)) {
-    #     load(ignorefile)
-    #     ignore <- ""
+    #     ignore <- get(ignorefile)
     # } else {
     #     ignore <- ""
     # }
