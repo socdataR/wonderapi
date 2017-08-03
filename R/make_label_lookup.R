@@ -1,4 +1,3 @@
-# makes label lookup table
 make_label_lookup <- function(db) {
     index <- map(dbnamelookup, ~which(.x == db)) %>% unlist()
     if (length(index) == 0) stop ("I don't know which database you want.")
