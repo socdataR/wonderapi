@@ -1,5 +1,10 @@
 # makes label lookup table
-make_label_lookup <- function(webdata) {
+make_label_lookup <- function(db) {
+    index <- map(dbnamelookup, ~which(.x == db)) %>% unlist()
+    if (length(index) == 0) stop ("I don't know which database you want.")
+    webdata <- agree_and_scrape(dbname = dbnamelookup$dbname[index],
+                                dbcode = dbnamelookup$dbcode[index],
+                                submit = dbnamelookup$dbagree[index])
     webform <- html_form(webdata)[[3]]
     dbcode <- webform$fields$dataset_code$value
 
@@ -16,10 +21,9 @@ make_label_lookup <- function(webdata) {
         # get rid of long help links
         stringr::str_replace_all("\\(http.*\\)", "")
 
-    label_df <- data.frame(code = forfield, label = labeltext,
-                           stringsAsFactors = FALSE) %>%
-        na.omit()
-
-    write_csv(label_df, paste0("data/", dbcode,
-                               "labellookup.csv"))
+    labellookup <- data.frame(code = forfield, label = labeltext,
+                           stringsAsFactors = FALSE) %>% na.omit()
+    objname <- paste0(dbcode, "labellookup")
+    assign(objname, labellookup)
+    save(list = objname, file = paste0("data/", objname, ".Rdata"))
 }
