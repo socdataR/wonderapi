@@ -16,7 +16,8 @@ db_to_add <- c("D66", "D76")
 purrr::map(db_to_add, make_label_lookup)
 
 # add query default parameters
-qd_to_add <- c("D66_BirthsOnly-req.xml", "D76_Example1-req.xml")
+qd_to_add <- c("D66_BirthsOnly-req.xml", "D76_Defaults.xml")
 purrr::map(qd_to_add, make_query_list)
 
+# make codebooks
 
