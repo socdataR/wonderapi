@@ -22,7 +22,8 @@ Remotes:
     hrbrmstr/wondr
 Suggests:
     testthat,
-    knitr
+    knitr,
+    rmarkdown
 VignetteBuilder: knitr
 License: GPL
 Encoding: UTF-8
