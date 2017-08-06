@@ -38,9 +38,8 @@ getData <- function(agree = FALSE, db = "D66", querylist = NULL,
         ))
     }
     if (add == TRUE) {
-#        default_list_name <- paste0(dbcode, "querydefaults")
-#        default_list <- get(default_list_name)
-        default_list <- D66querydefaults
+        default_list_name <- paste0(dbcode, "querydefaults")
+        default_list <- get(default_list_name)
         if(is.null(querylist)) {
             querylist <- default_list
         } else {
@@ -176,7 +175,7 @@ label_to_code <- function(list_with_labels, dbcode) {
     lookup <- get(filename)
     for (i in seq_along(list_with_labels)) {
         nameindex <- which(lookup$label == list_with_labels[[i]][[1]])[1]
-        if (length(nameindex) > 0) {
+        if (!is.na(nameindex)) {
             code <- lookup$code[nameindex]
             if (substring(code, 1, 1) == "D") {
                 code <- paste0("V_", code)
@@ -185,7 +184,7 @@ label_to_code <- function(list_with_labels, dbcode) {
         }
         valueindex <- which(lookup$label ==
                                 list_with_labels[[i]][[2]])
-        if (length(valueindex) > 0) {
+        if (!is.na(valueindex)) {
             list_with_codes[[i]][[2]] <- lookup$code[valueindex]
         }
     }
@@ -201,8 +200,10 @@ combine_lists <- function(list1, list2) {
         unlist()
     for (i in seq_along(param_names2)) {
         index <- which(param_names1 == param_names2[i])[1]
-        if (length(index) > 0) {
+        if (!is.na(index)) {
             combined_list[[index]][[2]] <- list2[[i]][[2]]
+        } else {
+            combined_list <- c(combined_list, list(list2[[i]]))
         }
     }
     combined_list
