@@ -72,9 +72,11 @@ getrows <- function(thisrow, numcol) {
     v <- v %>% na.omit()
     if (length(v) == 0) stop()
 
-    # convert to numeric, divide % by 100
-    v <- as.character(round(((grepl("\\%", v)*-.99 + 1) *
-                                 readr::parse_number(v)), 3))
+    # divide % by 100
+#    v <- as.character(round(((grepl("\\%", v)*-.99 + 1) *
+#                                 readr::parse_number(v)), 3))
+
+    v[grepl("\\%", v)] <- as.numeric(gsub("\\%", "", v[grepl("\\%", v)]))/100
     len <- length(c(l, v))
     return(c(rep(NA, numcol - len), l, v))
 }
@@ -129,10 +131,12 @@ make_query_table <- function(query_result) {
         xml2::xml_attr("code")
 
     variablecodes <- query_result %>% rvest::xml_node("dataset") %>%
-        xml2::xml_find_all("variable[@code]") %>% xml2::xml_attr("code")
+        xml2::xml_find_all("variable[@code] | variable/hier-level[@code]") %>%
+        xml2::xml_attr("code")
 
     variablelabels <- query_result %>% rvest::xml_node("dataset") %>%
-        xml2::xml_find_all("variable[@code]") %>% xml2::xml_attr("label")
+        xml2::xml_find_all("variable[@code] | variable/hier-level[@code]") %>%
+        xml2::xml_attr("label")
 
     measurecodes <- query_result %>% rvest::xml_node("dataset") %>%
         rvest::xml_nodes("measure") %>% xml2::xml_attr("code")
@@ -175,17 +179,22 @@ label_to_code <- function(list_with_labels, dbcode) {
     lookup <- get(filename)
     for (i in seq_along(list_with_labels)) {
         nameindex <- which(lookup$label == list_with_labels[[i]][[1]])[1]
-        if (!is.na(nameindex)) {
-            code <- lookup$code[nameindex]
-            if (substring(code, 1, 1) == "D") {
-                code <- paste0("V_", code)
+        if (length(nameindex) > 0) {
+            if (!is.na(nameindex)) {
+                code <- lookup$code[nameindex]
+                if (substring(code, 1, 1) == "D") {
+                    code <- paste0("V_", code)
+                }
+                list_with_codes[[i]][[1]] <- code
             }
-            list_with_codes[[i]][[1]] <- code
         }
+
         valueindex <- which(lookup$label ==
                                 list_with_labels[[i]][[2]])
-        if (!is.na(valueindex)) {
+        if (length(valueindex > 0)) {
+            if (!is.na(valueindex)) {
             list_with_codes[[i]][[2]] <- lookup$code[valueindex]
+            }
         }
     }
     list_with_codes
