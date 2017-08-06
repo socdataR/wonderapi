@@ -17,7 +17,7 @@ session <- rvest::html_session(url1)
 form <- rvest::html_form(session)[[3]]
 
 webdata <- rvest::submit_form(session, form, submit = submit) %>%
-    rvest::read_html(url2)
+    xml2::read_html(url2)
 
 return(webdata)
 }
