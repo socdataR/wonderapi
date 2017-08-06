@@ -15,7 +15,12 @@ The best way to become familiar with CDC Wonder API options is to use the web in
 
 ## Understanding the structure of a query  
 
-Queries are composed of parameter name-value pairs. There are different types of parameters.  The most crucial are Group Results By and Measures. The Group Results By parameters serve as keys for grouping the data; the maximum number of Group Results By parameters is five.  By default, the query is set to request a single Group Results By parameter: Year, and request a single measure, the same one that is listed as the default measure on the web interface (i.e. `Births` for [the Births dataset](https://wonder.cdc.gov/controller/datarequest/D76), `Deaths` for the [Detailed Mortality dataset](https://wonder.cdc.gov/controller/datarequest/D76).)
+Queries are composed of parameter name-value pairs. There are different types of parameters.  The most crucial are Group Results By and Measures. The Group Results By parameters serve as keys for grouping the data; the maximum number of Group Results By parameters is five.  By default, the query is set to request a single Group Results By parameter: Year, and request a single measure, the same one that is listed as the default measure on the web interface (i.e. `Births` for [the Births dataset](https://wonder.cdc.gov/controller/datarequest/D76), `Deaths` for the [Detailed Mortality dataset](https://wonder.cdc.gov/controller/datarequest/D76).) Queries may be requested relying only on the default settings:  
+```{r}
+getData(TRUE, "Births") %>% head()
+getData(TRUE, "Detailed Mortality") %>% head()
+```
+
 
 Group By Variables
 The de
