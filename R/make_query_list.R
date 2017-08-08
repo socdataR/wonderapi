@@ -14,9 +14,10 @@ make_query_list <- function(filename) {
     default_xml <- xml2::read_xml(paste0("data-raw/", filename)) %>%
         rvest::xml_nodes("parameter")
     default_list <- sapply(default_xml, make_param_list)
-    objname <- paste0(dbcode, "querydefaults")
-    assign(objname, default_list)
-    save(list = objname, file = paste0("data/", objname, ".rda"))
+    return(default_list)
+    # objname <- paste0(dbcode, "querydefaults")
+    # assign(objname, default_list)
+    # save(list = objname, file = paste0("data/", objname, ".rda"))
 }
 
 # variation of wondr::add_param()

@@ -9,15 +9,17 @@ dbnamelookup <- data.frame(dblabel = c("Births", "Detailed Mortality"),
                            dbagree = c("action-I Agree", "action-I Agree"),
                            stringsAsFactors = FALSE)
 
-devtools::use_data(dbnamelookup, internal = TRUE)
-
 # add label lookups
 db_to_add <- c("D66", "D76")
-purrr::map(db_to_add, make_label_lookup)
+label_list <- purrr::map(db_to_add, make_label_lookup) %>%
+    setNames(paste0(db_to_add, "labellookup"))
 
 # add query default parameters
-qd_to_add <- c("D66_BirthsOnly-req.xml", "D76_Defaults.xml")
-purrr::map(qd_to_add, make_query_list)
+qd_to_add <- c("D66_Defaults.xml", "D76_Defaults.xml")
+dbcodes <- purrr::map_chr(strsplit(qd_to_add, "_"), ~.x[1])
+query_defaults <- purrr::map(qd_to_add, make_query_list) %>%
+    setNames(paste0(dbcodes, "querydefaults"))
 
-# make codebooks
+devtools::use_data(dbnamelookup, label_list, query_defaults, internal = TRUE,
+                   overwrite = TRUE)
 

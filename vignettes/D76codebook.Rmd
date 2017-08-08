@@ -1,0 +1,15 @@
+---
+title: " D76 Detailed Mortality Dataset Codebook"
+author: "Joyce Robbins "
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Births dataset (D66)}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+This codebook is provided to assist in determining how to set up a query to the CDC Wonder API. The best way to become familiar with the API is to use the web interface: https://wonder.cdc.gov.  Also, read the [Introduction to wonderapi](wonderapi.html) to learn about the basic sections of CDC Wonder query requests.
+
+             dblabel           dbname dbcode        dbagree
+1             Births natality-current    D66 action-I Agree
+2 Detailed Mortality        ucd-icd10    D76 action-I Agree

@@ -39,7 +39,8 @@ getData <- function(agree = FALSE, db = "D66", querylist = NULL,
     }
     if (add == TRUE) {
         default_list_name <- paste0(dbcode, "querydefaults")
-        default_list <- get(default_list_name)
+        index <- which(names(query_defaults) == default_list_name)
+        default_list <- query_defaults[[index]]
         if(is.null(querylist)) {
             querylist <- default_list
         } else {
@@ -70,12 +71,7 @@ getrows <- function(thisrow, numcol) {
     }
 
     v <- v %>% na.omit()
-    if (length(v) == 0) stop()
-
-    # divide % by 100
-#    v <- as.character(round(((grepl("\\%", v)*-.99 + 1) *
-#                                 readr::parse_number(v)), 3))
-
+    if (length(v) == 0) stop("length(v) = 0")
     v[grepl("\\%", v)] <- as.numeric(gsub("\\%", "", v[grepl("\\%", v)]))/100
     len <- length(c(l, v))
     return(c(rep(NA, numcol - len), l, v))
@@ -92,8 +88,8 @@ replaceNAs <- function (x) {
 }
 
 conditional_as.numeric <- function(.x) {
-    if(sum(nchar(stringr::str_replace_all(.x, "[0-9|.]", ""))) == 0) {
-        as.numeric(.x)
+    if(sum(nchar(stringr::str_replace_all(.x, "[0-9|.|,]", ""))) == 0) {
+        readr::parse_number(.x)
     } else {
         .x
     }
@@ -125,11 +121,10 @@ make_query_table <- function(query_result) {
         replaceNAs() %>%
         purrr::map_df(conditional_as.numeric)
 
-    # get column names (byvariables, then measures)
-
     dbcode <- query_result %>% rvest::xml_node("dataset") %>%
         xml2::xml_attr("code")
 
+# create lookup table from query request (needed for column names)
     variablecodes <- query_result %>% rvest::xml_node("dataset") %>%
         xml2::xml_find_all("variable[@code] | variable/hier-level[@code]") %>%
         xml2::xml_attr("code")
@@ -147,6 +142,8 @@ make_query_table <- function(query_result) {
     lookup <- data.frame(code = c(variablecodes, measurecodes),
                          label = c(variablelabels, measurelabels),
                          stringsAsFactors = FALSE)
+
+# get column names (byvariables, then measures)
 
     byvariables <- query_result %>%
         rvest::xml_node("byvariables") %>%
@@ -173,32 +170,44 @@ list_2_tib <- function(listof2) {
     tibble(name, value)
 }
 
+# converts human readable names and (some) values to CDC variable names
 label_to_code <- function(list_with_labels, dbcode) {
     list_with_codes <- list_with_labels
-    filename <- paste0(dbcode, "labellookup")
-    lookup <- get(filename)
+    label_list_name <- paste0(dbcode, "labellookup")
+    index <- which(names(label_list) == label_list_name)
+    lookup <- label_list[[index]]
     for (i in seq_along(list_with_labels)) {
+        # taking first one in case there are multiple matches
+        # (if no matches, [1] has the effect of turning nameindex to NA)
         nameindex <- which(lookup$label == list_with_labels[[i]][[1]])[1]
-        if (length(nameindex) > 0) {
-            if (!is.na(nameindex)) {
+        if (!is.na(nameindex)) {
                 code <- lookup$code[nameindex]
-                if (substring(code, 1, 1) == "D") {
-                    code <- paste0("V_", code)
-                }
-                list_with_codes[[i]][[1]] <- code
-            }
-        }
+                precode <- substring(code, 1, 1)
+                switch(precode,
+                       D = code <- paste0("V_", code),
+                       M = list_with_codes[[i]][[2]] <-
+                           paste0(dbcode, ".", gsub("_", "", code))
+                )
+            list_with_codes[[i]][[1]] <- code
+        } else {
+            if (!list_with_labels[[i]][[1]] %in% lookup$code) {
+                mymessage <- paste0("Ignoring: \"",
+                                    list_with_labels[[i]][[1]],"\",",
+                                    "...(not recognized)")
+                message(mymessage)
+                list_with_codes[[i]] <- NULL
+            } #else
+        } # for loop
 
         valueindex <- which(lookup$label ==
                                 list_with_labels[[i]][[2]])
         if (length(valueindex > 0)) {
-            if (!is.na(valueindex)) {
             list_with_codes[[i]][[2]] <- lookup$code[valueindex]
-            }
         }
-    }
+    } # for loop
     list_with_codes
-}
+} # end of function
+
 
 combine_lists <- function(list1, list2) {
 
@@ -212,11 +221,11 @@ combine_lists <- function(list1, list2) {
         if (!is.na(index)) {
             combined_list[[index]][[2]] <- list2[[i]][[2]]
         } else {
-            combined_list <- c(combined_list, list(list2[[i]]))
-        }
-    }
+            new_element <- list(parameter = list(name = list2[[i]][[1]],
+                                                 value = list2[[i]][[2]]))
+            combined_list <- c(combined_list, new_element)
+        } # if
+    } # for loop
     combined_list
-}
-
-
+} # end of function
 
