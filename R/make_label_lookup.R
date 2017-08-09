@@ -1,4 +1,6 @@
+
 make_label_lookup <- function(db) {
+    # check all columns of dbnamelookup for db
     index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
     if (length(index) == 0) stop ("I don't know which database you want.")
     webdata <- agree_and_scrape(dbname = dbnamelookup$dbname[index],

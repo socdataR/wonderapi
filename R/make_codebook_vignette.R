@@ -1,7 +1,7 @@
-make_codebook_vignette <- function(db) {
-    index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
-    if (length(index) == 0) stop ("I don't know which database you want.")
 
+make_codebook_vignette <- function(dbcode = "D66") {
+    index <- purrr::map(dbnamelookup, ~which(.x == dbcode)) %>% unlist()
+    if (length(index) == 0) stop ("I don't know which database you want.")
     # get data
     webdata <- agree_and_scrape(dbname = dbnamelookup$dbname[index],
                                 dbcode = dbnamelookup$dbcode[index],
@@ -9,12 +9,11 @@ make_codebook_vignette <- function(db) {
     # find form, organize the info
     webform <- webdata %>% rvest::html_form()
     form_df <- purrr::map_df(webform[[3]]$fields, unpack)
-    dbcode <- db
 
     form_df <- form_df %>%
         dplyr::filter(!(type %in% c("button", "submit", "hidden"))) %>%
-        dplyr::filter(!(stringr::str_detect(name, "O_") & type == "checkbox"))
-
+        dplyr::filter(!(stringr::str_detect(name, "O_") & type == "checkbox")) %>%
+        dplyr::mutate(dbcode = dbcode)
     # create vignette
     sink(paste0("vignettes/", dbcode, "codebook.Rmd"))
     cat("---\n")
@@ -24,7 +23,8 @@ make_codebook_vignette <- function(db) {
     cat("date: \"`r Sys.Date()`\"\n")
     cat("output: rmarkdown::html_vignette\n")
     cat("vignette: >\n")
-    cat("  %\\VignetteIndexEntry{Births dataset (D66)}\n")
+    cat("  %\\VignetteIndexEntry{", dbcode,
+        dbnamelookup$dblabel[index],"}\n")
     cat("  %\\VignetteEngine{knitr::rmarkdown}\n")
     cat("  %\\VignetteEncoding{UTF-8}\n")
     cat("---\n")
@@ -55,22 +55,19 @@ unpack <- function(item) {
 
 process_item <- function(thisrow) {
     precode <- strsplit(thisrow$name, "_")[[1]][1]
+    lookupname <- thisrow$name
     switch(precode,
            O = if (thisrow$type == "radio") {
                lookupname <- paste0(thisrow$name,
                                     thisrow$value)
-           } else {
-               lookupname <- thisrow$name
-
            },
            F = lookupname <- strsplit(thisrow$name,
                                       "_")[[1]][2],
            V = lookupname <- strsplit(thisrow$name,
-                                      "_")[[1]][2],
-           B = lookupname <- thisrow$name,
-           M = lookupname <- thisrow$name
+                                      "_")[[1]][2]
     )
-    label_list_name <- paste0(dbcode, "labellookup")
+
+    label_list_name <- paste0(thisrow$dbcode, "labellookup")
     index <- which(names(label_list) == label_list_name)
     labellookup <- label_list[[index]]
     index <- which(labellookup$code == lookupname)
