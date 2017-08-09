@@ -1,10 +1,10 @@
 ---
-title: " D66 Natality for 2007 - 2015 Dataset Codebook"
+title: " D27 Natality for 2003 - 2006 Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D66 Natality for 2007 - 2015 }
+  %\VignetteIndexEntry{ D27 Natality for 2003 - 2006 }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,43 +15,45 @@ B_1 	 Group Results By
 
 **Value(s):**
 ```
-		 D66.V22-level1 	 Census Region 
-		 D66.V22-level2 	 Census Division 
-		 D66.V37-level1 	 HHS Region 
-		 D66.V21-level1 	 State 
-		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
-		 D66.V27 	 Marital Status 
-		 D66.V1 	 Age of Mother 9 
-		 D66.V38 	 Age of Mother 10 
-		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
-		 D66.V20 	 Year 
-		 D66.V25 	 Month 
-		 D66.V26 	 Weekday 
-		 D66.V3 	 Gender 
-		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
-		 D66.V7 	 Plurality or Multiple Birth 
-		 D66.V28 	 Live Birth Order 
-		 D66.V30 	 Birthplace 
-		 D66.V31 	 Delivery Method 
-		 D66.V29 	 Medical Attendant 
-		 D66.V6 	 LMP Gestational Age 10 
-		 D66.V23 	 LMP Gestational Age 11 
-		 D66.V24 	 LMP Gestational Age Weekly 
-		 D66.V32 	 OE Gestational Age 10 
-		 D66.V33 	 OE Gestational Age 11 
-		 D66.V34 	 OE Gestational Age Weekly 
-		 D66.V16 	 Chronic Hypertension 
-		 D66.V14 	 Diabetes 
-		 D66.V17 	 Pregnancy-associated Hypertension 
-		 D66.V18 	 Eclampsia 
-		 D66.V10 	 Tobacco Use 
+		 D27.V22-level1 	 Census Region 
+		 D27.V22-level2 	 Census Division 
+		 D27.V37-level1 	 HHS Region 
+		 D27.V21-level1 	 State 
+		 D27.V21-level2 	 County 
+		 D27.V4 	 Hispanic Origin 
+		 D27.V2 	 Race 
+		 D27.V27 	 Marital Status 
+		 D27.V1 	 Age of Mother 9 
+		 D27.V38 	 Age of Mother 10 
+		 D27.V39 	 Age of Mother 13 
+		 D27.V40 	 Age of Mother Year 
+		 D27.V5 	 Education 
+		 D27.V20 	 Year 
+		 D27.V25 	 Month 
+		 D27.V26 	 Weekday 
+		 D27.V3 	 Gender 
+		 D27.V8 	 Month Prenatal Care Began 
+		 D27.V9 	 Birth Weight 12 
+		 D27.V35 	 Birth Weight 14 
+		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V7 	 Plurality or Multiple Birth 
+		 D27.V28 	 Live Birth Order 
+		 D27.V30 	 Birthplace 
+		 D27.V31 	 Delivery Method 
+		 D27.V29 	 Medical Attendant 
+		 D27.V6 	 LMP Gestational Age 10 
+		 D27.V23 	 LMP Gestational Age 11 
+		 D27.V24 	 LMP Gestational Age Weekly 
+		 D27.V11 	 Anemia 
+		 D27.V12 	 Cardiac Disease 
+		 D27.V16 	 Chronic Hypertension 
+		 D27.V14 	 Diabetes 
+		 D27.V18 	 Eclampsia 
+		 D27.V15 	 Hydramnios / Oligohydramnios 
+		 D27.V19 	 Incompetent Cervix 
+		 D27.V13 	 Lung Disease 
+		 D27.V17 	 Pregnancy-associated Hypertension 
+		 D27.V10 	 Tobacco Use 
 ```
 
 **Parameter:**
@@ -60,43 +62,45 @@ B_2 	 And By
 **Value(s):**
 ```
 		 *None* 	 None 
-		 D66.V22-level1 	 Census Region 
-		 D66.V22-level2 	 Census Division 
-		 D66.V37-level1 	 HHS Region 
-		 D66.V21-level1 	 State 
-		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
-		 D66.V27 	 Marital Status 
-		 D66.V1 	 Age of Mother 9 
-		 D66.V38 	 Age of Mother 10 
-		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
-		 D66.V20 	 Year 
-		 D66.V25 	 Month 
-		 D66.V26 	 Weekday 
-		 D66.V3 	 Gender 
-		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
-		 D66.V7 	 Plurality or Multiple Birth 
-		 D66.V28 	 Live Birth Order 
-		 D66.V30 	 Birthplace 
-		 D66.V31 	 Delivery Method 
-		 D66.V29 	 Medical Attendant 
-		 D66.V6 	 LMP Gestational Age 10 
-		 D66.V23 	 LMP Gestational Age 11 
-		 D66.V24 	 LMP Gestational Age Weekly 
-		 D66.V32 	 OE Gestational Age 10 
-		 D66.V33 	 OE Gestational Age 11 
-		 D66.V34 	 OE Gestational Age Weekly 
-		 D66.V16 	 Chronic Hypertension 
-		 D66.V14 	 Diabetes 
-		 D66.V17 	 Pregnancy-associated Hypertension 
-		 D66.V18 	 Eclampsia 
-		 D66.V10 	 Tobacco Use 
+		 D27.V22-level1 	 Census Region 
+		 D27.V22-level2 	 Census Division 
+		 D27.V37-level1 	 HHS Region 
+		 D27.V21-level1 	 State 
+		 D27.V21-level2 	 County 
+		 D27.V4 	 Hispanic Origin 
+		 D27.V2 	 Race 
+		 D27.V27 	 Marital Status 
+		 D27.V1 	 Age of Mother 9 
+		 D27.V38 	 Age of Mother 10 
+		 D27.V39 	 Age of Mother 13 
+		 D27.V40 	 Age of Mother Year 
+		 D27.V5 	 Education 
+		 D27.V20 	 Year 
+		 D27.V25 	 Month 
+		 D27.V26 	 Weekday 
+		 D27.V3 	 Gender 
+		 D27.V8 	 Month Prenatal Care Began 
+		 D27.V9 	 Birth Weight 12 
+		 D27.V35 	 Birth Weight 14 
+		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V7 	 Plurality or Multiple Birth 
+		 D27.V28 	 Live Birth Order 
+		 D27.V30 	 Birthplace 
+		 D27.V31 	 Delivery Method 
+		 D27.V29 	 Medical Attendant 
+		 D27.V6 	 LMP Gestational Age 10 
+		 D27.V23 	 LMP Gestational Age 11 
+		 D27.V24 	 LMP Gestational Age Weekly 
+		 D27.V11 	 Anemia 
+		 D27.V12 	 Cardiac Disease 
+		 D27.V16 	 Chronic Hypertension 
+		 D27.V14 	 Diabetes 
+		 D27.V18 	 Eclampsia 
+		 D27.V15 	 Hydramnios / Oligohydramnios 
+		 D27.V19 	 Incompetent Cervix 
+		 D27.V13 	 Lung Disease 
+		 D27.V17 	 Pregnancy-associated Hypertension 
+		 D27.V10 	 Tobacco Use 
 ```
 
 **Parameter:**
@@ -105,43 +109,45 @@ B_3 	 And By
 **Value(s):**
 ```
 		 *None* 	 None 
-		 D66.V22-level1 	 Census Region 
-		 D66.V22-level2 	 Census Division 
-		 D66.V37-level1 	 HHS Region 
-		 D66.V21-level1 	 State 
-		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
-		 D66.V27 	 Marital Status 
-		 D66.V1 	 Age of Mother 9 
-		 D66.V38 	 Age of Mother 10 
-		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
-		 D66.V20 	 Year 
-		 D66.V25 	 Month 
-		 D66.V26 	 Weekday 
-		 D66.V3 	 Gender 
-		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
-		 D66.V7 	 Plurality or Multiple Birth 
-		 D66.V28 	 Live Birth Order 
-		 D66.V30 	 Birthplace 
-		 D66.V31 	 Delivery Method 
-		 D66.V29 	 Medical Attendant 
-		 D66.V6 	 LMP Gestational Age 10 
-		 D66.V23 	 LMP Gestational Age 11 
-		 D66.V24 	 LMP Gestational Age Weekly 
-		 D66.V32 	 OE Gestational Age 10 
-		 D66.V33 	 OE Gestational Age 11 
-		 D66.V34 	 OE Gestational Age Weekly 
-		 D66.V16 	 Chronic Hypertension 
-		 D66.V14 	 Diabetes 
-		 D66.V17 	 Pregnancy-associated Hypertension 
-		 D66.V18 	 Eclampsia 
-		 D66.V10 	 Tobacco Use 
+		 D27.V22-level1 	 Census Region 
+		 D27.V22-level2 	 Census Division 
+		 D27.V37-level1 	 HHS Region 
+		 D27.V21-level1 	 State 
+		 D27.V21-level2 	 County 
+		 D27.V4 	 Hispanic Origin 
+		 D27.V2 	 Race 
+		 D27.V27 	 Marital Status 
+		 D27.V1 	 Age of Mother 9 
+		 D27.V38 	 Age of Mother 10 
+		 D27.V39 	 Age of Mother 13 
+		 D27.V40 	 Age of Mother Year 
+		 D27.V5 	 Education 
+		 D27.V20 	 Year 
+		 D27.V25 	 Month 
+		 D27.V26 	 Weekday 
+		 D27.V3 	 Gender 
+		 D27.V8 	 Month Prenatal Care Began 
+		 D27.V9 	 Birth Weight 12 
+		 D27.V35 	 Birth Weight 14 
+		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V7 	 Plurality or Multiple Birth 
+		 D27.V28 	 Live Birth Order 
+		 D27.V30 	 Birthplace 
+		 D27.V31 	 Delivery Method 
+		 D27.V29 	 Medical Attendant 
+		 D27.V6 	 LMP Gestational Age 10 
+		 D27.V23 	 LMP Gestational Age 11 
+		 D27.V24 	 LMP Gestational Age Weekly 
+		 D27.V11 	 Anemia 
+		 D27.V12 	 Cardiac Disease 
+		 D27.V16 	 Chronic Hypertension 
+		 D27.V14 	 Diabetes 
+		 D27.V18 	 Eclampsia 
+		 D27.V15 	 Hydramnios / Oligohydramnios 
+		 D27.V19 	 Incompetent Cervix 
+		 D27.V13 	 Lung Disease 
+		 D27.V17 	 Pregnancy-associated Hypertension 
+		 D27.V10 	 Tobacco Use 
 ```
 
 **Parameter:**
@@ -150,43 +156,45 @@ B_4 	 And By
 **Value(s):**
 ```
 		 *None* 	 None 
-		 D66.V22-level1 	 Census Region 
-		 D66.V22-level2 	 Census Division 
-		 D66.V37-level1 	 HHS Region 
-		 D66.V21-level1 	 State 
-		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
-		 D66.V27 	 Marital Status 
-		 D66.V1 	 Age of Mother 9 
-		 D66.V38 	 Age of Mother 10 
-		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
-		 D66.V20 	 Year 
-		 D66.V25 	 Month 
-		 D66.V26 	 Weekday 
-		 D66.V3 	 Gender 
-		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
-		 D66.V7 	 Plurality or Multiple Birth 
-		 D66.V28 	 Live Birth Order 
-		 D66.V30 	 Birthplace 
-		 D66.V31 	 Delivery Method 
-		 D66.V29 	 Medical Attendant 
-		 D66.V6 	 LMP Gestational Age 10 
-		 D66.V23 	 LMP Gestational Age 11 
-		 D66.V24 	 LMP Gestational Age Weekly 
-		 D66.V32 	 OE Gestational Age 10 
-		 D66.V33 	 OE Gestational Age 11 
-		 D66.V34 	 OE Gestational Age Weekly 
-		 D66.V16 	 Chronic Hypertension 
-		 D66.V14 	 Diabetes 
-		 D66.V17 	 Pregnancy-associated Hypertension 
-		 D66.V18 	 Eclampsia 
-		 D66.V10 	 Tobacco Use 
+		 D27.V22-level1 	 Census Region 
+		 D27.V22-level2 	 Census Division 
+		 D27.V37-level1 	 HHS Region 
+		 D27.V21-level1 	 State 
+		 D27.V21-level2 	 County 
+		 D27.V4 	 Hispanic Origin 
+		 D27.V2 	 Race 
+		 D27.V27 	 Marital Status 
+		 D27.V1 	 Age of Mother 9 
+		 D27.V38 	 Age of Mother 10 
+		 D27.V39 	 Age of Mother 13 
+		 D27.V40 	 Age of Mother Year 
+		 D27.V5 	 Education 
+		 D27.V20 	 Year 
+		 D27.V25 	 Month 
+		 D27.V26 	 Weekday 
+		 D27.V3 	 Gender 
+		 D27.V8 	 Month Prenatal Care Began 
+		 D27.V9 	 Birth Weight 12 
+		 D27.V35 	 Birth Weight 14 
+		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V7 	 Plurality or Multiple Birth 
+		 D27.V28 	 Live Birth Order 
+		 D27.V30 	 Birthplace 
+		 D27.V31 	 Delivery Method 
+		 D27.V29 	 Medical Attendant 
+		 D27.V6 	 LMP Gestational Age 10 
+		 D27.V23 	 LMP Gestational Age 11 
+		 D27.V24 	 LMP Gestational Age Weekly 
+		 D27.V11 	 Anemia 
+		 D27.V12 	 Cardiac Disease 
+		 D27.V16 	 Chronic Hypertension 
+		 D27.V14 	 Diabetes 
+		 D27.V18 	 Eclampsia 
+		 D27.V15 	 Hydramnios / Oligohydramnios 
+		 D27.V19 	 Incompetent Cervix 
+		 D27.V13 	 Lung Disease 
+		 D27.V17 	 Pregnancy-associated Hypertension 
+		 D27.V10 	 Tobacco Use 
 ```
 
 **Parameter:**
@@ -195,43 +203,45 @@ B_5 	 And By
 **Value(s):**
 ```
 		 *None* 	 None 
-		 D66.V22-level1 	 Census Region 
-		 D66.V22-level2 	 Census Division 
-		 D66.V37-level1 	 HHS Region 
-		 D66.V21-level1 	 State 
-		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
-		 D66.V27 	 Marital Status 
-		 D66.V1 	 Age of Mother 9 
-		 D66.V38 	 Age of Mother 10 
-		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
-		 D66.V20 	 Year 
-		 D66.V25 	 Month 
-		 D66.V26 	 Weekday 
-		 D66.V3 	 Gender 
-		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
-		 D66.V7 	 Plurality or Multiple Birth 
-		 D66.V28 	 Live Birth Order 
-		 D66.V30 	 Birthplace 
-		 D66.V31 	 Delivery Method 
-		 D66.V29 	 Medical Attendant 
-		 D66.V6 	 LMP Gestational Age 10 
-		 D66.V23 	 LMP Gestational Age 11 
-		 D66.V24 	 LMP Gestational Age Weekly 
-		 D66.V32 	 OE Gestational Age 10 
-		 D66.V33 	 OE Gestational Age 11 
-		 D66.V34 	 OE Gestational Age Weekly 
-		 D66.V16 	 Chronic Hypertension 
-		 D66.V14 	 Diabetes 
-		 D66.V17 	 Pregnancy-associated Hypertension 
-		 D66.V18 	 Eclampsia 
-		 D66.V10 	 Tobacco Use 
+		 D27.V22-level1 	 Census Region 
+		 D27.V22-level2 	 Census Division 
+		 D27.V37-level1 	 HHS Region 
+		 D27.V21-level1 	 State 
+		 D27.V21-level2 	 County 
+		 D27.V4 	 Hispanic Origin 
+		 D27.V2 	 Race 
+		 D27.V27 	 Marital Status 
+		 D27.V1 	 Age of Mother 9 
+		 D27.V38 	 Age of Mother 10 
+		 D27.V39 	 Age of Mother 13 
+		 D27.V40 	 Age of Mother Year 
+		 D27.V5 	 Education 
+		 D27.V20 	 Year 
+		 D27.V25 	 Month 
+		 D27.V26 	 Weekday 
+		 D27.V3 	 Gender 
+		 D27.V8 	 Month Prenatal Care Began 
+		 D27.V9 	 Birth Weight 12 
+		 D27.V35 	 Birth Weight 14 
+		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V7 	 Plurality or Multiple Birth 
+		 D27.V28 	 Live Birth Order 
+		 D27.V30 	 Birthplace 
+		 D27.V31 	 Delivery Method 
+		 D27.V29 	 Medical Attendant 
+		 D27.V6 	 LMP Gestational Age 10 
+		 D27.V23 	 LMP Gestational Age 11 
+		 D27.V24 	 LMP Gestational Age Weekly 
+		 D27.V11 	 Anemia 
+		 D27.V12 	 Cardiac Disease 
+		 D27.V16 	 Chronic Hypertension 
+		 D27.V14 	 Diabetes 
+		 D27.V18 	 Eclampsia 
+		 D27.V15 	 Hydramnios / Oligohydramnios 
+		 D27.V19 	 Incompetent Cervix 
+		 D27.V13 	 Lung Disease 
+		 D27.V17 	 Pregnancy-associated Hypertension 
+		 D27.V10 	 Tobacco Use 
 ```
 
 **Parameter:**
@@ -265,12 +275,6 @@ M_80 	 Average LMP Gestational Age
 M_81 	 Standard Deviation 
 
 **Parameter:**
-M_90 	 Average OE Gestational Age 
-
-**Parameter:**
-M_91 	 Standard Deviation 
-
-**Parameter:**
 O_title 	 Title 
 
 **Parameter:**
@@ -286,21 +290,21 @@ O_rate_per 	 Calculate Rates Per
 
 **Parameter:**
 O_location 
-**Values:**	 D66.V21 	 States 
+**Values:**	 D27.V21 	 States 
 
 **Parameter:**
 O_location 
-**Values:**	 D66.V22 	 Census Regions 
+**Values:**	 D27.V22 	 Census Regions 
 
 **Parameter:**
 O_location 
-**Values:**	 D66.V37 	 HHS Regions 
+**Values:**	 D27.V37 	 HHS Regions 
 
 **Parameter:**
-V_D66.V21 	 Selected Items 
+V_D27.V21 	 Selected Items 
 
 **Parameter:**
-F_D66.V21 	 Selected Items 
+F_D27.V21 	 Selected Items 
 
 **Value(s):**
 ```
@@ -359,10 +363,10 @@ F_D66.V21 	 Selected Items
 ```
 
 **Parameter:**
-V_D66.V22 	 Selected Items 
+V_D27.V22 	 Selected Items 
 
 **Parameter:**
-F_D66.V22 	 Selected Items 
+F_D27.V22 	 Selected Items 
 
 **Value(s):**
 ```
@@ -374,10 +378,10 @@ F_D66.V22 	 Selected Items
 ```
 
 **Parameter:**
-V_D66.V37 	 Selected Items 
+V_D27.V37 	 Selected Items 
 
 **Parameter:**
-F_D66.V37 	 Selected Items 
+F_D27.V37 	 Selected Items 
 
 **Value(s):**
 ```
@@ -395,7 +399,7 @@ F_D66.V37 	 Selected Items
 ```
 
 **Parameter:**
-V_D66.V4 	 Hispanic Origin 
+V_D27.V4 	 Hispanic Origin 
 
 **Value(s):**
 ```
@@ -412,7 +416,7 @@ V_D66.V4 	 Hispanic Origin
 ```
 
 **Parameter:**
-V_D66.V2 	 Race 
+V_D27.V2 	 Race 
 
 **Value(s):**
 ```
@@ -424,7 +428,7 @@ V_D66.V2 	 Race
 ```
 
 **Parameter:**
-V_D66.V27 	 Marital Status 
+V_D27.V27 	 Marital Status 
 
 **Value(s):**
 ```
@@ -436,22 +440,22 @@ V_D66.V27 	 Marital Status
 
 **Parameter:**
 O_age 
-**Values:**	 D66.V1 	 Age of Mother 9 
+**Values:**	 D27.V1 	 Age of Mother 9 
 
 **Parameter:**
 O_age 
-**Values:**	 D66.V38 	 Age of Mother 10 
+**Values:**	 D27.V38 	 Age of Mother 10 
 
 **Parameter:**
 O_age 
-**Values:**	 D66.V39 	 Age of Mother 13 
+**Values:**	 D27.V39 	 Age of Mother 13 
 
 **Parameter:**
 O_age 
-**Values:**	 D66.V40 	 Age of Mother Year 
+**Values:**	 D27.V40 	 Age of Mother Year 
 
 **Parameter:**
-V_D66.V1 	 Age of Mother 9 
+V_D27.V1 	 Age of Mother 9 
 
 **Value(s):**
 ```
@@ -468,7 +472,7 @@ V_D66.V1 	 Age of Mother 9
 ```
 
 **Parameter:**
-V_D66.V38 	 Age of Mother 10 
+V_D27.V38 	 Age of Mother 10 
 
 **Value(s):**
 ```
@@ -486,7 +490,7 @@ V_D66.V38 	 Age of Mother 10
 ```
 
 **Parameter:**
-V_D66.V39 	 Age of Mother 13 
+V_D27.V39 	 Age of Mother 13 
 
 **Value(s):**
 ```
@@ -507,14 +511,12 @@ V_D66.V39 	 Age of Mother 13
 ```
 
 **Parameter:**
-V_D66.V40 	 Age of Mother Year 
+V_D27.V40 	 Age of Mother Year 
 
 **Value(s):**
 ```
 		 *All* 	  All Ages  
-		 10-12 	  10-12 years  
-		 13 	  13 years  
-		 14 	  14 years  
+		 14 	  Under 15 years  
 		 15 	  15 years  
 		 16 	  16 years  
 		 17 	  17 years  
@@ -554,42 +556,34 @@ V_D66.V40 	 Age of Mother Year
 ```
 
 **Parameter:**
-V_D66.V5 	 Education 
+V_D27.V5 	 Education 
 
 **Value(s):**
 ```
 		 *All* 	  All Groups  
-		 1 	  8th grade or less  
-		 2 	  9th through 12th grade with no diploma  
-		 3 	  High school graduate or GED completed  
-		 4 	  Some college credit, but not a degree  
-		 5 	  Associate degree (AA, AS)  
-		 6 	  Bachelor's degree (BA, AB, BS)  
-		 7 	  Master's degree (MA, MS)  
-		 8 	  Doctorate (PHD, EdD) or Professional Degree (MD, DDS, DVM, LLB, JD)  
-		 Unk 	  Unknown/Not on certificate  
+		 19176 	  0 -  8 years  
+		 19177 	  9 - 11 years  
+		 19178 	  12 years  
+		 19179 	  13 - 15 years  
+		 16+ 	  16 years and over  
+		 NR 	  Not stated/Not on certificate  
 		 999 	  Excluded  
 ```
 
 **Parameter:**
-V_D66.V20 	 Year 
+V_D27.V20 	 Year 
 
 **Value(s):**
 ```
 		 *All* 	  All Years  
-		 2007 	  2007  
-		 2008 	  2008  
-		 2009 	  2009  
-		 2010 	  2010  
-		 2011 	  2011  
-		 2012 	  2012  
-		 2013 	  2013  
-		 2014 	  2014  
-		 2015 	  2015  
+		 2003 	  2003  
+		 2004 	  2004  
+		 2005 	  2005  
+		 2006 	  2006  
 ```
 
 **Parameter:**
-V_D66.V25 	 Month 
+V_D27.V25 	 Month 
 
 **Value(s):**
 ```
@@ -609,7 +603,7 @@ V_D66.V25 	 Month
 ```
 
 **Parameter:**
-V_D66.V26 	 Weekday 
+V_D27.V26 	 Weekday 
 
 **Value(s):**
 ```
@@ -625,7 +619,7 @@ V_D66.V26 	 Weekday
 ```
 
 **Parameter:**
-V_D66.V3 	 Gender 
+V_D27.V3 	 Gender 
 
 **Value(s):**
 ```
@@ -635,7 +629,7 @@ V_D66.V3 	 Gender
 ```
 
 **Parameter:**
-V_D66.V8 	 Month Prenatal Care Began 
+V_D27.V8 	 Month Prenatal Care Began 
 
 **Value(s):**
 ```
@@ -657,18 +651,18 @@ V_D66.V8 	 Month Prenatal Care Began
 
 **Parameter:**
 O_weight 
-**Values:**	 D66.V9 	 Birth Weight 12 
+**Values:**	 D27.V9 	 Birth Weight 12 
 
 **Parameter:**
 O_weight 
-**Values:**	 D66.V35 	 Birth Weight 14 
+**Values:**	 D27.V35 	 Birth Weight 14 
 
 **Parameter:**
 O_weight 
-**Values:**	 D66.V41 	 Birth Weight 100 gram increments 
+**Values:**	 D27.V41 	 Birth Weight 100 gram increments 
 
 **Parameter:**
-V_D66.V9 	 Birth Weight 12 
+V_D27.V9 	 Birth Weight 12 
 
 **Value(s):**
 ```
@@ -688,7 +682,7 @@ V_D66.V9 	 Birth Weight 12
 ```
 
 **Parameter:**
-V_D66.V35 	 Birth Weight 14 
+V_D27.V35 	 Birth Weight 14 
 
 **Value(s):**
 ```
@@ -710,7 +704,7 @@ V_D66.V35 	 Birth Weight 14
 ```
 
 **Parameter:**
-V_D66.V41 	 Birth Weight 100 gram increments 
+V_D27.V41 	 Birth Weight 100 gram increments 
 
 **Value(s):**
 ```
@@ -800,7 +794,7 @@ V_D66.V41 	 Birth Weight 100 gram increments
 ```
 
 **Parameter:**
-V_D66.V28 	 Live Birth Order 
+V_D27.V28 	 Live Birth Order 
 
 **Value(s):**
 ```
@@ -815,7 +809,7 @@ V_D66.V28 	 Live Birth Order
 ```
 
 **Parameter:**
-V_D66.V7 	 Plurality or Multiple Birth 
+V_D27.V7 	 Plurality or Multiple Birth 
 
 **Value(s):**
 ```
@@ -828,7 +822,7 @@ V_D66.V7 	 Plurality or Multiple Birth
 ```
 
 **Parameter:**
-V_D66.V30 	 Birthplace 
+V_D27.V30 	 Birthplace 
 
 **Value(s):**
 ```
@@ -842,7 +836,7 @@ V_D66.V30 	 Birthplace
 ```
 
 **Parameter:**
-V_D66.V31 	 Delivery Method 
+V_D27.V31 	 Delivery Method 
 
 **Value(s):**
 ```
@@ -853,7 +847,7 @@ V_D66.V31 	 Delivery Method
 ```
 
 **Parameter:**
-V_D66.V29 	 Medical Attendant 
+V_D27.V29 	 Medical Attendant 
 
 **Value(s):**
 ```
@@ -868,18 +862,18 @@ V_D66.V29 	 Medical Attendant
 
 **Parameter:**
 O_gestation 
-**Values:**	 D66.V6 	 LMP Gestational Age 10 
+**Values:**	 D27.V6 	 LMP Gestational Age 10 
 
 **Parameter:**
 O_gestation 
-**Values:**	 D66.V23 	 LMP Gestational Age 11 
+**Values:**	 D27.V23 	 LMP Gestational Age 11 
 
 **Parameter:**
 O_gestation 
-**Values:**	 D66.V24 	 LMP Gestational Age Weekly 
+**Values:**	 D27.V24 	 LMP Gestational Age Weekly 
 
 **Parameter:**
-V_D66.V6 	 LMP Gestational Age 10 
+V_D27.V6 	 LMP Gestational Age 10 
 
 **Value(s):**
 ```
@@ -897,7 +891,7 @@ V_D66.V6 	 LMP Gestational Age 10
 ```
 
 **Parameter:**
-V_D66.V23 	 LMP Gestational Age 11 
+V_D27.V23 	 LMP Gestational Age 11 
 
 **Value(s):**
 ```
@@ -916,7 +910,7 @@ V_D66.V23 	 LMP Gestational Age 11
 ```
 
 **Parameter:**
-V_D66.V24 	 LMP Gestational Age Weekly 
+V_D27.V24 	 LMP Gestational Age Weekly 
 
 **Value(s):**
 ```
@@ -956,96 +950,7 @@ V_D66.V24 	 LMP Gestational Age Weekly
 ```
 
 **Parameter:**
-O_oe_gestation 
-**Values:**	 D66.V32 	 OE Gestational Age 10 
-
-**Parameter:**
-O_oe_gestation 
-**Values:**	 D66.V33 	 OE Gestational Age 11 
-
-**Parameter:**
-O_oe_gestation 
-**Values:**	 D66.V34 	 OE Gestational Age Weekly 
-
-**Parameter:**
-V_D66.V32 	 OE Gestational Age 10 
-
-**Value(s):**
-```
-		 *All* 	  All Weeks  
-		 01 	  Under 20 weeks  
-		 02 	  20 - 27 weeks  
-		 03 	  28 - 31 weeks  
-		 04 	  32 - 35 weeks  
-		 05 	  36 weeks  
-		 06 	  37 - 39 weeks  
-		 07 	  40 weeks  
-		 08 	  41 weeks  
-		 09 	  42 weeks or more  
-		 10 	  Unknown  
-```
-
-**Parameter:**
-V_D66.V33 	 OE Gestational Age 11 
-
-**Value(s):**
-```
-		 *All* 	  All Weeks  
-		 01 	  Under 20 weeks  
-		 02 	  20-27 weeks  
-		 03 	  28-31 weeks  
-		 04 	  32-33 weeks  
-		 05 	  34-36 weeks  
-		 06 	  37-38 weeks  
-		 07 	  39 weeks  
-		 08 	  40 weeks  
-		 09 	  41 weeks  
-		 10 	  42 or more weeks  
-		 11 	  Unknown  
-```
-
-**Parameter:**
-V_D66.V34 	 OE Gestational Age Weekly 
-
-**Value(s):**
-```
-		 *All* 	  All Weeks  
-		 17 	  17 weeks  
-		 18 	  18 weeks  
-		 19 	  19 weeks  
-		 20 	  20 weeks  
-		 21 	  21 weeks  
-		 22 	  22 weeks  
-		 23 	  23 weeks  
-		 24 	  24 weeks  
-		 25 	  25 weeks  
-		 26 	  26 weeks  
-		 27 	  27 weeks  
-		 28 	  28 weeks  
-		 29 	  29 weeks  
-		 30 	  30 weeks  
-		 31 	  31 weeks  
-		 32 	  32 weeks  
-		 33 	  33 weeks  
-		 34 	  34 weeks  
-		 35 	  35 weeks  
-		 36 	  36 weeks  
-		 37 	  37 weeks  
-		 38 	  38 weeks  
-		 39 	  39 weeks  
-		 40 	  40 weeks  
-		 41 	  41 weeks  
-		 42 	  42 weeks  
-		 43 	  43 weeks  
-		 44 	  44 weeks  
-		 45 	  45 weeks  
-		 46 	  46 weeks  
-		 47 	  47 weeks  
-		 99 	  Unknown  
-```
-
-**Parameter:**
-V_D66.V16 	 Chronic Hypertension 
+V_D27.V11 	 Anemia 
 
 **Value(s):**
 ```
@@ -1057,7 +962,7 @@ V_D66.V16 	 Chronic Hypertension
 ```
 
 **Parameter:**
-V_D66.V14 	 Diabetes 
+V_D27.V12 	 Cardiac Disease 
 
 **Value(s):**
 ```
@@ -1069,7 +974,7 @@ V_D66.V14 	 Diabetes
 ```
 
 **Parameter:**
-V_D66.V17 	 Pregnancy-associated Hypertension 
+V_D27.V16 	 Chronic Hypertension 
 
 **Value(s):**
 ```
@@ -1081,7 +986,7 @@ V_D66.V17 	 Pregnancy-associated Hypertension
 ```
 
 **Parameter:**
-V_D66.V18 	 Eclampsia 
+V_D27.V14 	 Diabetes 
 
 **Value(s):**
 ```
@@ -1093,7 +998,67 @@ V_D66.V18 	 Eclampsia
 ```
 
 **Parameter:**
-V_D66.V10 	 Tobacco Use 
+V_D27.V18 	 Eclampsia 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D27.V15 	 Hydramnios / Oligohydramnios 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D27.V19 	 Incompetent Cervix 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D27.V13 	 Lung Disease 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D27.V17 	 Pregnancy-associated Hypertension 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D27.V10 	 Tobacco Use 
 
 **Value(s):**
 ```
