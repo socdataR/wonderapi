@@ -1,7 +1,7 @@
 Package: wonderapi
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
+Title: Tools for accessing the CDC Wonder API
+Version: 0.0.0.9000
 Authors@R: c(
   person("Joyce", "Robbins", email="joycerobbins1@gmail.com", role = "cre"),
   person("Elin", "Waring", email="elin.waring@gmail.com", role = "aut"))
