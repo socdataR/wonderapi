@@ -1,6 +1,6 @@
 #' CDC Wonder dataset lookup table
 #'
-#'contains codes, dataset names, url endings, and "I Agree" submit phrases
+#'contains codes, dataset names, url endings, and "I Agree" submit phrases (has to be external because it's needed to create internal data files)
 #'
 #' @format A data frame with 4 columns, 2 rows (will increase as data sets are added from this list: \url{https://wonder.cdc.gov/}
 #' \describe{
