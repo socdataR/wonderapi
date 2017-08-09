@@ -19,6 +19,6 @@
 dbnamelookup
 }
 \description{
-contains codes, dataset names, url endings, and "I Agree" submit phrases
+contains codes, dataset names, url endings, and "I Agree" submit phrases (has to be external because it's needed to create internal data files)
 }
 \keyword{datasets}
