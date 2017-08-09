@@ -2,4 +2,5 @@
 
 export("%>%")
 export(getData)
+export(show_databases)
 importFrom(magrittr,"%>%")
