@@ -4,13 +4,13 @@
 .RData
 .Ruserdata
 <<<<<<< HEAD
-natality.Rproj
-NatQuery2.R
-=======
 .gitignore
 .Rbuildignore
 \images
 query_result.xml
 webdata.html
 inst/doc
->>>>>>> develop
+=======
+natality.Rproj
+NatQuery2.R
+>>>>>>> master

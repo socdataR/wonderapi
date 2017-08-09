@@ -1,25 +1,29 @@
-Package: natality
+Package: wonderapi
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
+Title: Tools for accessing the CDC Wonder API
+Version: 0.0.0.9000
 Authors@R: c(
   person("Joyce", "Robbins", email="joycerobbins1@gmail.com", role = "cre"),
   person("Elin", "Waring", email="elin.waring@gmail.com", role = "aut"))
-Description: Let us work with natality data
+Description: Let us work with CDC Wonder API data
     Interface with the federal data.
 Depends:
     R (>= 3.1.2)
 Imports:
-    wondr,
-    xml2,
-    purrr,
     magrittr,
-    tibble
+    purrr,
+    readr,
+    rvest,
+    stringr,
+    tibble,
+    wondr,
+    xml2
 Remotes:
     hrbrmstr/wondr
 Suggests:
     testthat,
-    knitr
+    knitr,
+    rmarkdown
 VignetteBuilder: knitr
 License: GPL
 Encoding: UTF-8
