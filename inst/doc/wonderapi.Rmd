@@ -9,7 +9,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(cache = TRUE)
 ```
 
 
@@ -20,7 +20,12 @@ The best way to become familiar with CDC Wonder API options is to use the web in
 
 ## Understanding the structure of a query  
 
-Queries are composed of parameter name-value pairs. There are different types of parameters.  Most critical are Group Results By and Measures. The Group Results By parameters serve as keys for grouping the data; the maximum number of Group Results By parameters is five.  Setting up a query without assistance is complex because the query must be submitted as an .xml file with a long list of required parameters, such as [here (Example 1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml) and [here (Example 2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml). 
+Queries are composed of parameter name-value pairs.  Setting up a query without assistance is complex because the query must be submitted as an .xml file with a long list of required parameters, such as [here (Example 1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml) and [here (Example 2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml). The point of the package is to prevent your having to create requests in this form.  It relies on the `wondr` package which creates converts R lists to xml and makes the query. The value of this package is in easing the process of setting up the query and tidying the results:
+
+The `wonderapi::getData` function  
+* calls `wondr::make_query`  
+* processes the results  
+* returns tidy data frame  
 
 ## Codebooks
 
@@ -39,16 +44,21 @@ Currently, the following codebook vignettes are available:
 
 ## Default query lists and requests  
 
-To facilitate the process of designing a query list, this package relies on default query lists. Each default query is set to request a single Group By Results parameter, generally set to `"Year"`. It is set to request the measures that are listed as default measures on the web interface (i.e. `Births` for [the Births dataset](https://wonder.cdc.gov/controller/datarequest/D76); `Deaths`, `Population` and `Crude Rate` for the [Detailed Mortality dataset](https://wonder.cdc.gov/controller/datarequest/D76).) To see the default settings, perform a query request without specifying a querylist:  
+To facilitate the process of designing a query list, this package relies on default query lists. Each default query is set to request a single Group By Results parameter, generally set to `"Year"`. It is set to request the measures that are listed as default measures on the web interface (i.e. `Births` for [the Births dataset](https://wonder.cdc.gov/controller/datarequest/D76); `Deaths`, `Population` and `Crude Rate` for the [Detailed Mortality dataset](https://wonder.cdc.gov/controller/datarequest/D76).) To see the default settings, perform a query request without specifying a querylist: 
+### Disclaimer #1
+I did by best but there are no guarantees that the default lists are set up properly.
 
-```{r}
-library(dplyr)
+```{r, message = FALSE}
+library(tidyverse)
 library(wonderapi)
-getData(TRUE, "Births") %>% head()
+getData(TRUE, "Natality for 2007 - 2015") %>% head()
 getData(TRUE, "Detailed Mortality") %>% head()
 ```
 
 ## Customized queries  
+
+There are different types of parameters.  Most critical are Group Results By and Measures. The Group Results By parameters serve as keys for grouping the data; the maximum number of Group Results By parameters is five. 
+
 To make changes to the default list, first create a list of lists, wherein each nested list is a name-value pair.  For example, the following changes the first (and currently only) "Group Results By" variable to Weekday:
 
 ```{r, eval = FALSE}
@@ -79,21 +89,21 @@ Measures do not need values; it is sufficient to specify a name only:
 mylist <- list(list("Group Results By", "Marital Status"),
                list("Average Age of Mother", "D66.M70"),
                list("sdfasdf", "sadf"))
-mydata <- getData(TRUE, "Births", mylist)
+mydata <- getData(TRUE, "Natality for 2007 - 2015", mylist)
 ```
 
 ```{r}
 mylist <- list(list("Group Results By", "Marital Status"),
                list("Average Age of Mother", "D66.M70"),
                list("Year", "2015"))
-getData(TRUE, "Births", mylist)
+getData(TRUE, "Natality for 2007 - 2015", mylist)
 ```
 
 ```{r}
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
-mydata <- getData(TRUE, "Births", mylist)
+mydata <- getData(TRUE, "Natality for 2007 - 2015", mylist)
 knitr::kable(mydata)
 ```
 
@@ -101,9 +111,7 @@ knitr::kable(mydata)
 By returning a tidy data frame, the query results are ready to be plotted without any additional data manipulation:  
 
 ```{r}
-library(ggplot2)
-ggplot(mydata, aes(x = Year, y = Births, 
-                   color = `Marital Status`)) + 
+ggplot(mydata, aes(x = Year, y = Births, color = `Marital Status`)) + 
     geom_line() + ggtitle("Births by Marital Status")
 
 ggplot(mydata, aes(x = Year, y = `Average Age of Mother`,
@@ -113,7 +121,6 @@ ggplot(mydata, aes(x = Year, y = `Average Age of Mother`,
 ```
 
 ```{r}
-library(tidyr)
 mydata2 <- mydata %>% 
     select(-`Average Age of Mother`) %>% 
     spread(key = `Marital Status`, value = `Births`) %>% 
@@ -123,13 +130,63 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
     ylab("Percent of Total Births")
 ```
 
+Some of the datasets, such as the Births, are divided into multiple databases by time period. `wonderapi` makes it easy to combine the data into one data frame. (Care needs to be taken as the variables are not identical in all. For example, the 1995 - 2002 dataset does not have any measure options; it only returns number of births. To find out what's available, see the codebooks [ADD LINK] and crosscheck with the [CDC Wonder API web interface](https://wonder.cdc.gov).)
+```{r}
+births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
+                getData(TRUE, "Natality for 2003 - 2006"),
+                getData(TRUE, "Natality for 2007 - 2015"))
+ggplot(births, aes(Year, Births)) + geom_line() + 
+    ggtitle("U.S. Births by Year, 1995 - 2015")
 
-```{r eval = FALSE, echo = FALSE}
-To do: check that names & values are recognized
+```
+
+```{r eval = FALSE}
+
+births <- getData(TRUE, "Natality for 2007 - 2015", mylist)
+ggplot(births, aes(Year, Births, color = Education, shape = Education)) +
+    geom_line() + geom_point() + theme(legend.position = "bottom")
+```
+
+### Errors
+There are two basic types of errors: those caused by the `wonderapi` package and those due to constraints of the CDC Wonder API. Ideally, all errors would be caught before queries are made, however this is not possible since there are many quirky rules and it is beyond the scope of this package to check for all of them.  What the package does do is toss out any name-value pairs in which the _name_ is not recognized.  (Value checking will be added in the future.) For example:  
+
+```{r}
+getData(TRUE, "Detailed Mortality", list(list("Suspect", "Mrs. Peacock")))
+```
+
+It is common to get CDC errors, which look like this:
+```{r, error = TRUE}
+mylist <- list(list("And By", "Education"), 
+               list("Birth Rate (Census Region, Census Division, HHS Region, State, County, Year, Race)", ""))
+getData(TRUE, "Natality for 2007 - 2015", mylist) %>% head()
+```
+
+If this occurs, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query.  If all goes well, you will receive more detailed information on what went wrong:  
+
+```{r, out.width = "500px", echo = FALSE}
+knitr::include_graphics("NatalityError.png")
+```
+
+We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Race" instead of "Education", it works:
+```{r}
+mylist <- list(list("And By", "Race"), 
+               list("Birth Rate (Census Region, Census Division, HHS Region, State, County, Year, Race)", ""))
+getData(TRUE, "Natality for 2007 - 2015", mylist) %>%
+    head() %>% knitr::kable()
 ```
 
 
 
 
-Next, please read the documentation for the single function of the package {getData}. This vignette focuses on setting up the `querylist` parameter passed to this function. The `querylist`
+
+
+
+```{r todolist, eval = FALSE, echo = FALSE}
+radio buttons
+note about advanced options
+() in labels
+set agree default to FALSE, move to end
+import versions
+```
+
 
