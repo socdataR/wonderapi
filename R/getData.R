@@ -72,6 +72,7 @@ getrows <- function(thisrow, numcol) {
 
     v <- v %>% na.omit()
     if (length(v) == 0) stop("length(v) = 0")
+    # deal with percents -- need to take out % and divide by 100
     v[grepl("\\%", v)] <- as.numeric(gsub("\\%", "", v[grepl("\\%", v)]))/100
     len <- length(c(l, v))
     return(c(rep(NA, numcol - len), l, v))
@@ -180,7 +181,7 @@ label_to_code <- function(list_with_labels, dbcode) {
         # taking first one in case there are multiple matches
         # (if no matches, [1] has the effect of turning nameindex to NA)
         nameindex <- which(lookup$label == list_with_labels[[i]][[1]])[1]
-        if (!is.na(nameindex)) {
+        if (!is.na(nameindex)) {   # label found for parameter name
                 code <- lookup$code[nameindex]
                 precode <- substring(code, 1, 1)
                 switch(precode,
@@ -189,15 +190,21 @@ label_to_code <- function(list_with_labels, dbcode) {
                            paste0(dbcode, ".", gsub("_", "", code))
                 )
             list_with_codes[[i]][[1]] <- code
-        } else {
+        } else {  # label not found
             if (!list_with_labels[[i]][[1]] %in% lookup$code) {
+                # ... and code not found --> problem
                 mymessage <- paste0("Ignoring: \"",
                                     list_with_labels[[i]][[1]],"\",",
                                     "...(not recognized)")
                 message(mymessage)
                 list_with_codes[[i]] <- NULL
-            } #else
-        } # for loop
+            } else { # code found
+                code <- list_with_labels[[i]][[1]]
+                precode <- substring(code, 1, 1)
+                if (precode == "M") list_with_codes[[i]][[2]] <-
+                    paste0(dbcode, ".", gsub("_", "", code))
+            } # 2nd else
+        } # 1st else
 
         valueindex <- which(lookup$label ==
                                 list_with_labels[[i]][[2]])
