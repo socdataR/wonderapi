@@ -9,7 +9,7 @@ getData(agree = FALSE, db = "D66", querylist = NULL, add = TRUE)
 \arguments{
 \item{agree}{Must be set to TRUE to actively agree to the CDC terms (default is FALSE). To see the terms for the particular dataset click on that dataset here: \url{https://wonder.cdc.gov}. \href{https://wonder.cdc.gov/ucd-icd10.html}{sample}}
 
-\item{db}{Indicate the database, either by label, name, or code.  To see the complete list of what's available, use \code{View(dbnamelookup)}}
+\item{db}{Indicate the database, either by label, name, or code.  To see the complete list of what's available, use `show_databases()`}
 
 \item{querylist}{The query list supplied must be a list of lists of names and values. By default it is combined with the default query list for that database. To supply a full list and bypass the default query list, set \code{add} to \code{TRUE}. See here for instructions on how to create this list.}
 
