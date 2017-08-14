@@ -1,0 +1,21 @@
+---
+title: " D104 Heat Wave Days Dataset Codebook"
+author: "Joyce Robbins "
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ D104 Heat Wave Days }
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+This codebook is provided to assist in determining how to set up a query to the CDC Wonder API. The best way to become familiar with the API is to use the web interface: https://wonder.cdc.gov.  Also, read the [Introduction to wonderapi](wonderapi.html) to learn about the basic sections of CDC Wonder query requests.
+
+{xml_document}
+<page>
+[1] <title>Number of Heat Wave Days in May-September (1981-2010) Result ...
+[2] <default-map/>
+[3] <dataset code="D104" label="Number of Heat Wave Days in May-Septemb ...
+[4] <response>\n  <request query-date="Aug 14, 2017 1:21:38 PM">\n    < ...
+[5] <tabs2>\n  <tab label="Request Form" status="closed" target="reques ...
+[6] <thisfile>\\wonder\\templates\\xsl\\table_response.xsl</thisfile>
+[1] "/Users/JoyceRobbins/wonderapi"
