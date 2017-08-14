@@ -20,13 +20,16 @@ The best way to become familiar with CDC Wonder API options is to use the web in
 Queries are composed of parameter name-value pairs.  Setting up a query without assistance is complex because the query must be submitted as an .xml file with a long list of required parameters, such as [here (Example 1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml) and [here (Example 2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml). The point of the package is to prevent your having to create requests in this form.  It relies on the `wondr` package which creates converts R lists to xml and makes the query. The value of this package is in easing the process of setting up the query and tidying the results:
 
 The `wonderapi::getData` function  
+* converts your human readable query requests to CDC codes
 * calls `wondr::make_query`  
 * processes the results  
 * returns tidy data frame  
 
 ## Codebooks
 
-Codebooks are provided as package vignettes to allow the user to conveniently look up the names and values of available parameters in each dataset.  The codebooks are an important contribution of the package and are not provided by the CDC.  They are generated automatically by [this script](https://github.com/socdataR/wonderapi/blob/master/R/make_codebook_vignette.R), which scrapes the CDC Wonder web interface form, and displays parameter names and values in human readable form.  The benefit of this method is the ability to quickly produce and update codebook vignettes that closely follow the web interface, with parameters appearing in the same order.  It also means, however, that the codebooks contain more information than the typical user needs to submit a query.  Most users will only need to group by variables (codes beginning with "B_"), measures (codes beginning with "M_"), and limiting variables (codes beginning with "V_"). 
+Codebooks are provided as package vignettes to allow the user to conveniently look up the names and values of available parameters in each dataset.  The codebooks are an important contribution of the package and are not provided by the CDC.  They will be useful to anyone using the CDC Wonder API; they are not specific to this R package.  You can find them [here](.
+
+They are generated automatically by [this script](https://github.com/socdataR/wonderapi/blob/master/R/make_codebook_vignette.R), which scrapes the CDC Wonder web interface form, and displays parameter names and values in human readable form.  The benefit of this method is the ability to quickly produce and update codebook vignettes that closely follow the web interface, with parameters appearing in the same order.  It also means, however, that the codebooks contain more information than the typical user needs to submit a query.  Most users will only need to group by variables (codes beginning with "B_"), measures (codes beginning with "M_"), and limiting variables (codes beginning with "V_"). 
 
 Although some of the parameter names are long and/or awkward, for the sake of consistency, we follow the CDC names exactly. **The only exception is that any content that appears in parentheses should be dropped.** For example, "Fertility Rate" can be substituted for "M_5", but "Fertility Rate (Census Region, Census Division, HHS Region, State, County, Year, Age of Mother, Race) cannot.
 
