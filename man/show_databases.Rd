@@ -7,7 +7,7 @@
 show_databases()
 }
 \description{
-displays available databases (also available here: LINK TO GITHUB)
+displays available databases (also available here: ADD LINK TO GITHUB)
 }
 \examples{
 show_databases()
