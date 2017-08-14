@@ -19,12 +19,12 @@
 # This function is designed to work for query results with varying number of columns per row
 
 getrows <- function(row, numcol) {
-    cells <- row %>% html_nodes("c")
+    cells <- row %>% rvest::html_nodes("c")
     len <- length(cells)
     # assuming all the labels ("l") are to the left of all
     # the values ("v")
-    l <- cells %>% html_attr("l") %>% na.omit()
-    v <- cells %>% html_attr("v") %>% na.omit()
+    l <- cells %>% rvest::html_attr("l") %>% na.omit()
+    v <- cells %>% rvest::html_attr("v") %>% na.omit()
     c(rep(NA, numcol - len), l, v)
 }
 
@@ -38,29 +38,29 @@ replaceNAs <- function (x) {
 }
 
 makequerytable <- function(query_result) {
-    allrows <- query_result %>% html_nodes("r")
-    numcol <-  allrows[1] %>% html_nodes("c") %>% length()
+    allrows <- query_result %>% rvest::html_nodes("r")
+    numcol <-  allrows[1] %>% rvest::html_nodes("c") %>% length()
     querytable <- allrows %>%
-    map(getrows, numcol) %>%
+    purrr::map(getrows, numcol) %>%
     sapply(c) %>% t() %>% data.frame() %>%
     replaceNAs()
 # (inspiration: https://stackoverflow.com/questions/4227223/r-list-to-data-frame)
 
 # determine column names (byvariables, then measures)
     byvariables <- query_result %>%
-        html_node("byvariables") %>%
-        html_nodes("variable") %>%
-        html_attr("code")
+        rvest::html_node("byvariables") %>%
+        rvest::html_nodes("variable") %>%
+        rvest::html_attr("code")
 
     measures <- query_result %>%
-        html_node("measure-selections") %>%
-        html_nodes("measure") %>%
-        html_attr("code")
+        rvest::html_node("measure-selections") %>%
+        rvest::html_nodes("measure") %>%
+        rvest::html_attr("code")
 
     colvars <- c(byvariables, measures)
-    lookup <- read_csv("D66lookuptable.csv")
+    lookup <- readr::read_csv("D66lookuptable.csv")
     # the lookup table is created by makelookuptable()
-    colvar_index <- map_int(colvars,
+    colvar_index <- purrr::map_int(colvars,
                         ~which(lookup$code == .x)[1])
     colnames(querytable) <- lookup$label[colvar_index]
 
