@@ -1,15 +1,16 @@
 ## ----setup, include = FALSE----------------------------------------------
-knitr::opts_chunk$set(cache = TRUE)
+knitr::opts_chunk$set(cache = TRUE, fig.width = 4, 
+                      fig.align = 'center')
 
 ## ---- message = FALSE----------------------------------------------------
 library(tidyverse)
 library(wonderapi)
-getData(TRUE, "Natality for 2007 - 2015") %>% head()
-getData(TRUE, "Detailed Mortality") %>% head()
+getData(TRUE, "Natality for 2007 - 2015") %>% head() %>% knitr::kable() 
+getData(TRUE, "Detailed Mortality") %>% head() %>% knitr::kable()
 
 ## ---- eval = FALSE-------------------------------------------------------
 #  mylist <- list(list("Group Results By", "Weekday"))
-#  getData(TRUE, "Detailed Mortality", mylist) %>% head()
+#  getData(TRUE, "Detailed Mortality", mylist) %>% head() %>% knitr::kable()
 
 ## ---- eval = FALSE-------------------------------------------------------
 #  ## not run
@@ -17,18 +18,6 @@ getData(TRUE, "Detailed Mortality") %>% head()
 #  mylist <- list(list("Group Results By", "Race"))
 #  mylist <- list(list("B_1", "Race"))
 #  mylist <- list(list("Group Results By", "D66.V2"))
-
-## ------------------------------------------------------------------------
-mylist <- list(list("Group Results By", "Marital Status"),
-               list("Average Age of Mother", "D66.M70"),
-               list("sdfasdf", "sadf"))
-mydata <- getData(TRUE, "Natality for 2007 - 2015", mylist)
-
-## ------------------------------------------------------------------------
-mylist <- list(list("Group Results By", "Marital Status"),
-               list("Average Age of Mother", "D66.M70"),
-               list("Year", "2015"))
-getData(TRUE, "Natality for 2007 - 2015", mylist)
 
 ## ------------------------------------------------------------------------
 mylist <- list(list("Group Results By", "Marital Status"),
@@ -63,21 +52,18 @@ ggplot(births, aes(Year, Births)) + geom_line() +
     ggtitle("U.S. Births by Year, 1995 - 2015")
 
 
-## ----eval = FALSE--------------------------------------------------------
-#  
-#  births <- getData(TRUE, "Natality for 2007 - 2015", mylist)
-#  ggplot(births, aes(Year, Births, color = Education, shape = Education)) +
-#      geom_line() + geom_point() + theme(legend.position = "bottom")
-
 ## ------------------------------------------------------------------------
-getData(TRUE, "Detailed Mortality", list(list("Suspect", "Mrs. Peacock")))
+getData(TRUE, "Detailed Mortality", 
+        list(list("Suspect", "Mrs. Peacock"))) %>%
+    head() %>% knitr::kable()
 
 ## ---- error = TRUE-------------------------------------------------------
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate (Census Region, Census Division, HHS Region, State, County, Year, Race)", ""))
-getData(TRUE, "Natality for 2007 - 2015", mylist) %>% head()
+getData(TRUE, "Natality for 2007 - 2015", mylist) %>% head() %>%
+    knitr::kable()
 
-## ---- out.width = "500px", echo = FALSE----------------------------------
+## ---- out.width = "432px", echo = FALSE----------------------------------
 knitr::include_graphics("NatalityError.png")
 
 ## ------------------------------------------------------------------------
