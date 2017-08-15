@@ -177,6 +177,7 @@ label_to_code <- function(list_with_labels, dbcode) {
     label_list_name <- paste0(dbcode, "labellookup")
     index <- which(names(label_list) == label_list_name)
     lookup <- label_list[[index]]
+    lookup$label <- gsub("\\s*\\([^\\)]+\\)", "", lookup$label)
     for (i in seq_along(list_with_labels)) {
         # taking first one in case there are multiple matches
         # (if no matches, [1] has the effect of turning nameindex to NA)
