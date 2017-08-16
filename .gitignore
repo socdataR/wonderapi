@@ -3,7 +3,6 @@
 .Rhistory
 .RData
 .Ruserdata
-inst/doc
 vignettes/*.R
 vignettes/ReadmeVignette_cache/
 readme.html
