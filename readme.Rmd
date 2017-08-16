@@ -1,13 +1,29 @@
 ---
-title: "wonderapi"
+title: "Read This Vignette"
 author: "Joyce Robbins"
-date: "8/9/2017"
+date: "`r Sys.Date()`"
 output: 
   html_document: 
     keep_md: yes
 ---
+
+```{r notestoself, eval = FALSE, echo = FALSE}
+# For Github readme, do the following:
+# 1. Save as readme.rmd in project root directory 
+# 2. Change output to:
+#   html_document: 
+#     keep_md: yes
+# 3. Delete Vignette: info
+# 4. Change Githubreadme to TRUE
+# DO NOT MAKE ANY OTHER CHANGES
+```
+
+```{r, echo = FALSE}
+githubreadme <- TRUE
+```
+  
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(fig.align = 'center')
+knitr::opts_chunk$set(cache = TRUE, fig.align = 'center')
 ```
 
 ## Introduction
@@ -20,16 +36,15 @@ The best way to become familiar with CDC Wonder API options is to use the web in
 Queries are composed of parameter name-value pairs.  Setting up a query without assistance is complex because the query must be submitted as an .xml file with a long list of required parameters, such as [here (Example 1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml) and [here (Example 2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml). The point of the package is to prevent your having to create requests in this form.  It relies on the `wondr` package which creates converts R lists to xml and makes the query. The value of this package is in easing the process of setting up the query and tidying the results:
 
 The `wonderapi::getData` function  
-* converts your human readable query requests to CDC codes
-* calls `wondr::make_query`  
+* converts user's parameter requests to codes
+* adds codes to default query list
+* calls `wondr::make_query`
 * processes the results  
 * returns tidy data frame  
 
 ## Codebooks
 
-Codebooks are provided as package vignettes to allow the user to conveniently look up the names and values of available parameters in each dataset.  The codebooks are an important contribution of the package and are not provided by the CDC.  They will be useful to anyone using the CDC Wonder API; they are not specific to this R package.  You can find them [here](.
-
-They are generated automatically by [this script](https://github.com/socdataR/wonderapi/blob/master/R/make_codebook_vignette.R), which scrapes the CDC Wonder web interface form, and displays parameter names and values in human readable form.  The benefit of this method is the ability to quickly produce and update codebook vignettes that closely follow the web interface, with parameters appearing in the same order.  It also means, however, that the codebooks contain more information than the typical user needs to submit a query.  Most users will only need to group by variables (codes beginning with "B_"), measures (codes beginning with "M_"), and limiting variables (codes beginning with "V_"). 
+Codebooks are provided as package vignettes to allow the user to conveniently look up the names and values of available parameters in each dataset.  The codebooks are an important contribution of the package and are not provided by the CDC.  They are generated automatically by [this script](https://github.com/socdataR/wonderapi/blob/develop/R/make_codebook_vignette.R), which scrapes the CDC Wonder web interface form, and displays parameter names and values in human readable form.  The benefit of this method is the ability to quickly produce and update codebook vignettes that closely follow the web interface, with parameters appearing in the same order.  It also means, however, that the codebooks contain more information than the typical user needs to submit a query.  Most users will only need to group by variables (codes beginning with "B_"), measures (codes beginning with "M_"), and limiting variables (codes beginning with "V_"). 
 
 Although some of the parameter names are long and/or awkward, for the sake of consistency, we follow the CDC names exactly. **The only exception is that any content that appears in parentheses should be dropped.** For example, "Fertility Rate" can be substituted for "M_5", but "Fertility Rate (Census Region, Census Division, HHS Region, State, County, Year, Age of Mother, Race) cannot.
 
@@ -37,13 +52,24 @@ Although some of the parameter names are long and/or awkward, for the sake of co
 
 To facilitate the process of designing a query list, this package relies on default query lists. Each default query is set to request a single Group By Results parameter, generally set to `"Year"`. It is set to request the measures that are listed as default measures on the web interface (i.e. `Births` for [the Births dataset](https://wonder.cdc.gov/controller/datarequest/D76); `Deaths`, `Population` and `Crude Rate` for the [Detailed Mortality dataset](https://wonder.cdc.gov/controller/datarequest/D76).) To see the default settings, perform a query request without specifying a querylist: 
 ### Disclaimer #1
-I did my best but there are no guarantees that the default lists are set up properly.
+I did by best but there are no guarantees that the default lists are set up properly.
 
 ```{r, message = FALSE}
 library(tidyverse)
 library(wonderapi)
-getData(TRUE, "Natality for 2007 - 2015") %>% head()
-getData(TRUE, "Detailed Mortality") %>% head()
+library(knitr)
+natdata <- getData(TRUE, "Natality for 2007 - 2015")
+dmdata <- getData(TRUE, "Detailed Mortality")
+```
+
+```{r eval=githubreadme, echo=githubreadme}
+natdata %>% head()
+dmdata %>% head()
+```
+
+```{r eval=!githubreadme, echo=!githubreadme}
+natdata %>% head() %>% kable()
+dmdata %>% head() %>% kable()
 ```
 
 ## Customized queries  
@@ -52,9 +78,17 @@ There are different types of parameters.  Most critical are Group Results By and
 
 To make changes to the default list, first create a list of lists, wherein each nested list is a name-value pair.  For example, the following changes the first (and currently only) "Group Results By" variable to Weekday:
 
-```{r, eval = FALSE}
+```{r}
 mylist <- list(list("Group Results By", "Weekday"))
-getData(TRUE, "Detailed Mortality", mylist) %>% head()
+mydata <- getData(TRUE, "Detailed Mortality", mylist)
+```
+
+```{r eval=githubreadme, echo=githubreadme}
+mydata %>% head()
+```
+
+```{r eval=!githubreadme, echo=!githubreadme}
+mydata %>% head() %>% kable()
 ```
 
 As the set up is slightly different depending on the parameter type, more details on setting up the name-value pairs by parameter types are provided below.
@@ -81,9 +115,15 @@ mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
 mydata <- getData(TRUE, "Natality for 2007 - 2015", mylist)
-mydata
 ```
 
+```{r eval=githubreadme, echo=githubreadme}
+mydata %>% head()
+```
+
+```{r eval=!githubreadme, echo=!githubreadme}
+mydata %>% head() %>% kable()
+```
 
 By returning a tidy data frame, the query results are ready to be plotted without any additional data manipulation:  
 
@@ -123,34 +163,56 @@ ggplot(births, aes(Year, Births)) + geom_line() +
 There are two basic types of errors: those caused by the `wonderapi` package and those due to constraints of the CDC Wonder API. Ideally, all errors would be caught before queries are made, however this is not possible since there are many quirky rules and it is beyond the scope of this package to check for all of them.  What the package does do is toss out any name-value pairs in which the _name_ is not recognized.  (Value checking will be added in the future.) For example:  
 
 ```{r}
-getData(TRUE, "Detailed Mortality", 
-        list(list("Suspect", "Mrs. Peacock"))) %>% head()
+mydata <- getData(TRUE, "Detailed Mortality", 
+        list(list("Suspect", "Mrs. Peacock")))
+```
+
+```{r eval=githubreadme, echo=githubreadme}
+mydata %>% head()
+```
+
+```{r eval=!githubreadme, echo=!githubreadme}
+mydata %>% head() %>% kable()
 ```
 
 It is common to get CDC errors, which look like this:
 ```{r, error = TRUE}
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate (Census Region, Census Division, HHS Region, State, County, Year, Race)", ""))
-getData(TRUE, "Natality for 2007 - 2015", mylist) %>% head()
+mydata <- getData(TRUE, "Natality for 2007 - 2015", mylist)
+```
+
+```{r eval=githubreadme, echo=githubreadme}
+mydata %>% head()
+```
+
+```{r eval=!githubreadme, echo=!githubreadme}
+mydata %>% head() %>% kable()
 ```
 
 If this occurs, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query.  If all goes well, you will receive more detailed information on what went wrong:  
 
-![](NatalityError.png)
+<center><img src="NatalityError.png" width="432px"/></center>
 
 We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Race" instead of "Education", it works:
 ```{r}
 mylist <- list(list("And By", "Race"), 
                list("Birth Rate (Census Region, Census Division, HHS Region, State, County, Year, Race)", ""))
-getData(TRUE, "Natality for 2007 - 2015", mylist) %>% head()
+mydata <- getData(TRUE, "Natality for 2007 - 2015", mylist)
 ```
 
+```{r eval=githubreadme, echo=githubreadme}
+mydata %>% head()
+```
+
+```{r eval=!githubreadme, echo=!githubreadme}
+mydata %>% head() %>% kable()
+```
 
 
 ```{r todolist, eval = FALSE, echo = FALSE}
 radio buttons
 note about advanced options
-() in labels
 set agree default to FALSE, move to end
 import versions
 ```
