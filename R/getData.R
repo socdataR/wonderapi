@@ -210,6 +210,7 @@ label_to_code <- function(list_with_labels, dbcode) {
         valueindex <- which(lookup$label ==
                                 list_with_labels[[i]][[2]])
         if (length(valueindex > 0)) {
+            valueindex <- valueindex[which.min(nchar(lookup$code[valueindex]))]
             list_with_codes[[i]][[2]] <- lookup$code[valueindex]
         }
     } # for loop
