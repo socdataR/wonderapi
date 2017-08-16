@@ -53,5 +53,4 @@ devtools::use_data(dbnamelookup, label_list, query_defaults,
 purrr::map(databases, make_codebook_vignette)
 devtools::build_vignettes()
 
-# Click Build & Reload to see in Help section (??)
 
