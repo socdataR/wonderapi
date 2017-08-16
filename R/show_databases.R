@@ -9,5 +9,7 @@
 #'
 
 show_databases <- function() {
-    dbnamelookup[,1:3]
+    dbs <- dbnamelookup[,c(1,3)]
+    colnames(dbs) <- c("label", "name")
+    dbs
 }
