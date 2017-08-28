@@ -13,7 +13,7 @@ vignette: >
 # For Github readme, do the following (delete as you go):
 # 1. Save as readme.Rmd in project root directory 
 # 2. Add:
-# Do not edit -- see vignettes/ReadmeVignette.Rmd
+# DON'T MAKE ANY CHANGES -- edit vignettes/ReadmeVignette.Rmd instead
 # 2. Change the title to wonderapi
 # 3. Change date manually
 # 4. Change output to:
@@ -23,7 +23,6 @@ vignette: >
 # 5. Delete Vignette: info
 # 6. Change Githubreadme to TRUE
 # 7. Delete library(knitr)
-# DO NOT MAKE ANY OTHER CHANGES
 ```
 
 ```{r, echo = FALSE}
@@ -37,8 +36,8 @@ knitr::opts_chunk$set(cache = TRUE, fig.width = 4, fig.height = 3,
 ```
 
 ```{r, message = FALSE}
-library(tidyverse)
 library(wonderapi)
+library(dplyr)
 library(knitr)
 ```
 
@@ -82,8 +81,10 @@ The best way to become familiar with CDC Wonder API options is to use the web in
 
 This package is not on CRAN. It can be installed from Github with the `devtools` package:
 ```{r, eval = FALSE}
-devtools::install_github("socdataR/wonderapi")
-```
+devtools::install_github("socdataR/wonderapi", build_vignettes = TRUE)
+``` 
+
+(The vignettes are an important component of the package as the codebooks are stored as vignettes, so be sure to include `build_vignettes = TRUE`.)  
 
 ## Getting started
 
@@ -189,12 +190,12 @@ getData(TRUE, "D66", mylist)
 By returning a tidy data frame, the query results are ready to be plotted without any additional data manipulation:  
 
 ```{r BirthsByMaritalStatus, fig.show='hold'}
-ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
+ggplot2::ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
     geom_line() + ggtitle("Births by Marital Status")
 ```
 
 ```{r AverageAgeofMother}
-ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
+ggplot2::ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
                    color = `Marital Status`)) + geom_line() +
     geom_point() + ylab("age (in years)") + 
     ggtitle("Average Age of Mother")
@@ -206,7 +207,7 @@ mydata2 <- mydata2 %>%
     select(-`Average Age of Mother`) %>% 
     spread(key = `Marital Status`, value = `Births`) %>% 
     mutate(Total = Married + Unmarried)
-ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
+ggplot2::ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
     geom_point() + ggtitle("Births to Unmarried Mothers") +
     ylab("Percent of Total Births")
 ```
@@ -218,17 +219,14 @@ Some of the datasets, such as the Births, are divided into multiple databases by
 births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
                 getData(TRUE, "Natality for 2007 - 2015"))
-ggplot(births, aes(Year, Births)) + geom_line() + 
+ggplot2::ggplot(births, aes(Year, Births)) + geom_line() + 
     ggtitle("U.S. Births by Year, 1995 - 2015")
 
 ```
 
 ### Errors
 
-The main source of errors is improper query requests. The `wonderapi` has limited ability to catch problems before the query request is made. It checks the list of parameter names 
-
-
-There are two basic types of errors: those caused by the `wonderapi` package and those due to constraints of the CDC Wonder API. Ideally, all errors would be caught before queries are made, however this is not possible since there are many quirky rules and it is beyond the scope of this package to check for all of them.  What the package does do is toss out any name-value pairs in which the _name_ is not recognized.  (Value checking will be added in the future.) For example:  
+The main source of errors is improper query requests. The `wonderapi` has limited ability to catch problems before the query request is made. It checks the list of parameter names and will reject the name-value pair if the _name_, either in code or human readable form, is not recognized. (Checking for _value_ problems will be added in the future.) Here is an example of an unrecognized parameter name:  
 
 ```{r}
 mydata3 <- getData(TRUE, "Detailed Mortality", 
@@ -243,18 +241,21 @@ mydata3 %>% head()
 mydata3 %>% head() %>% kable()
 ```
 
-It is common to get CDC errors, which look like this:
+Errors due to the constraints of the CDC Wonder API are more difficult to catch since there are many quirky rules and it is currently beyond the scope of this package to check for them. The following, for example, appears to be a reasonable request, but results in an error:  
+
+
 ```{r, error = TRUE}
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate", ""))
 mydata4 <- getData(TRUE, "Natality for 2007 - 2015", mylist)
 ```
 
-If this occurs, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query.  If all goes well, you will receive more detailed information on what went wrong:  
+In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong:  
 
 <center><img src="NatalityError.png" width="432px"/></center>
 
-We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Race" instead of "Education", it works:
+We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Race" instead of "Education", it works:  
+
 ```{r}
 mylist <- list(list("And By", "Race"), 
                list("Birth Rate", ""))
