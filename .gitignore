@@ -4,6 +4,7 @@
 .RData
 .Ruserdata
 vignettes/*.R
+vignettes/*.html
 vignettes/IntroVignette_cache/
 readme.html
 readme_cache/
