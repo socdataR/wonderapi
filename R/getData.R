@@ -24,8 +24,7 @@
 
 #' @export
 
-getData <- function(agree = FALSE, db = "D66", querylist = NULL,
-                    add = TRUE) {
+getData <- function(agree = FALSE, db = "D66", querylist = NULL, add = TRUE) {
     index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
     if (length(index) == 0) stop ("Database not recognized.")
     dbcode <- dbnamelookup$dbcode[index]
@@ -60,7 +59,7 @@ getrows <- function(thisrow, numcol) {
     cells <- thisrow %>% rvest::xml_nodes("c")
     # assuming all the labels ("l") are to the left of all
     # the values ("v")
-    l <- cells %>% xml2::xml_attr("l") %>% na.omit()
+    l <- cells %>% xml2::xml_attr("l") %>% stats::na.omit()
     v <- vector()
     for (i in seq_along(cells)) {
         v <- c(v, cells[i] %>% xml2::xml_attr("v"))
@@ -70,7 +69,7 @@ getrows <- function(thisrow, numcol) {
         }
     }
 
-    v <- v %>% na.omit()
+    v <- v %>% stats::na.omit()
     if (length(v) == 0) stop("length(v) = 0")
     # deal with percents -- need to take out % and divide by 100
     v[grepl("\\%", v)] <- as.numeric(gsub("\\%", "", v[grepl("\\%", v)]))/100
@@ -114,7 +113,7 @@ make_query_table <- function(query_result) {
         length(firstrow %>% xml2::xml_children()) # standard deviation
     # measures are children
     numl <- firstrow %>% xml2::xml_attr("l") %>%
-        na.omit() %>% length()
+        stats::na.omit() %>% length()
 
     querytable <- do.call(rbind, purrr::map(allrows, getrows,
                                      numcol)) %>%
@@ -168,7 +167,7 @@ make_query_table <- function(query_result) {
 list_2_tib <- function(listof2) {
     name <- listof2 %>% purrr::map(~.x[[1]]) %>% unlist()
     value <- listof2 %>% purrr::map(~.x[[2]]) %>% unlist()
-    tibble(name, value)
+    tibble::tibble(name, value)
 }
 
 # converts human readable names and (some) values to CDC variable names
