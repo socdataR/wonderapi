@@ -23,6 +23,6 @@ make_label_lookup <- function(db) {
         stringr::str_replace_all("\\(http.*\\)", "")
 
     labellookup <- data.frame(code = forfield, label = labeltext,
-                           stringsAsFactors = FALSE) %>% na.omit()
+                           stringsAsFactors = FALSE) %>% stats::na.omit()
     return(labellookup)
 }
