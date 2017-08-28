@@ -5,8 +5,9 @@ Version: 0.0.0.9000
 Authors@R: c(
   person("Joyce", "Robbins", email="joycerobbins1@gmail.com", role = "cre"),
   person("Elin", "Waring", email="elin.waring@gmail.com", role = "aut"))
-Description: Let us work with CDC Wonder API data
-    Interface with the federal data.
+Description: Simplifies the process of formulating CDC Wonder API query
+    requests and interpreting query responses in order to obtain federal
+    health data
 Depends:
     R (>= 3.1.2)
 Imports:
