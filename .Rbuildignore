@@ -1,7 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 \images
-vignettes/ReadmeVignette_cache/
+vignettes/IntroVignette_cache/
 readme.html
 readme_cache/
-testvignette*

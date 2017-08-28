@@ -8,7 +8,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-This codebook is provided to assist in determining how to set up a query to the CDC Wonder API. The best way to become familiar with the API is to use the web interface: https://wonder.cdc.gov.  Also, read the [Introduction to wonderapi](wonderapi.html) to learn about the basic sections of CDC Wonder query requests.
+This codebook is provided to assist in determining how to set up a query to the CDC Wonder API. The best way to become familiar with the API is to use the web interface: https://wonder.cdc.gov.  Also, read the [Intro to wonderapi vignette](IntroVignette.html) to learn about the basic sections of CDC Wonder query requests.
 
 **Parameter:**
 B_1 	 Group Results By 
@@ -16,13 +16,24 @@ B_1 	 Group Results By
 **Value(s):**
 ```
 		 D10.V22-level1 	 Census Region 
-		 D10.V22-level2 	 Census Division 
-		 D10.V37-level1 	 HHS Region 
-		 D10.V21-level1 	 State 
-		 D10.V21-level2 	 County 
-		 D10.V4 	 Hispanic Origin 
-		 D10.V2 	 Race 
-		 D10.V1 	 Age of Mother 
+		 D10.V22-level2 	 Census[[1]]
+NULL
+
+[[2]]
+NULL
+
+[[3]]
+NULL
+
+[[4]]
+NULL
+
+[[5]]
+NULL
+
+[1] "/Users/JoyceRobbins/wonderapi_0.0.0.9000.tar.gz"
+[1] "/Users/JoyceRobbins/wonderapi_0.0.0.9000.tar.gz"
+er 
 		 D10.V5 	 Education 
 		 D10.V20 	 Year 
 		 D10.V3 	 Gender 
