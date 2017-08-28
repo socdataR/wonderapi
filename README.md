@@ -2,9 +2,26 @@
 Joyce Robbins  
 2017-08-28  
 
-## Contents
-* [Overview](#Overview)
-
+<div id="TOC">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting started</a><ul>
+<li><a href="#codebooks">Codebooks</a></li>
+<li><a href="#default-query-lists-and-requests">Default query lists and requests</a></li>
+</ul></li>
+<li><a href="#creating-customized-queries">Creating customized queries</a><ul>
+<li><a href="#group-by-variables">Group By variables</a></li>
+<li><a href="#measures">Measures</a></li>
+<li><a href="#limiting-variables">Limiting variables</a></li>
+<li><a href="#plotting-query-results">Plotting query results</a></li>
+<li><a href="#combining-results-from-multiple-datasets">Combining results from multiple datasets</a></li>
+<li><a href="#errors">Errors</a></li>
+</ul></li>
+</ul>
+</div>
 
 
 ```r
