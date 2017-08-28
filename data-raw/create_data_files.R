@@ -38,12 +38,12 @@ databases <- dbnamelookup$dbcode
 
 # 3. add label lookup lists
 label_list <- purrr::map(databases, make_label_lookup) %>%
-    setNames(paste0(databases, "labellookup"))
+    stats::setNames(paste0(databases, "labellookup"))
 
 # 4. add query default lookup lists
 qd_to_add <- purrr::map_chr(databases, ~paste0(.x, "_Defaults.xml"))
 query_defaults <- purrr::map(qd_to_add, make_query_list) %>%
-    setNames(paste0(databases, "querydefaults"))
+    stats::setNames(paste0(databases, "querydefaults"))
 
 # 5. save as internal data (R/sysdata.rda)
 devtools::use_data(dbnamelookup, label_list, query_defaults,
