@@ -12,14 +12,12 @@ vignette: >
 ```{r notestoself, eval = FALSE, echo = FALSE}
 # For Github readme, do the following (delete as you go):
 # 1. Save as readme.Rmd in project root directory 
-# 2. Add:
-# DON'T MAKE ANY CHANGES -- edit vignettes/ReadmeVignette.Rmd instead
 # 2. Change the title to wonderapi
 # 3. Change date manually
 # 4. Change output to:
-#   html_document: 
+# output:
+#   rmarkdown::html_document: 
 #     keep_md: yes
-#     toc: true
 # 5. Delete Vignette: info
 # 6. Change Githubreadme to TRUE
 # 7. Delete library(knitr)
@@ -27,13 +25,37 @@ vignette: >
 
 ```{r, echo = FALSE}
 githubreadme <- FALSE
+# DON'T MAKE ANY CHANGES -- edit vignettes/ReadmeVignette.Rmd instead
 ```
+ 
+ 
   
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(cache = TRUE, fig.width = 4, fig.height = 3,
                       fig.align = 'center')
-
 ```
+
+<div id="TOC">
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#example">Example</a></li>
+</ul></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting started</a><ul>
+<li><a href="#codebooks">Codebooks</a></li>
+<li><a href="#default-query-lists-and-requests">Default query lists and requests</a></li>
+</ul></li>
+<li><a href="#creating-customized-queries">Creating customized queries</a><ul>
+<li><a href="#group-by-variables">Group By variables</a></li>
+<li><a href="#measures">Measures</a></li>
+<li><a href="#limiting-variables">Limiting variables</a></li>
+<li><a href="#plotting-query-results">Plotting query results</a></li>
+<li><a href="#combining-results-from-multiple-datasets">Combining results from multiple datasets</a></li>
+<li><a href="#errors">Errors</a></li>
+</ul></li>
+</ul>
+</div>
+
 
 ```{r, message = FALSE}
 library(dplyr)
