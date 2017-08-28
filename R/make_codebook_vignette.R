@@ -9,7 +9,6 @@ make_codebook_vignette <- function(dbcode = "D66") {
     # find form, organize the info
     webform <- webdata %>% rvest::html_form()
     form_df <- purrr::map_df(webform[[3]]$fields, unpack)
-
     form_df <- form_df %>%
         dplyr::filter(!(type %in% c("button", "submit", "hidden"))) %>%
         dplyr::filter(!(stringr::str_detect(name, "O_") & type == "checkbox")) %>%
