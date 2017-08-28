@@ -36,10 +36,11 @@ knitr::opts_chunk$set(cache = TRUE, fig.width = 4, fig.height = 3,
 ```
 
 ```{r, message = FALSE}
-library(wonderapi)
 library(dplyr)
-library(knitr)
 library(ggplot2)
+library(knitr)
+library(tidyr)
+library(wonderapi)
 ```
 
 ## Overview
@@ -270,6 +271,4 @@ mydata5 %>% head()
 ```{r eval=!githubreadme, echo=!githubreadme}
 mydata5 %>% head() %>% kable()
 ```
-
-
 
