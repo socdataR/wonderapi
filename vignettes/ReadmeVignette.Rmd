@@ -39,6 +39,7 @@ knitr::opts_chunk$set(cache = TRUE, fig.width = 4, fig.height = 3,
 library(wonderapi)
 library(dplyr)
 library(knitr)
+library(ggplot2)
 ```
 
 ## Overview
@@ -190,12 +191,12 @@ getData(TRUE, "D66", mylist)
 By returning a tidy data frame, the query results are ready to be plotted without any additional data manipulation:  
 
 ```{r BirthsByMaritalStatus, fig.show='hold'}
-ggplot2::ggplot(mydata2, ggplot2::aes(x = Year, y = Births, color = `Marital Status`)) +
+ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
     geom_line() + ggtitle("Births by Marital Status")
 ```
 
 ```{r AverageAgeofMother}
-ggplot2::ggplot(mydata2, ggplot2::aes(x = Year, y = `Average Age of Mother`,
+ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
                    color = `Marital Status`)) + geom_line() +
     geom_point() + ylab("age (in years)") + 
     ggtitle("Average Age of Mother")
@@ -207,7 +208,7 @@ mydata2 <- mydata2 %>%
     select(-`Average Age of Mother`) %>% 
     spread(key = `Marital Status`, value = `Births`) %>% 
     mutate(Total = Married + Unmarried)
-ggplot2::ggplot(mydata2, ggplot2::aes(x = Year, y = Unmarried / Total)) + geom_line() +
+ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
     geom_point() + ggtitle("Births to Unmarried Mothers") +
     ylab("Percent of Total Births")
 ```
@@ -219,7 +220,7 @@ Some of the datasets, such as the Births, are divided into multiple databases by
 births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
                 getData(TRUE, "Natality for 2007 - 2015"))
-ggplot2::ggplot(births, ggplot2::aes(Year, Births)) + geom_line() + 
+ggplot(births, aes(Year, Births)) + geom_line() + 
     ggtitle("U.S. Births by Year, 1995 - 2015")
 
 ```
