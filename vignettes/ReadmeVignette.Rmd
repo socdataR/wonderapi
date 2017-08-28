@@ -12,6 +12,8 @@ vignette: >
 ```{r notestoself, eval = FALSE, echo = FALSE}
 # For Github readme, do the following (delete as you go):
 # 1. Save as readme.Rmd in project root directory 
+# 2. Add:
+# Do not edit -- see vignettes/ReadmeVignette.Rmd
 # 2. Change the title to wonderapi
 # 3. Change date manually
 # 4. Change output to:
@@ -20,6 +22,7 @@ vignette: >
 #     toc: true
 # 5. Delete Vignette: info
 # 6. Change Githubreadme to TRUE
+# 7. Delete library(knitr)
 # DO NOT MAKE ANY OTHER CHANGES
 ```
 
@@ -185,12 +188,12 @@ getData(TRUE, "D66", mylist)
 
 By returning a tidy data frame, the query results are ready to be plotted without any additional data manipulation:  
 
-```{r, fig.show='hold'}
+```{r BirthsByMaritalStatus, fig.show='hold'}
 ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
     geom_line() + ggtitle("Births by Marital Status")
 ```
 
-```{r}
+```{r AverageAgeofMother}
 ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
                    color = `Marital Status`)) + geom_line() +
     geom_point() + ylab("age (in years)") + 
@@ -198,7 +201,7 @@ ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
 ```
 
 
-```{r}
+```{r BirthstoUnmarriedMothers}
 mydata2 <- mydata2 %>% 
     select(-`Average Age of Mother`) %>% 
     spread(key = `Marital Status`, value = `Births`) %>% 
@@ -211,7 +214,7 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
 ### Combining results from multiple datasets
 Some of the datasets, such as the Births, are divided into multiple databases by time period. `wonderapi` makes it easy to combine the data into one data frame. (Care needs to be taken as the variables are not identical in all. For example, the 1995 - 2002 dataset does not have any measure options; it only returns number of births. To find out what's available, see the codebooks (**`>??codebook`**) and crosscheck with the [CDC Wonder API web interface](https://wonder.cdc.gov).)  
 
-```{r}
+```{r BirthsbyYear1995to2015}
 births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
                 getData(TRUE, "Natality for 2007 - 2015"))
@@ -221,6 +224,10 @@ ggplot(births, aes(Year, Births)) + geom_line() +
 ```
 
 ### Errors
+
+The main source of errors is improper query requests. The `wonderapi` has limited ability to catch problems before the query request is made. It checks the list of parameter names 
+
+
 There are two basic types of errors: those caused by the `wonderapi` package and those due to constraints of the CDC Wonder API. Ideally, all errors would be caught before queries are made, however this is not possible since there are many quirky rules and it is beyond the scope of this package to check for all of them.  What the package does do is toss out any name-value pairs in which the _name_ is not recognized.  (Value checking will be added in the future.) For example:  
 
 ```{r}
