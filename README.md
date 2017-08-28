@@ -1,16 +1,16 @@
 # wonderapi
 Joyce Robbins  
-2017-08-16  
-
+2017-08-28  
 
   
 
 
 
 ```r
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
 library(wonderapi)
-library(knitr)
 ```
 
 ## Overview
@@ -78,8 +78,10 @@ The best way to become familiar with CDC Wonder API options is to use the web in
 This package is not on CRAN. It can be installed from Github with the `devtools` package:
 
 ```r
-devtools::install_github("socdataR/wonderapi")
+devtools::install_github("socdataR/wonderapi", build_vignettes = TRUE)
 ```
+
+(The vignettes are an important component of the package as the codebooks are stored as vignettes, so be sure to include `build_vignettes = TRUE`.)  
 
 ## Getting started
 
@@ -255,7 +257,7 @@ ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
     geom_line() + ggtitle("Births by Marital Status")
 ```
 
-<img src="readme_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-html/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
 
 
 ```r
@@ -265,7 +267,7 @@ ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
     ggtitle("Average Age of Mother")
 ```
 
-<img src="readme_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-html/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
 
 
 
@@ -279,7 +281,7 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
     ylab("Percent of Total Births")
 ```
 
-<img src="readme_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-html/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
 
 ### Combining results from multiple datasets
 Some of the datasets, such as the Births, are divided into multiple databases by time period. `wonderapi` makes it easy to combine the data into one data frame. (Care needs to be taken as the variables are not identical in all. For example, the 1995 - 2002 dataset does not have any measure options; it only returns number of births. To find out what's available, see the codebooks (**`>??codebook`**) and crosscheck with the [CDC Wonder API web interface](https://wonder.cdc.gov).)  
@@ -293,10 +295,11 @@ ggplot(births, aes(Year, Births)) + geom_line() +
     ggtitle("U.S. Births by Year, 1995 - 2015")
 ```
 
-<img src="readme_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-html/BirthsbyYear1995to2015-1.png" style="display: block; margin: auto;" />
 
 ### Errors
-There are two basic types of errors: those caused by the `wonderapi` package and those due to constraints of the CDC Wonder API. Ideally, all errors would be caught before queries are made, however this is not possible since there are many quirky rules and it is beyond the scope of this package to check for all of them.  What the package does do is toss out any name-value pairs in which the _name_ is not recognized.  (Value checking will be added in the future.) For example:  
+
+The main source of errors is improper query requests. The `wonderapi` has limited ability to catch problems before the query request is made. It checks the list of parameter names and will reject the name-value pair if the _name_, either in code or human readable form, is not recognized. (Checking for _value_ problems will be added in the future.) Here is an example of an unrecognized parameter name:  
 
 
 ```r
@@ -327,7 +330,9 @@ mydata3 %>% head()
 
 
 
-It is common to get CDC errors, which look like this:
+Errors due to the constraints of the CDC Wonder API are more difficult to catch since there are many quirky rules and it is currently beyond the scope of this package to check for them. The following, for example, appears to be a reasonable request, but results in an error:  
+
+
 
 ```r
 mylist <- list(list("And By", "Education"), 
@@ -339,11 +344,12 @@ mydata4 <- getData(TRUE, "Natality for 2007 - 2015", mylist)
 ## Error in wondr::make_query(querylist, dbcode): Internal Server Error (HTTP 500).
 ```
 
-If this occurs, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query.  If all goes well, you will receive more detailed information on what went wrong:  
+In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong:  
 
 <center><img src="NatalityError.png" width="432px"/></center>
 
-We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Race" instead of "Education", it works:
+We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Race" instead of "Education", it works:  
+
 
 ```r
 mylist <- list(list("And By", "Race"), 
@@ -368,8 +374,6 @@ mydata5 %>% head()
 ## 6  2008        Asian or Pacific Islander  253185           16094699
 ## # ... with 1 more variables: `Birth Rate` <dbl>
 ```
-
-
 
 
 
