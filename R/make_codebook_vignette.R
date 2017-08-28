@@ -27,7 +27,7 @@ make_codebook_vignette <- function(dbcode = "D66") {
     cat("  %\\VignetteEngine{knitr::rmarkdown}\n")
     cat("  %\\VignetteEncoding{UTF-8}\n")
     cat("---\n")
-    cat("This codebook is provided to assist in determining how to set up a query to the CDC Wonder API. The best way to become familiar with the API is to use the web interface: https://wonder.cdc.gov.  Also, read the [Intro to wonderapi vignette](IntroVignette.html) to learn about the basic sections of CDC Wonder query requests.\n\n")
+    cat("This codebook is provided to assist in determining how to set up a query to the CDC Wonder API. The best way to become familiar with the API is to use the web interface: https://wonder.cdc.gov.  Also, read the [<code>wonderapi</code> vignette](IntroVignette.html) to learn about the basic sections of CDC Wonder query requests.\n\n")
     apply(form_df, 1, process_item)
     sink()
 }

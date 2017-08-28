@@ -1,5 +1,5 @@
 ---
-title: "Readme Vignette"
+title: "wonderapi"
 author: "Joyce Robbins"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -12,20 +12,19 @@ vignette: >
 ```{r notestoself, eval = FALSE, echo = FALSE}
 # For Github readme, do the following (delete as you go):
 # 1. Save as readme.Rmd in project root directory 
-# 2. Change the title to wonderapi
-# 3. Change date manually
-# 4. Change output to:
+# 2. Change date manually
+# 3. Change output to:
 # output:
 #   rmarkdown::html_document: 
 #     keep_md: yes
-# 5. Delete Vignette: info
-# 6. Change Githubreadme to TRUE
-# 7. Delete library(knitr)
+# 4. Delete Vignette: info
+# 5. Change Githubreadme to TRUE
+# 6. Delete library(knitr)
 ```
 
 ```{r, echo = FALSE}
 githubreadme <- FALSE
-# DON'T MAKE ANY CHANGES -- edit vignettes/ReadmeVignette.Rmd instead
+# DON'T MAKE ANY CHANGES -- edit vignettes/IntroVignette.Rmd instead
 ```
  
  
