@@ -9,7 +9,7 @@ Description: Simplifies the process of formulating CDC Wonder API query
     requests and interpreting query responses in order to obtain federal
     health data
 Depends:
-    R (>= 3.1.2)
+    R (>= 3.3.2)
 Imports:
     dplyr,
     magrittr,
