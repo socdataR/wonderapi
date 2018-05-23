@@ -30,7 +30,7 @@
 	</parameter>
 	<parameter>
 		<name>F_D76.V2</name>
-		<value>C00-D48</value>
+		<value>*All*</value>
 	</parameter>
 	<parameter>
 		<name>F_D76.V27</name>
@@ -50,7 +50,7 @@
 	</parameter>
 	<parameter>
 		<name>I_D76.V2</name>
-		<value>C00-D48 (Neoplasms)</value>
+		<value>*All*</value>
 	</parameter>
 	<parameter>
 		<name>I_D76.V27</name>
