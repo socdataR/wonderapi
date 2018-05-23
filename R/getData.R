@@ -236,4 +236,3 @@ combine_lists <- function(list1, list2) {
     } # for loop
     combined_list
 } # end of function
-

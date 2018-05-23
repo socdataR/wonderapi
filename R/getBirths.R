@@ -5,17 +5,29 @@
 #' @param ... list of words to indicate the group_by variables desired in the query. Words will be interpreted according to the first letter (not case-sensitive):
 #'
 #'     A = "Age of Mother Year"
-#'     B = "Birth Weight 100 gram increments"
+#'
+#'     B = "Birth Weight 100 gram   increments"
+#'
 #'     D = "Delivery Method"
+#'
 #'     E = "Education"
+#'
 #'     G = "Gender"
+#'
 #'     H = "Hispanic Origin"
+#'
 #'     M = "Month"
+#'
 #'     O = "Live Birth Order"
+#'
 #'     P = "Birthplace"
+#'
 #'     R = "Race"
+#'
 #'     S = "Marital Status"
+#'
 #'     P = "Month Prenatal Care Began"
+#'
 #'     W = "Weekday"
 #'
 #'
@@ -32,28 +44,6 @@
 #'
 
 #' @export
-
-
-convert_byvar <- function(user_text) {
-  user_text <- as.character(user_text)
-  correct_text <- switch(toupper(substr(user_text, 1, 1)),
-         A = "Age of Mother Year",
-         B = "Birth Weight 100 gram increments",
-         D = "Delivery Method",
-         E = "Education",
-         G = "Gender",
-         H = "Hispanic Origin",
-         M = "Month",
-         O = "Live Birth Order",
-         P = "Birthplace",
-         R = "Race",
-         S = "Marital Status",
-         P = "Month Prenatal Care Began",
-         W = "Weekday")
-  if (is.null(correct_text)) message(paste("Do not know what to do with", user_text, "...skipping."))
-  return(correct_text)
-}
-
 
 getBirths <- function(...) {
   l <- rlang::enexprs(...) %>%
@@ -76,3 +66,23 @@ getBirths <- function(...) {
 }
 
 
+
+convert_byvar <- function(user_text) {
+  user_text <- as.character(user_text)
+  correct_text <- switch(toupper(substr(user_text, 1, 1)),
+                         A = "Age of Mother Year",
+                         B = "Birth Weight 100 gram increments",
+                         D = "Delivery Method",
+                         E = "Education",
+                         G = "Gender",
+                         H = "Hispanic Origin",
+                         M = "Month",
+                         O = "Live Birth Order",
+                         P = "Birthplace",
+                         R = "Race",
+                         S = "Marital Status",
+                         P = "Month Prenatal Care Began",
+                         W = "Weekday")
+  if (is.null(correct_text)) message(paste("Do not know what to do with", user_text, "...skipping."))
+  return(correct_text)
+}
