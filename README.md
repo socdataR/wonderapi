@@ -104,10 +104,7 @@ from multiple datasets</a>
 </div>
 
 ``` r
-library(dplyr)
-library(ggplot2)
-library(knitr)
-library(tidyr)
+library(tidyverse)
 library(wonderapi)
 ```
 
@@ -495,11 +492,11 @@ well, you will receive more detailed information on what went wrong:
 </center>
 
 We learn that we can’t include “Education” if we request the “Birth
-Rate” measure. If we try again with “Single Race” instead of
+Rate” measure. If we try again with “Bridged Race” instead of
 “Education”, it works:
 
 ``` r
-mylist <- list(list("And By", "Single Race"), 
+mylist <- list(list("And By", "Bridged Race"), 
                list("Birth Rate", ""))
 mydata5 <- getData(TRUE, "Natality for 2007 - 2016", mylist)
 ```
@@ -509,11 +506,11 @@ mydata5 %>% head()
 ```
 
     ## # A tibble: 6 x 5
-    ##    Year `Single Race`  Births `Total Population` `Birth Rate` 
-    ##   <dbl> <chr>           <dbl> <chr>              <chr>        
-    ## 1  2007 Not Available 4316233 Not Available      Not Available
-    ## 2  2008 Not Available 4247694 Not Available      Not Available
-    ## 3  2009 Not Available 4130665 Not Available      Not Available
-    ## 4  2010 Not Available 3999386 Not Available      Not Available
-    ## 5  2011 Not Available 3953590 Not Available      Not Available
-    ## 6  2012 Not Available 3952841 Not Available      Not Available
+    ##    Year `Bridged Race`               Births `Total Populatio… `Birth Rate`
+    ##   <dbl> <chr>                         <dbl>             <dbl>        <dbl>
+    ## 1  2007 American Indian or Alaska …   49443           3829898         12.9
+    ## 2  2007 Asian or Pacific Islander    254488          15559373         16.4
+    ## 3  2007 Black or African American    675676          40451108         16.7
+    ## 4  2007 White                       3336626         241390828         13.8
+    ## 5  2008 American Indian or Alaska …   49537           3983929         12.4
+    ## 6  2008 Asian or Pacific Islander    253185          16094699         15.7

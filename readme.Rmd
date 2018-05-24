@@ -40,10 +40,7 @@ knitr::opts_chunk$set(fig.width = 4, fig.height = 3,
 
 
 ```{r, message = FALSE}
-library(dplyr)
-library(ggplot2)
-library(knitr)
-library(tidyr)
+library(tidyverse)
 library(wonderapi)
 ```
 
@@ -260,10 +257,10 @@ In this case, the best approach is to visit the [CDC Wonder API web interface](h
 
 <center><img src="NatalityError.png" width="432px"/></center>
 
-We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Single Race" instead of "Education", it works:  
+We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Bridged Race" instead of "Education", it works:  
 
 ```{r}
-mylist <- list(list("And By", "Single Race"), 
+mylist <- list(list("And By", "Bridged Race"), 
                list("Birth Rate", ""))
 mydata5 <- getData(TRUE, "Natality for 2007 - 2016", mylist)
 ```
