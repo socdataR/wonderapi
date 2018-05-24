@@ -40,7 +40,8 @@ B_1 	 Group Results By
 		 D76.V12 	 ICD-10 130 Cause List (Infants) 
 		 D76.V22 	 Injury Intent 
 		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
-		 D76.V25 	 Drug/Alcohol Induced Causes 
+		 D76.V25-level1 	 Drug/Alcohol Induced 
+		 D76.V25-level2 	 Drug/Alcohol Induced Cause 
 ```
 
 **Parameter:**
@@ -74,7 +75,8 @@ B_2 	 And By
 		 D76.V12 	 ICD-10 130 Cause List (Infants) 
 		 D76.V22 	 Injury Intent 
 		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
-		 D76.V25 	 Drug/Alcohol Induced Causes 
+		 D76.V25-level1 	 Drug/Alcohol Induced 
+		 D76.V25-level2 	 Drug/Alcohol Induced Cause 
 ```
 
 **Parameter:**
@@ -108,7 +110,8 @@ B_3 	 And By
 		 D76.V12 	 ICD-10 130 Cause List (Infants) 
 		 D76.V22 	 Injury Intent 
 		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
-		 D76.V25 	 Drug/Alcohol Induced Causes 
+		 D76.V25-level1 	 Drug/Alcohol Induced 
+		 D76.V25-level2 	 Drug/Alcohol Induced Cause 
 ```
 
 **Parameter:**
@@ -142,7 +145,8 @@ B_4 	 And By
 		 D76.V12 	 ICD-10 130 Cause List (Infants) 
 		 D76.V22 	 Injury Intent 
 		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
-		 D76.V25 	 Drug/Alcohol Induced Causes 
+		 D76.V25-level1 	 Drug/Alcohol Induced 
+		 D76.V25-level2 	 Drug/Alcohol Induced Cause 
 ```
 
 **Parameter:**
@@ -176,7 +180,8 @@ B_5 	 And By
 		 D76.V12 	 ICD-10 130 Cause List (Infants) 
 		 D76.V22 	 Injury Intent 
 		 D76.V23 	 Injury Mechanism & All Other Leading Causes 
-		 D76.V25 	 Drug/Alcohol Induced Causes 
+		 D76.V25-level1 	 Drug/Alcohol Induced 
+		 D76.V25-level2 	 Drug/Alcohol Induced Cause 
 ```
 
 **Parameter:**
@@ -245,6 +250,7 @@ VM_D76.M6_D76.V1_S
 		 2013 	  2013  
 		 2014 	  2014  
 		 2015 	  2015  
+		 2016 	  2016  
 ```
 
 **Parameter:**
@@ -677,6 +683,7 @@ F_D76.V1 	 Selected Items
 		 2013 	 + 2013  (2013)   
 		 2014 	 + 2014  (2014)   
 		 2015 	 + 2015  (2015)   
+		 2016 	 + 2016  (2016)   
 ```
 
 **Parameter:**
@@ -1178,14 +1185,22 @@ V_D76.V23 	 Injury Mechanism & All Other Leading Causes
 ```
 
 **Parameter:**
-V_D76.V25 	 Drug/Alcohol Induced Causes 
+V_D76.V25 	 Selected Items 
+
+**Parameter:**
+F_D76.V25 	 Selected Items 
 
 **Value(s):**
 ```
-		 *All* 	  All Causes of Death  
-		 D 	  Drug-Induced Causes  
-		 A 	  Alcohol-Induced Causes  
-		 O 	  All Other Causes  
+		 *All* 	    All Causes of Death 
+		 D 	 -  Drug-induced causes   
+		 D1 	          Drug poisonings (overdose) Unintentional (X40-X44)   
+		 D2 	          Drug poisonings (overdose) Suicide (X60-X64)   
+		 D3 	          Drug poisonings (overdose) Homicide (X85)   
+		 D4 	          Drug poisonings (overdose) Undetermined (Y10-Y14)   
+		 D9 	          All other drug-induced causes   
+		 A 	 + Alcohol-induced causes   
+		 O 	 + All other non-drug and non-alcohol causes   
 ```
 
 **Parameter:**

@@ -1,10 +1,10 @@
 ---
-title: " D66 Natality for 2007 - 2015 Dataset Codebook"
+title: " D66 Natality for 2007 - 2016 Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D66 Natality for 2007 - 2015 }
+  %\VignetteIndexEntry{ D66 Natality for 2007 - 2016 }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,8 +20,10 @@ B_1 	 Group Results By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
+		 D66.V4 	 Expanded Hispanic Origin 
+		 D66.V43 	 Hispanic Origin 
+		 D66.V2 	 Bridged Race 
+		 D66.V42 	 Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
@@ -65,8 +67,10 @@ B_2 	 And By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
+		 D66.V4 	 Expanded Hispanic Origin 
+		 D66.V43 	 Hispanic Origin 
+		 D66.V2 	 Bridged Race 
+		 D66.V42 	 Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
@@ -110,8 +114,10 @@ B_3 	 And By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
+		 D66.V4 	 Expanded Hispanic Origin 
+		 D66.V43 	 Hispanic Origin 
+		 D66.V2 	 Bridged Race 
+		 D66.V42 	 Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
@@ -155,8 +161,10 @@ B_4 	 And By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
+		 D66.V4 	 Expanded Hispanic Origin 
+		 D66.V43 	 Hispanic Origin 
+		 D66.V2 	 Bridged Race 
+		 D66.V42 	 Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
@@ -200,8 +208,10 @@ B_5 	 And By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Hispanic Origin 
-		 D66.V2 	 Race 
+		 D66.V4 	 Expanded Hispanic Origin 
+		 D66.V43 	 Hispanic Origin 
+		 D66.V2 	 Bridged Race 
+		 D66.V42 	 Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
@@ -238,10 +248,10 @@ B_5 	 And By
 M_1 	 Births 
 
 **Parameter:**
-M_3 	 Birth Rate (Census Region, Census Division, HHS Region, State, County, Year, Race) 
+M_3 	 Birth Rate 
 
 **Parameter:**
-M_5 	 Fertility Rate (Census Region, Census Division, HHS Region, State, County, Year, Age of Mother, Race) 
+M_5 	 Fertility Rate 
 
 **Parameter:**
 M_11 	 Percent of Total Births 
@@ -395,46 +405,6 @@ F_D66.V37 	 Selected Items
 ```
 
 **Parameter:**
-V_D66.V4 	 Hispanic Origin 
-
-**Value(s):**
-```
-		 *All* 	  All Origins  
-		 2148-5 	  Mexican  
-		 2180-8 	  Puerto Rican  
-		 2182-4 	  Cuban  
-		 4 	  Central or South American  
-		 5 	  Other and Unknown Hispanic  
-		 6 	  Non-Hispanic White  
-		 7 	  Non-Hispanic Black  
-		 8 	  Non-Hispanic other races  
-		 9 	  Origin unknown or not stated  
-```
-
-**Parameter:**
-V_D66.V2 	 Race 
-
-**Value(s):**
-```
-		 *All* 	  All Races  
-		 1002-5 	  American Indian or Alaska Native  
-		 A-PI 	  Asian or Pacific Islander  
-		 2054-5 	  Black or African American  
-		 2106-3 	  White  
-```
-
-**Parameter:**
-V_D66.V27 	 Marital Status 
-
-**Value(s):**
-```
-		 *All* 	  All  
-		 1 	  Married  
-		 2 	  Unmarried  
-		 9 	  Unknown or not Stated  
-```
-
-**Parameter:**
 O_age 
 **Values:**	 D66.V1 	 Age of Mother 9 
 
@@ -572,6 +542,70 @@ V_D66.V5 	 Education
 ```
 
 **Parameter:**
+V_D66.V27 	 Marital Status 
+
+**Value(s):**
+```
+		 *All* 	  All  
+		 1 	  Married  
+		 2 	  Unmarried  
+		 9 	  Unknown or not Stated  
+```
+
+**Parameter:**
+V_D66.V43 	 Hispanic Origin 
+
+**Value(s):**
+```
+		 *All* 	  All Hispanicity  
+		 2135-2 	  Hispanic or Latino  
+		 2186-5 	  Not Hispanic or Latino  
+		 9 	  Hispanic origin not stated  
+```
+
+**Parameter:**
+V_D66.V4 	 Expanded Hispanic Origin 
+
+**Value(s):**
+```
+		 *All* 	  All Origins  
+		 2148-5 	  Mexican  
+		 2180-8 	  Puerto Rican  
+		 2182-4 	  Cuban  
+		 4 	  Central or South American  
+		 5 	  Other and Unknown Hispanic  
+		 0 	  Non-Hispanic  
+		 9 	  Origin unknown or not stated  
+```
+
+**Parameter:**
+V_D66.V42 	 Single Race 
+
+**Value(s):**
+```
+		 *All* 	  All Races  
+		 1002-5 	  American Indian or Alaska Native  
+		 A 	  Asian  
+		 2054-5 	  Black or African American  
+		 NHOPI 	  Native Hawaiian or Other Pacific Islander  
+		 2106-3 	  White  
+		 M 	  More than one race  
+		 NA 	  Not Available  
+```
+
+**Parameter:**
+V_D66.V2 	 Bridged Race 
+
+**Value(s):**
+```
+		 *All* 	  All Races  
+		 1002-5 	  American Indian or Alaska Native  
+		 A-PI 	  Asian or Pacific Islander  
+		 2054-5 	  Black or African American  
+		 2106-3 	  White  
+```
+
+**Parameter:**
 V_D66.V20 	 Year 
 
 **Value(s):**
@@ -586,6 +620,7 @@ V_D66.V20 	 Year
 		 2013 	  2013  
 		 2014 	  2014  
 		 2015 	  2015  
+		 2016 	  2016  
 ```
 
 **Parameter:**

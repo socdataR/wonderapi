@@ -14,7 +14,7 @@ library(wondr)
 # 1. test new dataset to be added
 devtools::load_all()
 # temporarily bypass dbnamelookup in sysdata.rda
-dbnamelookup <- read_csv("data-raw/dbnamelookup.csv")
+dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")
 dbcode <- "D104"
 make_label_lookup(dbcode)
 
@@ -24,10 +24,10 @@ agreelist <- list(parameter = list(
     name = "accept_datause_restrictions",
     value = "true"))
 
-c(agreelist, ql) %>% make_query(dbcode)
+c(agreelist, ql) %>% wondr::make_query(dbcode)
 
 # 2. if that all works, recreate all files and save to sysdata.rda
-dbnamelookup <- read_csv("data-raw/dbnamelookup.csv")
+dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")
 
 # since package needs dbnamelookup, do the following before continuing:
 devtools::use_data(dbnamelookup, internal = TRUE, overwrite = TRUE)
