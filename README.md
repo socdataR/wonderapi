@@ -110,6 +110,8 @@ library(wonderapi)
 
 ## Overview
 
+**Warning: You cannot access subnational data (i.e. group by Region, Division, State, County, etc.) through the API, due to [vital statistics policy for public data sharing](https://wonder.cdc.gov/wonder/help/WONDER-API.html#More). If you need the geographical variables, use the [CDC Wonder Web Interface](https://wonder.cdc.gov/).**
+
 This package makes it easier to use the CDC Wonder API. It does so by
 employing hidden default query lists and lookup tables, allowing users
 to focus only on the variables they’re interested in obtaining, and to
