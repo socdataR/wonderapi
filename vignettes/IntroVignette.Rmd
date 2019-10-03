@@ -13,10 +13,7 @@ vignette: >
 # For Github readme, do the following (delete as you go):
 # 1. Save as readme.Rmd in project root directory 
 # 2. Change date manually
-# 3. Change output to:
-# output:
-#   rmarkdown::html_document: 
-#     keep_md: yes
+# 3. Change output to: github_document
 # 4. Delete Vignette: info
 # 5. Change Githubreadme to TRUE
 # 6. Delete library(knitr)
