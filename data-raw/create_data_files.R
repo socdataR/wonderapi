@@ -46,7 +46,7 @@ query_defaults <- purrr::map(qd_to_add, make_query_list) %>%
     stats::setNames(paste0(databases, "querydefaults"))
 
 # 5. save as internal data (R/sysdata.rda)
-devtools::use_data(dbnamelookup, label_list, query_defaults,
+usethis::use_data(dbnamelookup, label_list, query_defaults,
                    internal = TRUE, overwrite = TRUE)
 
 # 6. make codebook vignettes
