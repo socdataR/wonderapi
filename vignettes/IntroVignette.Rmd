@@ -128,14 +128,14 @@ Although some of the parameter names are long and/or awkward, for the sake of co
 To facilitate the process of designing a query list, this package relies on default query lists. Each default query is set to request a single Group By Results parameter, generally set to `"Year"`. It is set to request the Measures that are listed as default Measures on the web interface (i.e. `Births` for [the Births dataset](https://wonder.cdc.gov/controller/datarequest/D76); `Deaths`, `Population` and `Crude Rate` for the [Detailed Mortality dataset](https://wonder.cdc.gov/controller/datarequest/D76).) To see the default settings, perform a query request without specifying a querylist: 
 
 ```{r eval=githubreadme, echo=githubreadme}
-natdata <- getData(TRUE, "Natality for 2007 - 2016")
+natdata <- getData(TRUE, "Natality for 2007 - 2018")
 natdata %>% head()
 dmdata <- getData(TRUE, "Detailed Mortality")
 dmdata %>% head()
 ```
 
 ```{r eval=!githubreadme, echo=!githubreadme}
-natdata <- getData(TRUE, "Natality for 2007 - 2016")
+natdata <- getData(TRUE, "Natality for 2007 - 2018")
 natdata %>% head() %>% kable()
 dmdata <- getData(TRUE, "Detailed Mortality")
 dmdata %>% head() %>% kable()
@@ -185,7 +185,7 @@ Measures do not need values; it is sufficient to specify a name only:
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
-mydata2 <- getData(TRUE, "Natality for 2007 - 2016", mylist)
+mydata2 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
 ```
 
 ```{r eval=githubreadme, echo=githubreadme}
@@ -236,12 +236,12 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
 ### Combining results from multiple datasets
 Some of the datasets, such as the Births, are divided into multiple databases by time period. `wonderapi` makes it easy to combine the data into one data frame. (Care needs to be taken as the variables are not identical in all. For example, the 1995 - 2002 dataset does not have any measure options; it only returns number of births. To find out what's available, see the codebooks (**`>??codebook`**) and crosscheck with the [CDC Wonder API web interface](https://wonder.cdc.gov).)  
 
-```{r BirthsbyYear1995to2016}
+```{r BirthsbyYear1995to2018}
 births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
-                getData(TRUE, "Natality for 2007 - 2016"))
+                getData(TRUE, "Natality for 2007 - 2018"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
-    ggtitle("U.S. Births by Year, 1995 - 2016")
+    ggtitle("U.S. Births by Year, 1995 - 2018")
 
 ```
 
@@ -268,7 +268,7 @@ Errors due to the constraints of the CDC Wonder API are more difficult to catch 
 ```{r, error = TRUE}
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate", ""))
-mydata4 <- getData(TRUE, "Natality for 2007 - 2016", mylist)
+mydata4 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
 ```
 
 In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong:  
@@ -278,9 +278,9 @@ In this case, the best approach is to visit the [CDC Wonder API web interface](h
 We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Bridged Race" instead of "Education", it works:  
 
 ```{r}
-mylist <- list(list("And By", "Bridged Race"), 
+mylist <- list(list("And By", "Mother's Bridged Race"), 
                list("Birth Rate", ""))
-mydata5 <- getData(TRUE, "Natality for 2007 - 2016", mylist)
+mydata5 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
 ```
 
 ```{r eval=githubreadme, echo=githubreadme}

@@ -4,3 +4,5 @@
 vignettes/IntroVignette_cache/
 readme.html
 readme_cache/
+^doc$
+^Meta$

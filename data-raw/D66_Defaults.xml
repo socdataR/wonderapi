@@ -34,18 +34,15 @@
 	</parameter>
 	<parameter>
 		<name>I_D66.V21</name>
-		<value>*All* (The United States)
-</value>
+		<value>*All* (The United States)</value>
 	</parameter>
 	<parameter>
 		<name>I_D66.V22</name>
-		<value>*All* (The United States)
-</value>
+		<value>*All* (The United States)</value>
 	</parameter>
 	<parameter>
 		<name>I_D66.V37</name>
-		<value>*All* (The United States)
-</value>
+		<value>*All* (The United States)</value>
 	</parameter>
 	<parameter>
 		<name>M_1</name>
@@ -66,6 +63,10 @@
 	<parameter>
 		<name>O_age</name>
 		<value>D66.V1</value>
+	</parameter>
+		<parameter>
+		<name>O_urban</name>
+		<value>D66.V156</value>
 	</parameter>
 	<parameter>
 		<name>O_gestation</name>
@@ -105,7 +106,7 @@
 	</parameter>
 	<parameter>
 		<name>O_title</name>
-		<value>Births 2007-2018 by year, all measures checked </value>
+		<value>Births 2007-2018 by year, all measures checked</value>
 	</parameter>
 	<parameter>
 		<name>O_weight</name>

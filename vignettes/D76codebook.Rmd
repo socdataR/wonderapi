@@ -251,6 +251,7 @@ VM_D76.M6_D76.V1_S
 		 2014 	  2014  
 		 2015 	  2015  
 		 2016 	  2016  
+		 2017 	  2017  
 ```
 
 **Parameter:**
@@ -417,8 +418,8 @@ V_D76.V19 	 2013 Urbanization
 		 2 	  Large Fringe Metro  
 		 3 	  Medium Metro  
 		 4 	  Small Metro  
-		 5 	  Micropolitan (non-metro)  
-		 6 	  NonCore (non-metro)  
+		 5 	  Micropolitan (Nonmetro)  
+		 6 	  NonCore (Nonmetro)  
 ```
 
 **Parameter:**
@@ -431,8 +432,8 @@ V_D76.V11 	 2006 Urbanization
 		 2 	  Large Fringe Metro  
 		 3 	  Medium Metro  
 		 4 	  Small Metro  
-		 5 	  Micropolitan (non-metro)  
-		 6 	  NonCore (non-metro)  
+		 5 	  Micropolitan (Nonmetro)  
+		 6 	  NonCore (Nonmetro)  
 ```
 
 **Parameter:**
@@ -684,6 +685,7 @@ F_D76.V1 	 Selected Items
 		 2014 	 + 2014  (2014)   
 		 2015 	 + 2015  (2015)   
 		 2016 	 + 2016  (2016)   
+		 2017 	 + 2017  (2017)   
 ```
 
 **Parameter:**
@@ -824,8 +826,8 @@ V_D76.V4 	 ICD-10 113 Cause List
 		 GR113-035 	     Malignant neoplasm of bladder (C67)  
 		 GR113-036 	     Malignant neoplasms of meninges, brain and other parts of central nervous system (C70-C72)  
 		 GR113-037 	     Malignant neoplasms of lymphoid, hematopoietic and related tissue (C81-C96)  
-		 GR113-038 	        Hodgkin's disease (C81)  
-		 GR113-039 	        Non-Hodgkin's lymphoma (C82-C85)  
+		 GR113-038 	        Hodgkin disease (C81)  
+		 GR113-039 	        Non-Hodgkin lymphoma (C82-C85)  
 		 GR113-040 	        Leukemia (C91-C95)  
 		 GR113-041 	        Multiple myeloma and immunoproliferative neoplasms (C88,C90)  
 		 GR113-042 	        Other and unspecified malignant neoplasms of lymphoid, hematopoietic and related tissue (C96)  
@@ -837,8 +839,8 @@ V_D76.V4 	 ICD-10 113 Cause List
 		 GR113-048 	     Malnutrition (E40-E46)  
 		 GR113-049 	     Other nutritional deficiencies (E50-E64)  
 		 GR113-050 	  #Meningitis (G00,G03)  
-		 GR113-051 	  #Parkinson's disease (G20-G21)  
-		 GR113-052 	  #Alzheimer's disease (G30)  
+		 GR113-051 	  #Parkinson disease (G20-G21)  
+		 GR113-052 	  #Alzheimer disease (G30)  
 		 GR113-053 	  Major cardiovascular diseases (I00-I78)  
 		 GR113-054 	     #Diseases of heart (I00-I09,I11,I13,I20-I51)  
 		 GR113-055 	        Acute rheumatic fever and chronic rheumatic heart diseases (I00-I09)  
@@ -955,7 +957,7 @@ V_D76.V12 	 ICD-10 130 Cause List (Infants)
 		 GR130-022 	     All other and unspecified infectious and parasitic diseases (A20-A32,A38,A42-A49,A51-A53,A55-A79,B35-B36,B38-B49,B55-B58,B60-B99)  
 		 GR130-023 	  Neoplasms (C00-D48)  
 		 GR130-024 	     #Malignant neoplasms (C00-C97)  
-		 GR130-025 	        Hodgkin's disease and non-Hodgkin's lymphomas (C81-C85)  
+		 GR130-025 	        Hodgkin disease and non-Hodgkin lymphomas (C81-C85)  
 		 GR130-026 	        Leukemia (C91-C95)  
 		 GR130-027 	        Other and unspecified malignant neoplasms (C00-C80,C88,C90,C96-C97)  
 		 GR130-028 	     #In situ neoplasms, benign neoplasms and neoplasms of uncertain or unknown behavior (D00-D48)  
@@ -1059,9 +1061,9 @@ V_D76.V12 	 ICD-10 130 Cause List (Infants)
 		 GR130-126 	     Congenital malformations of digestive system (Q35-Q45)  
 		 GR130-127 	     Congenital malformations of genitourinary system (Q50-Q64)  
 		 GR130-128 	     Congenital malformations and deformations of musculoskeletal system, limbs and integument (Q65-Q85)  
-		 GR130-129 	     Down's syndrome (Q90)  
-		 GR130-130 	     Edward's syndrome (Q91.0-Q91.3)  
-		 GR130-131 	     Patau's syndrome (Q91.4-Q91.7)  
+		 GR130-129 	     Down syndrome (Q90)  
+		 GR130-130 	     Edward syndrome (Q91.0-Q91.3)  
+		 GR130-131 	     Patau syndrome (Q91.4-Q91.7)  
 		 GR130-132 	     Other congenital malformations and deformations (Q10-Q18,Q86-Q89)  
 		 GR130-133 	     Other chromosomal abnormalities, not elsewhere classified (Q92-Q99)  
 		 GR130-134 	  Symptoms, signs and abnormal clinical and laboratory findings, not elsewhere classified (R00-R99)  

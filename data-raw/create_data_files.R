@@ -15,7 +15,7 @@ library(wondr)
 devtools::load_all()
 # temporarily bypass dbnamelookup in sysdata.rda
 dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")
-dbcode <- "D104"
+dbcode <- "D66"
 make_label_lookup(dbcode)
 
 ql <- make_query_list(paste0(dbcode,"_Defaults.xml"))
@@ -30,7 +30,7 @@ c(agreelist, ql) %>% wondr::make_query(dbcode)
 dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")
 
 # since package needs dbnamelookup, do the following before continuing:
-devtools::use_data(dbnamelookup, internal = TRUE, overwrite = TRUE)
+usethis::use_data(dbnamelookup, internal = TRUE, overwrite = TRUE)
 devtools::load_all()
 
 # get database codes

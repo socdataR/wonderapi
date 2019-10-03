@@ -1,10 +1,10 @@
 ---
-title: " D66 Natality for 2007 - 2016 Dataset Codebook"
+title: " D66 Natality for 2007 - 2018 Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D66 Natality for 2007 - 2016 }
+  %\VignetteIndexEntry{ D66 Natality for 2007 - 2018 }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,24 +20,28 @@ B_1 	 Group Results By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Expanded Hispanic Origin 
-		 D66.V43 	 Hispanic Origin 
-		 D66.V2 	 Bridged Race 
-		 D66.V42 	 Single Race 
+		 D66.V154 	 2013 Metro/Nonmetro 
+		 D66.V155 	 2006 Metro/Nonmetro 
+		 D66.V156 	 2013 Urbanization 
+		 D66.V157 	 2006 Urbanization 
+		 D66.V4 	 Mother's Expanded Hispanic Origin 
+		 D66.V43 	 Mother's Hispanic Origin 
+		 D66.V2 	 Mother's Bridged Race 
+		 D66.V42 	 Mother's Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
 		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
+		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
 		 D66.V26 	 Weekday 
 		 D66.V3 	 Gender 
 		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
+		 D66.V9 	 Infant Birth Weight 12 
+		 D66.V35 	 Infant Birth Weight 14 
+		 D66.V41 	 Infant Birth Weight 100 gram increments 
 		 D66.V7 	 Plurality or Multiple Birth 
 		 D66.V28 	 Live Birth Order 
 		 D66.V30 	 Birthplace 
@@ -67,24 +71,28 @@ B_2 	 And By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Expanded Hispanic Origin 
-		 D66.V43 	 Hispanic Origin 
-		 D66.V2 	 Bridged Race 
-		 D66.V42 	 Single Race 
+		 D66.V154 	 2013 Metro/Nonmetro 
+		 D66.V155 	 2006 Metro/Nonmetro 
+		 D66.V156 	 2013 Urbanization 
+		 D66.V157 	 2006 Urbanization 
+		 D66.V4 	 Mother's Expanded Hispanic Origin 
+		 D66.V43 	 Mother's Hispanic Origin 
+		 D66.V2 	 Mother's Bridged Race 
+		 D66.V42 	 Mother's Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
 		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
+		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
 		 D66.V26 	 Weekday 
 		 D66.V3 	 Gender 
 		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
+		 D66.V9 	 Infant Birth Weight 12 
+		 D66.V35 	 Infant Birth Weight 14 
+		 D66.V41 	 Infant Birth Weight 100 gram increments 
 		 D66.V7 	 Plurality or Multiple Birth 
 		 D66.V28 	 Live Birth Order 
 		 D66.V30 	 Birthplace 
@@ -114,24 +122,28 @@ B_3 	 And By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Expanded Hispanic Origin 
-		 D66.V43 	 Hispanic Origin 
-		 D66.V2 	 Bridged Race 
-		 D66.V42 	 Single Race 
+		 D66.V154 	 2013 Metro/Nonmetro 
+		 D66.V155 	 2006 Metro/Nonmetro 
+		 D66.V156 	 2013 Urbanization 
+		 D66.V157 	 2006 Urbanization 
+		 D66.V4 	 Mother's Expanded Hispanic Origin 
+		 D66.V43 	 Mother's Hispanic Origin 
+		 D66.V2 	 Mother's Bridged Race 
+		 D66.V42 	 Mother's Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
 		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
+		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
 		 D66.V26 	 Weekday 
 		 D66.V3 	 Gender 
 		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
+		 D66.V9 	 Infant Birth Weight 12 
+		 D66.V35 	 Infant Birth Weight 14 
+		 D66.V41 	 Infant Birth Weight 100 gram increments 
 		 D66.V7 	 Plurality or Multiple Birth 
 		 D66.V28 	 Live Birth Order 
 		 D66.V30 	 Birthplace 
@@ -161,24 +173,28 @@ B_4 	 And By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Expanded Hispanic Origin 
-		 D66.V43 	 Hispanic Origin 
-		 D66.V2 	 Bridged Race 
-		 D66.V42 	 Single Race 
+		 D66.V154 	 2013 Metro/Nonmetro 
+		 D66.V155 	 2006 Metro/Nonmetro 
+		 D66.V156 	 2013 Urbanization 
+		 D66.V157 	 2006 Urbanization 
+		 D66.V4 	 Mother's Expanded Hispanic Origin 
+		 D66.V43 	 Mother's Hispanic Origin 
+		 D66.V2 	 Mother's Bridged Race 
+		 D66.V42 	 Mother's Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
 		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
+		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
 		 D66.V26 	 Weekday 
 		 D66.V3 	 Gender 
 		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
+		 D66.V9 	 Infant Birth Weight 12 
+		 D66.V35 	 Infant Birth Weight 14 
+		 D66.V41 	 Infant Birth Weight 100 gram increments 
 		 D66.V7 	 Plurality or Multiple Birth 
 		 D66.V28 	 Live Birth Order 
 		 D66.V30 	 Birthplace 
@@ -208,24 +224,28 @@ B_5 	 And By
 		 D66.V37-level1 	 HHS Region 
 		 D66.V21-level1 	 State 
 		 D66.V21-level2 	 County 
-		 D66.V4 	 Expanded Hispanic Origin 
-		 D66.V43 	 Hispanic Origin 
-		 D66.V2 	 Bridged Race 
-		 D66.V42 	 Single Race 
+		 D66.V154 	 2013 Metro/Nonmetro 
+		 D66.V155 	 2006 Metro/Nonmetro 
+		 D66.V156 	 2013 Urbanization 
+		 D66.V157 	 2006 Urbanization 
+		 D66.V4 	 Mother's Expanded Hispanic Origin 
+		 D66.V43 	 Mother's Hispanic Origin 
+		 D66.V2 	 Mother's Bridged Race 
+		 D66.V42 	 Mother's Single Race 
 		 D66.V27 	 Marital Status 
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
 		 D66.V40 	 Age of Mother Year 
-		 D66.V5 	 Education 
+		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
 		 D66.V26 	 Weekday 
 		 D66.V3 	 Gender 
 		 D66.V8 	 Month Prenatal Care Began 
-		 D66.V9 	 Birth Weight 12 
-		 D66.V35 	 Birth Weight 14 
-		 D66.V41 	 Birth Weight 100 gram increments 
+		 D66.V9 	 Infant Birth Weight 12 
+		 D66.V35 	 Infant Birth Weight 14 
+		 D66.V41 	 Infant Birth Weight 100 gram increments 
 		 D66.V7 	 Plurality or Multiple Birth 
 		 D66.V28 	 Live Birth Order 
 		 D66.V30 	 Birthplace 
@@ -405,6 +425,70 @@ F_D66.V37 	 Selected Items
 ```
 
 **Parameter:**
+O_urban 
+**Values:**	 D66.V154 	 2013 Metro/Nonmetro 
+
+**Parameter:**
+O_urban 
+**Values:**	 D66.V155 	 2006 Metro/Nonmetro 
+
+**Parameter:**
+O_urban 
+**Values:**	 D66.V156 	 2013 Urbanization 
+
+**Parameter:**
+O_urban 
+**Values:**	 D66.V157 	 2006 Urbanization 
+
+**Parameter:**
+V_D66.V154 	 2013 Metro/Nonmetro 
+
+**Value(s):**
+```
+		 *All* 	  All Categories  
+		 Metro 	  Metro  
+		 Nonmetro 	  Nonmetro  
+```
+
+**Parameter:**
+V_D66.V155 	 2006 Metro/Nonmetro 
+
+**Value(s):**
+```
+		 *All* 	  All Categories  
+		 Metro 	  Metro  
+		 Nonmetro 	  Nonmetro  
+```
+
+**Parameter:**
+V_D66.V156 	 2013 Urbanization 
+
+**Value(s):**
+```
+		 *All* 	  All Categories  
+		 1 	  Large Central Metro  
+		 2 	  Large Fringe Metro  
+		 3 	  Medium Metro  
+		 4 	  Small Metro  
+		 5 	  Micropolitan (Nonmetro)  
+		 6 	  NonCore (Nonmetro)  
+```
+
+**Parameter:**
+V_D66.V157 	 2006 Urbanization 
+
+**Value(s):**
+```
+		 *All* 	  All Categories  
+		 1 	  Large Central Metro  
+		 2 	  Large Fringe Metro  
+		 3 	  Medium Metro  
+		 4 	  Small Metro  
+		 5 	  Micropolitan (Nonmetro)  
+		 6 	  NonCore (Nonmetro)  
+```
+
+**Parameter:**
 O_age 
 **Values:**	 D66.V1 	 Age of Mother 9 
 
@@ -482,7 +566,7 @@ V_D66.V40 	 Age of Mother Year
 **Value(s):**
 ```
 		 *All* 	  All Ages  
-		 10-12 	  10-12 years  
+		 12 	  12 years and under  
 		 13 	  13 years  
 		 14 	  14 years  
 		 15 	  15 years  
@@ -524,7 +608,7 @@ V_D66.V40 	 Age of Mother Year
 ```
 
 **Parameter:**
-V_D66.V5 	 Education 
+V_D66.V5 	 Mother's Education 
 
 **Value(s):**
 ```
@@ -535,10 +619,11 @@ V_D66.V5 	 Education
 		 4 	  Some college credit, but not a degree  
 		 5 	  Associate degree (AA, AS)  
 		 6 	  Bachelor's degree (BA, AB, BS)  
-		 7 	  Master's degree (MA, MS)  
-		 8 	  Doctorate (PHD, EdD) or Professional Degree (MD, DDS, DVM, LLB, JD)  
-		 Unk 	  Unknown/Not on certificate  
-		 999 	  Excluded  
+		 7 	  Master's degree (MA, MS, MEng, MEd, MSW, MBA)  
+		 8 	  Doctorate (PhD, EdD) or Professional Degree (MD, DDS, DVM, LLB, JD)  
+		 Unk 	  Unknown or Not Stated  
+		 Exc 	  Excluded  
+		 NR 	  Not Reported  
 ```
 
 **Parameter:**
@@ -549,37 +634,40 @@ V_D66.V27 	 Marital Status
 		 *All* 	  All  
 		 1 	  Married  
 		 2 	  Unmarried  
-		 9 	  Unknown or not Stated  
+		 9 	  Unknown or Not Stated  
+		 NR 	  Not Reported  
 ```
 
 **Parameter:**
-V_D66.V43 	 Hispanic Origin 
+V_D66.V43 	 Mother's Hispanic Origin 
 
 **Value(s):**
 ```
 		 *All* 	  All Hispanicity  
 		 2135-2 	  Hispanic or Latino  
 		 2186-5 	  Not Hispanic or Latino  
-		 9 	  Hispanic origin not stated  
+		 9 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
-V_D66.V4 	 Expanded Hispanic Origin 
+V_D66.V4 	 Mother's Expanded Hispanic Origin 
 
 **Value(s):**
 ```
 		 *All* 	  All Origins  
+		 0 	  Non-Hispanic  
 		 2148-5 	  Mexican  
 		 2180-8 	  Puerto Rican  
 		 2182-4 	  Cuban  
 		 4 	  Central or South American  
+		 7 	  Dominican  
 		 5 	  Other and Unknown Hispanic  
-		 0 	  Non-Hispanic  
-		 9 	  Origin unknown or not stated  
+		 9 	  Unknown or Not Stated  
+		 100 	  Not Reported  
 ```
 
 **Parameter:**
-V_D66.V42 	 Single Race 
+V_D66.V42 	 Mother's Single Race 
 
 **Value(s):**
 ```
@@ -590,11 +678,13 @@ V_D66.V42 	 Single Race
 		 NHOPI 	  Native Hawaiian or Other Pacific Islander  
 		 2106-3 	  White  
 		 M 	  More than one race  
+		 UNK 	  Unknown or Not Stated  
 		 NA 	  Not Available  
+		 NR 	  Not Reported  
 ```
 
 **Parameter:**
-V_D66.V2 	 Bridged Race 
+V_D66.V2 	 Mother's Bridged Race 
 
 **Value(s):**
 ```
@@ -621,6 +711,8 @@ V_D66.V20 	 Year
 		 2014 	  2014  
 		 2015 	  2015  
 		 2016 	  2016  
+		 2017 	  2017  
+		 2018 	  2018  
 ```
 
 **Parameter:**
@@ -686,24 +778,24 @@ V_D66.V8 	 Month Prenatal Care Began
 		 08 	  8th month  
 		 09 	  9th month  
 		 10 	  10th month  
-		 99 	  Not stated/Not on certificate  
-		 98 	  Excluded  
+		 99 	  Unknown or Not Stated  
+		 98 	  Not Reported  
 ```
 
 **Parameter:**
 O_weight 
-**Values:**	 D66.V9 	 Birth Weight 12 
+**Values:**	 D66.V9 	 Infant Birth Weight 12 
 
 **Parameter:**
 O_weight 
-**Values:**	 D66.V35 	 Birth Weight 14 
+**Values:**	 D66.V35 	 Infant Birth Weight 14 
 
 **Parameter:**
 O_weight 
-**Values:**	 D66.V41 	 Birth Weight 100 gram increments 
+**Values:**	 D66.V41 	 Infant Birth Weight 100 gram increments 
 
 **Parameter:**
-V_D66.V9 	 Birth Weight 12 
+V_D66.V9 	 Infant Birth Weight 12 
 
 **Value(s):**
 ```
@@ -719,11 +811,11 @@ V_D66.V9 	 Birth Weight 12
 		 09 	  4000 - 4499 grams  
 		 10 	  4500 - 4999 grams  
 		 11 	  5000 - 8165 grams  
-		 12 	  Not stated  
+		 12 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
-V_D66.V35 	 Birth Weight 14 
+V_D66.V35 	 Infant Birth Weight 14 
 
 **Value(s):**
 ```
@@ -741,15 +833,16 @@ V_D66.V35 	 Birth Weight 14
 		 11 	  4000 - 4499 grams  
 		 12 	  4500 - 4999 grams  
 		 13 	  5000 - 8165 grams  
-		 14 	  Not stated  
+		 14 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
-V_D66.V41 	 Birth Weight 100 gram increments 
+V_D66.V41 	 Infant Birth Weight 100 gram increments 
 
 **Value(s):**
 ```
 		 *All* 	  All Weights  
+		 0 	  0 - 99 grams  
 		 1 	  100 - 199 grams  
 		 2 	  200 - 299 grams  
 		 3 	  300 - 399 grams  
@@ -831,7 +924,7 @@ V_D66.V41 	 Birth Weight 100 gram increments
 		 79 	  7900 - 7999 grams  
 		 80 	  8000 - 8099 grams  
 		 81 	  8100 - 8165 grams  
-		 99 	  Not stated  
+		 99 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -873,7 +966,7 @@ V_D66.V30 	 Birthplace
 		 3 	  Clinic/Doctor's Office  
 		 4 	  Residence  
 		 5 	  Other  
-		 9 	  Unknown  
+		 9 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -884,7 +977,7 @@ V_D66.V31 	 Delivery Method
 		 *All* 	  All Methods  
 		 1 	  Vaginal  
 		 2 	  Cesarean  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -899,6 +992,7 @@ V_D66.V29 	 Medical Attendant
 		 4 	  Other Midwife  
 		 5 	  Other  
 		 9 	  Unknown or not stated  
+		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -928,7 +1022,7 @@ V_D66.V6 	 LMP Gestational Age 10
 		 07 	  40 weeks  
 		 08 	  41 weeks  
 		 09 	  42 weeks or more  
-		 10 	  Unknown  
+		 10 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -946,8 +1040,8 @@ V_D66.V23 	 LMP Gestational Age 11
 		 07 	  39 weeks  
 		 08 	  40 weeks  
 		 09 	  41 weeks  
-		 10 	  42 or more weeks  
-		 11 	  Unknown  
+		 10 	  42 weeks or more  
+		 11 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -987,7 +1081,7 @@ V_D66.V24 	 LMP Gestational Age Weekly
 		 45 	  45 weeks  
 		 46 	  46 weeks  
 		 47 	  47 weeks  
-		 99 	  Unknown  
+		 99 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -1017,7 +1111,7 @@ V_D66.V32 	 OE Gestational Age 10
 		 07 	  40 weeks  
 		 08 	  41 weeks  
 		 09 	  42 weeks or more  
-		 10 	  Unknown  
+		 10 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -1035,8 +1129,8 @@ V_D66.V33 	 OE Gestational Age 11
 		 07 	  39 weeks  
 		 08 	  40 weeks  
 		 09 	  41 weeks  
-		 10 	  42 or more weeks  
-		 11 	  Unknown  
+		 10 	  42 weeks or more  
+		 11 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -1076,7 +1170,7 @@ V_D66.V34 	 OE Gestational Age Weekly
 		 45 	  45 weeks  
 		 46 	  46 weeks  
 		 47 	  47 weeks  
-		 99 	  Unknown  
+		 99 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -1087,7 +1181,7 @@ V_D66.V16 	 Chronic Hypertension
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1099,7 +1193,7 @@ V_D66.V14 	 Diabetes
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1111,7 +1205,7 @@ V_D66.V17 	 Pregnancy-associated Hypertension
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1123,7 +1217,7 @@ V_D66.V18 	 Eclampsia
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1135,7 +1229,7 @@ V_D66.V10 	 Tobacco Use
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 

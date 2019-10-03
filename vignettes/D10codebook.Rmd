@@ -20,16 +20,16 @@ B_1 	 Group Results By
 		 D10.V37-level1 	 HHS Region 
 		 D10.V21-level1 	 State 
 		 D10.V21-level2 	 County 
-		 D10.V4 	 Hispanic Origin 
-		 D10.V2 	 Race 
+		 D10.V4 	 Mother's Hispanic Origin 
+		 D10.V2 	 Mother's Race 
 		 D10.V1 	 Age of Mother 
-		 D10.V5 	 Education 
+		 D10.V5 	 Mother's Education 
 		 D10.V20 	 Year 
 		 D10.V3 	 Gender 
 		 D10.V6 	 Gestational Age at Birth 
 		 D10.V7 	 Plurality or Multiple Birth 
 		 D10.V8 	 Month Prenatal Care Began 
-		 D10.V9 	 Birth Weight 
+		 D10.V9 	 Infant Birth Weight 
 		 D10.V11 	 Anemia 
 		 D10.V12 	 Cardiac Disease 
 		 D10.V16 	 Chronic Hypertension 
@@ -53,16 +53,16 @@ B_2 	 And By
 		 D10.V37-level1 	 HHS Region 
 		 D10.V21-level1 	 State 
 		 D10.V21-level2 	 County 
-		 D10.V4 	 Hispanic Origin 
-		 D10.V2 	 Race 
+		 D10.V4 	 Mother's Hispanic Origin 
+		 D10.V2 	 Mother's Race 
 		 D10.V1 	 Age of Mother 
-		 D10.V5 	 Education 
+		 D10.V5 	 Mother's Education 
 		 D10.V20 	 Year 
 		 D10.V3 	 Gender 
 		 D10.V6 	 Gestational Age at Birth 
 		 D10.V7 	 Plurality or Multiple Birth 
 		 D10.V8 	 Month Prenatal Care Began 
-		 D10.V9 	 Birth Weight 
+		 D10.V9 	 Infant Birth Weight 
 		 D10.V11 	 Anemia 
 		 D10.V12 	 Cardiac Disease 
 		 D10.V16 	 Chronic Hypertension 
@@ -86,16 +86,16 @@ B_3 	 And By
 		 D10.V37-level1 	 HHS Region 
 		 D10.V21-level1 	 State 
 		 D10.V21-level2 	 County 
-		 D10.V4 	 Hispanic Origin 
-		 D10.V2 	 Race 
+		 D10.V4 	 Mother's Hispanic Origin 
+		 D10.V2 	 Mother's Race 
 		 D10.V1 	 Age of Mother 
-		 D10.V5 	 Education 
+		 D10.V5 	 Mother's Education 
 		 D10.V20 	 Year 
 		 D10.V3 	 Gender 
 		 D10.V6 	 Gestational Age at Birth 
 		 D10.V7 	 Plurality or Multiple Birth 
 		 D10.V8 	 Month Prenatal Care Began 
-		 D10.V9 	 Birth Weight 
+		 D10.V9 	 Infant Birth Weight 
 		 D10.V11 	 Anemia 
 		 D10.V12 	 Cardiac Disease 
 		 D10.V16 	 Chronic Hypertension 
@@ -119,16 +119,16 @@ B_4 	 And By
 		 D10.V37-level1 	 HHS Region 
 		 D10.V21-level1 	 State 
 		 D10.V21-level2 	 County 
-		 D10.V4 	 Hispanic Origin 
-		 D10.V2 	 Race 
+		 D10.V4 	 Mother's Hispanic Origin 
+		 D10.V2 	 Mother's Race 
 		 D10.V1 	 Age of Mother 
-		 D10.V5 	 Education 
+		 D10.V5 	 Mother's Education 
 		 D10.V20 	 Year 
 		 D10.V3 	 Gender 
 		 D10.V6 	 Gestational Age at Birth 
 		 D10.V7 	 Plurality or Multiple Birth 
 		 D10.V8 	 Month Prenatal Care Began 
-		 D10.V9 	 Birth Weight 
+		 D10.V9 	 Infant Birth Weight 
 		 D10.V11 	 Anemia 
 		 D10.V12 	 Cardiac Disease 
 		 D10.V16 	 Chronic Hypertension 
@@ -152,16 +152,16 @@ B_5 	 And By
 		 D10.V37-level1 	 HHS Region 
 		 D10.V21-level1 	 State 
 		 D10.V21-level2 	 County 
-		 D10.V4 	 Hispanic Origin 
-		 D10.V2 	 Race 
+		 D10.V4 	 Mother's Hispanic Origin 
+		 D10.V2 	 Mother's Race 
 		 D10.V1 	 Age of Mother 
-		 D10.V5 	 Education 
+		 D10.V5 	 Mother's Education 
 		 D10.V20 	 Year 
 		 D10.V3 	 Gender 
 		 D10.V6 	 Gestational Age at Birth 
 		 D10.V7 	 Plurality or Multiple Birth 
 		 D10.V8 	 Month Prenatal Care Began 
-		 D10.V9 	 Birth Weight 
+		 D10.V9 	 Infant Birth Weight 
 		 D10.V11 	 Anemia 
 		 D10.V12 	 Cardiac Disease 
 		 D10.V16 	 Chronic Hypertension 
@@ -288,7 +288,7 @@ F_D10.V37 	 Selected Items
 ```
 
 **Parameter:**
-V_D10.V4 	 Hispanic Origin 
+V_D10.V4 	 Mother's Hispanic Origin 
 
 **Value(s):**
 ```
@@ -305,7 +305,7 @@ V_D10.V4 	 Hispanic Origin
 ```
 
 **Parameter:**
-V_D10.V2 	 Race 
+V_D10.V2 	 Mother's Race 
 
 **Value(s):**
 ```
@@ -338,7 +338,7 @@ V_D10.V1 	 Age of Mother
 ```
 
 **Parameter:**
-V_D10.V5 	 Education 
+V_D10.V5 	 Mother's Education 
 
 **Value(s):**
 ```
@@ -393,7 +393,7 @@ V_D10.V6 	 Gestational Age at Birth
 		 07 	  40 weeks  
 		 08 	  41 weeks  
 		 09 	  42 weeks or more  
-		 10 	  Unknown  
+		 10 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -426,12 +426,12 @@ V_D10.V8 	 Month Prenatal Care Began
 		 08 	  8th month  
 		 09 	  9th month  
 		 10 	  10th month  
-		 99 	  Not stated/Not on certificate  
-		 98 	  Excluded  
+		 99 	  Unknown or Not Stated  
+		 98 	  Not Reported  
 ```
 
 **Parameter:**
-V_D10.V9 	 Birth Weight 
+V_D10.V9 	 Infant Birth Weight 
 
 **Value(s):**
 ```
@@ -447,7 +447,7 @@ V_D10.V9 	 Birth Weight
 		 09 	  4000 - 4499 grams  
 		 10 	  4500 - 4999 grams  
 		 11 	  5000 - 8165 grams  
-		 12 	  Not stated  
+		 12 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -458,7 +458,7 @@ V_D10.V11 	 Anemia
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -470,7 +470,7 @@ V_D10.V12 	 Cardiac Disease
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -482,7 +482,7 @@ V_D10.V16 	 Chronic Hypertension
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -494,7 +494,7 @@ V_D10.V14 	 Diabetes
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -506,7 +506,7 @@ V_D10.V18 	 Eclampsia
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -518,7 +518,7 @@ V_D10.V15 	 Hydramnios / Oligohydramnios
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -530,7 +530,7 @@ V_D10.V19 	 Incompetent Cervix
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -542,7 +542,7 @@ V_D10.V13 	 Lung Disease
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -554,7 +554,7 @@ V_D10.V17 	 Pregnancy-associated Hypertension
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -566,7 +566,7 @@ V_D10.V10 	 Tobacco Use
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 

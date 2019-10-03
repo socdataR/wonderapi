@@ -20,23 +20,23 @@ B_1 	 Group Results By
 		 D27.V37-level1 	 HHS Region 
 		 D27.V21-level1 	 State 
 		 D27.V21-level2 	 County 
-		 D27.V4 	 Expanded Hispanic Origin 
-		 D27.V43 	 Hispanic Origin 
-		 D27.V2 	 Bridged Race 
+		 D27.V4 	 Mother's Expanded Hispanic Origin 
+		 D27.V43 	 Mother's Hispanic Origin 
+		 D27.V2 	 Mother's Bridged Race 
 		 D27.V27 	 Marital Status 
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
 		 D27.V40 	 Age of Mother Year 
-		 D27.V5 	 Education 
+		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
 		 D27.V26 	 Weekday 
 		 D27.V3 	 Gender 
 		 D27.V8 	 Month Prenatal Care Began 
-		 D27.V9 	 Birth Weight 12 
-		 D27.V35 	 Birth Weight 14 
-		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V9 	 Infant Birth Weight 12 
+		 D27.V35 	 Infant Birth Weight 14 
+		 D27.V41 	 Infant Birth Weight 100 gram increments 
 		 D27.V7 	 Plurality or Multiple Birth 
 		 D27.V28 	 Live Birth Order 
 		 D27.V30 	 Birthplace 
@@ -68,23 +68,23 @@ B_2 	 And By
 		 D27.V37-level1 	 HHS Region 
 		 D27.V21-level1 	 State 
 		 D27.V21-level2 	 County 
-		 D27.V4 	 Expanded Hispanic Origin 
-		 D27.V43 	 Hispanic Origin 
-		 D27.V2 	 Bridged Race 
+		 D27.V4 	 Mother's Expanded Hispanic Origin 
+		 D27.V43 	 Mother's Hispanic Origin 
+		 D27.V2 	 Mother's Bridged Race 
 		 D27.V27 	 Marital Status 
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
 		 D27.V40 	 Age of Mother Year 
-		 D27.V5 	 Education 
+		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
 		 D27.V26 	 Weekday 
 		 D27.V3 	 Gender 
 		 D27.V8 	 Month Prenatal Care Began 
-		 D27.V9 	 Birth Weight 12 
-		 D27.V35 	 Birth Weight 14 
-		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V9 	 Infant Birth Weight 12 
+		 D27.V35 	 Infant Birth Weight 14 
+		 D27.V41 	 Infant Birth Weight 100 gram increments 
 		 D27.V7 	 Plurality or Multiple Birth 
 		 D27.V28 	 Live Birth Order 
 		 D27.V30 	 Birthplace 
@@ -116,23 +116,23 @@ B_3 	 And By
 		 D27.V37-level1 	 HHS Region 
 		 D27.V21-level1 	 State 
 		 D27.V21-level2 	 County 
-		 D27.V4 	 Expanded Hispanic Origin 
-		 D27.V43 	 Hispanic Origin 
-		 D27.V2 	 Bridged Race 
+		 D27.V4 	 Mother's Expanded Hispanic Origin 
+		 D27.V43 	 Mother's Hispanic Origin 
+		 D27.V2 	 Mother's Bridged Race 
 		 D27.V27 	 Marital Status 
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
 		 D27.V40 	 Age of Mother Year 
-		 D27.V5 	 Education 
+		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
 		 D27.V26 	 Weekday 
 		 D27.V3 	 Gender 
 		 D27.V8 	 Month Prenatal Care Began 
-		 D27.V9 	 Birth Weight 12 
-		 D27.V35 	 Birth Weight 14 
-		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V9 	 Infant Birth Weight 12 
+		 D27.V35 	 Infant Birth Weight 14 
+		 D27.V41 	 Infant Birth Weight 100 gram increments 
 		 D27.V7 	 Plurality or Multiple Birth 
 		 D27.V28 	 Live Birth Order 
 		 D27.V30 	 Birthplace 
@@ -164,23 +164,23 @@ B_4 	 And By
 		 D27.V37-level1 	 HHS Region 
 		 D27.V21-level1 	 State 
 		 D27.V21-level2 	 County 
-		 D27.V4 	 Expanded Hispanic Origin 
-		 D27.V43 	 Hispanic Origin 
-		 D27.V2 	 Bridged Race 
+		 D27.V4 	 Mother's Expanded Hispanic Origin 
+		 D27.V43 	 Mother's Hispanic Origin 
+		 D27.V2 	 Mother's Bridged Race 
 		 D27.V27 	 Marital Status 
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
 		 D27.V40 	 Age of Mother Year 
-		 D27.V5 	 Education 
+		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
 		 D27.V26 	 Weekday 
 		 D27.V3 	 Gender 
 		 D27.V8 	 Month Prenatal Care Began 
-		 D27.V9 	 Birth Weight 12 
-		 D27.V35 	 Birth Weight 14 
-		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V9 	 Infant Birth Weight 12 
+		 D27.V35 	 Infant Birth Weight 14 
+		 D27.V41 	 Infant Birth Weight 100 gram increments 
 		 D27.V7 	 Plurality or Multiple Birth 
 		 D27.V28 	 Live Birth Order 
 		 D27.V30 	 Birthplace 
@@ -212,23 +212,23 @@ B_5 	 And By
 		 D27.V37-level1 	 HHS Region 
 		 D27.V21-level1 	 State 
 		 D27.V21-level2 	 County 
-		 D27.V4 	 Expanded Hispanic Origin 
-		 D27.V43 	 Hispanic Origin 
-		 D27.V2 	 Bridged Race 
+		 D27.V4 	 Mother's Expanded Hispanic Origin 
+		 D27.V43 	 Mother's Hispanic Origin 
+		 D27.V2 	 Mother's Bridged Race 
 		 D27.V27 	 Marital Status 
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
 		 D27.V40 	 Age of Mother Year 
-		 D27.V5 	 Education 
+		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
 		 D27.V26 	 Weekday 
 		 D27.V3 	 Gender 
 		 D27.V8 	 Month Prenatal Care Began 
-		 D27.V9 	 Birth Weight 12 
-		 D27.V35 	 Birth Weight 14 
-		 D27.V41 	 Birth Weight 100 gram increments 
+		 D27.V9 	 Infant Birth Weight 12 
+		 D27.V35 	 Infant Birth Weight 14 
+		 D27.V41 	 Infant Birth Weight 100 gram increments 
 		 D27.V7 	 Plurality or Multiple Birth 
 		 D27.V28 	 Live Birth Order 
 		 D27.V30 	 Birthplace 
@@ -521,7 +521,7 @@ V_D27.V40 	 Age of Mother Year
 ```
 
 **Parameter:**
-V_D27.V5 	 Education 
+V_D27.V5 	 Mother's Education 
 
 **Value(s):**
 ```
@@ -543,37 +543,39 @@ V_D27.V27 	 Marital Status
 		 *All* 	  All  
 		 1 	  Married  
 		 2 	  Unmarried  
-		 9 	  Unknown or not Stated  
+		 9 	  Unknown or Not Stated  
+		 NR 	  Not Reported  
 ```
 
 **Parameter:**
-V_D27.V43 	 Hispanic Origin 
+V_D27.V43 	 Mother's Hispanic Origin 
 
 **Value(s):**
 ```
 		 *All* 	  All Hispanicity  
 		 2135-2 	  Hispanic or Latino  
 		 2186-5 	  Not Hispanic or Latino  
-		 9 	  Hispanic origin not stated  
+		 9 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
-V_D27.V4 	 Expanded Hispanic Origin 
+V_D27.V4 	 Mother's Expanded Hispanic Origin 
 
 **Value(s):**
 ```
 		 *All* 	  All Origins  
+		 0 	  Non-Hispanic  
 		 2148-5 	  Mexican  
 		 2180-8 	  Puerto Rican  
 		 2182-4 	  Cuban  
 		 4 	  Central or South American  
 		 5 	  Other and Unknown Hispanic  
-		 0 	  Non-Hispanic  
-		 9 	  Origin unknown or not stated  
+		 9 	  Unknown or Not Stated  
+		 100 	  Not Reported  
 ```
 
 **Parameter:**
-V_D27.V2 	 Bridged Race 
+V_D27.V2 	 Mother's Bridged Race 
 
 **Value(s):**
 ```
@@ -659,24 +661,24 @@ V_D27.V8 	 Month Prenatal Care Began
 		 08 	  8th month  
 		 09 	  9th month  
 		 10 	  10th month  
-		 99 	  Not stated/Not on certificate  
-		 98 	  Excluded  
+		 99 	  Unknown or Not Stated  
+		 98 	  Not Reported  
 ```
 
 **Parameter:**
 O_weight 
-**Values:**	 D27.V9 	 Birth Weight 12 
+**Values:**	 D27.V9 	 Infant Birth Weight 12 
 
 **Parameter:**
 O_weight 
-**Values:**	 D27.V35 	 Birth Weight 14 
+**Values:**	 D27.V35 	 Infant Birth Weight 14 
 
 **Parameter:**
 O_weight 
-**Values:**	 D27.V41 	 Birth Weight 100 gram increments 
+**Values:**	 D27.V41 	 Infant Birth Weight 100 gram increments 
 
 **Parameter:**
-V_D27.V9 	 Birth Weight 12 
+V_D27.V9 	 Infant Birth Weight 12 
 
 **Value(s):**
 ```
@@ -692,11 +694,11 @@ V_D27.V9 	 Birth Weight 12
 		 09 	  4000 - 4499 grams  
 		 10 	  4500 - 4999 grams  
 		 11 	  5000 - 8165 grams  
-		 12 	  Not stated  
+		 12 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
-V_D27.V35 	 Birth Weight 14 
+V_D27.V35 	 Infant Birth Weight 14 
 
 **Value(s):**
 ```
@@ -714,15 +716,16 @@ V_D27.V35 	 Birth Weight 14
 		 11 	  4000 - 4499 grams  
 		 12 	  4500 - 4999 grams  
 		 13 	  5000 - 8165 grams  
-		 14 	  Not stated  
+		 14 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
-V_D27.V41 	 Birth Weight 100 gram increments 
+V_D27.V41 	 Infant Birth Weight 100 gram increments 
 
 **Value(s):**
 ```
 		 *All* 	  All Weights  
+		 0 	  0 - 99 grams  
 		 1 	  100 - 199 grams  
 		 2 	  200 - 299 grams  
 		 3 	  300 - 399 grams  
@@ -804,7 +807,7 @@ V_D27.V41 	 Birth Weight 100 gram increments
 		 79 	  7900 - 7999 grams  
 		 80 	  8000 - 8099 grams  
 		 81 	  8100 - 8165 grams  
-		 99 	  Not stated  
+		 99 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -846,7 +849,7 @@ V_D27.V30 	 Birthplace
 		 3 	  Clinic/Doctor's Office  
 		 4 	  Residence  
 		 5 	  Other  
-		 9 	  Unknown  
+		 9 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -857,7 +860,7 @@ V_D27.V31 	 Delivery Method
 		 *All* 	  All Methods  
 		 1 	  Vaginal  
 		 2 	  Cesarean  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -872,6 +875,7 @@ V_D27.V29 	 Medical Attendant
 		 4 	  Other Midwife  
 		 5 	  Other  
 		 9 	  Unknown or not stated  
+		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -901,7 +905,7 @@ V_D27.V6 	 LMP Gestational Age 10
 		 07 	  40 weeks  
 		 08 	  41 weeks  
 		 09 	  42 weeks or more  
-		 10 	  Unknown  
+		 10 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -919,8 +923,8 @@ V_D27.V23 	 LMP Gestational Age 11
 		 07 	  39 weeks  
 		 08 	  40 weeks  
 		 09 	  41 weeks  
-		 10 	  42 or more weeks  
-		 11 	  Unknown  
+		 10 	  42 weeks or more  
+		 11 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -960,7 +964,7 @@ V_D27.V24 	 LMP Gestational Age Weekly
 		 45 	  45 weeks  
 		 46 	  46 weeks  
 		 47 	  47 weeks  
-		 99 	  Unknown  
+		 99 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -971,7 +975,7 @@ V_D27.V11 	 Anemia
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -983,7 +987,7 @@ V_D27.V12 	 Cardiac Disease
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -995,7 +999,7 @@ V_D27.V16 	 Chronic Hypertension
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1007,7 +1011,7 @@ V_D27.V14 	 Diabetes
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1019,7 +1023,7 @@ V_D27.V18 	 Eclampsia
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1031,7 +1035,7 @@ V_D27.V15 	 Hydramnios / Oligohydramnios
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1043,7 +1047,7 @@ V_D27.V19 	 Incompetent Cervix
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1055,7 +1059,7 @@ V_D27.V13 	 Lung Disease
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1067,7 +1071,7 @@ V_D27.V17 	 Pregnancy-associated Hypertension
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
@@ -1079,7 +1083,7 @@ V_D27.V10 	 Tobacco Use
 		 *All* 	  All Values  
 		 1 	  Yes  
 		 2 	  No  
-		 9 	  Not Stated  
+		 9 	  Unknown or Not Stated  
 		 10 	  Not Reported  
 ```
 
