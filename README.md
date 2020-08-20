@@ -3,7 +3,7 @@ wonderapi
 Joyce Robbins
 October 3, 2019
 
-**Please note that the CDC [does not allow access subnational data categories through the API](https://wonder.cdc.gov/wonder/help/WONDER-API.html#More). That means grouping by location variables such as Region, Division, State, County, and Urbanization will not work.**
+**Please note that the CDC [does not allow access to subnational data categories through the API](https://wonder.cdc.gov/wonder/help/WONDER-API.html#More). That means grouping by location variables such as Region, Division, State, County, and Urbanization will not work.**
 
 <div id="TOC">
 
