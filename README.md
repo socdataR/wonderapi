@@ -1,106 +1,58 @@
 wonderapi
 ================
 Joyce Robbins
-October 3, 2019
-
-**Please note that the CDC [does not allow access to subnational data categories through the API](https://wonder.cdc.gov/wonder/help/WONDER-API.html#More). That means grouping by location variables such as Region, Division, State, County, and Urbanization will not work.**
+June 21, 2021
 
 <div id="TOC">
 
 <ul>
-
 <li>
-
 <a href="#overview">Overview</a>
-
 <ul>
-
 <li>
-
 <a href="#example">Example</a>
-
 </li>
-
 </ul>
-
 </li>
-
 <li>
-
 <a href="#installation">Installation</a>
-
 </li>
-
 <li>
-
 <a href="#getting-started">Getting started</a>
-
 <ul>
-
 <li>
-
 <a href="#codebooks">Codebooks</a>
-
 </li>
-
 <li>
-
 <a href="#default-query-lists-and-requests">Default query lists and
 requests</a>
-
 </li>
-
 </ul>
-
 </li>
-
 <li>
-
 <a href="#creating-customized-queries">Creating customized queries</a>
-
 <ul>
-
 <li>
-
 <a href="#group-by-variables">Group By variables</a>
-
 </li>
-
 <li>
-
 <a href="#measures">Measures</a>
-
 </li>
-
 <li>
-
 <a href="#limiting-variables">Limiting variables</a>
-
 </li>
-
 <li>
-
 <a href="#plotting-query-results">Plotting query results</a>
-
 </li>
-
 <li>
-
 <a href="#combining-results-from-multiple-datasets">Combining results
 from multiple datasets</a>
-
 </li>
-
 <li>
-
 <a href="#errors">Errors</a>
-
 </li>
-
 </ul>
-
 </li>
-
 </ul>
 
 </div>
@@ -119,11 +71,11 @@ write queries using human readable names rather than numeric codes.
 
 `getData()`
 
-  - converts the user’s parameter requests to codes  
-  - adds these codes to the default query list  
-  - calls `wondr::make_query` to obtain query results
-  - processes the results  
-  - returns a tidy data frame
+-   converts the user’s parameter requests to codes  
+-   adds these codes to the default query list  
+-   calls `wondr::make_query` to obtain query results
+-   processes the results  
+-   returns a tidy data frame
 
 ### Example
 
@@ -186,14 +138,15 @@ codebooks are stored as vignettes, so be sure to include
 Queries are composed of parameter name-value pairs. Setting up a query
 without assistance is complex because the query must be submitted as an
 .xml file with a long list of required parameters, such as [here
-(Example 1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml)
-and [here
-(Example 2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml).
+(Example
+1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml)
+and [here (Example
+2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml).
 The point of the package is to prevent your having to create requests in
 this form. It relies on the `wondr` package which creates converts R
 lists to xml and makes the query. The value of this package is in the
-“pre” and “post” stages of the query, that is, the processes of
-setting up the query and tidying the results.
+“pre” and “post” stages of the query, that is, the processes of setting
+up the query and tidying the results.
 
 ### Codebooks
 
@@ -232,7 +185,7 @@ To facilitate the process of designing a query list, this package relies
 on default query lists. Each default query is set to request a single
 Group By Results parameter, generally set to `"Year"`. It is set to
 request the Measures that are listed as default Measures on the web
-interface (i.e. `Births` for [the Births
+interface (i.e. `Births` for [the Births
 dataset](https://wonder.cdc.gov/controller/datarequest/D76); `Deaths`,
 `Population` and `Crude Rate` for the [Detailed Mortality
 dataset](https://wonder.cdc.gov/controller/datarequest/D76).) To see the
@@ -301,12 +254,12 @@ mydata %>% head()
     ## # A tibble: 6 x 4
     ##   Weekday    Deaths Population     `Crude Rate`  
     ##   <chr>       <dbl> <chr>          <chr>         
-    ## 1 Sunday    6771754 Not Applicable Not Applicable
-    ## 2 Monday    6818805 Not Applicable Not Applicable
-    ## 3 Tuesday   6771904 Not Applicable Not Applicable
-    ## 4 Wednesday 6776899 Not Applicable Not Applicable
-    ## 5 Thursday  6786793 Not Applicable Not Applicable
-    ## 6 Friday    6891067 Not Applicable Not Applicable
+    ## 1 Sunday    7575854 Not Applicable Not Applicable
+    ## 2 Monday    7638335 Not Applicable Not Applicable
+    ## 3 Tuesday   7586763 Not Applicable Not Applicable
+    ## 4 Wednesday 7585543 Not Applicable Not Applicable
+    ## 5 Thursday  7596742 Not Applicable Not Applicable
+    ## 6 Friday    7711294 Not Applicable Not Applicable
 
 As the set up is slightly different depending on the parameter type,
 more details on setting up the name-value pairs by parameter types are
@@ -369,7 +322,7 @@ mylist <- list(list("Month", "2"))
 getData(TRUE, "D66", mylist)
 ```
 
-    ## # A tibble: 12 x 2
+    ## # A tibble: 13 x 2
     ##     Year Births
     ##    <dbl>  <dbl>
     ##  1  2007 326891
@@ -384,6 +337,7 @@ getData(TRUE, "D66", mylist)
     ## 10  2016 306015
     ## 11  2017 289054
     ## 12  2018 284250
+    ## 13  2019 279963
 
 **Note that values for Limiting Variables must be entered as codes; in
 this case “2” rather than “February.” We hope to add capability for
@@ -437,10 +391,10 @@ births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
                 getData(TRUE, "Natality for 2007 - 2019"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
-    ggtitle("U.S. Births by Year, 1995 - 2018")
+    ggtitle("U.S. Births by Year, 1995 - 2019")
 ```
 
-<img src="readme_files/figure-gfm/BirthsbyYear1995to2018-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-gfm/BirthsbyYear1995to2019-1.png" style="display: block; margin: auto;" />
 
 ### Errors
 
@@ -483,16 +437,14 @@ mylist <- list(list("And By", "Education"),
 mydata4 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 ```
 
-    ## Error in wondr::make_query(querylist, dbcode): Bad Request (HTTP 400).
+    ## Error in wondr::make_query(querylist, dbcode): Internal Server Error (HTTP 500).
 
 In this case, the best approach is to visit the [CDC Wonder API web
 interface](https://wonder.cdc.gov) and try the same query. If all goes
 well, you will receive more detailed information on what went wrong:
 
 <center>
-
 <img src="NatalityError.png" width="432px"/>
-
 </center>
 
 We learn that we can’t include “Education” if we request the “Birth
@@ -510,11 +462,11 @@ mydata5 %>% head()
 ```
 
     ## # A tibble: 6 x 5
-    ##    Year `Mother's Bridged Race`       Births `Total Populatio… `Birth Rate`
-    ##   <dbl> <chr>                          <dbl>             <dbl>        <dbl>
-    ## 1  2007 American Indian or Alaska N…   49443           3829898         12.9
-    ## 2  2007 Asian or Pacific Islander     254488          15559373         16.4
-    ## 3  2007 Black or African American     675676          40451108         16.7
-    ## 4  2007 White                        3336626         241390828         13.8
-    ## 5  2008 American Indian or Alaska N…   49537           3983929         12.4
-    ## 6  2008 Asian or Pacific Islander     253185          16094699         15.7
+    ##    Year `Mother's Bridged Race`           Births `Total Population` `Birth Rate`
+    ##   <dbl> <chr>                              <dbl>              <dbl>        <dbl>
+    ## 1  2007 American Indian or Alaska Native   49443            3829898         12.9
+    ## 2  2007 Asian or Pacific Islander         254488           15559373         16.4
+    ## 3  2007 Black or African American         675676           40451108         16.7
+    ## 4  2007 White                            3336626          241390828         13.8
+    ## 5  2008 American Indian or Alaska Native   49537            3983929         12.4
+    ## 6  2008 Asian or Pacific Islander         253185           16094699         15.7
