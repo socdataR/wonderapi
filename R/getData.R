@@ -56,7 +56,7 @@ getData <- function(agree = FALSE, db = "D66", querylist = NULL, add = TRUE) {
 }
 
 getrows <- function(thisrow, numcol) {
-    cells <- thisrow %>% rvest::xml_nodes("c")
+    cells <- thisrow %>% rvest::html_elements("c")
     # assuming all the labels ("l") are to the left of all
     # the values ("v")
     l <- cells %>% xml2::xml_attr("l") %>% stats::na.omit()
@@ -102,13 +102,13 @@ make_query_table <- function(query_result) {
     # remove total rows
     dt <- vector()
     for (i in seq_along(allrows)) {
-        ifelse (allrows[i] %>% rvest::xml_nodes("c") %>%
+        ifelse (allrows[i] %>% rvest::html_elements("c") %>%
                     xml2::xml_has_attr("dt") %>% sum() > 0, dt[i] <- TRUE,
                 dt[i] <- FALSE)
     }
     allrows <- allrows[!dt]
 
-    firstrow <- allrows[1] %>% rvest::xml_nodes("c")
+    firstrow <- allrows[1] %>% rvest::html_elements("c")
     numcol <-  length(firstrow) +
         length(firstrow %>% xml2::xml_children()) # standard deviation
     # measures are children
@@ -121,23 +121,23 @@ make_query_table <- function(query_result) {
         replaceNAs() %>%
         purrr::map_df(conditional_as.numeric)
 
-    dbcode <- query_result %>% rvest::xml_node("dataset") %>%
+    dbcode <- query_result %>% rvest::html_element("dataset") %>%
         xml2::xml_attr("code")
 
 # create lookup table from query request (needed for column names)
-    variablecodes <- query_result %>% rvest::xml_node("dataset") %>%
+    variablecodes <- query_result %>% rvest::html_element("dataset") %>%
         xml2::xml_find_all("variable[@code] | variable/hier-level[@code]") %>%
         xml2::xml_attr("code")
 
-    variablelabels <- query_result %>% rvest::xml_node("dataset") %>%
+    variablelabels <- query_result %>% rvest::html_element("dataset") %>%
         xml2::xml_find_all("variable[@code] | variable/hier-level[@code]") %>%
         xml2::xml_attr("label")
 
-    measurecodes <- query_result %>% rvest::xml_node("dataset") %>%
-        rvest::xml_nodes("measure") %>% xml2::xml_attr("code")
+    measurecodes <- query_result %>% rvest::html_element("dataset") %>%
+        rvest::html_elements("measure") %>% xml2::xml_attr("code")
 
-    measurelabels <- query_result %>% rvest::xml_node("dataset") %>%
-        rvest::xml_nodes("measure") %>% xml2::xml_attr("label")
+    measurelabels <- query_result %>% rvest::html_element("dataset") %>%
+        rvest::html_elements("measure") %>% xml2::xml_attr("label")
 
     lookup <- data.frame(code = c(variablecodes, measurecodes),
                          label = c(variablelabels, measurelabels),
@@ -146,13 +146,13 @@ make_query_table <- function(query_result) {
 # get column names (byvariables, then measures)
 
     byvariables <- query_result %>%
-        rvest::xml_node("byvariables") %>%
-        rvest::xml_nodes("variable") %>%
+        rvest::html_element("byvariables") %>%
+        rvest::html_elements("variable") %>%
         xml2::xml_attr("code")
 
     measures <- query_result %>%
-        rvest::xml_node("measure-selections") %>%
-        rvest::xml_nodes("measure") %>%
+        rvest::html_element("measure-selections") %>%
+        rvest::html_elements("measure") %>%
         xml2::xml_attr("code")
 
     index <- c(byvariables, measures) %>%
