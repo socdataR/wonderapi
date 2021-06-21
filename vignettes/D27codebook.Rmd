@@ -631,7 +631,6 @@ V_D27.V26 	 Weekday
 		 5 	  Thursday  
 		 6 	  Friday  
 		 7 	  Saturday  
-		 9 	  Unknown  
 ```
 
 **Parameter:**

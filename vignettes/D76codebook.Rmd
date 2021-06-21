@@ -22,7 +22,10 @@ B_1 	 Group Results By
 		 D76.V9-level2 	 County 
 		 D76.V19 	 2013 Urbanization 
 		 D76.V11 	 2006 Urbanization 
-		 D76.V5 	 Age Groups 
+		 D76.V5 	 Ten-Year Age Groups 
+		 D76.V51 	 Five-Year Age Groups 
+		 D76.V52 	 Single-Year Ages 
+		 D76.V6 	 Infant Age Groups 
 		 D76.V7 	 Gender 
 		 D76.V17 	 Hispanic Origin 
 		 D76.V8 	 Race 
@@ -57,7 +60,10 @@ B_2 	 And By
 		 D76.V9-level2 	 County 
 		 D76.V19 	 2013 Urbanization 
 		 D76.V11 	 2006 Urbanization 
-		 D76.V5 	 Age Groups 
+		 D76.V5 	 Ten-Year Age Groups 
+		 D76.V51 	 Five-Year Age Groups 
+		 D76.V52 	 Single-Year Ages 
+		 D76.V6 	 Infant Age Groups 
 		 D76.V7 	 Gender 
 		 D76.V17 	 Hispanic Origin 
 		 D76.V8 	 Race 
@@ -92,7 +98,10 @@ B_3 	 And By
 		 D76.V9-level2 	 County 
 		 D76.V19 	 2013 Urbanization 
 		 D76.V11 	 2006 Urbanization 
-		 D76.V5 	 Age Groups 
+		 D76.V5 	 Ten-Year Age Groups 
+		 D76.V51 	 Five-Year Age Groups 
+		 D76.V52 	 Single-Year Ages 
+		 D76.V6 	 Infant Age Groups 
 		 D76.V7 	 Gender 
 		 D76.V17 	 Hispanic Origin 
 		 D76.V8 	 Race 
@@ -127,7 +136,10 @@ B_4 	 And By
 		 D76.V9-level2 	 County 
 		 D76.V19 	 2013 Urbanization 
 		 D76.V11 	 2006 Urbanization 
-		 D76.V5 	 Age Groups 
+		 D76.V5 	 Ten-Year Age Groups 
+		 D76.V51 	 Five-Year Age Groups 
+		 D76.V52 	 Single-Year Ages 
+		 D76.V6 	 Infant Age Groups 
 		 D76.V7 	 Gender 
 		 D76.V17 	 Hispanic Origin 
 		 D76.V8 	 Race 
@@ -162,7 +174,10 @@ B_5 	 And By
 		 D76.V9-level2 	 County 
 		 D76.V19 	 2013 Urbanization 
 		 D76.V11 	 2006 Urbanization 
-		 D76.V5 	 Age Groups 
+		 D76.V5 	 Ten-Year Age Groups 
+		 D76.V51 	 Five-Year Age Groups 
+		 D76.V52 	 Single-Year Ages 
+		 D76.V6 	 Infant Age Groups 
 		 D76.V7 	 Gender 
 		 D76.V17 	 Hispanic Origin 
 		 D76.V8 	 Race 
@@ -252,6 +267,8 @@ VM_D76.M6_D76.V1_S
 		 2015 	  2015  
 		 2016 	  2016  
 		 2017 	  2017  
+		 2018 	  2018  
+		 2019 	  2019  
 ```
 
 **Parameter:**
@@ -686,6 +703,8 @@ F_D76.V1 	 Selected Items
 		 2015 	 + 2015  (2015)   
 		 2016 	 + 2016  (2016)   
 		 2017 	 + 2017  (2017)   
+		 2018 	 + 2018  (2018)   
+		 2019 	 + 2019  (2019)   
 ```
 
 **Parameter:**
@@ -875,7 +894,7 @@ V_D76.V4 	 ICD-10 113 Cause List
 		 GR113-084 	     Emphysema (J43)  
 		 GR113-085 	     Asthma (J45-J46)  
 		 GR113-086 	     Other chronic lower respiratory diseases (J44,J47)  
-		 GR113-087 	  #Pneumoconioses and chemical effects (J60-J66,J68)  
+		 GR113-087 	  #Pneumoconioses and chemical effects (J60-J66,J68,U07.0)  
 		 GR113-088 	  #Pneumonitis due to solids and liquids (J69)  
 		 GR113-089 	  Other diseases of respiratory system (J00-J06,J30- J39,J67,J70-J98)  
 		 GR113-090 	  #Peptic ulcer (K25-K28)  

@@ -713,6 +713,7 @@ V_D66.V20 	 Year
 		 2016 	  2016  
 		 2017 	  2017  
 		 2018 	  2018  
+		 2019 	  2019  
 ```
 
 **Parameter:**
@@ -748,7 +749,6 @@ V_D66.V26 	 Weekday
 		 5 	  Thursday  
 		 6 	  Friday  
 		 7 	  Saturday  
-		 9 	  Unknown  
 ```
 
 **Parameter:**
@@ -1182,7 +1182,6 @@ V_D66.V16 	 Chronic Hypertension
 		 1 	  Yes  
 		 2 	  No  
 		 9 	  Unknown or Not Stated  
-		 10 	  Not Reported  
 ```
 
 **Parameter:**
@@ -1194,7 +1193,6 @@ V_D66.V14 	 Diabetes
 		 1 	  Yes  
 		 2 	  No  
 		 9 	  Unknown or Not Stated  
-		 10 	  Not Reported  
 ```
 
 **Parameter:**
@@ -1206,7 +1204,6 @@ V_D66.V17 	 Pregnancy-associated Hypertension
 		 1 	  Yes  
 		 2 	  No  
 		 9 	  Unknown or Not Stated  
-		 10 	  Not Reported  
 ```
 
 **Parameter:**

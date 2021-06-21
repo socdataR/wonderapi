@@ -12,3 +12,5 @@ readme_cache/
 inst/doc
 doc
 Meta
+/doc/
+/Meta/

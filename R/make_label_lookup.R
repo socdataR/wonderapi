@@ -6,7 +6,7 @@ make_label_lookup <- function(db) {
     webdata <- agree_and_scrape(dbname = dbnamelookup$dbname[index],
                                 dbcode = dbnamelookup$dbcode[index],
                                 submit = dbnamelookup$dbagree[index])
-    webform <- rvest::html_form(webdata)[[3]]
+    webform <- rvest::html_form(webdata)[[2]]
     dbcode <- webform$fields$dataset_code$value
 
     labels <- webdata %>% rvest::html_nodes("label")
