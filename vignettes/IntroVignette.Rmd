@@ -125,14 +125,14 @@ Although some of the parameter names are long and/or awkward, for the sake of co
 To facilitate the process of designing a query list, this package relies on default query lists. Each default query is set to request a single Group By Results parameter, generally set to `"Year"`. It is set to request the Measures that are listed as default Measures on the web interface (i.e. `Births` for [the Births dataset](https://wonder.cdc.gov/controller/datarequest/D76); `Deaths`, `Population` and `Crude Rate` for the [Detailed Mortality dataset](https://wonder.cdc.gov/controller/datarequest/D76).) To see the default settings, perform a query request without specifying a querylist: 
 
 ```{r eval=githubreadme, echo=githubreadme}
-natdata <- getData(TRUE, "Natality for 2007 - 2018")
+natdata <- getData(TRUE, "Natality for 2007 - 2019")
 natdata %>% head()
 dmdata <- getData(TRUE, "Detailed Mortality")
 dmdata %>% head()
 ```
 
 ```{r eval=!githubreadme, echo=!githubreadme}
-natdata <- getData(TRUE, "Natality for 2007 - 2018")
+natdata <- getData(TRUE, "Natality for 2007 - 2019")
 natdata %>% head() %>% kable()
 dmdata <- getData(TRUE, "Detailed Mortality")
 dmdata %>% head() %>% kable()
@@ -182,7 +182,7 @@ Measures do not need values; it is sufficient to specify a name only:
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
-mydata2 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
+mydata2 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 ```
 
 ```{r eval=githubreadme, echo=githubreadme}
@@ -236,7 +236,7 @@ Some of the datasets, such as the Births, are divided into multiple databases by
 ```{r BirthsbyYear1995to2018}
 births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
-                getData(TRUE, "Natality for 2007 - 2018"))
+                getData(TRUE, "Natality for 2007 - 2019"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
     ggtitle("U.S. Births by Year, 1995 - 2018")
 
@@ -265,7 +265,7 @@ Errors due to the constraints of the CDC Wonder API are more difficult to catch 
 ```{r, error = TRUE}
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate", ""))
-mydata4 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
+mydata4 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 ```
 
 In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong:  
@@ -277,7 +277,7 @@ We learn that we can't include "Education" if we request the "Birth Rate" measur
 ```{r}
 mylist <- list(list("And By", "Mother's Bridged Race"), 
                list("Birth Rate", ""))
-mydata5 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
+mydata5 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 ```
 
 ```{r eval=githubreadme, echo=githubreadme}

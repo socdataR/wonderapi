@@ -157,7 +157,7 @@ wonderapi::show_databases()
     ##   <chr>                    <chr>
     ## 1 Natality for 1995 - 2002 D10  
     ## 2 Natality for 2003 - 2006 D27  
-    ## 3 Natality for 2007 - 2018 D66  
+    ## 3 Natality for 2007 - 2019 D66  
     ## 4 Detailed Mortality       D76  
     ## 5 Heat Wave Days           D104
 
@@ -240,7 +240,7 @@ default settings, perform a query request without specifying a
 querylist:
 
 ``` r
-natdata <- getData(TRUE, "Natality for 2007 - 2018")
+natdata <- getData(TRUE, "Natality for 2007 - 2019")
 natdata %>% head()
 ```
 
@@ -340,7 +340,7 @@ Measures do not need values; it is sufficient to specify a name only:
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
-mydata2 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
+mydata2 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 ```
 
 ``` r
@@ -435,7 +435,7 @@ available, see the codebooks (**`>??codebook`**) and crosscheck with the
 ``` r
 births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
-                getData(TRUE, "Natality for 2007 - 2018"))
+                getData(TRUE, "Natality for 2007 - 2019"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
     ggtitle("U.S. Births by Year, 1995 - 2018")
 ```
@@ -480,7 +480,7 @@ appears to be a reasonable request, but results in an error:
 ``` r
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate", ""))
-mydata4 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
+mydata4 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 ```
 
     ## Error in wondr::make_query(querylist, dbcode): Bad Request (HTTP 400).
@@ -502,7 +502,7 @@ Rate” measure. If we try again with “Bridged Race” instead of
 ``` r
 mylist <- list(list("And By", "Mother's Bridged Race"), 
                list("Birth Rate", ""))
-mydata5 <- getData(TRUE, "Natality for 2007 - 2018", mylist)
+mydata5 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 ```
 
 ``` r
