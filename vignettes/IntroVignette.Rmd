@@ -95,6 +95,10 @@ More databases will be added in the future.
 
 The best way to become familiar with CDC Wonder API options is to use the web interface: [https://wonder.cdc.gov](https://wonder.cdc.gov), as the options available through the API are nearly identical. The greatest difference is that location variables are not available through the API.  
 
+### Limitations of the CDC WONDER API
+
+Note that queries for mortality and births statistics from the National Vital Statistics System cannot limit or group results by any location field, such as Region, Division, State or County, or Urbanization (urbanization categories map to specific geographic counties).^[See [https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html) for more information.]
+
 ## Installation
 
 This package is not on CRAN. It can be installed from Github with the `devtools` package:

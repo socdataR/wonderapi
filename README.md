@@ -1,7 +1,7 @@
 wonderapi
 ================
 Joyce Robbins
-June 21, 2021
+2021-09-14
 
 <div id="TOC">
 
@@ -59,6 +59,11 @@ from multiple datasets</a>
 
 ``` r
 library(tidyverse)
+```
+
+    ## Warning: package 'tidyverse' was built under R version 4.0.5
+
+``` r
 library(wonderapi)
 ```
 
@@ -120,6 +125,15 @@ the web interface: <https://wonder.cdc.gov>, as the options available
 through the API are nearly identical. The greatest difference is that
 location variables are not available through the API.
 
+### Limitations of the CDC WONDER API
+
+Note that queries for mortality and births statistics from the National
+Vital Statistics System cannot limit or group results by any location
+field, such as Region, Division, State or County, or Urbanization
+(urbanization categories map to specific geographic counties).^\[See
+\[<a href="https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html" class="uri">https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html</a>)
+for more information.\]
+
 ## Installation
 
 This package is not on CRAN. It can be installed from Github with the
@@ -175,8 +189,8 @@ with “V\_”).
 Although some of the parameter names are long and/or awkward, for the
 sake of consistency, we follow the CDC names exactly. **The only
 exception is that any content that appears in parentheses should be
-dropped.** For example, “Fertility Rate” can be substituted for “M\_5”,
-but "Fertility Rate (Census Region, Census Division, HHS Region, State,
+dropped.** For example, “Fertility Rate” can be substituted for “M_5”,
+but “Fertility Rate (Census Region, Census Division, HHS Region, State,
 County, Year, Age of Mother, Race) cannot.
 
 ### Default query lists and requests
@@ -269,7 +283,7 @@ provided below.
 
 Each dataset allows for fixed number (5 or fewer) Group By variables,
 codes for which are `"B_1", "B_2", "B_3",` etc. `"Group By Results"` may
-be substituted for `"B_1"` and `"And By"` for `"B_2"`. `"And By`" may
+be substituted for `"B_1"` and `"And By"` for `"B_2"`. `"And By`” may
 **not**, however, be substituted for `"B_3"` on to avoid ambiguity (this
 may change in the future.) Values – in this case, the Group By variables
 – may be specified by code or human readable name. The following, thus,
@@ -391,10 +405,10 @@ births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
                 getData(TRUE, "Natality for 2007 - 2019"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
-    ggtitle("U.S. Births by Year, 1995 - 2019")
+    ggtitle("U.S. Births by Year, 1995 - 2018")
 ```
 
-<img src="readme_files/figure-gfm/BirthsbyYear1995to2019-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-gfm/BirthsbyYear1995to2018-1.png" style="display: block; margin: auto;" />
 
 ### Errors
 
