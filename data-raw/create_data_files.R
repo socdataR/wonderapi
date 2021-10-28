@@ -11,12 +11,16 @@ library(readr)
 library(wonderapi)
 library(wondr)
 
+# Adding a new dataset
+# Add dataset to dbnamelookup.csv
+#
+
 # 1. test new dataset to be added
 devtools::load_all()
 # temporarily bypass dbnamelookup in sysdata.rda
 dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")
-dbcode <- "D66"
-make_label_lookup(dbcode)
+dbcode <- "D149"
+make_label_lookup(dbcode, dbnamelookup)
 
 ql <- make_query_list(paste0(dbcode,"_Defaults.xml"))
 

@@ -1,5 +1,5 @@
 
-make_label_lookup <- function(db) {
+make_label_lookup <- function(db, dbnamelookup) {
     # check all columns of dbnamelookup for db
     index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
     if (length(index) == 0) stop ("I don't know which database you want.")
