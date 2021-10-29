@@ -61,12 +61,12 @@ getData <- function(agree = FALSE, db = "D66", querylist = NULL, add = TRUE) {
             if(any(is.element(
                 queryparams,
                 c("O_location", "VM_D76.M6_D76.V10", "V_D76.V9", "F_D76.V9", "V_D76.V10", "F_D76.V10", "V_D76.V27", "F_D76.V27", "O_urban", "V_D76.V19", "V_D76.V11")))) {
-                warning("It looks like you are trying to limit results by a location field or urbanization.\nThis is not possible via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
+                stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
             }
             if(any(is.element(
                 queryargs,
                 c("Census Region", "Census Division", "HHS Region", "State", "County", "2013 Urbanization", "2006 Urbanization", "D76.V10-level1", "D76.V10-level2", "D76.V27-level1", "D76.V9-level1", "D76.V9-level2", "D76.V19", "D76.V11")))) {
-                warning("It looks like you are trying to group results by a location field or urbanization.\nThis is not possible via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
+                stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
             }
             querylist <- label_to_code(querylist, dbcode)
             querylist <- combine_lists(default_list,
