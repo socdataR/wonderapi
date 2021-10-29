@@ -82,9 +82,9 @@ write queries using human readable names rather than numeric codes.
 Note that queries for mortality and births statistics from the National
 Vital Statistics System cannot limit or group results by any location
 field, such as Region, Division, State or County, or Urbanization
-(urbanization categories map to specific geographic counties).^\[See
-\[<a href="https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html" class="uri">https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html</a>)
-for more information.\]
+(urbanization categories map to specific geographic counties). See:
+<https://wonder.cdc.gov/wonder/help/WONDER-API.html> for more
+information.
 
 ### Example
 
