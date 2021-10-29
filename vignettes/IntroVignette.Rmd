@@ -60,6 +60,7 @@ library(wonderapi)
 ```
 
 ## Overview
+
 This package makes it easier to use the CDC Wonder API.  It does so by employing hidden default query lists and lookup tables, allowing users to focus only on the variables they're interested in obtaining, and to write queries using human readable names rather than numeric codes.
 
 `getData()`
@@ -69,6 +70,10 @@ This package makes it easier to use the CDC Wonder API.  It does so by employing
 * calls `wondr::make_query` to obtain query results
 * processes the results  
 * returns a tidy data frame  
+
+## Limitations of the CDC WONDER API
+
+Note that queries for mortality and births statistics from the National Vital Statistics System cannot limit or group results by any location field, such as Region, Division, State or County, or Urbanization (urbanization categories map to specific geographic counties).^[See [https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html) for more information.]
 
 ### Example
 
@@ -94,10 +99,6 @@ wonderapi::show_databases()
 More databases will be added in the future.  
 
 The best way to become familiar with CDC Wonder API options is to use the web interface: [https://wonder.cdc.gov](https://wonder.cdc.gov), as the options available through the API are nearly identical. The greatest difference is that location variables are not available through the API.  
-
-### Limitations of the CDC WONDER API
-
-Note that queries for mortality and births statistics from the National Vital Statistics System cannot limit or group results by any location field, such as Region, Division, State or County, or Urbanization (urbanization categories map to specific geographic counties).^[See [https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html) for more information.]
 
 ## Installation
 
@@ -237,12 +238,12 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
 ### Combining results from multiple datasets
 Some of the datasets, such as the Births, are divided into multiple databases by time period. `wonderapi` makes it easy to combine the data into one data frame. (Care needs to be taken as the variables are not identical in all. For example, the 1995 - 2002 dataset does not have any measure options; it only returns number of births. To find out what's available, see the codebooks (**`>??codebook`**) and crosscheck with the [CDC Wonder API web interface](https://wonder.cdc.gov).)  
 
-```{r BirthsbyYear1995to2018}
+```{r BirthsbyYear1995to2019}
 births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
                 getData(TRUE, "Natality for 2007 - 2019"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
-    ggtitle("U.S. Births by Year, 1995 - 2018")
+    ggtitle("U.S. Births by Year, 1995 - 2019")
 
 ```
 
