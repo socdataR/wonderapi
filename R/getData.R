@@ -9,6 +9,13 @@
 #'
 #' @param add If \code{TRUE} (default) \code{querylist} is combined with the default query list. Set to \code{FALSE} to use \code{querylist} as a standalone list of query parameters.
 #'
+#' @details
+#' Queries for mortality and births statistics from the National Vital Statistics System cannot limit or group results by any location field, such as Region, Division, State or County, or Urbanization (urbanization categories map to specific geographic counties).
+#'
+#' For example, in the D76 online database for Detailed Mortality 1999-2013, the location fields are D76.V9, D76.V10 and D76.V27, and the urbanization fields are D76.V11 and D76.V19. These 'sub-national" data fields cannot be grouped by or limited via the API, although these fields are available in the web application.
+#'
+#' See \url{https://wonder.cdc.gov/wonder/help/WONDER-API.html} for more information.
+#'
 #' @examples
 #' mylist <- list(
 #'   list("Group Results By", "Race"),
@@ -43,6 +50,24 @@ getData <- function(agree = FALSE, db = "D66", querylist = NULL, add = TRUE) {
         if(is.null(querylist)) {
             querylist <- default_list
         } else {
+            queryparams <- querylist %>%
+                purrr::map(~.x[[1]]) %>%
+                unlist() %>%
+                unique()
+            queryargs <- querylist %>%
+                purrr::map(~.x[[2]]) %>%
+                unlist() %>%
+                unique()
+            if(any(is.element(
+                queryparams,
+                c("O_location", "VM_D76.M6_D76.V10", "V_D76.V9", "F_D76.V9", "V_D76.V10", "F_D76.V10", "V_D76.V27", "F_D76.V27", "O_urban", "V_D76.V19", "V_D76.V11")))) {
+                stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
+            }
+            if(any(is.element(
+                queryargs,
+                c("Census Region", "Census Division", "HHS Region", "State", "County", "2013 Urbanization", "2006 Urbanization", "D76.V10-level1", "D76.V10-level2", "D76.V27-level1", "D76.V9-level1", "D76.V9-level2", "D76.V19", "D76.V11")))) {
+                stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
+            }
             querylist <- label_to_code(querylist, dbcode)
             querylist <- combine_lists(default_list,
                                        querylist)

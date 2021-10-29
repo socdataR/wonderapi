@@ -1,9 +1,8 @@
 ---
 title: "wonderapi"
 author: "Joyce Robbins"
-date: "June 21, 2021"
-output: rmarkdown::github_document
-
+date: "`r Sys.Date()`"
+output: github_document
 ---
 
 ```{r, echo = FALSE}
@@ -46,6 +45,7 @@ library(wonderapi)
 ```
 
 ## Overview
+
 This package makes it easier to use the CDC Wonder API.  It does so by employing hidden default query lists and lookup tables, allowing users to focus only on the variables they're interested in obtaining, and to write queries using human readable names rather than numeric codes.
 
 `getData()`
@@ -55,6 +55,10 @@ This package makes it easier to use the CDC Wonder API.  It does so by employing
 * calls `wondr::make_query` to obtain query results
 * processes the results  
 * returns a tidy data frame  
+
+### Limitations of the CDC WONDER API
+
+Note that queries for mortality and births statistics from the National Vital Statistics System cannot limit or group results by any location field, such as Region, Division, State or County, or Urbanization (urbanization categories map to specific geographic counties).^[See [https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html) for more information.]
 
 ### Example
 

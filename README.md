@@ -1,7 +1,7 @@
 wonderapi
 ================
 Joyce Robbins
-June 21, 2021
+2021-10-28
 
 <div id="TOC">
 
@@ -77,6 +77,15 @@ write queries using human readable names rather than numeric codes.
 -   processes the results  
 -   returns a tidy data frame
 
+### Limitations of the CDC WONDER API
+
+Note that queries for mortality and births statistics from the National
+Vital Statistics System cannot limit or group results by any location
+field, such as Region, Division, State or County, or Urbanization
+(urbanization categories map to specific geographic counties).^\[See
+\[<a href="https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html" class="uri">https://wonder.cdc.gov/wonder/help/WONDER-API.html\(https://wonder.cdc.gov/wonder/help/WONDER-API.html</a>)
+for more information.\]
+
 ### Example
 
 ``` r
@@ -88,7 +97,7 @@ mydata0 <- getData(TRUE, "Detailed Mortality", mylist)
 mydata0 %>% head()
 ```
 
-    ## # A tibble: 6 x 5
+    ## # A tibble: 6 × 5
     ##    Year Gender  Deaths Population `Crude Rate`
     ##   <dbl> <chr>    <dbl>      <dbl>        <dbl>
     ## 1  1999 Female 1215860  142237295         855.
@@ -104,7 +113,7 @@ mydata0 %>% head()
 wonderapi::show_databases()
 ```
 
-    ## # A tibble: 5 x 2
+    ## # A tibble: 5 × 2
     ##   label                    name 
     ##   <chr>                    <chr>
     ## 1 Natality for 1995 - 2002 D10  
@@ -175,8 +184,8 @@ with “V\_”).
 Although some of the parameter names are long and/or awkward, for the
 sake of consistency, we follow the CDC names exactly. **The only
 exception is that any content that appears in parentheses should be
-dropped.** For example, “Fertility Rate” can be substituted for “M\_5”,
-but "Fertility Rate (Census Region, Census Division, HHS Region, State,
+dropped.** For example, “Fertility Rate” can be substituted for “M_5”,
+but “Fertility Rate (Census Region, Census Division, HHS Region, State,
 County, Year, Age of Mother, Race) cannot.
 
 ### Default query lists and requests
@@ -197,7 +206,7 @@ natdata <- getData(TRUE, "Natality for 2007 - 2019")
 natdata %>% head()
 ```
 
-    ## # A tibble: 6 x 2
+    ## # A tibble: 6 × 2
     ##    Year  Births
     ##   <dbl>   <dbl>
     ## 1  2007 4316233
@@ -212,7 +221,7 @@ dmdata <- getData(TRUE, "Detailed Mortality")
 dmdata %>% head()
 ```
 
-    ## # A tibble: 6 x 4
+    ## # A tibble: 6 × 4
     ##    Year  Deaths Population `Crude Rate`
     ##   <dbl>   <dbl>      <dbl>        <dbl>
     ## 1  1999 2391043  279040168         857.
@@ -251,7 +260,7 @@ mydata <- getData(TRUE, "Detailed Mortality", mylist)
 mydata %>% head()
 ```
 
-    ## # A tibble: 6 x 4
+    ## # A tibble: 6 × 4
     ##   Weekday    Deaths Population     `Crude Rate`  
     ##   <chr>       <dbl> <chr>          <chr>         
     ## 1 Sunday    7575854 Not Applicable Not Applicable
@@ -269,7 +278,7 @@ provided below.
 
 Each dataset allows for fixed number (5 or fewer) Group By variables,
 codes for which are `"B_1", "B_2", "B_3",` etc. `"Group By Results"` may
-be substituted for `"B_1"` and `"And By"` for `"B_2"`. `"And By`" may
+be substituted for `"B_1"` and `"And By"` for `"B_2"`. `"And By`” may
 **not**, however, be substituted for `"B_3"` on to avoid ambiguity (this
 may change in the future.) Values – in this case, the Group By variables
 – may be specified by code or human readable name. The following, thus,
@@ -300,7 +309,7 @@ mydata2 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 mydata2 %>% head()
 ```
 
-    ## # A tibble: 6 x 4
+    ## # A tibble: 6 × 4
     ##   `Marital Status`  Year  Births `Average Age of Mother`
     ##   <chr>            <dbl>   <dbl>                   <dbl>
     ## 1 Married           2007 2601186                    29.5
@@ -322,7 +331,7 @@ mylist <- list(list("Month", "2"))
 getData(TRUE, "D66", mylist)
 ```
 
-    ## # A tibble: 13 x 2
+    ## # A tibble: 13 × 2
     ##     Year Births
     ##    <dbl>  <dbl>
     ##  1  2007 326891
@@ -416,7 +425,7 @@ mydata3 <- getData(TRUE, "Detailed Mortality",
 mydata3 %>% head()
 ```
 
-    ## # A tibble: 6 x 4
+    ## # A tibble: 6 × 4
     ##    Year  Deaths Population `Crude Rate`
     ##   <dbl>   <dbl>      <dbl>        <dbl>
     ## 1  1999 2391043  279040168         857.
@@ -461,7 +470,7 @@ mydata5 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
 mydata5 %>% head()
 ```
 
-    ## # A tibble: 6 x 5
+    ## # A tibble: 6 × 5
     ##    Year `Mother's Bridged Race`           Births `Total Population` `Birth Rate`
     ##   <dbl> <chr>                              <dbl>              <dbl>        <dbl>
     ## 1  2007 American Indian or Alaska Native   49443            3829898         12.9
