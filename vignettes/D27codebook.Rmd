@@ -835,6 +835,7 @@ V_D27.V7 	 Plurality or Multiple Birth
 		 3 	  Triplet  
 		 4 	  Quadruplet  
 		 5 	  Quintuplet or higher  
+		 10 	  Not Available  
 ```
 
 **Parameter:**
@@ -870,7 +871,7 @@ V_D27.V29 	 Medical Attendant
 		 *All* 	  All Attendants  
 		 1 	  Doctor of Medicine(MD)  
 		 2 	  Doctor of Osteopathy(DO)  
-		 3 	  Certified Nurse Midwife(CNM)  
+		 3 	  Certified Nurse Midwife(CNM/CM)  
 		 4 	  Other Midwife  
 		 5 	  Other  
 		 9 	  Unknown or not stated  

@@ -269,6 +269,7 @@ VM_D76.M6_D76.V1_S
 		 2017 	  2017  
 		 2018 	  2018  
 		 2019 	  2019  
+		 2020 	  2020  
 ```
 
 **Parameter:**
@@ -705,6 +706,7 @@ F_D76.V1 	 Selected Items
 		 2017 	 + 2017  (2017)   
 		 2018 	 + 2018  (2018)   
 		 2019 	 + 2019  (2019)   
+		 2020 	 + 2020  (2020 )   
 ```
 
 **Parameter:**
@@ -825,7 +827,7 @@ V_D76.V4 	 ICD-10 113 Cause List
 		 GR113-015 	  #Viral hepatitis (B15-B19)  
 		 GR113-016 	  #Human immunodeficiency virus (HIV) disease (B20-B24)  
 		 GR113-017 	  #Malaria (B50-B54)  
-		 GR113-018 	  Other and unspecified infectious and parasitic diseases and their sequelae (A00,A05,A20-A36,A42-A44,A48-A49,A54-A79,A81-A82,A85.0-A85.1,A85.8,A86-B04,B06-B09,B25-B49,B55-B99)  
+		 GR113-018 	  Other and unspecified infectious and parasitic diseases and their sequelae (A00,A05,A20-A36,A42-A44,A48-A49,A54-A79,A81-A82,A85.0-A85.1,A85.8,A86-B04,B06-B09,B25-B49,B55-B99,U07.1)  
 		 GR113-019 	  #Malignant neoplasms (C00-C97)  
 		 GR113-020 	     Malignant neoplasms of lip, oral cavity and pharynx (C00-C14)  
 		 GR113-021 	     Malignant neoplasm of esophagus (C15)  
@@ -944,6 +946,7 @@ V_D76.V4 	 ICD-10 113 Cause List
 		 GR113-134 	  #Operations of war and their sequelae (Y36,Y89.1)  
 		 GR113-135 	  #Complications of medical and surgical care (Y40-Y84,Y88)  
 		 GR113-136 	  #Enterocolitis due to Clostridium difficile (A04.7)  
+		 GR113-137 	  #COVID-19 (U07.1)  
 ```
 
 **Parameter:**
@@ -952,7 +955,7 @@ V_D76.V12 	 ICD-10 130 Cause List (Infants)
 **Value(s):**
 ```
 		 *All* 	  All Causes of Death  
-		 GR130-001 	  Certain infectious and parasitic diseases (A00-B99)  
+		 GR130-001 	  Certain infectious and parasitic diseases (A00-B99,U07.1)  
 		 GR130-002 	     Certain intestinal infectious diseases (A00-A08)  
 		 GR130-003 	     #Diarrhea and gastroenteritis of infectious origin (A09)  
 		 GR130-004 	     #Tuberculosis (A16-A19)  
@@ -963,13 +966,13 @@ V_D76.V12 	 ICD-10 130 Cause List (Infants)
 		 GR130-009 	     #Septicemia (A40-A41)  
 		 GR130-010 	     #Congenital syphilis (A50)  
 		 GR130-011 	     #Gonococcal infection (A54)  
-		 GR130-012 	     Viral diseases (A80-B34)  
+		 GR130-012 	     Viral diseases (A80-B34,U07.1)  
 		 GR130-013 	        #Acute poliomyelitis (A80)  
 		 GR130-014 	        #Varicella (chickenpox) (B01)  
 		 GR130-015 	        #Measles (B05)  
 		 GR130-016 	        #Human immunodeficiency virus (HIV) disease (B20-B24)  
 		 GR130-017 	        #Mumps (B26)  
-		 GR130-018 	        Other and unspecified viral diseases (A81-B00,B02-B04,B06-B19,B25,B27-B34)  
+		 GR130-018 	        Other and unspecified viral diseases (A81-B00,B02-B04,B06-B19,B25,B27-B34,U07.1)  
 		 GR130-019 	     #Candidiasis (B37)  
 		 GR130-020 	     #Malaria (B50-B54)  
 		 GR130-021 	     #Pneumocystosis (B59)  

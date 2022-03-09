@@ -407,6 +407,7 @@ V_D10.V7 	 Plurality or Multiple Birth
 		 3 	  Triplet  
 		 4 	  Quadruplet  
 		 5 	  Quintuplet or higher  
+		 10 	  Not Available  
 ```
 
 **Parameter:**

@@ -15,7 +15,7 @@ library(wondr)
 devtools::load_all()
 # temporarily bypass dbnamelookup in sysdata.rda
 dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")
-dbcode <- "D66"
+dbcode <- "D76"
 make_label_lookup(dbcode)
 
 ql <- make_query_list(paste0(dbcode,"_Defaults.xml"))

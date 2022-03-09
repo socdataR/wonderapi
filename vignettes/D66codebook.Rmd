@@ -663,6 +663,7 @@ V_D66.V4 	 Mother's Expanded Hispanic Origin
 		 7 	  Dominican  
 		 5 	  Other and Unknown Hispanic  
 		 9 	  Unknown or Not Stated  
+		 10 	  Not Available  
 		 100 	  Not Reported  
 ```
 
@@ -693,6 +694,7 @@ V_D66.V2 	 Mother's Bridged Race
 		 A-PI 	  Asian or Pacific Islander  
 		 2054-5 	  Black or African American  
 		 2106-3 	  White  
+		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -714,6 +716,7 @@ V_D66.V20 	 Year
 		 2017 	  2017  
 		 2018 	  2018  
 		 2019 	  2019  
+		 2020 	  2020  
 ```
 
 **Parameter:**
@@ -953,6 +956,7 @@ V_D66.V7 	 Plurality or Multiple Birth
 		 3 	  Triplet  
 		 4 	  Quadruplet  
 		 5 	  Quintuplet or higher  
+		 10 	  Not Available  
 ```
 
 **Parameter:**
@@ -988,7 +992,7 @@ V_D66.V29 	 Medical Attendant
 		 *All* 	  All Attendants  
 		 1 	  Doctor of Medicine(MD)  
 		 2 	  Doctor of Osteopathy(DO)  
-		 3 	  Certified Nurse Midwife(CNM)  
+		 3 	  Certified Nurse Midwife(CNM/CM)  
 		 4 	  Other Midwife  
 		 5 	  Other  
 		 9 	  Unknown or not stated  
