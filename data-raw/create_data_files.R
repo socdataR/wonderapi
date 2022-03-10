@@ -11,6 +11,8 @@ library(readr)
 library(wonderapi)
 library(wondr)
 
+# First, manually update data-raw/dbnamelookup.csv if necessary
+
 # 1. test new dataset to be added
 devtools::load_all()
 # temporarily bypass dbnamelookup in sysdata.rda
@@ -51,6 +53,7 @@ usethis::use_data(dbnamelookup, label_list, query_defaults,
 
 # 6. make codebook vignettes
 purrr::map(databases, make_codebook_vignette)
+# manually update IntroVignette.Rmd
 devtools::build_vignettes()
 
 

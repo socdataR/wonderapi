@@ -1,10 +1,10 @@
 ---
-title: " D66 Natality for 2007 - 2019 Dataset Codebook"
+title: " D66 Natality for 2007 - 2020 Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D66 Natality for 2007 - 2019 }
+  %\VignetteIndexEntry{ D66 Natality for 2007 - 2020 }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

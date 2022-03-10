@@ -1,7 +1,7 @@
 wonderapi
 ================
 Joyce Robbins
-2021-10-28
+March 9, 2022
 
 <div id="TOC">
 
@@ -59,6 +59,15 @@ from multiple datasets</a>
 
 ``` r
 library(tidyverse)
+```
+
+    ## Warning: package 'tidyr' was built under R version 4.1.2
+
+    ## Warning: package 'readr' was built under R version 4.1.2
+
+    ## Warning: package 'dplyr' was built under R version 4.1.2
+
+``` r
 library(wonderapi)
 ```
 
@@ -77,7 +86,7 @@ write queries using human readable names rather than numeric codes.
 -   processes the results  
 -   returns a tidy data frame
 
-### Limitations of the CDC WONDER API
+## Limitations of the CDC WONDER API
 
 Note that queries for mortality and births statistics from the National
 Vital Statistics System cannot limit or group results by any location
@@ -98,14 +107,14 @@ mydata0 %>% head()
 ```
 
     ## # A tibble: 6 × 5
-    ##    Year Gender  Deaths Population `Crude Rate`
-    ##   <dbl> <chr>    <dbl>      <dbl>        <dbl>
-    ## 1  1999 Female 1215860  142237295         855.
-    ## 2  1999 Male   1175183  136802873         859 
-    ## 3  2000 Female 1225706  143368343         855.
-    ## 4  2000 Male   1177289  138053563         853.
-    ## 5  2001 Female 1232913  145077463         850.
-    ## 6  2001 Male   1183090  139891492         846.
+    ##   Year  Gender  Deaths Population `Crude Rate`
+    ##   <chr> <chr>    <dbl>      <dbl>        <dbl>
+    ## 1 1999  Female 1215860  142237295         855.
+    ## 2 1999  Male   1175183  136802873         859 
+    ## 3 2000  Female 1225706  143368343         855.
+    ## 4 2000  Male   1177289  138053563         853.
+    ## 5 2001  Female 1232913  145077463         850.
+    ## 6 2001  Male   1183090  139891492         846.
 
 `show_databases()` displays available databases by name and code:
 
@@ -118,7 +127,7 @@ wonderapi::show_databases()
     ##   <chr>                    <chr>
     ## 1 Natality for 1995 - 2002 D10  
     ## 2 Natality for 2003 - 2006 D27  
-    ## 3 Natality for 2007 - 2019 D66  
+    ## 3 Natality for 2007 - 2020 D66  
     ## 4 Detailed Mortality       D76  
     ## 5 Heat Wave Days           D104
 
@@ -202,7 +211,7 @@ default settings, perform a query request without specifying a
 querylist:
 
 ``` r
-natdata <- getData(TRUE, "Natality for 2007 - 2019")
+natdata <- getData(TRUE, "Natality for 2007 - 2020")
 natdata %>% head()
 ```
 
@@ -222,14 +231,14 @@ dmdata %>% head()
 ```
 
     ## # A tibble: 6 × 4
-    ##    Year  Deaths Population `Crude Rate`
-    ##   <dbl>   <dbl>      <dbl>        <dbl>
-    ## 1  1999 2391043  279040168         857.
-    ## 2  2000 2402995  281421906         854.
-    ## 3  2001 2416003  284968955         848.
-    ## 4  2002 2443030  287625193         849.
-    ## 5  2003 2447946  290107933         844.
-    ## 6  2004 2397269  292805298         819.
+    ##   Year   Deaths Population `Crude Rate`
+    ##   <chr>   <dbl>      <dbl>        <dbl>
+    ## 1 1999  2391043  279040168         857.
+    ## 2 2000  2402995  281421906         854.
+    ## 3 2001  2416003  284968955         848.
+    ## 4 2002  2443030  287625193         849.
+    ## 5 2003  2447946  290107933         844.
+    ## 6 2004  2397269  292805298         819.
 
 The default lists were prepared based on CDC examples, but we make no
 claim that they are error free. If you have any suggestions for
@@ -263,12 +272,12 @@ mydata %>% head()
     ## # A tibble: 6 × 4
     ##   Weekday    Deaths Population     `Crude Rate`  
     ##   <chr>       <dbl> <chr>          <chr>         
-    ## 1 Sunday    7575854 Not Applicable Not Applicable
-    ## 2 Monday    7638335 Not Applicable Not Applicable
-    ## 3 Tuesday   7586763 Not Applicable Not Applicable
-    ## 4 Wednesday 7585543 Not Applicable Not Applicable
-    ## 5 Thursday  7596742 Not Applicable Not Applicable
-    ## 6 Friday    7711294 Not Applicable Not Applicable
+    ## 1 Sunday    8049406 Not Applicable Not Applicable
+    ## 2 Monday    8120828 Not Applicable Not Applicable
+    ## 3 Tuesday   8066322 Not Applicable Not Applicable
+    ## 4 Wednesday 8074854 Not Applicable Not Applicable
+    ## 5 Thursday  8087969 Not Applicable Not Applicable
+    ## 6 Friday    8197715 Not Applicable Not Applicable
 
 As the set up is slightly different depending on the parameter type,
 more details on setting up the name-value pairs by parameter types are
@@ -302,7 +311,7 @@ Measures do not need values; it is sufficient to specify a name only:
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
-mydata2 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
+mydata2 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
 ```
 
 ``` r
@@ -331,7 +340,7 @@ mylist <- list(list("Month", "2"))
 getData(TRUE, "D66", mylist)
 ```
 
-    ## # A tibble: 13 × 2
+    ## # A tibble: 14 × 2
     ##     Year Births
     ##    <dbl>  <dbl>
     ##  1  2007 326891
@@ -347,6 +356,7 @@ getData(TRUE, "D66", mylist)
     ## 11  2017 289054
     ## 12  2018 284250
     ## 13  2019 279963
+    ## 14  2020 282654
 
 **Note that values for Limiting Variables must be entered as codes; in
 this case “2” rather than “February.” We hope to add capability for
@@ -362,7 +372,7 @@ ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
     geom_line() + ggtitle("Births by Marital Status")
 ```
 
-<img src="readme_files/figure-gfm/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
+<img src="Readme_files/figure-gfm/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
 
 ``` r
 ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
@@ -371,7 +381,7 @@ ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
     ggtitle("Average Age of Mother")
 ```
 
-<img src="readme_files/figure-gfm/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
+<img src="Readme_files/figure-gfm/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
 
 ``` r
 mydata2 <- mydata2 %>% 
@@ -383,7 +393,7 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
     ylab("Percent of Total Births")
 ```
 
-<img src="readme_files/figure-gfm/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
+<img src="Readme_files/figure-gfm/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
 
 ### Combining results from multiple datasets
 
@@ -398,12 +408,12 @@ available, see the codebooks (**`>??codebook`**) and crosscheck with the
 ``` r
 births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
                 getData(TRUE, "Natality for 2003 - 2006"),
-                getData(TRUE, "Natality for 2007 - 2019"))
+                getData(TRUE, "Natality for 2007 - 2020"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
-    ggtitle("U.S. Births by Year, 1995 - 2019")
+    ggtitle("U.S. Births by Year, 1995 - 2020")
 ```
 
-<img src="readme_files/figure-gfm/BirthsbyYear1995to2019-1.png" style="display: block; margin: auto;" />
+<img src="Readme_files/figure-gfm/BirthsbyYear1995to2020-1.png" style="display: block; margin: auto;" />
 
 ### Errors
 
@@ -426,14 +436,14 @@ mydata3 %>% head()
 ```
 
     ## # A tibble: 6 × 4
-    ##    Year  Deaths Population `Crude Rate`
-    ##   <dbl>   <dbl>      <dbl>        <dbl>
-    ## 1  1999 2391043  279040168         857.
-    ## 2  2000 2402995  281421906         854.
-    ## 3  2001 2416003  284968955         848.
-    ## 4  2002 2443030  287625193         849.
-    ## 5  2003 2447946  290107933         844.
-    ## 6  2004 2397269  292805298         819.
+    ##   Year   Deaths Population `Crude Rate`
+    ##   <chr>   <dbl>      <dbl>        <dbl>
+    ## 1 1999  2391043  279040168         857.
+    ## 2 2000  2402995  281421906         854.
+    ## 3 2001  2416003  284968955         848.
+    ## 4 2002  2443030  287625193         849.
+    ## 5 2003  2447946  290107933         844.
+    ## 6 2004  2397269  292805298         819.
 
 Errors due to the constraints of the CDC Wonder API are more difficult
 to catch since there are many quirky rules and it is currently beyond
@@ -443,7 +453,7 @@ appears to be a reasonable request, but results in an error:
 ``` r
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate", ""))
-mydata4 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
+mydata4 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
 ```
 
     ## Error in wondr::make_query(querylist, dbcode): Internal Server Error (HTTP 500).
@@ -463,7 +473,7 @@ Rate” measure. If we try again with “Bridged Race” instead of
 ``` r
 mylist <- list(list("And By", "Mother's Bridged Race"), 
                list("Birth Rate", ""))
-mydata5 <- getData(TRUE, "Natality for 2007 - 2019", mylist)
+mydata5 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
 ```
 
 ``` r
@@ -472,10 +482,10 @@ mydata5 %>% head()
 
     ## # A tibble: 6 × 5
     ##    Year `Mother's Bridged Race`           Births `Total Population` `Birth Rate`
-    ##   <dbl> <chr>                              <dbl>              <dbl>        <dbl>
-    ## 1  2007 American Indian or Alaska Native   49443            3829898         12.9
-    ## 2  2007 Asian or Pacific Islander         254488           15559373         16.4
-    ## 3  2007 Black or African American         675676           40451108         16.7
-    ## 4  2007 White                            3336626          241390828         13.8
-    ## 5  2008 American Indian or Alaska Native   49537            3983929         12.4
-    ## 6  2008 Asian or Pacific Islander         253185           16094699         15.7
+    ##   <dbl> <chr>                              <dbl> <chr>              <chr>       
+    ## 1  2007 American Indian or Alaska Native   49443 3,829,898          12.91       
+    ## 2  2007 Asian or Pacific Islander         254488 15,559,373         16.36       
+    ## 3  2007 Black or African American         675676 40,451,108         16.70       
+    ## 4  2007 White                            3336626 241,390,828        13.82       
+    ## 5  2008 American Indian or Alaska Native   49537 3,983,929          12.43       
+    ## 6  2008 Asian or Pacific Islander         253185 16,094,699         15.73
