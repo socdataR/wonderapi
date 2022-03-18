@@ -21,7 +21,7 @@ library(wondr)
 
 devtools::load_all()
 
-dbcode <- "D149"  # code of new database
+dbcode <- "D176"  # code of new database
 
 ql <- make_query_list(paste0(dbcode,"_Defaults.xml"))
 
