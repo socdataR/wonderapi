@@ -1,3 +1,5 @@
+# This file contains code and instructions for adding or updating CDC Wonder databases.
+
 # create data files and vignette:
 # 1. test new dataset to be added
 # 2. read dbnamelookup (database name lookup)
@@ -8,17 +10,18 @@
 
 library(dplyr)
 library(readr)
-library(wonderapi)
+library(wonderapi) # update to latest version
 library(wondr)
 
-# First, manually update data-raw/dbnamelookup.csv if necessary
+# 1. test that default query list works
 
-# 1. test new dataset to be added
+# ** TO DO ** if adding a new database, manually update data-raw/dbnamelookup.csv
+
+# ** TO DO ** Add a default query list to data-raw/  It is very difficult to create one from scratch. The best option is to request one from CDC Wonder Customer Support <cwus@cdc.gov>.
+
 devtools::load_all()
-# temporarily bypass dbnamelookup in sysdata.rda
-dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")
-dbcode <- "D76"
-make_label_lookup(dbcode)
+
+dbcode <- "D149"  # code of new database
 
 ql <- make_query_list(paste0(dbcode,"_Defaults.xml"))
 
@@ -51,9 +54,14 @@ query_defaults <- purrr::map(qd_to_add, make_query_list) %>%
 usethis::use_data(dbnamelookup, label_list, query_defaults,
                    internal = TRUE, overwrite = TRUE)
 
-# 6. make codebook vignettes
+# 6. make codebook vignette .Rmd
 purrr::map(databases, make_codebook_vignette)
-# manually update IntroVignette.Rmd
+
+#  TO DO: manually update IntroVignette.Rmd
+
+# OPTIONAL: test that the vignettes build. Note that they won't appear in Help unless the package is installed but they can be accessed with browseVignettes(). See ?build_vignettes() for more info.
+
 devtools::build_vignettes()
+
 
 

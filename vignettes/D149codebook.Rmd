@@ -1,0 +1,4464 @@
+---
+title: " D149 Natality for 2016 - 2020 (expanded) Dataset Codebook"
+author: "Joyce Robbins "
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ D149 Natality for 2016 - 2020 (expanded) }
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+This codebook is provided to assist in determining how to set up a query to the CDC Wonder API. The best way to become familiar with the API is to use the web interface: https://wonder.cdc.gov.  Also, read the [<code>wonderapi</code> vignette](IntroVignette.html) to learn about the basic sections of CDC Wonder query requests.
+
+**Parameter:**
+B_1 	 Group Results By 
+
+**Value(s):**
+```
+		 D149.V22-level1 	 Census Region of Residence 
+		 D149.V22-level2 	 Census Division of Residence 
+		 D149.V37-level1 	 HHS Region of Residence 
+		 D149.V21-level1 	 State of Residence 
+		 D149.V21-level2 	 County of Residence 
+		 D149.V154 	 2013 Metro/Nonmetro 
+		 D149.V155 	 2006 Metro/Nonmetro 
+		 D149.V156 	 2013 Urbanization 
+		 D149.V157 	 2006 Urbanization 
+		 D149.V42 	 Mother's Single Race 6 
+		 D149.V49 	 Mother's Single Race 15 
+		 D149.V50 	 Mother's Single/Multi Race 31 
+		 D149.V43 	 Mother's Hispanic Origin 
+		 D149.V4 	 Mother's Expanded Hispanic Origin 
+		 D149.V1 	 Age of Mother 9 
+		 D149.V38 	 Age of Mother 10 
+		 D149.V39 	 Age of Mother 13 
+		 D149.V40 	 Age of Mother Year 
+		 D149.V5 	 Mother's Education 
+		 D149.V27 	 Marital Status 
+		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
+		 D149.V48 	 Mother's Nativity 
+		 D149.V147 	 Mother's Birth Country 
+		 D149.V47 	 Mother's Birth State 
+		 D149.V54 	 Father's Single Race 6 
+		 D149.V55 	 Father's Single Race 15 
+		 D149.V56 	 Father's Single/Multi Race 31 
+		 D149.V53 	 Father's Hispanic Origin 
+		 D149.V52 	 Father's Expanded Hispanic Origin 
+		 D149.V57 	 Age of Father 
+		 D149.V58 	 Father's Education 
+		 D149.V60 	 Interval Since Last Live Birth 
+		 D149.V61 	 Interval Since Last Other Pregnancy Outcome 
+		 D149.V62 	 Interval of Last Pregnancy 
+		 D149.V151 	 Prior Births Now Living 
+		 D149.V152 	 Prior Births Now Dead 
+		 D149.V153 	 Prior Other Pregnancy Outcomes 
+		 D149.V28 	 Live Birth Order 
+		 D149.V59 	 Total Birth Order 
+		 D149.V66 	 WIC 
+		 D149.V89 	 Successful External Cephalic Version 
+		 D149.V90 	 Failed External Cephalic Version 
+		 D149.V65 	 Number of Prenatal Visits Recode 
+		 D149.V64 	 Number of Prenatal Visits 
+		 D149.V63 	 Trimester Prenatal Care Began 
+		 D149.V8 	 Month Prenatal Care Began 
+		 D149.V70 	 Mother's Height in Inches 
+		 D149.V71 	 Mother's Pre-pregnancy BMI 
+		 D149.V73 	 Mother's Weight Gain Recode 
+		 D149.V72 	 Mother's Weight Gain 
+		 D149.V149 	 Mother's Pre-pregnancy Weight 
+		 D149.V150 	 Mother's Delivery Weight 
+		 D149.V10 	 Tobacco Use 
+		 D149.V143 	 Number of Cigarettes Before Pregnancy Recode 
+		 D149.V139 	 Number of Cigarettes Before Pregnancy 
+		 D149.V144 	 Number of Cigarettes 1st Trimester Recode 
+		 D149.V140 	 Number of Cigarettes 1st Trimester 
+		 D149.V145 	 Number of Cigarettes 2nd Trimester Recode 
+		 D149.V141 	 Number of Cigarettes 2nd Trimester 
+		 D149.V146 	 Number of Cigarettes 3rd Trimester Recode 
+		 D149.V142 	 Number of Cigarettes 3rd Trimester 
+		 D149.V74 	 Pre-pregnancy Diabetes 
+		 D149.V75 	 Gestational Diabetes 
+		 D149.V16 	 Pre-pregnancy Hypertension 
+		 D149.V17 	 Gestational Hypertension 
+		 D149.V18 	 Eclampsia 
+		 D149.V76 	 Previous Preterm Birth 
+		 D149.V77 	 Infertility Treatment Used 
+		 D149.V78 	 Fertility Enhancing Drugs 
+		 D149.V79 	 Assistive Reproductive Technology 
+		 D149.V80 	 Previous Cesarean Delivery 
+		 D149.V81 	 Number of Previous Cesareans 
+		 D149.V82 	 Risk Factors Checked 
+		 D149.V83 	 Gonorrhea 
+		 D149.V84 	 Syphilis 
+		 D149.V85 	 Chlamydia 
+		 D149.V86 	 Hepatitis B 
+		 D149.V87 	 Hepatitis C 
+		 D149.V88 	 Infections Checked 
+		 D149.V91 	 Induction of Labor 
+		 D149.V92 	 Augmentation of Labor 
+		 D149.V93 	 Steroids 
+		 D149.V94 	 Antibiotics for Mother 
+		 D149.V95 	 Chorioamnionitis 
+		 D149.V96 	 Anesthesia 
+		 D149.V97 	 Characteristics of Labor Checked 
+		 D149.V20 	 Year 
+		 D149.V25 	 Month 
+		 D149.V26 	 Weekday 
+		 D149.V44 	 Time of Day 
+		 D149.V45 	 Birthplace 
+		 D149.V30 	 Birthplace Recode 6 
+		 D149.V46 	 Birthplace Recode 3 
+		 D149.V29 	 Medical Attendant 
+		 D149.V108 	 Mother Transferred 
+		 D149.V98 	 Fetal Presentation 
+		 D149.V99 	 Final Route and Delivery Method 
+		 D149.V101 	 Delivery Method Expanded 
+		 D149.V31 	 Delivery Method 
+		 D149.V100 	 Trial of Labor Attempted (if cesarean) 
+		 D149.V110 	 Source of Payment for Delivery 
+		 D149.V109 	 Source of Payment for Delivery Expanded 
+		 D149.V102 	 Maternal Transfusion 
+		 D149.V103 	 Perineal Laceration 
+		 D149.V104 	 Ruptured Uterus 
+		 D149.V105 	 Unplanned Hysterectomy 
+		 D149.V106 	 Admission to Intensive Care Unit 
+		 D149.V107 	 Maternal Morbidity Checked 
+		 D149.V32 	 OE Gestational Age Recode 10 
+		 D149.V33 	 OE Gestational Age Recode 11 
+		 D149.V34 	 OE Gestational Age Weekly 
+		 D149.V6 	 LMP Gestational Recode 10 
+		 D149.V23 	 LMP Gestational Recode 11 
+		 D149.V24 	 LMP Gestational Age Weekly 
+		 D149.V3 	 Sex of Infant 
+		 D149.V7 	 Plurality 
+		 D149.V115 	 Set Order 
+		 D149.V9 	 Infant Birth Weight 12 
+		 D149.V35 	 Infant Birth Weight 14 
+		 D149.V41 	 Infant Birth Weight 100 gram increments 
+		 D149.V111 	 Five Minute APGAR Score 
+		 D149.V112 	 Five Minute APGAR Score Recode 
+		 D149.V113 	 Ten Minute APGAR Score 
+		 D149.V114 	 Ten Minute APGAR Score Recode 
+		 D149.V136 	 Infant Transferred 
+		 D149.V137 	 Infant Living at Time of Report 
+		 D149.V138 	 Infant Breastfed at Discharge 
+		 D149.V116 	 Assisted Ventilation 
+		 D149.V117 	 Assisted Ventilation > 6 hrs 
+		 D149.V118 	 NICU Admission 
+		 D149.V119 	 Surfactant Replacement Therapy 
+		 D149.V120 	 Antibiotics for Suspected Neonatal Sepsis 
+		 D149.V121 	 Seizures 
+		 D149.V122 	 Abnormal Conditions Checked 
+		 D149.V123 	 Anencephaly 
+		 D149.V124 	 Meningomyelocele / Spina Bifida 
+		 D149.V125 	 Cyanotic Congenital Heart Disease 
+		 D149.V126 	 Congenital Diaphragmatic Hernia 
+		 D149.V127 	 Omphalocele 
+		 D149.V128 	 Gastroschisis 
+		 D149.V129 	 Limb Reduction Defect 
+		 D149.V130 	 Cleft Lip with or without Cleft Palate 
+		 D149.V131 	 Cleft Palate Alone 
+		 D149.V132 	 Down Syndrome 
+		 D149.V133 	 Suspected Chromosomal Disorder 
+		 D149.V134 	 Hypospadias 
+		 D149.V135 	 Congenital Anomalies Checked 
+```
+
+**Parameter:**
+B_2 	 And By 
+
+**Value(s):**
+```
+		 *None* 	 None 
+		 D149.V22-level1 	 Census Region of Residence 
+		 D149.V22-level2 	 Census Division of Residence 
+		 D149.V37-level1 	 HHS Region of Residence 
+		 D149.V21-level1 	 State of Residence 
+		 D149.V21-level2 	 County of Residence 
+		 D149.V154 	 2013 Metro/Nonmetro 
+		 D149.V155 	 2006 Metro/Nonmetro 
+		 D149.V156 	 2013 Urbanization 
+		 D149.V157 	 2006 Urbanization 
+		 D149.V42 	 Mother's Single Race 6 
+		 D149.V49 	 Mother's Single Race 15 
+		 D149.V50 	 Mother's Single/Multi Race 31 
+		 D149.V43 	 Mother's Hispanic Origin 
+		 D149.V4 	 Mother's Expanded Hispanic Origin 
+		 D149.V1 	 Age of Mother 9 
+		 D149.V38 	 Age of Mother 10 
+		 D149.V39 	 Age of Mother 13 
+		 D149.V40 	 Age of Mother Year 
+		 D149.V5 	 Mother's Education 
+		 D149.V27 	 Marital Status 
+		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
+		 D149.V48 	 Mother's Nativity 
+		 D149.V147 	 Mother's Birth Country 
+		 D149.V47 	 Mother's Birth State 
+		 D149.V54 	 Father's Single Race 6 
+		 D149.V55 	 Father's Single Race 15 
+		 D149.V56 	 Father's Single/Multi Race 31 
+		 D149.V53 	 Father's Hispanic Origin 
+		 D149.V52 	 Father's Expanded Hispanic Origin 
+		 D149.V57 	 Age of Father 
+		 D149.V58 	 Father's Education 
+		 D149.V60 	 Interval Since Last Live Birth 
+		 D149.V61 	 Interval Since Last Other Pregnancy Outcome 
+		 D149.V62 	 Interval of Last Pregnancy 
+		 D149.V151 	 Prior Births Now Living 
+		 D149.V152 	 Prior Births Now Dead 
+		 D149.V153 	 Prior Other Pregnancy Outcomes 
+		 D149.V28 	 Live Birth Order 
+		 D149.V59 	 Total Birth Order 
+		 D149.V66 	 WIC 
+		 D149.V89 	 Successful External Cephalic Version 
+		 D149.V90 	 Failed External Cephalic Version 
+		 D149.V65 	 Number of Prenatal Visits Recode 
+		 D149.V64 	 Number of Prenatal Visits 
+		 D149.V63 	 Trimester Prenatal Care Began 
+		 D149.V8 	 Month Prenatal Care Began 
+		 D149.V70 	 Mother's Height in Inches 
+		 D149.V71 	 Mother's Pre-pregnancy BMI 
+		 D149.V73 	 Mother's Weight Gain Recode 
+		 D149.V72 	 Mother's Weight Gain 
+		 D149.V149 	 Mother's Pre-pregnancy Weight 
+		 D149.V150 	 Mother's Delivery Weight 
+		 D149.V10 	 Tobacco Use 
+		 D149.V143 	 Number of Cigarettes Before Pregnancy Recode 
+		 D149.V139 	 Number of Cigarettes Before Pregnancy 
+		 D149.V144 	 Number of Cigarettes 1st Trimester Recode 
+		 D149.V140 	 Number of Cigarettes 1st Trimester 
+		 D149.V145 	 Number of Cigarettes 2nd Trimester Recode 
+		 D149.V141 	 Number of Cigarettes 2nd Trimester 
+		 D149.V146 	 Number of Cigarettes 3rd Trimester Recode 
+		 D149.V142 	 Number of Cigarettes 3rd Trimester 
+		 D149.V74 	 Pre-pregnancy Diabetes 
+		 D149.V75 	 Gestational Diabetes 
+		 D149.V16 	 Pre-pregnancy Hypertension 
+		 D149.V17 	 Gestational Hypertension 
+		 D149.V18 	 Eclampsia 
+		 D149.V76 	 Previous Preterm Birth 
+		 D149.V77 	 Infertility Treatment Used 
+		 D149.V78 	 Fertility Enhancing Drugs 
+		 D149.V79 	 Assistive Reproductive Technology 
+		 D149.V80 	 Previous Cesarean Delivery 
+		 D149.V81 	 Number of Previous Cesareans 
+		 D149.V82 	 Risk Factors Checked 
+		 D149.V83 	 Gonorrhea 
+		 D149.V84 	 Syphilis 
+		 D149.V85 	 Chlamydia 
+		 D149.V86 	 Hepatitis B 
+		 D149.V87 	 Hepatitis C 
+		 D149.V88 	 Infections Checked 
+		 D149.V91 	 Induction of Labor 
+		 D149.V92 	 Augmentation of Labor 
+		 D149.V93 	 Steroids 
+		 D149.V94 	 Antibiotics for Mother 
+		 D149.V95 	 Chorioamnionitis 
+		 D149.V96 	 Anesthesia 
+		 D149.V97 	 Characteristics of Labor Checked 
+		 D149.V20 	 Year 
+		 D149.V25 	 Month 
+		 D149.V26 	 Weekday 
+		 D149.V44 	 Time of Day 
+		 D149.V45 	 Birthplace 
+		 D149.V30 	 Birthplace Recode 6 
+		 D149.V46 	 Birthplace Recode 3 
+		 D149.V29 	 Medical Attendant 
+		 D149.V108 	 Mother Transferred 
+		 D149.V98 	 Fetal Presentation 
+		 D149.V99 	 Final Route and Delivery Method 
+		 D149.V101 	 Delivery Method Expanded 
+		 D149.V31 	 Delivery Method 
+		 D149.V100 	 Trial of Labor Attempted (if cesarean) 
+		 D149.V110 	 Source of Payment for Delivery 
+		 D149.V109 	 Source of Payment for Delivery Expanded 
+		 D149.V102 	 Maternal Transfusion 
+		 D149.V103 	 Perineal Laceration 
+		 D149.V104 	 Ruptured Uterus 
+		 D149.V105 	 Unplanned Hysterectomy 
+		 D149.V106 	 Admission to Intensive Care Unit 
+		 D149.V107 	 Maternal Morbidity Checked 
+		 D149.V32 	 OE Gestational Age Recode 10 
+		 D149.V33 	 OE Gestational Age Recode 11 
+		 D149.V34 	 OE Gestational Age Weekly 
+		 D149.V6 	 LMP Gestational Recode 10 
+		 D149.V23 	 LMP Gestational Recode 11 
+		 D149.V24 	 LMP Gestational Age Weekly 
+		 D149.V3 	 Sex of Infant 
+		 D149.V7 	 Plurality 
+		 D149.V115 	 Set Order 
+		 D149.V9 	 Infant Birth Weight 12 
+		 D149.V35 	 Infant Birth Weight 14 
+		 D149.V41 	 Infant Birth Weight 100 gram increments 
+		 D149.V111 	 Five Minute APGAR Score 
+		 D149.V112 	 Five Minute APGAR Score Recode 
+		 D149.V113 	 Ten Minute APGAR Score 
+		 D149.V114 	 Ten Minute APGAR Score Recode 
+		 D149.V136 	 Infant Transferred 
+		 D149.V137 	 Infant Living at Time of Report 
+		 D149.V138 	 Infant Breastfed at Discharge 
+		 D149.V116 	 Assisted Ventilation 
+		 D149.V117 	 Assisted Ventilation > 6 hrs 
+		 D149.V118 	 NICU Admission 
+		 D149.V119 	 Surfactant Replacement Therapy 
+		 D149.V120 	 Antibiotics for Suspected Neonatal Sepsis 
+		 D149.V121 	 Seizures 
+		 D149.V122 	 Abnormal Conditions Checked 
+		 D149.V123 	 Anencephaly 
+		 D149.V124 	 Meningomyelocele / Spina Bifida 
+		 D149.V125 	 Cyanotic Congenital Heart Disease 
+		 D149.V126 	 Congenital Diaphragmatic Hernia 
+		 D149.V127 	 Omphalocele 
+		 D149.V128 	 Gastroschisis 
+		 D149.V129 	 Limb Reduction Defect 
+		 D149.V130 	 Cleft Lip with or without Cleft Palate 
+		 D149.V131 	 Cleft Palate Alone 
+		 D149.V132 	 Down Syndrome 
+		 D149.V133 	 Suspected Chromosomal Disorder 
+		 D149.V134 	 Hypospadias 
+		 D149.V135 	 Congenital Anomalies Checked 
+```
+
+**Parameter:**
+B_3 	 And By 
+
+**Value(s):**
+```
+		 *None* 	 None 
+		 D149.V22-level1 	 Census Region of Residence 
+		 D149.V22-level2 	 Census Division of Residence 
+		 D149.V37-level1 	 HHS Region of Residence 
+		 D149.V21-level1 	 State of Residence 
+		 D149.V21-level2 	 County of Residence 
+		 D149.V154 	 2013 Metro/Nonmetro 
+		 D149.V155 	 2006 Metro/Nonmetro 
+		 D149.V156 	 2013 Urbanization 
+		 D149.V157 	 2006 Urbanization 
+		 D149.V42 	 Mother's Single Race 6 
+		 D149.V49 	 Mother's Single Race 15 
+		 D149.V50 	 Mother's Single/Multi Race 31 
+		 D149.V43 	 Mother's Hispanic Origin 
+		 D149.V4 	 Mother's Expanded Hispanic Origin 
+		 D149.V1 	 Age of Mother 9 
+		 D149.V38 	 Age of Mother 10 
+		 D149.V39 	 Age of Mother 13 
+		 D149.V40 	 Age of Mother Year 
+		 D149.V5 	 Mother's Education 
+		 D149.V27 	 Marital Status 
+		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
+		 D149.V48 	 Mother's Nativity 
+		 D149.V147 	 Mother's Birth Country 
+		 D149.V47 	 Mother's Birth State 
+		 D149.V54 	 Father's Single Race 6 
+		 D149.V55 	 Father's Single Race 15 
+		 D149.V56 	 Father's Single/Multi Race 31 
+		 D149.V53 	 Father's Hispanic Origin 
+		 D149.V52 	 Father's Expanded Hispanic Origin 
+		 D149.V57 	 Age of Father 
+		 D149.V58 	 Father's Education 
+		 D149.V60 	 Interval Since Last Live Birth 
+		 D149.V61 	 Interval Since Last Other Pregnancy Outcome 
+		 D149.V62 	 Interval of Last Pregnancy 
+		 D149.V151 	 Prior Births Now Living 
+		 D149.V152 	 Prior Births Now Dead 
+		 D149.V153 	 Prior Other Pregnancy Outcomes 
+		 D149.V28 	 Live Birth Order 
+		 D149.V59 	 Total Birth Order 
+		 D149.V66 	 WIC 
+		 D149.V89 	 Successful External Cephalic Version 
+		 D149.V90 	 Failed External Cephalic Version 
+		 D149.V65 	 Number of Prenatal Visits Recode 
+		 D149.V64 	 Number of Prenatal Visits 
+		 D149.V63 	 Trimester Prenatal Care Began 
+		 D149.V8 	 Month Prenatal Care Began 
+		 D149.V70 	 Mother's Height in Inches 
+		 D149.V71 	 Mother's Pre-pregnancy BMI 
+		 D149.V73 	 Mother's Weight Gain Recode 
+		 D149.V72 	 Mother's Weight Gain 
+		 D149.V149 	 Mother's Pre-pregnancy Weight 
+		 D149.V150 	 Mother's Delivery Weight 
+		 D149.V10 	 Tobacco Use 
+		 D149.V143 	 Number of Cigarettes Before Pregnancy Recode 
+		 D149.V139 	 Number of Cigarettes Before Pregnancy 
+		 D149.V144 	 Number of Cigarettes 1st Trimester Recode 
+		 D149.V140 	 Number of Cigarettes 1st Trimester 
+		 D149.V145 	 Number of Cigarettes 2nd Trimester Recode 
+		 D149.V141 	 Number of Cigarettes 2nd Trimester 
+		 D149.V146 	 Number of Cigarettes 3rd Trimester Recode 
+		 D149.V142 	 Number of Cigarettes 3rd Trimester 
+		 D149.V74 	 Pre-pregnancy Diabetes 
+		 D149.V75 	 Gestational Diabetes 
+		 D149.V16 	 Pre-pregnancy Hypertension 
+		 D149.V17 	 Gestational Hypertension 
+		 D149.V18 	 Eclampsia 
+		 D149.V76 	 Previous Preterm Birth 
+		 D149.V77 	 Infertility Treatment Used 
+		 D149.V78 	 Fertility Enhancing Drugs 
+		 D149.V79 	 Assistive Reproductive Technology 
+		 D149.V80 	 Previous Cesarean Delivery 
+		 D149.V81 	 Number of Previous Cesareans 
+		 D149.V82 	 Risk Factors Checked 
+		 D149.V83 	 Gonorrhea 
+		 D149.V84 	 Syphilis 
+		 D149.V85 	 Chlamydia 
+		 D149.V86 	 Hepatitis B 
+		 D149.V87 	 Hepatitis C 
+		 D149.V88 	 Infections Checked 
+		 D149.V91 	 Induction of Labor 
+		 D149.V92 	 Augmentation of Labor 
+		 D149.V93 	 Steroids 
+		 D149.V94 	 Antibiotics for Mother 
+		 D149.V95 	 Chorioamnionitis 
+		 D149.V96 	 Anesthesia 
+		 D149.V97 	 Characteristics of Labor Checked 
+		 D149.V20 	 Year 
+		 D149.V25 	 Month 
+		 D149.V26 	 Weekday 
+		 D149.V44 	 Time of Day 
+		 D149.V45 	 Birthplace 
+		 D149.V30 	 Birthplace Recode 6 
+		 D149.V46 	 Birthplace Recode 3 
+		 D149.V29 	 Medical Attendant 
+		 D149.V108 	 Mother Transferred 
+		 D149.V98 	 Fetal Presentation 
+		 D149.V99 	 Final Route and Delivery Method 
+		 D149.V101 	 Delivery Method Expanded 
+		 D149.V31 	 Delivery Method 
+		 D149.V100 	 Trial of Labor Attempted (if cesarean) 
+		 D149.V110 	 Source of Payment for Delivery 
+		 D149.V109 	 Source of Payment for Delivery Expanded 
+		 D149.V102 	 Maternal Transfusion 
+		 D149.V103 	 Perineal Laceration 
+		 D149.V104 	 Ruptured Uterus 
+		 D149.V105 	 Unplanned Hysterectomy 
+		 D149.V106 	 Admission to Intensive Care Unit 
+		 D149.V107 	 Maternal Morbidity Checked 
+		 D149.V32 	 OE Gestational Age Recode 10 
+		 D149.V33 	 OE Gestational Age Recode 11 
+		 D149.V34 	 OE Gestational Age Weekly 
+		 D149.V6 	 LMP Gestational Recode 10 
+		 D149.V23 	 LMP Gestational Recode 11 
+		 D149.V24 	 LMP Gestational Age Weekly 
+		 D149.V3 	 Sex of Infant 
+		 D149.V7 	 Plurality 
+		 D149.V115 	 Set Order 
+		 D149.V9 	 Infant Birth Weight 12 
+		 D149.V35 	 Infant Birth Weight 14 
+		 D149.V41 	 Infant Birth Weight 100 gram increments 
+		 D149.V111 	 Five Minute APGAR Score 
+		 D149.V112 	 Five Minute APGAR Score Recode 
+		 D149.V113 	 Ten Minute APGAR Score 
+		 D149.V114 	 Ten Minute APGAR Score Recode 
+		 D149.V136 	 Infant Transferred 
+		 D149.V137 	 Infant Living at Time of Report 
+		 D149.V138 	 Infant Breastfed at Discharge 
+		 D149.V116 	 Assisted Ventilation 
+		 D149.V117 	 Assisted Ventilation > 6 hrs 
+		 D149.V118 	 NICU Admission 
+		 D149.V119 	 Surfactant Replacement Therapy 
+		 D149.V120 	 Antibiotics for Suspected Neonatal Sepsis 
+		 D149.V121 	 Seizures 
+		 D149.V122 	 Abnormal Conditions Checked 
+		 D149.V123 	 Anencephaly 
+		 D149.V124 	 Meningomyelocele / Spina Bifida 
+		 D149.V125 	 Cyanotic Congenital Heart Disease 
+		 D149.V126 	 Congenital Diaphragmatic Hernia 
+		 D149.V127 	 Omphalocele 
+		 D149.V128 	 Gastroschisis 
+		 D149.V129 	 Limb Reduction Defect 
+		 D149.V130 	 Cleft Lip with or without Cleft Palate 
+		 D149.V131 	 Cleft Palate Alone 
+		 D149.V132 	 Down Syndrome 
+		 D149.V133 	 Suspected Chromosomal Disorder 
+		 D149.V134 	 Hypospadias 
+		 D149.V135 	 Congenital Anomalies Checked 
+```
+
+**Parameter:**
+B_4 	 And By 
+
+**Value(s):**
+```
+		 *None* 	 None 
+		 D149.V22-level1 	 Census Region of Residence 
+		 D149.V22-level2 	 Census Division of Residence 
+		 D149.V37-level1 	 HHS Region of Residence 
+		 D149.V21-level1 	 State of Residence 
+		 D149.V21-level2 	 County of Residence 
+		 D149.V154 	 2013 Metro/Nonmetro 
+		 D149.V155 	 2006 Metro/Nonmetro 
+		 D149.V156 	 2013 Urbanization 
+		 D149.V157 	 2006 Urbanization 
+		 D149.V42 	 Mother's Single Race 6 
+		 D149.V49 	 Mother's Single Race 15 
+		 D149.V50 	 Mother's Single/Multi Race 31 
+		 D149.V43 	 Mother's Hispanic Origin 
+		 D149.V4 	 Mother's Expanded Hispanic Origin 
+		 D149.V1 	 Age of Mother 9 
+		 D149.V38 	 Age of Mother 10 
+		 D149.V39 	 Age of Mother 13 
+		 D149.V40 	 Age of Mother Year 
+		 D149.V5 	 Mother's Education 
+		 D149.V27 	 Marital Status 
+		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
+		 D149.V48 	 Mother's Nativity 
+		 D149.V147 	 Mother's Birth Country 
+		 D149.V47 	 Mother's Birth State 
+		 D149.V54 	 Father's Single Race 6 
+		 D149.V55 	 Father's Single Race 15 
+		 D149.V56 	 Father's Single/Multi Race 31 
+		 D149.V53 	 Father's Hispanic Origin 
+		 D149.V52 	 Father's Expanded Hispanic Origin 
+		 D149.V57 	 Age of Father 
+		 D149.V58 	 Father's Education 
+		 D149.V60 	 Interval Since Last Live Birth 
+		 D149.V61 	 Interval Since Last Other Pregnancy Outcome 
+		 D149.V62 	 Interval of Last Pregnancy 
+		 D149.V151 	 Prior Births Now Living 
+		 D149.V152 	 Prior Births Now Dead 
+		 D149.V153 	 Prior Other Pregnancy Outcomes 
+		 D149.V28 	 Live Birth Order 
+		 D149.V59 	 Total Birth Order 
+		 D149.V66 	 WIC 
+		 D149.V89 	 Successful External Cephalic Version 
+		 D149.V90 	 Failed External Cephalic Version 
+		 D149.V65 	 Number of Prenatal Visits Recode 
+		 D149.V64 	 Number of Prenatal Visits 
+		 D149.V63 	 Trimester Prenatal Care Began 
+		 D149.V8 	 Month Prenatal Care Began 
+		 D149.V70 	 Mother's Height in Inches 
+		 D149.V71 	 Mother's Pre-pregnancy BMI 
+		 D149.V73 	 Mother's Weight Gain Recode 
+		 D149.V72 	 Mother's Weight Gain 
+		 D149.V149 	 Mother's Pre-pregnancy Weight 
+		 D149.V150 	 Mother's Delivery Weight 
+		 D149.V10 	 Tobacco Use 
+		 D149.V143 	 Number of Cigarettes Before Pregnancy Recode 
+		 D149.V139 	 Number of Cigarettes Before Pregnancy 
+		 D149.V144 	 Number of Cigarettes 1st Trimester Recode 
+		 D149.V140 	 Number of Cigarettes 1st Trimester 
+		 D149.V145 	 Number of Cigarettes 2nd Trimester Recode 
+		 D149.V141 	 Number of Cigarettes 2nd Trimester 
+		 D149.V146 	 Number of Cigarettes 3rd Trimester Recode 
+		 D149.V142 	 Number of Cigarettes 3rd Trimester 
+		 D149.V74 	 Pre-pregnancy Diabetes 
+		 D149.V75 	 Gestational Diabetes 
+		 D149.V16 	 Pre-pregnancy Hypertension 
+		 D149.V17 	 Gestational Hypertension 
+		 D149.V18 	 Eclampsia 
+		 D149.V76 	 Previous Preterm Birth 
+		 D149.V77 	 Infertility Treatment Used 
+		 D149.V78 	 Fertility Enhancing Drugs 
+		 D149.V79 	 Assistive Reproductive Technology 
+		 D149.V80 	 Previous Cesarean Delivery 
+		 D149.V81 	 Number of Previous Cesareans 
+		 D149.V82 	 Risk Factors Checked 
+		 D149.V83 	 Gonorrhea 
+		 D149.V84 	 Syphilis 
+		 D149.V85 	 Chlamydia 
+		 D149.V86 	 Hepatitis B 
+		 D149.V87 	 Hepatitis C 
+		 D149.V88 	 Infections Checked 
+		 D149.V91 	 Induction of Labor 
+		 D149.V92 	 Augmentation of Labor 
+		 D149.V93 	 Steroids 
+		 D149.V94 	 Antibiotics for Mother 
+		 D149.V95 	 Chorioamnionitis 
+		 D149.V96 	 Anesthesia 
+		 D149.V97 	 Characteristics of Labor Checked 
+		 D149.V20 	 Year 
+		 D149.V25 	 Month 
+		 D149.V26 	 Weekday 
+		 D149.V44 	 Time of Day 
+		 D149.V45 	 Birthplace 
+		 D149.V30 	 Birthplace Recode 6 
+		 D149.V46 	 Birthplace Recode 3 
+		 D149.V29 	 Medical Attendant 
+		 D149.V108 	 Mother Transferred 
+		 D149.V98 	 Fetal Presentation 
+		 D149.V99 	 Final Route and Delivery Method 
+		 D149.V101 	 Delivery Method Expanded 
+		 D149.V31 	 Delivery Method 
+		 D149.V100 	 Trial of Labor Attempted (if cesarean) 
+		 D149.V110 	 Source of Payment for Delivery 
+		 D149.V109 	 Source of Payment for Delivery Expanded 
+		 D149.V102 	 Maternal Transfusion 
+		 D149.V103 	 Perineal Laceration 
+		 D149.V104 	 Ruptured Uterus 
+		 D149.V105 	 Unplanned Hysterectomy 
+		 D149.V106 	 Admission to Intensive Care Unit 
+		 D149.V107 	 Maternal Morbidity Checked 
+		 D149.V32 	 OE Gestational Age Recode 10 
+		 D149.V33 	 OE Gestational Age Recode 11 
+		 D149.V34 	 OE Gestational Age Weekly 
+		 D149.V6 	 LMP Gestational Recode 10 
+		 D149.V23 	 LMP Gestational Recode 11 
+		 D149.V24 	 LMP Gestational Age Weekly 
+		 D149.V3 	 Sex of Infant 
+		 D149.V7 	 Plurality 
+		 D149.V115 	 Set Order 
+		 D149.V9 	 Infant Birth Weight 12 
+		 D149.V35 	 Infant Birth Weight 14 
+		 D149.V41 	 Infant Birth Weight 100 gram increments 
+		 D149.V111 	 Five Minute APGAR Score 
+		 D149.V112 	 Five Minute APGAR Score Recode 
+		 D149.V113 	 Ten Minute APGAR Score 
+		 D149.V114 	 Ten Minute APGAR Score Recode 
+		 D149.V136 	 Infant Transferred 
+		 D149.V137 	 Infant Living at Time of Report 
+		 D149.V138 	 Infant Breastfed at Discharge 
+		 D149.V116 	 Assisted Ventilation 
+		 D149.V117 	 Assisted Ventilation > 6 hrs 
+		 D149.V118 	 NICU Admission 
+		 D149.V119 	 Surfactant Replacement Therapy 
+		 D149.V120 	 Antibiotics for Suspected Neonatal Sepsis 
+		 D149.V121 	 Seizures 
+		 D149.V122 	 Abnormal Conditions Checked 
+		 D149.V123 	 Anencephaly 
+		 D149.V124 	 Meningomyelocele / Spina Bifida 
+		 D149.V125 	 Cyanotic Congenital Heart Disease 
+		 D149.V126 	 Congenital Diaphragmatic Hernia 
+		 D149.V127 	 Omphalocele 
+		 D149.V128 	 Gastroschisis 
+		 D149.V129 	 Limb Reduction Defect 
+		 D149.V130 	 Cleft Lip with or without Cleft Palate 
+		 D149.V131 	 Cleft Palate Alone 
+		 D149.V132 	 Down Syndrome 
+		 D149.V133 	 Suspected Chromosomal Disorder 
+		 D149.V134 	 Hypospadias 
+		 D149.V135 	 Congenital Anomalies Checked 
+```
+
+**Parameter:**
+B_5 	 And By 
+
+**Value(s):**
+```
+		 *None* 	 None 
+		 D149.V22-level1 	 Census Region of Residence 
+		 D149.V22-level2 	 Census Division of Residence 
+		 D149.V37-level1 	 HHS Region of Residence 
+		 D149.V21-level1 	 State of Residence 
+		 D149.V21-level2 	 County of Residence 
+		 D149.V154 	 2013 Metro/Nonmetro 
+		 D149.V155 	 2006 Metro/Nonmetro 
+		 D149.V156 	 2013 Urbanization 
+		 D149.V157 	 2006 Urbanization 
+		 D149.V42 	 Mother's Single Race 6 
+		 D149.V49 	 Mother's Single Race 15 
+		 D149.V50 	 Mother's Single/Multi Race 31 
+		 D149.V43 	 Mother's Hispanic Origin 
+		 D149.V4 	 Mother's Expanded Hispanic Origin 
+		 D149.V1 	 Age of Mother 9 
+		 D149.V38 	 Age of Mother 10 
+		 D149.V39 	 Age of Mother 13 
+		 D149.V40 	 Age of Mother Year 
+		 D149.V5 	 Mother's Education 
+		 D149.V27 	 Marital Status 
+		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
+		 D149.V48 	 Mother's Nativity 
+		 D149.V147 	 Mother's Birth Country 
+		 D149.V47 	 Mother's Birth State 
+		 D149.V54 	 Father's Single Race 6 
+		 D149.V55 	 Father's Single Race 15 
+		 D149.V56 	 Father's Single/Multi Race 31 
+		 D149.V53 	 Father's Hispanic Origin 
+		 D149.V52 	 Father's Expanded Hispanic Origin 
+		 D149.V57 	 Age of Father 
+		 D149.V58 	 Father's Education 
+		 D149.V60 	 Interval Since Last Live Birth 
+		 D149.V61 	 Interval Since Last Other Pregnancy Outcome 
+		 D149.V62 	 Interval of Last Pregnancy 
+		 D149.V151 	 Prior Births Now Living 
+		 D149.V152 	 Prior Births Now Dead 
+		 D149.V153 	 Prior Other Pregnancy Outcomes 
+		 D149.V28 	 Live Birth Order 
+		 D149.V59 	 Total Birth Order 
+		 D149.V66 	 WIC 
+		 D149.V89 	 Successful External Cephalic Version 
+		 D149.V90 	 Failed External Cephalic Version 
+		 D149.V65 	 Number of Prenatal Visits Recode 
+		 D149.V64 	 Number of Prenatal Visits 
+		 D149.V63 	 Trimester Prenatal Care Began 
+		 D149.V8 	 Month Prenatal Care Began 
+		 D149.V70 	 Mother's Height in Inches 
+		 D149.V71 	 Mother's Pre-pregnancy BMI 
+		 D149.V73 	 Mother's Weight Gain Recode 
+		 D149.V72 	 Mother's Weight Gain 
+		 D149.V149 	 Mother's Pre-pregnancy Weight 
+		 D149.V150 	 Mother's Delivery Weight 
+		 D149.V10 	 Tobacco Use 
+		 D149.V143 	 Number of Cigarettes Before Pregnancy Recode 
+		 D149.V139 	 Number of Cigarettes Before Pregnancy 
+		 D149.V144 	 Number of Cigarettes 1st Trimester Recode 
+		 D149.V140 	 Number of Cigarettes 1st Trimester 
+		 D149.V145 	 Number of Cigarettes 2nd Trimester Recode 
+		 D149.V141 	 Number of Cigarettes 2nd Trimester 
+		 D149.V146 	 Number of Cigarettes 3rd Trimester Recode 
+		 D149.V142 	 Number of Cigarettes 3rd Trimester 
+		 D149.V74 	 Pre-pregnancy Diabetes 
+		 D149.V75 	 Gestational Diabetes 
+		 D149.V16 	 Pre-pregnancy Hypertension 
+		 D149.V17 	 Gestational Hypertension 
+		 D149.V18 	 Eclampsia 
+		 D149.V76 	 Previous Preterm Birth 
+		 D149.V77 	 Infertility Treatment Used 
+		 D149.V78 	 Fertility Enhancing Drugs 
+		 D149.V79 	 Assistive Reproductive Technology 
+		 D149.V80 	 Previous Cesarean Delivery 
+		 D149.V81 	 Number of Previous Cesareans 
+		 D149.V82 	 Risk Factors Checked 
+		 D149.V83 	 Gonorrhea 
+		 D149.V84 	 Syphilis 
+		 D149.V85 	 Chlamydia 
+		 D149.V86 	 Hepatitis B 
+		 D149.V87 	 Hepatitis C 
+		 D149.V88 	 Infections Checked 
+		 D149.V91 	 Induction of Labor 
+		 D149.V92 	 Augmentation of Labor 
+		 D149.V93 	 Steroids 
+		 D149.V94 	 Antibiotics for Mother 
+		 D149.V95 	 Chorioamnionitis 
+		 D149.V96 	 Anesthesia 
+		 D149.V97 	 Characteristics of Labor Checked 
+		 D149.V20 	 Year 
+		 D149.V25 	 Month 
+		 D149.V26 	 Weekday 
+		 D149.V44 	 Time of Day 
+		 D149.V45 	 Birthplace 
+		 D149.V30 	 Birthplace Recode 6 
+		 D149.V46 	 Birthplace Recode 3 
+		 D149.V29 	 Medical Attendant 
+		 D149.V108 	 Mother Transferred 
+		 D149.V98 	 Fetal Presentation 
+		 D149.V99 	 Final Route and Delivery Method 
+		 D149.V101 	 Delivery Method Expanded 
+		 D149.V31 	 Delivery Method 
+		 D149.V100 	 Trial of Labor Attempted (if cesarean) 
+		 D149.V110 	 Source of Payment for Delivery 
+		 D149.V109 	 Source of Payment for Delivery Expanded 
+		 D149.V102 	 Maternal Transfusion 
+		 D149.V103 	 Perineal Laceration 
+		 D149.V104 	 Ruptured Uterus 
+		 D149.V105 	 Unplanned Hysterectomy 
+		 D149.V106 	 Admission to Intensive Care Unit 
+		 D149.V107 	 Maternal Morbidity Checked 
+		 D149.V32 	 OE Gestational Age Recode 10 
+		 D149.V33 	 OE Gestational Age Recode 11 
+		 D149.V34 	 OE Gestational Age Weekly 
+		 D149.V6 	 LMP Gestational Recode 10 
+		 D149.V23 	 LMP Gestational Recode 11 
+		 D149.V24 	 LMP Gestational Age Weekly 
+		 D149.V3 	 Sex of Infant 
+		 D149.V7 	 Plurality 
+		 D149.V115 	 Set Order 
+		 D149.V9 	 Infant Birth Weight 12 
+		 D149.V35 	 Infant Birth Weight 14 
+		 D149.V41 	 Infant Birth Weight 100 gram increments 
+		 D149.V111 	 Five Minute APGAR Score 
+		 D149.V112 	 Five Minute APGAR Score Recode 
+		 D149.V113 	 Ten Minute APGAR Score 
+		 D149.V114 	 Ten Minute APGAR Score Recode 
+		 D149.V136 	 Infant Transferred 
+		 D149.V137 	 Infant Living at Time of Report 
+		 D149.V138 	 Infant Breastfed at Discharge 
+		 D149.V116 	 Assisted Ventilation 
+		 D149.V117 	 Assisted Ventilation > 6 hrs 
+		 D149.V118 	 NICU Admission 
+		 D149.V119 	 Surfactant Replacement Therapy 
+		 D149.V120 	 Antibiotics for Suspected Neonatal Sepsis 
+		 D149.V121 	 Seizures 
+		 D149.V122 	 Abnormal Conditions Checked 
+		 D149.V123 	 Anencephaly 
+		 D149.V124 	 Meningomyelocele / Spina Bifida 
+		 D149.V125 	 Cyanotic Congenital Heart Disease 
+		 D149.V126 	 Congenital Diaphragmatic Hernia 
+		 D149.V127 	 Omphalocele 
+		 D149.V128 	 Gastroschisis 
+		 D149.V129 	 Limb Reduction Defect 
+		 D149.V130 	 Cleft Lip with or without Cleft Palate 
+		 D149.V131 	 Cleft Palate Alone 
+		 D149.V132 	 Down Syndrome 
+		 D149.V133 	 Suspected Chromosomal Disorder 
+		 D149.V134 	 Hypospadias 
+		 D149.V135 	 Congenital Anomalies Checked 
+```
+
+**Parameter:**
+M_002 	 Births 
+
+**Parameter:**
+M_004 	 Birth Rate 
+
+**Parameter:**
+M_006 	 Fertility Rate 
+
+**Parameter:**
+M_007 	 Percent of Total Births 
+
+**Parameter:**
+M_070 	 Average Age of Mother (years) 
+
+**Parameter:**
+M_071 	 Standard Deviation 
+
+**Parameter:**
+M_080 	 Average OE Gestational Age (weeks) 
+
+**Parameter:**
+M_081 	 Standard Deviation 
+
+**Parameter:**
+M_090 	 Average LMP Gestational Age (weeks) 
+
+**Parameter:**
+M_091 	 Standard Deviation 
+
+**Parameter:**
+M_095 	 Average Birth Weight (grams) 
+
+**Parameter:**
+M_096 	 Standard Deviation 
+
+**Parameter:**
+M_100 	 Average Pre-pregnancy BMI 
+
+**Parameter:**
+M_101 	 Standard Deviation 
+
+**Parameter:**
+M_110 	 Average Number of Prenatal Visits 
+
+**Parameter:**
+M_111 	 Standard Deviation 
+
+**Parameter:**
+M_120 	 Average Interval Since Last Live Birth (months) 
+
+**Parameter:**
+M_121 	 Standard Deviation 
+
+**Parameter:**
+M_130 	 Average Interval Since Last Other Pregnancy Outcome (months) 
+
+**Parameter:**
+M_131 	 Standard Deviation 
+
+**Parameter:**
+O_title 	 Title 
+
+**Parameter:**
+O_rate_per 	 Calculate Rates Per 
+
+**Value(s):**
+```
+		 1000 	  1,000  
+		 10000 	  10,000  
+		 100000 	  100,000  
+		 1000000 	  1,000,000  
+```
+
+**Parameter:**
+O_location 
+**Values:**	 D149.V21 	 States 
+
+**Parameter:**
+O_location 
+**Values:**	 D149.V22 	 Census Regions 
+
+**Parameter:**
+O_location 
+**Values:**	 D149.V37 	 HHS Regions 
+
+**Parameter:**
+V_D149.V21 	 Selected Items 
+
+**Parameter:**
+F_D149.V21 	 Selected Items 
+
+**Value(s):**
+```
+		 *All* 	    *All*  (The United States) 
+		 01 	 + 01  (Alabama)   
+		 02 	 + 02  (Alaska)   
+		 04 	 + 04  (Arizona)   
+		 05 	 + 05  (Arkansas)   
+		 06 	 + 06  (California)   
+		 08 	 + 08  (Colorado)   
+		 09 	 + 09  (Connecticut)   
+		 10 	 + 10  (Delaware)   
+		 11 	 + 11  (District of Columbia)   
+		 12 	 + 12  (Florida)   
+		 13 	 + 13  (Georgia)   
+		 15 	 + 15  (Hawaii)   
+		 16 	 + 16  (Idaho)   
+		 17 	 + 17  (Illinois)   
+		 18 	 + 18  (Indiana)   
+		 19 	 + 19  (Iowa)   
+		 20 	 + 20  (Kansas)   
+		 21 	 + 21  (Kentucky)   
+		 22 	 + 22  (Louisiana)   
+		 23 	 + 23  (Maine)   
+		 24 	 + 24  (Maryland)   
+		 25 	 + 25  (Massachusetts)   
+		 26 	 + 26  (Michigan)   
+		 27 	 + 27  (Minnesota)   
+		 28 	 + 28  (Mississippi)   
+		 29 	 + 29  (Missouri)   
+		 30 	 + 30  (Montana)   
+		 31 	 + 31  (Nebraska)   
+		 32 	 + 32  (Nevada)   
+		 33 	 + 33  (New Hampshire)   
+		 34 	 + 34  (New Jersey)   
+		 35 	 + 35  (New Mexico)   
+		 36 	 + 36  (New York)   
+		 37 	 + 37  (North Carolina)   
+		 38 	 + 38  (North Dakota)   
+		 39 	 + 39  (Ohio)   
+		 40 	 + 40  (Oklahoma)   
+		 41 	 + 41  (Oregon)   
+		 42 	 + 42  (Pennsylvania)   
+		 44 	 + 44  (Rhode Island)   
+		 45 	 + 45  (South Carolina)   
+		 46 	 + 46  (South Dakota)   
+		 47 	 + 47  (Tennessee)   
+		 48 	 + 48  (Texas)   
+		 49 	 + 49  (Utah)   
+		 50 	 + 50  (Vermont)   
+		 51 	 + 51  (Virginia)   
+		 53 	 + 53  (Washington)   
+		 54 	 + 54  (West Virginia)   
+		 55 	 + 55  (Wisconsin)   
+		 56 	 + 56  (Wyoming)   
+```
+
+**Parameter:**
+V_D149.V22 	 Selected Items 
+
+**Parameter:**
+F_D149.V22 	 Selected Items 
+
+**Value(s):**
+```
+		 *All* 	    *All*  (The United States) 
+		 CENS-R1 	 + CENS-R1  (Census Region 1: Northeast)   
+		 CENS-R2 	 + CENS-R2  (Census Region 2: Midwest)   
+		 CENS-R3 	 + CENS-R3  (Census Region 3: South)   
+		 CENS-R4 	 + CENS-R4  (Census Region 4: West)   
+```
+
+**Parameter:**
+V_D149.V37 	 Selected Items 
+
+**Parameter:**
+F_D149.V37 	 Selected Items 
+
+**Value(s):**
+```
+		 *All* 	    *All*  (The United States) 
+		 HHS1 	 + HHS1  (HHS Region #1  CT, ME, MA, NH, RI, VT)   
+		 HHS2 	 + HHS2  (HHS Region #2  NJ, NY)   
+		 HHS3 	 + HHS3  (HHS Region #3  DE, DC, MD, PA, VA, WV)   
+		 HHS4 	 + HHS4  (HHS Region #4  AL, FL, GA, KY, MS, NC, SC, TN)   
+		 HHS5 	 + HHS5  (HHS Region #5  IL, IN, MI, MN, OH, WI)   
+		 HHS6 	 + HHS6  (HHS Region #6  AR, LA, NM, OK, TX)   
+		 HHS7 	 + HHS7  (HHS Region #7  IA, KS, MO, NE)   
+		 HHS8 	 + HHS8  (HHS Region #8  CO, MT, ND, SD, UT, WY)   
+		 HHS9 	 + HHS9  (HHS Region #9  AZ, CA, HI, NV)   
+		 HHS10 	 + HHS10  (HHS Region #10  AK, ID, OR, WA)   
+```
+
+**Parameter:**
+O_urban 
+**Values:**	 D149.V154 	 2013 Metro/Nonmetro 
+
+**Parameter:**
+O_urban 
+**Values:**	 D149.V155 	 2006 Metro/Nonmetro 
+
+**Parameter:**
+O_urban 
+**Values:**	 D149.V156 	 2013 Urbanization 
+
+**Parameter:**
+O_urban 
+**Values:**	 D149.V157 	 2006 Urbanization 
+
+**Parameter:**
+V_D149.V154 	 2013 Metro/Nonmetro 
+
+**Value(s):**
+```
+		 *All* 	  All Categories  
+		 Metro 	  Metro  
+		 Nonmetro 	  Nonmetro  
+```
+
+**Parameter:**
+V_D149.V155 	 2006 Metro/Nonmetro 
+
+**Value(s):**
+```
+		 *All* 	  All Categories  
+		 Metro 	  Metro  
+		 Nonmetro 	  Nonmetro  
+```
+
+**Parameter:**
+V_D149.V156 	 2013 Urbanization 
+
+**Value(s):**
+```
+		 *All* 	  All Categories  
+		 1 	  Large Central Metro  
+		 2 	  Large Fringe Metro  
+		 3 	  Medium Metro  
+		 4 	  Small Metro  
+		 5 	  Micropolitan (Nonmetro)  
+		 6 	  NonCore (Nonmetro)  
+```
+
+**Parameter:**
+V_D149.V157 	 2006 Urbanization 
+
+**Value(s):**
+```
+		 *All* 	  All Categories  
+		 1 	  Large Central Metro  
+		 2 	  Large Fringe Metro  
+		 3 	  Medium Metro  
+		 4 	  Small Metro  
+		 5 	  Micropolitan (Nonmetro)  
+		 6 	  NonCore (Nonmetro)  
+```
+
+**Parameter:**
+O_race 
+**Values:**	 D149.V42 	 Mother's Single Race 6 
+
+**Parameter:**
+O_race 
+**Values:**	 D149.V49 	 Mother's Single Race 15 
+
+**Parameter:**
+O_race 
+**Values:**	 D149.V50 	 Mother's Single/Multi Race 31 
+
+**Parameter:**
+V_D149.V42 	 Mother's Single Race 6 
+
+**Value(s):**
+```
+		 *All* 	  All Races  
+		 1002-5 	  American Indian or Alaska Native  
+		 A 	  Asian  
+		 2054-5 	  Black or African American  
+		 NHOPI 	  Native Hawaiian or Other Pacific Islander  
+		 2106-3 	  White  
+		 M 	  More than one race  
+		 UNK 	  Unknown or Not Stated  
+		 NA 	  Not Available  
+		 NR 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V49 	 Mother's Single Race 15 
+
+**Value(s):**
+```
+		 *All* 	  All Races  
+		 1 	  White  
+		 2 	  Black  
+		 3 	  American Indian or Alaskan Native  
+		 4 	  Asian Indian  
+		 5 	  Chinese  
+		 6 	  Filipino  
+		 7 	  Japanese  
+		 8 	  Korean  
+		 9 	  Vietnamese  
+		 10 	  Other Asian  
+		 11 	  Hawaiian  
+		 12 	  Guamanian  
+		 13 	  Samoan  
+		 14 	  Other Pacific Islander  
+		 15 	  More than one race  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V50 	 Mother's Single/Multi Race 31 
+
+**Value(s):**
+```
+		 *All* 	  All Races  
+		 1 	  White (only)  
+		 2 	  Black (only)  
+		 3 	  AIAN (American Indian or Alaskan Native) (only)  
+		 4 	  Asian (only)  
+		 5 	  NHOPI (Native Hawaiian or Other Pacific Islander) (only)  
+		 6 	  Black and White  
+		 7 	  Black and AIAN  
+		 8 	  Black and Asian  
+		 9 	  Black and NHOPI  
+		 10 	  AIAN and White  
+		 11 	  AIAN and Asian  
+		 12 	  AIAN and NHOPI  
+		 13 	  Asian and White  
+		 14 	  Asian and NHOPI  
+		 15 	  NHOPI and White  
+		 16 	  Black, AIAN, and White  
+		 17 	  Black, AIAN, and Asian  
+		 18 	  Black, AIAN, and NHOPI  
+		 19 	  Black, Asian, and White  
+		 20 	  Black, Asian, and NHOPI  
+		 21 	  Black, NHOPI, and White  
+		 22 	  AIAN, Asian, and White  
+		 23 	  AIAN, NHOPI, and White  
+		 24 	  AIAN, Asian, and NHOPI  
+		 25 	  Asian, NHOPI, and White  
+		 26 	  Black, AIAN, Asian, and White  
+		 27 	  Black, AIAN, Asian, and NHOPI  
+		 28 	  Black, AIAN, NHOPI, and White  
+		 29 	  Black, Asian, NHOPI, and White  
+		 30 	  AIAN, Asian, NHOPI, and White  
+		 31 	  Black, AIAN, Asian, NHOPI, and White  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+		 101 	  Not Available  
+```
+
+**Parameter:**
+O_m_ethnicity 
+**Values:**	 D149.V43 	 Mother's Hispanic Origin 
+
+**Parameter:**
+O_m_ethnicity 
+**Values:**	 D149.V4 	 Mother's Expanded Hispanic Origin 
+
+**Parameter:**
+V_D149.V43 	 Mother's Hispanic Origin 
+
+**Value(s):**
+```
+		 *All* 	  All Origins  
+		 2135-2 	  Hispanic or Latino  
+		 2186-5 	  Not Hispanic or Latino  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V4 	 Mother's Expanded Hispanic Origin 
+
+**Value(s):**
+```
+		 *All* 	  All Origins  
+		 0 	  Non-Hispanic  
+		 2148-5 	  Mexican  
+		 2180-8 	  Puerto Rican  
+		 2182-4 	  Cuban  
+		 4 	  Central or South American  
+		 7 	  Dominican  
+		 5 	  Other and Unknown Hispanic  
+		 9 	  Unknown or Not Stated  
+		 10 	  Not Available  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+O_age 
+**Values:**	 D149.V1 	 Age of Mother 9 
+
+**Parameter:**
+O_age 
+**Values:**	 D149.V38 	 Age of Mother 10 
+
+**Parameter:**
+O_age 
+**Values:**	 D149.V39 	 Age of Mother 13 
+
+**Parameter:**
+O_age 
+**Values:**	 D149.V40 	 Age of Mother Year 
+
+**Parameter:**
+V_D149.V1 	 Age of Mother 9 
+
+**Value(s):**
+```
+		 *All* 	  All Ages  
+		 15 	  Under 15 years  
+		 15-19 	  15-19 years  
+		 20-24 	  20-24 years  
+		 25-29 	  25-29 years  
+		 30-34 	  30-34 years  
+		 35-39 	  35-39 years  
+		 40-44 	  40-44 years  
+		 45-49 	  45-49 years  
+		 50+ 	  50 years and over  
+```
+
+**Parameter:**
+V_D149.V38 	 Age of Mother 10 
+
+**Value(s):**
+```
+		 *All* 	  All Ages  
+		 15- 	  Under 15 years  
+		 15-17 	  15 - 17 years  
+		 18-19 	  18 - 19 years  
+		 20-24 	  20-24 years  
+		 25-29 	  25-29 years  
+		 30-34 	  30-34 years  
+		 35-39 	  35-39 years  
+		 40-44 	  40-44 years  
+		 45-49 	  45-49 years  
+		 50+ 	  50 years and over  
+```
+
+**Parameter:**
+V_D149.V39 	 Age of Mother 13 
+
+**Value(s):**
+```
+		 *All* 	  All Ages  
+		 15- 	  Under 15 years  
+		 15 	  15 years  
+		 16 	  16 years  
+		 17 	  17 years  
+		 18 	  18 years  
+		 19 	  19 years  
+		 20-24 	  20-24 years  
+		 25-29 	  25-29 years  
+		 30-34 	  30-34 years  
+		 35-39 	  35-39 years  
+		 40-44 	  40-44 years  
+		 45-49 	  45-49 years  
+		 50+ 	  50 years and over  
+```
+
+**Parameter:**
+V_D149.V40 	 Age of Mother Year 
+
+**Value(s):**
+```
+		 *All* 	  All Ages  
+		 12 	  12 years and under  
+		 13 	  13 years  
+		 14 	  14 years  
+		 15 	  15 years  
+		 16 	  16 years  
+		 17 	  17 years  
+		 18 	  18 years  
+		 19 	  19 years  
+		 20 	  20 years  
+		 21 	  21 years  
+		 22 	  22 years  
+		 23 	  23 years  
+		 24 	  24 years  
+		 25 	  25 years  
+		 26 	  26 years  
+		 27 	  27 years  
+		 28 	  28 years  
+		 29 	  29 years  
+		 30 	  30 years  
+		 31 	  31 years  
+		 32 	  32 years  
+		 33 	  33 years  
+		 34 	  34 years  
+		 35 	  35 years  
+		 36 	  36 years  
+		 37 	  37 years  
+		 38 	  38 years  
+		 39 	  39 years  
+		 40 	  40 years  
+		 41 	  41 years  
+		 42 	  42 years  
+		 43 	  43 years  
+		 44 	  44 years  
+		 45 	  45 years  
+		 46 	  46 years  
+		 47 	  47 years  
+		 48 	  48 years  
+		 49 	  49 years  
+		 50+ 	  50 years and over  
+```
+
+**Parameter:**
+V_D149.V5 	 Mother's Education 
+
+**Value(s):**
+```
+		 *All* 	  All Levels  
+		 1 	  8th grade or less  
+		 2 	  9th through 12th grade with no diploma  
+		 3 	  High school graduate or GED completed  
+		 4 	  Some college credit, but not a degree  
+		 5 	  Associate degree (AA, AS)  
+		 6 	  Bachelor's degree (BA, AB, BS)  
+		 7 	  Master's degree (MA, MS, MEng, MEd, MSW, MBA)  
+		 8 	  Doctorate (PhD, EdD) or Professional Degree (MD, DDS, DVM, LLB, JD)  
+		 Unk 	  Unknown or Not Stated  
+		 Exc 	  Excluded  
+		 NR 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V27 	 Marital Status 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Married  
+		 2 	  Unmarried  
+		 9 	  Unknown or Not Stated  
+		 NR 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+		 3 	  Not Applicable  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V48 	 Mother's Nativity 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Born in the U.S. (50 US States)  
+		 2 	  Born outside the U.S. (includes possessions)  
+		 3 	  Unknown or Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V147 	 Mother's Birth Country 
+
+**Value(s):**
+```
+		 *All* 	  All Countries  
+		 AF 	  AFGHANISTAN (AF)  
+		 AL 	  ALBANIA (AL)  
+		 AG 	  ALGERIA (AG)  
+		 AQ 	  AMERICAN SAMOA (AQ)  
+		 AN 	  ANDORRA (AN)  
+		 AO 	  ANGOLA (AO)  
+		 AV 	  ANGUILLA (AV)  
+		 AY 	  ANTARCTICA (AY)  
+		 AC 	  ANTIGUA AND BARBUDA (AC)  
+		 AR 	  ARGENTINA (AR)  
+		 AM 	  ARMENIA (AM)  
+		 AA 	  ARUBA (AA)  
+		 AT 	  ASHMORE AND CARTIER ISLANDS (AT)  
+		 AS 	  AUSTRALIA (AS)  
+		 AU 	  AUSTRIA (AU)  
+		 AJ 	  AZERBAIJAN (AJ)  
+		 BF 	  BAHAMAS, THE (BF)  
+		 BA 	  BAHRAIN (BA)  
+		 BG 	  BANGLADESH (BG)  
+		 BB 	  BARBADOS (BB)  
+		 BS 	  BASSAS DA INDIA (BS)  
+		 BO 	  BELARUS (BO)  
+		 BE 	  BELGIUM (BE)  
+		 BH 	  BELIZE (BH)  
+		 BN 	  BENIN (BN)  
+		 BD 	  BERMUDA (BD)  
+		 BT 	  BHUTAN (BT)  
+		 BL 	  BOLIVIA (BL)  
+		 BK 	  BOSNIA AND HERZEGOVINA (BK)  
+		 BC 	  BOTSWANA (BC)  
+		 BV 	  BOUVET ISLAND (BV)  
+		 BR 	  BRAZIL (BR)  
+		 IO 	  BRITISH INDIAN OCEAN TERRITORY (IO)  
+		 VI 	  BRITISH VIRGIN ISLANDS (VI)  
+		 BX 	  BRUNEI (BX)  
+		 BU 	  BULGARIA (BU)  
+		 UV 	  BURKINA FASO (UV)  
+		 BM 	  BURMA (BM)  
+		 BY 	  BURUNDI (BY)  
+		 CB 	  CAMBODIA (CB)  
+		 CM 	  CAMEROON (CM)  
+		 CA 	  CANADA (CA)  
+		 EQ 	  CANTON AND ENDERBERRY ISLANDS (EQ)  
+		 CV 	  CAPE VERDE (CV)  
+		 CJ 	  CAYMAN ISLANDS (CJ)  
+		 CT 	  CENTRAL AFRICAN REPUBLIC (CT)  
+		 CL 	  CENTRAL AND SOUTHERN LINE ISLANDS (CL)  
+		 CD 	  CHAD (CD)  
+		 CI 	  CHILE (CI)  
+		 CH 	  CHINA (CH)  
+		 KT 	  CHRISTMAS ISLAND (KT)  
+		 IP 	  CLIPPERTON ISLAND (IP)  
+		 CK 	  COCOS (KEELING) ISLANDS (CK)  
+		 CO 	  COLOMBIA (CO)  
+		 CN 	  COMOROS (CN)  
+		 CF 	  CONGO (CF)  
+		 CG 	  CONGO (CG)  
+		 CW 	  COOK ISLANDS (CW)  
+		 CR 	  CORAL SEA ISLANDS (CR)  
+		 CS 	  COSTA RICA (CS)  
+		 IV 	  COTE D' IVOIRE (IV)  
+		 HR 	  CROATIA (HR)  
+		 CU 	  CUBA (CU)  
+		 UC 	  CURACAO (UC)  
+		 CY 	  CYPRUS (CY)  
+		 EZ 	  CZECH REPUBLIC (EZ)  
+		 CZ 	  CZECHOSLOVAKIA (CZ)  
+		 DM 	  DAHOMEY [BENIN] (DM)  
+		 DA 	  DENMARK (DA)  
+		 DJ 	  DJIBOUTI (DJ)  
+		 DO 	  DOMINICA (DO)  
+		 DR 	  DOMINICAN REPUBLIC (DR)  
+		 EB 	  EAST BERLIN (EB)  
+		 GC 	  EAST GERMANY (GERMAN DEMOCRATIC REPUBLIC) (GC)  
+		 TT 	  EAST TIMOR (TT)  
+		 EC 	  ECUADOR (EC)  
+		 EG 	  EGYPT (EG)  
+		 ES 	  EL SALVADOR (ES)  
+		 EK 	  EQUATORIAL GUINEA (EK)  
+		 ER 	  ERITREA (ER)  
+		 EN 	  ESTONIA (EN)  
+		 ET 	  ETHIOPIA (ET)  
+		 PJ 	  ETOROFU, HABOMAI, KUNASHIRI, AND SHIKOTAN ISLANDS (PJ)  
+		 EU 	  EUROPA ISLAND (EU)  
+		 FK 	  FALKLAND ISLANDS (FK)  
+		 FO 	  FAROE ISLANDS (FO)  
+		 FJ 	  FIJI (FJ)  
+		 FI 	  FINLAND (FI)  
+		 FR 	  FRANCE (FR)  
+		 FG 	  FRENCH GUIANA (FG)  
+		 FP 	  FRENCH POLYNESIA (FP)  
+		 FS 	  FRENCH SOUTHERN AND ANTARCTIC LANDS (FS)  
+		 FT 	  FRENCH TERRITORY OF THE AFFARS AND ISSAS (FT)  
+		 GB 	  GABON (GB)  
+		 GA 	  GAMBIA, THE (GA)  
+		 GZ 	  GAZA STRIP (GZ)  
+		 GG 	  GEORGIA (GG)  
+		 GM 	  GERMANY (GM)  
+		 GH 	  GHANA (GH)  
+		 GI 	  GIBRALTAR (GI)  
+		 GS 	  GILBERT  ISLANDS (GS)  
+		 GN 	  GILBERT AND ELLICE ISLANDS (GN)  
+		 GO 	  GLORIOSO ISLANDS (GO)  
+		 GR 	  GREECE (GR)  
+		 GL 	  GREENLAND (GL)  
+		 GJ 	  GRENADA (GJ)  
+		 GP 	  GUADELOUPE (GP)  
+		 GQ 	  GUAM (GQ)  
+		 GT 	  GUATEMALA (GT)  
+		 GK 	  GUERNSEY (GK)  
+		 GV 	  GUINEA (GV)  
+		 PU 	  GUINEA-BISSAU (PU)  
+		 GY 	  GUYANA (GY)  
+		 HA 	  HAITI (HA)  
+		 HM 	  HEARD ISLAND AND MCDONALD  ISLANDS (HM)  
+		 VT 	  HOLY SEE (VATICAN CITY) (VT)  
+		 HO 	  HONDURAS (HO)  
+		 HK 	  HONG KONG (HK)  
+		 HQ  	  HOWLAND ISLAND (HQ )  
+		 HU 	  HUNGARY (HU)  
+		 IC 	  ICELAND (IC)  
+		 IN 	  INDIA (IN)  
+		 ID 	  INDONESIA (ID)  
+		 IR 	  IRAN (IR)  
+		 IZ 	  IRAQ (IZ)  
+		 IY 	  IRAQ-SAUDI ARABIA NEUTRAL ZONE (IY)  
+		 EI 	  IRELAND (EI)  
+		 IM 	  ISLE OF MAN (IM)  
+		 IS 	  ISRAEL (IS)  
+		 IW 	  ISRAEL-JORDAN DEMILITARIZED ZONE (IW)  
+		 IU 	  ISRAEL-SYRIA DEMILITARIZED ZONE (IU)  
+		 IT 	  ITALY (IT)  
+		 JM 	  JAMAICA (JM)  
+		 JN 	  JAN MAYEN (JN)  
+		 JA 	  JAPAN (JA)  
+		 DQ 	  JARVIS ISLAND (DQ)  
+		 JE 	  JERSEY (JE)  
+		 JQ 	  JOHNSTON ISLAND (JQ)  
+		 JO 	  JORDAN (JO)  
+		 JU 	  JUAN DE NOVA ISLAND (JU)  
+		 KZ 	  KAZAKHSTAN (KZ)  
+		 KE 	  KENYA (KE)  
+		 KR 	  KIRIBATI (KR)  
+		 KV 	  KOSOVO (KV)  
+		 KU 	  KUWAIT (KU)  
+		 KG 	  KYRGYZSTAN (KG)  
+		 LA 	  LAOS (LA)  
+		 LG 	  LATVIA (LG)  
+		 LE 	  LEBANON (LE)  
+		 LT 	  LESOTHO (LT)  
+		 LI 	  LIBERIA (LI)  
+		 LY 	  LIBYA (LY)  
+		 LS 	  LIECHTENSTEIN (LS)  
+		 LH 	  LITHUANIA (LH)  
+		 LU 	  LUXEMBOURG (LU)  
+		 MC 	  MACAU (MC)  
+		 MK 	  MACEDONIA, F.Y.R.O. (MK)  
+		 MA 	  MADAGASCAR (MA)  
+		 MI 	  MALAWI (MI)  
+		 MY 	  MALAYSIA (MY)  
+		 MV 	  MALDIVES (MV)  
+		 ML 	  MALI (ML)  
+		 MT 	  MALTA (MT)  
+		 RM 	  MARSHALL ISLANDS (RM)  
+		 MB 	  MARTINIQUE (MB)  
+		 MR 	  MAURITANIA (MR)  
+		 MP 	  MAURITIUS (MP)  
+		 MF 	  MAYOTTE (MF)  
+		 MX 	  MEXICO (MX)  
+		 FM 	  MICRONESIA, FEDERATED STATES OF (FM)  
+		 MQ  	  MIDWAY ISLAND (MQ )  
+		 MD 	  MOLDOVA (MD)  
+		 MN 	  MONACO (MN)  
+		 MG 	  MONGOLIA (MG)  
+		 MJ 	  MONTENEGRO (MJ)  
+		 MH 	  MONTSERRAT (MH)  
+		 MO 	  MOROCCO (MO)  
+		 MZ 	  MOZAMBIQUE (MZ)  
+		 WA 	  NAMIBIA (WA)  
+		 NR 	  NAURU (NR)  
+		 NP 	  NEPAL (NP)  
+		 NL 	  NETHERLANDS (NL)  
+		 NT 	  NETHERLANDS ANTILLES (NT)  
+		 NA 	  NETHERLANDS ANTILLES (NA)  
+		 NC 	  NEW CALEDONIA (NC)  
+		 NZ 	  NEW ZEALAND (NZ)  
+		 NU 	  NICARAGUA (NU)  
+		 NG 	  NIGER (NG)  
+		 NI 	  NIGERIA (NI)  
+		 NE 	  NIUE (NE)  
+		 NF 	  NORFOLK ISLAND (NF)  
+		 KN 	  NORTH KOREA (KN)  
+		 VN 	  NORTH VIETNAM (VN)  
+		 CQ 	  NORTHERN MARIANAS ISLANDS (CQ)  
+		 NO 	  NORWAY (NO)  
+		 MU 	  OMAN (MU)  
+		 PK 	  PAKISTAN (PK)  
+		 PS 	  PALAU (PS)  
+		 LQ 	  PALMYRA ATOLL (LQ)  
+		 PM 	  PANAMA (PM)  
+		 PN 	  PANAMA (PN)  
+		 PQ 	  PANAMA CANAL ZONE (PQ)  
+		 PP 	  PAPUA NEW GUINEA (PP)  
+		 PF 	  PARACEL ISLANDS (PF)  
+		 PA 	  PARAGUAY (PA)  
+		 PE 	  PERU (PE)  
+		 RP 	  PHILIPPINES (RP)  
+		 PC 	  PITCAIRN ISLAND (PC)  
+		 PL 	  POLAND (PL)  
+		 PO 	  PORTUGAL (PO)  
+		 RQ 	  PUERTO RICO (RQ)  
+		 QA 	  QATAR (QA)  
+		 RE 	  REUNION (RE)  
+		 RO 	  ROMANIA (RO)  
+		 RS 	  RUSSIA (RS)  
+		 RW 	  RWANDA (RW)  
+		 YQ 	  RYUKYU ISLANDS, SOUTHERN (YQ)  
+		 TB 	  SAINT BARTHELEMY (TB)  
+		 SH 	  SAINT HELENA (SH)  
+		 SC 	  SAINT KITTS AND NEVIS (SC)  
+		 ST 	  SAINT LUCIA (ST)  
+		 RN 	  SAINT MARTIN (RN)  
+		 SB 	  SAINT PIERRE AND MIQUELON (SB)  
+		 VC 	  SAINT VINCENT AND THE GRENADINES (VC)  
+		 WS 	  SAMOA (WS)  
+		 SM 	  SAN MARINO (SM)  
+		 TP 	  SAO TOME AND PRINCIPE (TP)  
+		 SA 	  SAUDI ARABIA (SA)  
+		 SG 	  SENEGAL (SG)  
+		 RI 	  SERBIA (RI)  
+		 SE 	  SEYCHELLES (SE)  
+		 SL 	  SIERRA LEONE (SL)  
+		 SK 	  SIKKIM (SK)  
+		 SN 	  SINGAPORE (SN)  
+		 NN 	  SINT MAARTEN (NN)  
+		 LO 	  SLOVAKIA (LO)  
+		 SI 	  SLOVENIA (SI)  
+		 BP 	  SOLOMON ISLANDS (BP)  
+		 SO 	  SOMALIA (SO)  
+		 SF 	  SOUTH AFRICA (SF)  
+		 SX 	  SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS (SX)  
+		 KS 	  SOUTH KOREA (KS)  
+		 OD 	  SOUTH SUDAN (OD)  
+		 VS 	  SOUTH VIETNAM (VS)  
+		 RH 	  SOUTHERN RHODESIA (RH)  
+		 SP 	  SPAIN (SP)  
+		 ME 	  SPANISH NORTH AFRICA (ME)  
+		 SS 	  SPANISH SAHARA (SS)  
+		 PG 	  SPRATLY ISLANDS (PG)  
+		 CE 	  SRI LANKA (CE)  
+		 SU 	  SUDAN (SU)  
+		 NS 	  SURINAME (NS)  
+		 SV 	  SVALBARD (SV)  
+		 JS 	  SVALBARD AND JAN MAYEN (JS)  
+		 SQ 	  SWAN ISLANDS (SQ)  
+		 WZ 	  SWAZILAND (WZ)  
+		 SW 	  SWEDEN (SW)  
+		 SZ 	  SWITZERLAND (SZ)  
+		 SY 	  SYRIA (SY)  
+		 TW 	  TAIWAN (TW)  
+		 TI 	  TAJIKISTAN (TI)  
+		 TZ 	  TANZANIA (TZ)  
+		 TH 	  THAILAND (TH)  
+		 PT 	  TIMOR (PT)  
+		 TO 	  TOGO (TO)  
+		 TL 	  TOKELAU (TL)  
+		 TN 	  TONGA (TN)  
+		 TD 	  TRINIDAD AND TOBAGO (TD)  
+		 TE 	  TROMELIN ISLAND (TE)  
+		 TQ 	  TRUST TERRITORY OF THE PACIFIC ISLANDS (TQ)  
+		 TS 	  TUNISIA (TS)  
+		 TU 	  TURKEY (TU)  
+		 TX 	  TURKMENISTAN (TX)  
+		 TK 	  TURKS AND CAICOS ISLANDS (TK)  
+		 TV 	  TUVALU (TV)  
+		 UG 	  UGANDA (UG)  
+		 UP 	  UKRAINE (UP)  
+		 UR 	  UNION OF SOVIET SOCIALIST REPUBLICS (UR)  
+		 TC 	  UNITED ARAB EMIRATES (TC)  
+		 AE 	  UNITED ARAB EMIRATES (AE)  
+		 UK 	  UNITED KINGDOM (UK)  
+		 US 	  UNITED STATES (US)  
+		 VQ  	  UNITED STATES VIRGIN ISLANDS (VQ )  
+		 UY 	  URUGUAY (UY)  
+		 IQ 	  US MISCELLANEOUS PACIFIC ISLANDS (IQ)  
+		 UZ 	  UZBEKISTAN (UZ)  
+		 NH 	  VANUATU (NH)  
+		 VE 	  VENEZUELA (VE)  
+		 VM 	  VIETNAM (VM)  
+		 WQ 	  WAKE ISLAND (WQ)  
+		 WF 	  WALLIS AND FUTUNA (WF)  
+		 WE 	  WEST BANK (WE)  
+		 WB 	  WEST BERLIN (WB)  
+		 GE 	  WEST GERMANY (FEDERAL REPUBLIC OF GERMANY) (GE)  
+		 WI 	  WESTERN SAHARA (WI)  
+		 YM 	  YEMEN (YM)  
+		 YS 	  YEMEN (ADEN) (YS)  
+		 YE 	  YEMEN (SANA'A) (YE)  
+		 YI 	  YUGOSLAVIA (YI)  
+		 YO 	  YUGOSLAVIA (YO)  
+		 ZA 	  ZAMBIA (ZA)  
+		 ZI 	  ZIMBABWE (ZI)  
+		 ZZ 	  UNKNOWN OR NOT STATED (ZZ)  
+		 N-R 	  NOT REPORTED (N-R)  
+```
+
+**Parameter:**
+V_D149.V47 	 Mother's Birth State 
+
+**Value(s):**
+```
+		 *All* 	  The United States  
+		 1 	  Alabama    
+		 2 	  Alaska    
+		 4 	  Arizona    
+		 5 	  Arkansas    
+		 6 	  California   
+		 8 	  Colorado    
+		 9 	  Connecticut   
+		 10 	  Delaware    
+		 11 	  District of Columbia  
+		 12 	  Florida    
+		 13 	  Georgia    
+		 15 	  Hawaii    
+		 16 	  Idaho    
+		 17 	  Illinois   
+		 18 	  Indiana    
+		 19 	  Iowa    
+		 20 	  Kansas    
+		 21 	  Kentucky   
+		 22 	  Louisiana   
+		 23 	  Maine    
+		 24 	  Maryland    
+		 25 	  Massachusetts   
+		 26 	  Michigan    
+		 27 	  Minnesota   
+		 28 	  Mississippi   
+		 29 	  Missouri   
+		 30 	  Montana  
+		 31 	  Nebraska  
+		 32 	  Nevada  
+		 33 	  New Hampshire  
+		 34 	  New Jersey  
+		 35 	  New Mexico  
+		 36 	  New York  
+		 37 	  North Carolina  
+		 38 	  North Dakota  
+		 39 	  Ohio  
+		 40 	  Oklahoma  
+		 41 	  Oregon  
+		 42 	  Pennsylvania  
+		 44 	  Rhode Island  
+		 45 	  South Carolina  
+		 46 	  South Dakota  
+		 47 	  Tennessee  
+		 48 	  Texas  
+		 49 	  Utah  
+		 50 	  Vermont  
+		 51 	  Virginia  
+		 53 	  Washington  
+		 54 	  West Virginia  
+		 55 	  Wisconsin  
+		 56 	  Wyoming  
+		 60 	  American Samoa  
+		 66 	  Guam  
+		 69 	  Northern Marianas  
+		 72 	  Puerto Rico  
+		 78 	  Virgin Islands  
+		 101 	  Alberta  
+		 102 	  British Columbia  
+		 103 	  Manitoba  
+		 104 	  New Brunswick  
+		 105 	  Newfoundland  
+		 106 	  Newfoundland and Laborador  
+		 107 	  Northwest Territories  
+		 108 	  Nova Scotia  
+		 109 	  Nunavut  
+		 110 	  Ontario  
+		 111 	  Prince Edward Island  
+		 112 	  Quebec  
+		 113 	  Saskatchewan  
+		 114 	  Yukon Territory  
+		 119 	  Rest of the World  
+		 120 	  Not Classifiable  
+		 199 	  Not Reported  
+```
+
+**Parameter:**
+O_frace 
+**Values:**	 D149.V54 	 Father's Single Race 6 
+
+**Parameter:**
+O_frace 
+**Values:**	 D149.V55 	 Father's Single Race 15 
+
+**Parameter:**
+O_frace 
+**Values:**	 D149.V56 	 Father's Single/Multi Race 31 
+
+**Parameter:**
+V_D149.V54 	 Father's Single Race 6 
+
+**Value(s):**
+```
+		 *All* 	  All Races  
+		 1002-5 	  American Indian or Alaska Native  
+		 A 	  Asian  
+		 2054-5 	  Black or African American  
+		 NHOPI 	  Native Hawaiian or Other Pacific Islander  
+		 2106-3 	  White  
+		 M 	  More than one race  
+		 UNK 	  Unknown or Not Stated  
+		 NA 	  Not Available  
+		 NR 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V55 	 Father's Single Race 15 
+
+**Value(s):**
+```
+		 *All* 	  All Races  
+		 1 	  White  
+		 2 	  Black  
+		 3 	  American Indian or Alaskan Native  
+		 4 	  Asian Indian  
+		 5 	  Chinese  
+		 6 	  Filipino  
+		 7 	  Japanese  
+		 8 	  Korean  
+		 9 	  Vietnamese  
+		 10 	  Other Asian  
+		 11 	  Hawaiian  
+		 12 	  Guamanian  
+		 13 	  Samoan  
+		 14 	  Other Pacific Islander  
+		 15 	  More than one race  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V56 	 Father's Single/Multi Race 31 
+
+**Value(s):**
+```
+		 *All* 	  All Races  
+		 1 	  White (only)  
+		 2 	  Black (only)  
+		 3 	  AIAN (American Indian or Alaskan Native) (only)  
+		 4 	  Asian (only)  
+		 5 	  NHOPI (Native Hawaiian or Other Pacific Islander) (only)  
+		 6 	  Black and White  
+		 7 	  Black and AIAN  
+		 8 	  Black and Asian  
+		 9 	  Black and NHOPI  
+		 10 	  AIAN and White  
+		 11 	  AIAN and Asian  
+		 12 	  AIAN and NHOPI  
+		 13 	  Asian and White  
+		 14 	  Asian and NHOPI  
+		 15 	  NHOPI and White  
+		 16 	  Black, AIAN, and White  
+		 17 	  Black, AIAN, and Asian  
+		 18 	  Black, AIAN, and NHOPI  
+		 19 	  Black, Asian, and White  
+		 20 	  Black, Asian, and NHOPI  
+		 21 	  Black, NHOPI, and White  
+		 22 	  AIAN, Asian, and White  
+		 23 	  AIAN, NHOPI, and White  
+		 24 	  AIAN, Asian, and NHOPI  
+		 25 	  Asian, NHOPI, and White  
+		 26 	  Black, AIAN, Asian, and White  
+		 27 	  Black, AIAN, Asian, and NHOPI  
+		 28 	  Black, AIAN, NHOPI, and White  
+		 29 	  Black, Asian, NHOPI, and White  
+		 30 	  AIAN, Asian, NHOPI, and White  
+		 31 	  Black, AIAN, Asian, NHOPI, and White  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+		 101 	  Not Available  
+```
+
+**Parameter:**
+O_f_ethnicity 
+**Values:**	 D149.V53 	 Father's Hispanic Origin 
+
+**Parameter:**
+O_f_ethnicity 
+**Values:**	 D149.V52 	 Father's Expanded Hispanic Origin 
+
+**Parameter:**
+V_D149.V53 	 Father's Hispanic Origin 
+
+**Value(s):**
+```
+		 *All* 	  All Origins  
+		 2135-2 	  Hispanic or Latino  
+		 2186-5 	  Not Hispanic or Latino  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V52 	 Father's Expanded Hispanic Origin 
+
+**Value(s):**
+```
+		 *All* 	  All Origins  
+		 0 	  Non-Hispanic  
+		 2148-5 	  Mexican  
+		 2180-8 	  Puerto Rican  
+		 2182-4 	  Cuban  
+		 4 	  Central or South American  
+		 7 	  Dominican  
+		 5 	  Other and Unknown Hispanic  
+		 9 	  Unknown or Not Stated  
+		 10 	  Not Available  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V57 	 Age of Father 
+
+**Value(s):**
+```
+		 *All* 	  All Ages  
+		 15 	  Under 15 years  
+		 15-19 	  15-19 years  
+		 20-24 	  20-24 years  
+		 25-29 	  25-29 years  
+		 30-34 	  30-34 years  
+		 35-39 	  35-39 years  
+		 40-44 	  40-44 years  
+		 45-49 	  45-49 years  
+		 50-54 	  50-54 years  
+		 55+ 	  55 years and older  
+		 NS 	  Unknown or Not Stated  
+		 NR 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V58 	 Father's Education 
+
+**Value(s):**
+```
+		 *All* 	  All Levels  
+		 1 	  8th grade or less  
+		 2 	  9th through 12th grade with no diploma  
+		 3 	  High school graduate or GED completed  
+		 4 	  Some college credit, but not a degree  
+		 5 	  Associate degree (AA, AS)  
+		 6 	  Bachelor's degree (BA, AB, BS)  
+		 7 	  Master's degree (MA, MS, MEng, MEd, MSW, MBA)  
+		 8 	  Doctorate (PhD, EdD) or Professional Degree (MD, DDS, DVM, LLB, JD)  
+		 Unk 	  Unknown or Not Stated  
+		 Exc 	  Excluded  
+		 NR 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V60 	 Interval Since Last Live Birth 
+
+**Value(s):**
+```
+		 *All* 	  All Intervals  
+		 0 	  Zero to 3 months (plural delivery)  
+		 1 	  4 to 11 months  
+		 2 	  12 to 17 months  
+		 3 	  18 to 23 months  
+		 4 	  24 to 35 months  
+		 5 	  36 to 47 months  
+		 6 	  48 to 59 months  
+		 7 	  60 to 71 months  
+		 8 	  72 months and over  
+		 88 	  Not Applicable (1st live birth)  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V61 	 Interval Since Last Other Pregnancy Outcome 
+
+**Value(s):**
+```
+		 *All* 	  All Intervals  
+		 0 	  Zero to 3 months (plural delivery)  
+		 1 	  4 to 11 months  
+		 2 	  12 to 17 months  
+		 3 	  18 to 23 months  
+		 4 	  24 to 35 months  
+		 5 	  36 to 47 months  
+		 6 	  48 to 59 months  
+		 7 	  60 to 71 months  
+		 8 	  72 months and over  
+		 88 	  Not Applicable (1st natality event)  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V62 	 Interval of Last Pregnancy 
+
+**Value(s):**
+```
+		 *All* 	  All Intervals  
+		 0 	  Zero to 3 months (plural delivery)  
+		 1 	  4 to 11 months  
+		 2 	  12 to 17 months  
+		 3 	  18 to 23 months  
+		 4 	  24 to 35 months  
+		 5 	  36 to 47 months  
+		 6 	  48 to 59 months  
+		 7 	  60 to 71 months  
+		 8 	  72 months and over  
+		 88 	  Not Applicable (no previous pregnancy)  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V151 	 Prior Births Now Living 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  0  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8  
+		 9 	  9  
+		 10 	  10  
+		 11 	  11  
+		 12 	  12  
+		 13 	  13  
+		 14 	  14  
+		 15 	  15  
+		 16 	  16  
+		 17 	  17  
+		 18 	  18  
+		 19 	  19  
+		 20 	  20  
+		 21 	  21  
+		 22 	  22  
+		 23 	  23  
+		 24 	  24  
+		 25 	  25  
+		 26 	  26  
+		 27 	  27  
+		 28 	  28  
+		 29 	  29  
+		 30 	  30  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V152 	 Prior Births Now Dead 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  0  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8  
+		 9 	  9  
+		 10 	  10  
+		 11 	  11  
+		 12 	  12  
+		 13 	  13  
+		 14 	  14  
+		 15 	  15  
+		 16 	  16  
+		 17 	  17  
+		 18 	  18  
+		 19 	  19  
+		 20 	  20  
+		 21 	  21  
+		 22 	  22  
+		 23 	  23  
+		 24 	  24  
+		 25 	  25  
+		 26 	  26  
+		 27 	  27  
+		 28 	  28  
+		 29 	  29  
+		 30 	  30  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V153 	 Prior Other Pregnancy Outcomes 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  0  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8  
+		 9 	  9  
+		 10 	  10  
+		 11 	  11  
+		 12 	  12  
+		 13 	  13  
+		 14 	  14  
+		 15 	  15  
+		 16 	  16  
+		 17 	  17  
+		 18 	  18  
+		 19 	  19  
+		 20 	  20  
+		 21 	  21  
+		 22 	  22  
+		 23 	  23  
+		 24 	  24  
+		 25 	  25  
+		 26 	  26  
+		 27 	  27  
+		 28 	  28  
+		 29 	  29  
+		 30 	  30  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V28 	 Live Birth Order 
+
+**Value(s):**
+```
+		 *All* 	  All Orders  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8 or more  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V59 	 Total Birth Order 
+
+**Value(s):**
+```
+		 *All* 	  All Orders  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8 or more  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V66 	 WIC 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V89 	 Successful External Cephalic Version 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V90 	 Failed External Cephalic Version 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_prenatal2 
+**Values:**	 D149.V65 	 Number of Prenatal Visits Recode 
+
+**Parameter:**
+O_prenatal2 
+**Values:**	 D149.V64 	 Number of Prenatal Visits 
+
+**Parameter:**
+V_D149.V65 	 Number of Prenatal Visits Recode 
+
+**Value(s):**
+```
+		 *All* 	  All Months  
+		 1 	  No visits  
+		 2 	  1 to 2 visits  
+		 3 	  3 to 4 visits  
+		 4 	  5 to 6 visits  
+		 5 	  7 to 8 visits  
+		 6 	  9 to 10 visits  
+		 7 	  11 to 12 visits  
+		 8 	  13 to 14 visits  
+		 9 	  15 to 16 visits  
+		 10 	  17 to 18 visits  
+		 11 	  19 or more visits  
+		 12 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V64 	 Number of Prenatal Visits 
+
+**Value(s):**
+```
+		 *All* 	  All Months  
+		 0 	  0 prenatal visits  
+		 1 	  1 prenatal visits  
+		 2 	  2 prenatal visits  
+		 3 	  3 prenatal visits  
+		 4 	  4 prenatal visits  
+		 5 	  5 prenatal visits  
+		 6 	  6 prenatal visits  
+		 7 	  7 prenatal visits  
+		 8 	  8 prenatal visits  
+		 9 	  9 prenatal visits  
+		 10 	  10 prenatal visits  
+		 11 	  11 prenatal visits  
+		 12 	  12 prenatal visits  
+		 13 	  13 prenatal visits  
+		 14 	  14 prenatal visits  
+		 15 	  15 prenatal visits  
+		 16 	  16 prenatal visits  
+		 17 	  17 prenatal visits  
+		 18 	  18 prenatal visits  
+		 19 	  19 prenatal visits  
+		 20 	  20 prenatal visits  
+		 21 	  21 prenatal visits  
+		 22 	  22 prenatal visits  
+		 23 	  23 prenatal visits  
+		 24 	  24 prenatal visits  
+		 25 	  25 prenatal visits  
+		 26 	  26 prenatal visits  
+		 27 	  27 prenatal visits  
+		 28 	  28 prenatal visits  
+		 29 	  29 prenatal visits  
+		 30 	  30 prenatal visits  
+		 31 	  31 prenatal visits  
+		 32 	  32 prenatal visits  
+		 33 	  33 prenatal visits  
+		 34 	  34 prenatal visits  
+		 35 	  35 prenatal visits  
+		 36 	  36 prenatal visits  
+		 37 	  37 prenatal visits  
+		 38 	  38 prenatal visits  
+		 39 	  39 prenatal visits  
+		 40 	  40 prenatal visits  
+		 41 	  41 prenatal visits  
+		 42 	  42 prenatal visits  
+		 43 	  43 prenatal visits  
+		 44 	  44 prenatal visits  
+		 45 	  45 prenatal visits  
+		 46 	  46 prenatal visits  
+		 47 	  47 prenatal visits  
+		 48 	  48 prenatal visits  
+		 49 	  49 prenatal visits  
+		 50 	  50 prenatal visits  
+		 51 	  51 prenatal visits  
+		 52 	  52 prenatal visits  
+		 53 	  53 prenatal visits  
+		 54 	  54 prenatal visits  
+		 55 	  55 prenatal visits  
+		 56 	  56 prenatal visits  
+		 57 	  57 prenatal visits  
+		 58 	  58 prenatal visits  
+		 59 	  59 prenatal visits  
+		 60 	  60 prenatal visits  
+		 61 	  61 prenatal visits  
+		 62 	  62 prenatal visits  
+		 63 	  63 prenatal visits  
+		 64 	  64 prenatal visits  
+		 65 	  65 prenatal visits  
+		 66 	  66 prenatal visits  
+		 67 	  67 prenatal visits  
+		 68 	  68 prenatal visits  
+		 69 	  69 prenatal visits  
+		 70 	  70 prenatal visits  
+		 71 	  71 prenatal visits  
+		 72 	  72 prenatal visits  
+		 73 	  73 prenatal visits  
+		 74 	  74 prenatal visits  
+		 75 	  75 prenatal visits  
+		 76 	  76 prenatal visits  
+		 77 	  77 prenatal visits  
+		 78 	  78 prenatal visits  
+		 79 	  79 prenatal visits  
+		 80 	  80 prenatal visits  
+		 81 	  81 prenatal visits  
+		 82 	  82 prenatal visits  
+		 83 	  83 prenatal visits  
+		 84 	  84 prenatal visits  
+		 85 	  85 prenatal visits  
+		 86 	  86 prenatal visits  
+		 87 	  87 prenatal visits  
+		 88 	  88 prenatal visits  
+		 89 	  89 prenatal visits  
+		 90 	  90 prenatal visits  
+		 91 	  91 prenatal visits  
+		 92 	  92 prenatal visits  
+		 93 	  93 prenatal visits  
+		 94 	  94 prenatal visits  
+		 95 	  95 prenatal visits  
+		 96 	  96 prenatal visits  
+		 97 	  97 prenatal visits  
+		 98 	  98 prenatal visits  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_prenatal 
+**Values:**	 D149.V63 	 Trimester Prenatal Care Began 
+
+**Parameter:**
+O_prenatal 
+**Values:**	 D149.V8 	 Month Prenatal Care Began 
+
+**Parameter:**
+V_D149.V8 	 Month Prenatal Care Began 
+
+**Value(s):**
+```
+		 *All* 	  All Months  
+		 00 	  No prenatal care  
+		 01 	  1st month  
+		 02 	  2nd month  
+		 03 	  3rd month  
+		 04 	  4th month  
+		 05 	  5th month  
+		 06 	  6th month  
+		 07 	  7th month  
+		 08 	  8th month  
+		 09 	  9th month  
+		 10 	  10th month  
+		 99 	  Unknown or Not Stated  
+		 98 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V63 	 Trimester Prenatal Care Began 
+
+**Value(s):**
+```
+		 *All* 	  All Months  
+		 1 	  1st to 3rd month  
+		 2 	  4th to 6th month  
+		 3 	  7th to final month  
+		 4 	  No prenatal care  
+		 5 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V70 	 Mother's Height in Inches 
+
+**Value(s):**
+```
+		 *All* 	  All Heights  
+		 30 	  30 inches  
+		 31 	  31 inches  
+		 32 	  32 inches  
+		 33 	  33 inches  
+		 34 	  34 inches  
+		 35 	  35 inches  
+		 36 	  36 inches  
+		 37 	  37 inches  
+		 38 	  38 inches  
+		 39 	  39 inches  
+		 40 	  40 inches  
+		 41 	  41 inches  
+		 42 	  42 inches  
+		 43 	  43 inches  
+		 44 	  44 inches  
+		 45 	  45 inches  
+		 46 	  46 inches  
+		 47 	  47 inches  
+		 48 	  48 inches  
+		 49 	  49 inches  
+		 50 	  50 inches  
+		 51 	  51 inches  
+		 52 	  52 inches  
+		 53 	  53 inches  
+		 54 	  54 inches  
+		 55 	  55 inches  
+		 56 	  56 inches  
+		 57 	  57 inches  
+		 58 	  58 inches  
+		 59 	  59 inches  
+		 60 	  60 inches  
+		 61 	  61 inches  
+		 62 	  62 inches  
+		 63 	  63 inches  
+		 64 	  64 inches  
+		 65 	  65 inches  
+		 66 	  66 inches  
+		 67 	  67 inches  
+		 68 	  68 inches  
+		 69 	  69 inches  
+		 70 	  70 inches  
+		 71 	  71 inches  
+		 72 	  72 inches  
+		 73 	  73 inches  
+		 74 	  74 inches  
+		 75 	  75 inches  
+		 76 	  76 inches  
+		 77 	  77 inches  
+		 78 	  78 inches  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V71 	 Mother's Pre-pregnancy BMI 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Underweight <18.5  
+		 2 	  Normal 18.5-24.9  
+		 3 	  Overweight 25.0-29.9  
+		 4 	  Obesity I 30.0-34.9  
+		 5 	  Obesity II 35.0-39.9  
+		 6 	  Extreme Obesity III > 39.9  
+		 9 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+O_gain 
+**Values:**	 D149.V72 	 Mother's Weight Gain 
+
+**Parameter:**
+O_gain 
+**Values:**	 D149.V73 	 Mother's Weight Gain Recode 
+
+**Parameter:**
+V_D149.V72 	 Mother's Weight Gain 
+
+**Value(s):**
+```
+		 *All* 	  All Weights  
+		 0 	  0 lbs  
+		 1 	  1 lbs  
+		 2 	  2 lbs  
+		 3 	  3 lbs  
+		 4 	  4 lbs  
+		 5 	  5 lbs  
+		 6 	  6 lbs  
+		 7 	  7 lbs  
+		 8 	  8 lbs  
+		 9 	  9 lbs  
+		 10 	  10 lbs  
+		 11 	  11 lbs  
+		 12 	  12 lbs  
+		 13 	  13 lbs  
+		 14 	  14 lbs  
+		 15 	  15 lbs  
+		 16 	  16 lbs  
+		 17 	  17 lbs  
+		 18 	  18 lbs  
+		 19 	  19 lbs  
+		 20 	  20 lbs  
+		 21 	  21 lbs  
+		 22 	  22 lbs  
+		 23 	  23 lbs  
+		 24 	  24 lbs  
+		 25 	  25 lbs  
+		 26 	  26 lbs  
+		 27 	  27 lbs  
+		 28 	  28 lbs  
+		 29 	  29 lbs  
+		 30 	  30 lbs  
+		 31 	  31 lbs  
+		 32 	  32 lbs  
+		 33 	  33 lbs  
+		 34 	  34 lbs  
+		 35 	  35 lbs  
+		 36 	  36 lbs  
+		 37 	  37 lbs  
+		 38 	  38 lbs  
+		 39 	  39 lbs  
+		 40 	  40 lbs  
+		 41 	  41 lbs  
+		 42 	  42 lbs  
+		 43 	  43 lbs  
+		 44 	  44 lbs  
+		 45 	  45 lbs  
+		 46 	  46 lbs  
+		 47 	  47 lbs  
+		 48 	  48 lbs  
+		 49 	  49 lbs  
+		 50 	  50 lbs  
+		 51 	  51 lbs  
+		 52 	  52 lbs  
+		 53 	  53 lbs  
+		 54 	  54 lbs  
+		 55 	  55 lbs  
+		 56 	  56 lbs  
+		 57 	  57 lbs  
+		 58 	  58 lbs  
+		 59 	  59 lbs  
+		 60 	  60 lbs  
+		 61 	  61 lbs  
+		 62 	  62 lbs  
+		 63 	  63 lbs  
+		 64 	  64 lbs  
+		 65 	  65 lbs  
+		 66 	  66 lbs  
+		 67 	  67 lbs  
+		 68 	  68 lbs  
+		 69 	  69 lbs  
+		 70 	  70 lbs  
+		 71 	  71 lbs  
+		 72 	  72 lbs  
+		 73 	  73 lbs  
+		 74 	  74 lbs  
+		 75 	  75 lbs  
+		 76 	  76 lbs  
+		 77 	  77 lbs  
+		 78 	  78 lbs  
+		 79 	  79 lbs  
+		 80 	  80 lbs  
+		 81 	  81 lbs  
+		 82 	  82 lbs  
+		 83 	  83 lbs  
+		 84 	  84 lbs  
+		 85 	  85 lbs  
+		 86 	  86 lbs  
+		 87 	  87 lbs  
+		 88 	  88 lbs  
+		 89 	  89 lbs  
+		 90 	  90 lbs  
+		 91 	  91 lbs  
+		 92 	  92 lbs  
+		 93 	  93 lbs  
+		 94 	  94 lbs  
+		 95 	  95 lbs  
+		 96 	  96 lbs  
+		 97 	  97 lbs  
+		 98 	  98 or more  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V73 	 Mother's Weight Gain Recode 
+
+**Value(s):**
+```
+		 *All* 	  All Weights  
+		 1 	  Less than 11 pounds  
+		 2 	  11 to 20 pounds  
+		 3 	  21 to 30 pounds  
+		 4 	  31 to 40 pounds  
+		 5 	  41 to 98 pounds  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V149 	 Mother's Pre-pregnancy Weight 
+
+**Value(s):**
+```
+		 *All* 	  All Weights  
+		 2 	   75 - 124 lbs  
+		 3 	  125 - 174 lbs  
+		 4 	  175 - 224 lbs  
+		 5 	  225 - 274 lbs  
+		 6 	  275 - 324 lbs  
+		 7 	  325 - 375 lbs  
+		 9 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V150 	 Mother's Delivery Weight 
+
+**Value(s):**
+```
+		 *All* 	  All Weights  
+		 2 	  100 - 149 lbs  
+		 3 	  150 - 199 lbs  
+		 4 	  200 - 249 lbs  
+		 5 	  250 - 299 lbs  
+		 6 	  300 - 349 lbs  
+		 7 	  350 - 400 lbs  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V10 	 Tobacco Use 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_cig_before 
+**Values:**	 D149.V143 	 Number of Cigarettes Before Pregnancy Recode 
+
+**Parameter:**
+O_cig_before 
+**Values:**	 D149.V139 	 Number of Cigarettes Before Pregnancy 
+
+**Parameter:**
+V_D149.V139 	 Number of Cigarettes Before Pregnancy 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  0 cigarettes daily  
+		 1 	  1 cigarettes daily  
+		 2 	  2 cigarettes daily  
+		 3 	  3 cigarettes daily  
+		 4 	  4 cigarettes daily  
+		 5 	  5 cigarettes daily  
+		 6 	  6 cigarettes daily  
+		 7 	  7 cigarettes daily  
+		 8 	  8 cigarettes daily  
+		 9 	  9 cigarettes daily  
+		 10 	  10 cigarettes daily  
+		 11 	  11 cigarettes daily  
+		 12 	  12 cigarettes daily  
+		 13 	  13 cigarettes daily  
+		 14 	  14 cigarettes daily  
+		 15 	  15 cigarettes daily  
+		 16 	  16 cigarettes daily  
+		 17 	  17 cigarettes daily  
+		 18 	  18 cigarettes daily  
+		 19 	  19 cigarettes daily  
+		 20 	  20 cigarettes daily  
+		 21 	  21 cigarettes daily  
+		 22 	  22 cigarettes daily  
+		 23 	  23 cigarettes daily  
+		 24 	  24 cigarettes daily  
+		 25 	  25 cigarettes daily  
+		 26 	  26 cigarettes daily  
+		 27 	  27 cigarettes daily  
+		 28 	  28 cigarettes daily  
+		 29 	  29 cigarettes daily  
+		 30 	  30 cigarettes daily  
+		 31 	  31 cigarettes daily  
+		 32 	  32 cigarettes daily  
+		 33 	  33 cigarettes daily  
+		 34 	  34 cigarettes daily  
+		 35 	  35 cigarettes daily  
+		 36 	  36 cigarettes daily  
+		 37 	  37 cigarettes daily  
+		 38 	  38 cigarettes daily  
+		 39 	  39 cigarettes daily  
+		 40 	  40 cigarettes daily  
+		 41 	  41 cigarettes daily  
+		 42 	  42 cigarettes daily  
+		 43 	  43 cigarettes daily  
+		 44 	  44 cigarettes daily  
+		 45 	  45 cigarettes daily  
+		 46 	  46 cigarettes daily  
+		 47 	  47 cigarettes daily  
+		 48 	  48 cigarettes daily  
+		 49 	  49 cigarettes daily  
+		 50 	  50 cigarettes daily  
+		 51 	  51 cigarettes daily  
+		 52 	  52 cigarettes daily  
+		 53 	  53 cigarettes daily  
+		 54 	  54 cigarettes daily  
+		 55 	  55 cigarettes daily  
+		 56 	  56 cigarettes daily  
+		 57 	  57 cigarettes daily  
+		 58 	  58 cigarettes daily  
+		 59 	  59 cigarettes daily  
+		 60 	  60 cigarettes daily  
+		 61 	  61 cigarettes daily  
+		 62 	  62 cigarettes daily  
+		 63 	  63 cigarettes daily  
+		 64 	  64 cigarettes daily  
+		 65 	  65 cigarettes daily  
+		 66 	  66 cigarettes daily  
+		 67 	  67 cigarettes daily  
+		 68 	  68 cigarettes daily  
+		 69 	  69 cigarettes daily  
+		 70 	  70 cigarettes daily  
+		 71 	  71 cigarettes daily  
+		 72 	  72 cigarettes daily  
+		 73 	  73 cigarettes daily  
+		 74 	  74 cigarettes daily  
+		 75 	  75 cigarettes daily  
+		 76 	  76 cigarettes daily  
+		 77 	  77 cigarettes daily  
+		 78 	  78 cigarettes daily  
+		 79 	  79 cigarettes daily  
+		 80 	  80 cigarettes daily  
+		 81 	  81 cigarettes daily  
+		 82 	  82 cigarettes daily  
+		 83 	  83 cigarettes daily  
+		 84 	  84 cigarettes daily  
+		 85 	  85 cigarettes daily  
+		 86 	  86 cigarettes daily  
+		 87 	  87 cigarettes daily  
+		 88 	  88 cigarettes daily  
+		 89 	  89 cigarettes daily  
+		 90 	  90 cigarettes daily  
+		 91 	  91 cigarettes daily  
+		 92 	  92 cigarettes daily  
+		 93 	  93 cigarettes daily  
+		 94 	  94 cigarettes daily  
+		 95 	  95 cigarettes daily  
+		 96 	  96 cigarettes daily  
+		 97 	  97 cigarettes daily  
+		 98 	  98 or more  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V143 	 Number of Cigarettes Before Pregnancy Recode 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  Nonsmoker  
+		 1 	  1-5  
+		 2 	  6-10  
+		 3 	  11-20  
+		 4 	  21-40  
+		 5 	  41 or more  
+		 6 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_cig_trim1 
+**Values:**	 D149.V144 	 Number of Cigarettes 1st Trimester Recode 
+
+**Parameter:**
+O_cig_trim1 
+**Values:**	 D149.V140 	 Number of Cigarettes 1st Trimester 
+
+**Parameter:**
+V_D149.V140 	 Number of Cigarettes 1st Trimester 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  0 cigarettes daily  
+		 1 	  1 cigarettes daily  
+		 2 	  2 cigarettes daily  
+		 3 	  3 cigarettes daily  
+		 4 	  4 cigarettes daily  
+		 5 	  5 cigarettes daily  
+		 6 	  6 cigarettes daily  
+		 7 	  7 cigarettes daily  
+		 8 	  8 cigarettes daily  
+		 9 	  9 cigarettes daily  
+		 10 	  10 cigarettes daily  
+		 11 	  11 cigarettes daily  
+		 12 	  12 cigarettes daily  
+		 13 	  13 cigarettes daily  
+		 14 	  14 cigarettes daily  
+		 15 	  15 cigarettes daily  
+		 16 	  16 cigarettes daily  
+		 17 	  17 cigarettes daily  
+		 18 	  18 cigarettes daily  
+		 19 	  19 cigarettes daily  
+		 20 	  20 cigarettes daily  
+		 21 	  21 cigarettes daily  
+		 22 	  22 cigarettes daily  
+		 23 	  23 cigarettes daily  
+		 24 	  24 cigarettes daily  
+		 25 	  25 cigarettes daily  
+		 26 	  26 cigarettes daily  
+		 27 	  27 cigarettes daily  
+		 28 	  28 cigarettes daily  
+		 29 	  29 cigarettes daily  
+		 30 	  30 cigarettes daily  
+		 31 	  31 cigarettes daily  
+		 32 	  32 cigarettes daily  
+		 33 	  33 cigarettes daily  
+		 34 	  34 cigarettes daily  
+		 35 	  35 cigarettes daily  
+		 36 	  36 cigarettes daily  
+		 37 	  37 cigarettes daily  
+		 38 	  38 cigarettes daily  
+		 39 	  39 cigarettes daily  
+		 40 	  40 cigarettes daily  
+		 41 	  41 cigarettes daily  
+		 42 	  42 cigarettes daily  
+		 43 	  43 cigarettes daily  
+		 44 	  44 cigarettes daily  
+		 45 	  45 cigarettes daily  
+		 46 	  46 cigarettes daily  
+		 47 	  47 cigarettes daily  
+		 48 	  48 cigarettes daily  
+		 49 	  49 cigarettes daily  
+		 50 	  50 cigarettes daily  
+		 51 	  51 cigarettes daily  
+		 52 	  52 cigarettes daily  
+		 53 	  53 cigarettes daily  
+		 54 	  54 cigarettes daily  
+		 55 	  55 cigarettes daily  
+		 56 	  56 cigarettes daily  
+		 57 	  57 cigarettes daily  
+		 58 	  58 cigarettes daily  
+		 59 	  59 cigarettes daily  
+		 60 	  60 cigarettes daily  
+		 61 	  61 cigarettes daily  
+		 62 	  62 cigarettes daily  
+		 63 	  63 cigarettes daily  
+		 64 	  64 cigarettes daily  
+		 65 	  65 cigarettes daily  
+		 66 	  66 cigarettes daily  
+		 67 	  67 cigarettes daily  
+		 68 	  68 cigarettes daily  
+		 69 	  69 cigarettes daily  
+		 70 	  70 cigarettes daily  
+		 71 	  71 cigarettes daily  
+		 72 	  72 cigarettes daily  
+		 73 	  73 cigarettes daily  
+		 74 	  74 cigarettes daily  
+		 75 	  75 cigarettes daily  
+		 76 	  76 cigarettes daily  
+		 77 	  77 cigarettes daily  
+		 78 	  78 cigarettes daily  
+		 79 	  79 cigarettes daily  
+		 80 	  80 cigarettes daily  
+		 81 	  81 cigarettes daily  
+		 82 	  82 cigarettes daily  
+		 83 	  83 cigarettes daily  
+		 84 	  84 cigarettes daily  
+		 85 	  85 cigarettes daily  
+		 86 	  86 cigarettes daily  
+		 87 	  87 cigarettes daily  
+		 88 	  88 cigarettes daily  
+		 89 	  89 cigarettes daily  
+		 90 	  90 cigarettes daily  
+		 91 	  91 cigarettes daily  
+		 92 	  92 cigarettes daily  
+		 93 	  93 cigarettes daily  
+		 94 	  94 cigarettes daily  
+		 95 	  95 cigarettes daily  
+		 96 	  96 cigarettes daily  
+		 97 	  97 cigarettes daily  
+		 98 	  98 or more  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V144 	 Number of Cigarettes 1st Trimester Recode 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  Nonsmoker  
+		 1 	  1-5  
+		 2 	  6-10  
+		 3 	  11-20  
+		 4 	  21-40  
+		 5 	  41 or more  
+		 6 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_cig_trim2 
+**Values:**	 D149.V145 	 Number of Cigarettes 2nd Trimester Recode 
+
+**Parameter:**
+O_cig_trim2 
+**Values:**	 D149.V141 	 Number of Cigarettes 2nd Trimester 
+
+**Parameter:**
+V_D149.V141 	 Number of Cigarettes 2nd Trimester 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  0 cigarettes daily  
+		 1 	  1 cigarettes daily  
+		 2 	  2 cigarettes daily  
+		 3 	  3 cigarettes daily  
+		 4 	  4 cigarettes daily  
+		 5 	  5 cigarettes daily  
+		 6 	  6 cigarettes daily  
+		 7 	  7 cigarettes daily  
+		 8 	  8 cigarettes daily  
+		 9 	  9 cigarettes daily  
+		 10 	  10 cigarettes daily  
+		 11 	  11 cigarettes daily  
+		 12 	  12 cigarettes daily  
+		 13 	  13 cigarettes daily  
+		 14 	  14 cigarettes daily  
+		 15 	  15 cigarettes daily  
+		 16 	  16 cigarettes daily  
+		 17 	  17 cigarettes daily  
+		 18 	  18 cigarettes daily  
+		 19 	  19 cigarettes daily  
+		 20 	  20 cigarettes daily  
+		 21 	  21 cigarettes daily  
+		 22 	  22 cigarettes daily  
+		 23 	  23 cigarettes daily  
+		 24 	  24 cigarettes daily  
+		 25 	  25 cigarettes daily  
+		 26 	  26 cigarettes daily  
+		 27 	  27 cigarettes daily  
+		 28 	  28 cigarettes daily  
+		 29 	  29 cigarettes daily  
+		 30 	  30 cigarettes daily  
+		 31 	  31 cigarettes daily  
+		 32 	  32 cigarettes daily  
+		 33 	  33 cigarettes daily  
+		 34 	  34 cigarettes daily  
+		 35 	  35 cigarettes daily  
+		 36 	  36 cigarettes daily  
+		 37 	  37 cigarettes daily  
+		 38 	  38 cigarettes daily  
+		 39 	  39 cigarettes daily  
+		 40 	  40 cigarettes daily  
+		 41 	  41 cigarettes daily  
+		 42 	  42 cigarettes daily  
+		 43 	  43 cigarettes daily  
+		 44 	  44 cigarettes daily  
+		 45 	  45 cigarettes daily  
+		 46 	  46 cigarettes daily  
+		 47 	  47 cigarettes daily  
+		 48 	  48 cigarettes daily  
+		 49 	  49 cigarettes daily  
+		 50 	  50 cigarettes daily  
+		 51 	  51 cigarettes daily  
+		 52 	  52 cigarettes daily  
+		 53 	  53 cigarettes daily  
+		 54 	  54 cigarettes daily  
+		 55 	  55 cigarettes daily  
+		 56 	  56 cigarettes daily  
+		 57 	  57 cigarettes daily  
+		 58 	  58 cigarettes daily  
+		 59 	  59 cigarettes daily  
+		 60 	  60 cigarettes daily  
+		 61 	  61 cigarettes daily  
+		 62 	  62 cigarettes daily  
+		 63 	  63 cigarettes daily  
+		 64 	  64 cigarettes daily  
+		 65 	  65 cigarettes daily  
+		 66 	  66 cigarettes daily  
+		 67 	  67 cigarettes daily  
+		 68 	  68 cigarettes daily  
+		 69 	  69 cigarettes daily  
+		 70 	  70 cigarettes daily  
+		 71 	  71 cigarettes daily  
+		 72 	  72 cigarettes daily  
+		 73 	  73 cigarettes daily  
+		 74 	  74 cigarettes daily  
+		 75 	  75 cigarettes daily  
+		 76 	  76 cigarettes daily  
+		 77 	  77 cigarettes daily  
+		 78 	  78 cigarettes daily  
+		 79 	  79 cigarettes daily  
+		 80 	  80 cigarettes daily  
+		 81 	  81 cigarettes daily  
+		 82 	  82 cigarettes daily  
+		 83 	  83 cigarettes daily  
+		 84 	  84 cigarettes daily  
+		 85 	  85 cigarettes daily  
+		 86 	  86 cigarettes daily  
+		 87 	  87 cigarettes daily  
+		 88 	  88 cigarettes daily  
+		 89 	  89 cigarettes daily  
+		 90 	  90 cigarettes daily  
+		 91 	  91 cigarettes daily  
+		 92 	  92 cigarettes daily  
+		 93 	  93 cigarettes daily  
+		 94 	  94 cigarettes daily  
+		 95 	  95 cigarettes daily  
+		 96 	  96 cigarettes daily  
+		 97 	  97 cigarettes daily  
+		 98 	  98 or more  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V145 	 Number of Cigarettes 2nd Trimester Recode 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  Nonsmoker  
+		 1 	  1-5  
+		 2 	  6-10  
+		 3 	  11-20  
+		 4 	  21-40  
+		 5 	  41 or more  
+		 6 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_cig_trim3 
+**Values:**	 D149.V146 	 Number of Cigarettes 3rd Trimester Recode 
+
+**Parameter:**
+O_cig_trim3 
+**Values:**	 D149.V142 	 Number of Cigarettes 3rd Trimester 
+
+**Parameter:**
+V_D149.V142 	 Number of Cigarettes 3rd Trimester 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  0 cigarettes daily  
+		 1 	  1 cigarettes daily  
+		 2 	  2 cigarettes daily  
+		 3 	  3 cigarettes daily  
+		 4 	  4 cigarettes daily  
+		 5 	  5 cigarettes daily  
+		 6 	  6 cigarettes daily  
+		 7 	  7 cigarettes daily  
+		 8 	  8 cigarettes daily  
+		 9 	  9 cigarettes daily  
+		 10 	  10 cigarettes daily  
+		 11 	  11 cigarettes daily  
+		 12 	  12 cigarettes daily  
+		 13 	  13 cigarettes daily  
+		 14 	  14 cigarettes daily  
+		 15 	  15 cigarettes daily  
+		 16 	  16 cigarettes daily  
+		 17 	  17 cigarettes daily  
+		 18 	  18 cigarettes daily  
+		 19 	  19 cigarettes daily  
+		 20 	  20 cigarettes daily  
+		 21 	  21 cigarettes daily  
+		 22 	  22 cigarettes daily  
+		 23 	  23 cigarettes daily  
+		 24 	  24 cigarettes daily  
+		 25 	  25 cigarettes daily  
+		 26 	  26 cigarettes daily  
+		 27 	  27 cigarettes daily  
+		 28 	  28 cigarettes daily  
+		 29 	  29 cigarettes daily  
+		 30 	  30 cigarettes daily  
+		 31 	  31 cigarettes daily  
+		 32 	  32 cigarettes daily  
+		 33 	  33 cigarettes daily  
+		 34 	  34 cigarettes daily  
+		 35 	  35 cigarettes daily  
+		 36 	  36 cigarettes daily  
+		 37 	  37 cigarettes daily  
+		 38 	  38 cigarettes daily  
+		 39 	  39 cigarettes daily  
+		 40 	  40 cigarettes daily  
+		 41 	  41 cigarettes daily  
+		 42 	  42 cigarettes daily  
+		 43 	  43 cigarettes daily  
+		 44 	  44 cigarettes daily  
+		 45 	  45 cigarettes daily  
+		 46 	  46 cigarettes daily  
+		 47 	  47 cigarettes daily  
+		 48 	  48 cigarettes daily  
+		 49 	  49 cigarettes daily  
+		 50 	  50 cigarettes daily  
+		 51 	  51 cigarettes daily  
+		 52 	  52 cigarettes daily  
+		 53 	  53 cigarettes daily  
+		 54 	  54 cigarettes daily  
+		 55 	  55 cigarettes daily  
+		 56 	  56 cigarettes daily  
+		 57 	  57 cigarettes daily  
+		 58 	  58 cigarettes daily  
+		 59 	  59 cigarettes daily  
+		 60 	  60 cigarettes daily  
+		 61 	  61 cigarettes daily  
+		 62 	  62 cigarettes daily  
+		 63 	  63 cigarettes daily  
+		 64 	  64 cigarettes daily  
+		 65 	  65 cigarettes daily  
+		 66 	  66 cigarettes daily  
+		 67 	  67 cigarettes daily  
+		 68 	  68 cigarettes daily  
+		 69 	  69 cigarettes daily  
+		 70 	  70 cigarettes daily  
+		 71 	  71 cigarettes daily  
+		 72 	  72 cigarettes daily  
+		 73 	  73 cigarettes daily  
+		 74 	  74 cigarettes daily  
+		 75 	  75 cigarettes daily  
+		 76 	  76 cigarettes daily  
+		 77 	  77 cigarettes daily  
+		 78 	  78 cigarettes daily  
+		 79 	  79 cigarettes daily  
+		 80 	  80 cigarettes daily  
+		 81 	  81 cigarettes daily  
+		 82 	  82 cigarettes daily  
+		 83 	  83 cigarettes daily  
+		 84 	  84 cigarettes daily  
+		 85 	  85 cigarettes daily  
+		 86 	  86 cigarettes daily  
+		 87 	  87 cigarettes daily  
+		 88 	  88 cigarettes daily  
+		 89 	  89 cigarettes daily  
+		 90 	  90 cigarettes daily  
+		 91 	  91 cigarettes daily  
+		 92 	  92 cigarettes daily  
+		 93 	  93 cigarettes daily  
+		 94 	  94 cigarettes daily  
+		 95 	  95 cigarettes daily  
+		 96 	  96 cigarettes daily  
+		 97 	  97 cigarettes daily  
+		 98 	  98 or more  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V146 	 Number of Cigarettes 3rd Trimester Recode 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  Nonsmoker  
+		 1 	  1-5  
+		 2 	  6-10  
+		 3 	  11-20  
+		 4 	  21-40  
+		 5 	  41 or more  
+		 6 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V74 	 Pre-pregnancy Diabetes 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V75 	 Gestational Diabetes 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V16 	 Pre-pregnancy Hypertension 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V17 	 Gestational Hypertension 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V18 	 Eclampsia 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V76 	 Previous Preterm Birth 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V77 	 Infertility Treatment Used 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V78 	 Fertility Enhancing Drugs 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+		 3 	  Not Applicable  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V79 	 Assistive Reproductive Technology 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+		 3 	  Not Applicable  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V80 	 Previous Cesarean Delivery 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V81 	 Number of Previous Cesareans 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  0 previous cesareans  
+		 1 	  1 previous cesareans  
+		 2 	  2 previous cesareans  
+		 3 	  3 previous cesareans  
+		 4 	  4 previous cesareans  
+		 5 	  5 previous cesareans  
+		 6 	  6 previous cesareans  
+		 7 	  7 previous cesareans  
+		 8 	  8 previous cesareans  
+		 9 	  9 previous cesareans  
+		 10 	  10 previous cesareans  
+		 11 	  11 previous cesareans  
+		 12 	  12 previous cesareans  
+		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V82 	 Risk Factors Checked 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  At least one checked  
+		 1 	  None checked  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V83 	 Gonorrhea 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V84 	 Syphilis 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V85 	 Chlamydia 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V86 	 Hepatitis B 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V87 	 Hepatitis C 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V88 	 Infections Checked 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  At least one checked  
+		 1 	  None checked  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V91 	 Induction of Labor 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V92 	 Augmentation of Labor 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V93 	 Steroids 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V94 	 Antibiotics for Mother 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V95 	 Chorioamnionitis 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V96 	 Anesthesia 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V97 	 Characteristics of Labor Checked 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  At least one checked  
+		 1 	  None checked  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V20 	 Year 
+
+**Value(s):**
+```
+		 *All* 	  All Years  
+		 2016 	  2016  
+		 2017 	  2017  
+		 2018 	  2018  
+		 2019 	  2019  
+		 2020 	  2020  
+```
+
+**Parameter:**
+V_D149.V25 	 Month 
+
+**Value(s):**
+```
+		 *All* 	  All Months  
+		 1 	  January  
+		 2 	  February  
+		 3 	  March  
+		 4 	  April  
+		 5 	  May  
+		 6 	  June  
+		 7 	  July  
+		 8 	  August  
+		 9 	  September  
+		 10 	  October  
+		 11 	  November  
+		 12 	  December  
+```
+
+**Parameter:**
+V_D149.V26 	 Weekday 
+
+**Value(s):**
+```
+		 *All* 	  All Days  
+		 1 	  Sunday  
+		 2 	  Monday  
+		 3 	  Tuesday  
+		 4 	  Wednesday  
+		 5 	  Thursday  
+		 6 	  Friday  
+		 7 	  Saturday  
+```
+
+**Parameter:**
+V_D149.V44 	 Time of Day 
+
+**Value(s):**
+```
+		 *All* 	  All Times  
+		 0 	  00:00 - 02:59  
+		 1 	  03:00 - 05:59  
+		 2 	  06:00 - 08:59  
+		 3 	  09:00 - 11:59  
+		 4 	  12:00 - 14:59  
+		 5 	  15:00 - 17:59  
+		 6 	  18:00 - 20:59  
+		 7 	  21:00 - 23:59  
+		 33 	  Unknown or Not Stated  
+		 NR 	  Not Reported  
+```
+
+**Parameter:**
+O_place 
+**Values:**	 D149.V45 	 Birthplace 
+
+**Parameter:**
+O_place 
+**Values:**	 D149.V30 	 Birthplace Recode 6 
+
+**Parameter:**
+O_place 
+**Values:**	 D149.V46 	 Birthplace Recode 3 
+
+**Parameter:**
+V_D149.V45 	 Birthplace 
+
+**Value(s):**
+```
+		 *All* 	  All Locations  
+		 1 	  Hospital  
+		 2 	  Freestanding Birth Center  
+		 3 	  Home (intended)  
+		 4 	  Home (not intended)   
+		 5 	  Home (unknown if intended)  
+		 6 	  Clinic / Doctor's Office  
+		 7 	  Other  
+		 9 	  Unknown or Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V30 	 Birthplace Recode 6 
+
+**Value(s):**
+```
+		 *All* 	  All Locations  
+		 1 	  In Hospital  
+		 2 	  Freestanding Birth Center  
+		 3 	  Clinic/Doctor's Office  
+		 4 	  Residence  
+		 5 	  Other  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V46 	 Birthplace Recode 3 
+
+**Value(s):**
+```
+		 *All* 	  All Locations  
+		 1 	  In Hospital  
+		 2 	  Not in Hospital  
+		 3 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V29 	 Medical Attendant 
+
+**Value(s):**
+```
+		 *All* 	  All Attendants  
+		 1 	  Doctor of Medicine(MD)  
+		 2 	  Doctor of Osteopathy(DO)  
+		 3 	  Certified Nurse Midwife(CNM/CM)  
+		 4 	  Other Midwife  
+		 5 	  Other  
+		 9 	  Unknown or not stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V108 	 Mother Transferred 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V98 	 Fetal Presentation 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Cephalic  
+		 2 	  Breech  
+		 3 	  Other  
+		 9 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V99 	 Final Route and Delivery Method 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Spontaneous  
+		 2 	  Forceps  
+		 3 	  Vacuum  
+		 4 	  Cesarean  
+		 9 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+O_delivery 
+**Values:**	 D149.V101 	 Delivery Method Expanded 
+
+**Parameter:**
+O_delivery 
+**Values:**	 D149.V31 	 Delivery Method 
+
+**Parameter:**
+V_D149.V101 	 Delivery Method Expanded 
+
+**Value(s):**
+```
+		 *All* 	  All Methods  
+		 1 	  Vaginal (excludes vaginal after previous C-section)  
+		 2 	  Vaginal after previous c-section  
+		 3 	  Primary C-section  
+		 4 	  Repeat C-section  
+		 5 	  Vaginal (unknown if previous c-section)  
+		 6 	  C-section (unknown if previous c-section)  
+		 9 	  Unknown or Not Stated  
+		 100 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V31 	 Delivery Method 
+
+**Value(s):**
+```
+		 *All* 	  All Methods  
+		 1 	  Vaginal  
+		 2 	  Cesarean  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V100 	 Trial of Labor Attempted (if cesarean) 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+		 3 	  Not Applicable  
+```
+
+**Parameter:**
+O_pay 
+**Values:**	 D149.V110 	 Source of Payment for Delivery 
+
+**Parameter:**
+O_pay 
+**Values:**	 D149.V109 	 Source of Payment for Delivery Expanded 
+
+**Parameter:**
+V_D149.V109 	 Source of Payment for Delivery Expanded 
+
+**Value(s):**
+```
+		 *All* 	  All Sources  
+		 1 	  Medicaid  
+		 2 	  Private Insurance  
+		 3 	  Self-Pay  
+		 4 	  Indian Health Service  
+		 5 	  CHAMPUS/TRICARE  
+		 6 	  Other Government (Federal, State, Local)  
+		 8 	  Other  
+		 9 	  Unknown or Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V110 	 Source of Payment for Delivery 
+
+**Value(s):**
+```
+		 *All* 	  All Sources  
+		 1 	  Medicaid  
+		 2 	  Private Insurance  
+		 3 	  Self Pay  
+		 4 	  Other  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V102 	 Maternal Transfusion 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V103 	 Perineal Laceration 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V104 	 Ruptured Uterus 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V105 	 Unplanned Hysterectomy 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V106 	 Admission to Intensive Care Unit 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V107 	 Maternal Morbidity Checked 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  At least one checked  
+		 1 	  None checked  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_oe_gestation 
+**Values:**	 D149.V32 	 OE Gestational Age Recode 10 
+
+**Parameter:**
+O_oe_gestation 
+**Values:**	 D149.V33 	 OE Gestational Age Recode 11 
+
+**Parameter:**
+O_oe_gestation 
+**Values:**	 D149.V34 	 OE Gestational Age Weekly 
+
+**Parameter:**
+V_D149.V32 	 OE Gestational Age Recode 10 
+
+**Value(s):**
+```
+		 *All* 	  All Weeks  
+		 01 	  Under 20 weeks  
+		 02 	  20 - 27 weeks  
+		 03 	  28 - 31 weeks  
+		 04 	  32 - 35 weeks  
+		 05 	  36 weeks  
+		 06 	  37 - 39 weeks  
+		 07 	  40 weeks  
+		 08 	  41 weeks  
+		 09 	  42 weeks or more  
+		 10 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V33 	 OE Gestational Age Recode 11 
+
+**Value(s):**
+```
+		 *All* 	  All Weeks  
+		 01 	  Under 20 weeks  
+		 02 	  20-27 weeks  
+		 03 	  28-31 weeks  
+		 04 	  32-33 weeks  
+		 05 	  34-36 weeks  
+		 06 	  37-38 weeks  
+		 07 	  39 weeks  
+		 08 	  40 weeks  
+		 09 	  41 weeks  
+		 10 	  42 weeks or more  
+		 11 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V34 	 OE Gestational Age Weekly 
+
+**Value(s):**
+```
+		 *All* 	  All Weeks  
+		 17 	  17 weeks  
+		 18 	  18 weeks  
+		 19 	  19 weeks  
+		 20 	  20 weeks  
+		 21 	  21 weeks  
+		 22 	  22 weeks  
+		 23 	  23 weeks  
+		 24 	  24 weeks  
+		 25 	  25 weeks  
+		 26 	  26 weeks  
+		 27 	  27 weeks  
+		 28 	  28 weeks  
+		 29 	  29 weeks  
+		 30 	  30 weeks  
+		 31 	  31 weeks  
+		 32 	  32 weeks  
+		 33 	  33 weeks  
+		 34 	  34 weeks  
+		 35 	  35 weeks  
+		 36 	  36 weeks  
+		 37 	  37 weeks  
+		 38 	  38 weeks  
+		 39 	  39 weeks  
+		 40 	  40 weeks  
+		 41 	  41 weeks  
+		 42 	  42 weeks  
+		 43 	  43 weeks  
+		 44 	  44 weeks  
+		 45 	  45 weeks  
+		 46 	  46 weeks  
+		 47 	  47 weeks  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_gestation 
+**Values:**	 D149.V6 	 LMP Gestational Recode 10 
+
+**Parameter:**
+O_gestation 
+**Values:**	 D149.V23 	 LMP Gestational Recode 11 
+
+**Parameter:**
+O_gestation 
+**Values:**	 D149.V24 	 LMP Gestational Age Weekly 
+
+**Parameter:**
+V_D149.V6 	 LMP Gestational Recode 10 
+
+**Value(s):**
+```
+		 *All* 	  All Weeks  
+		 01 	  Under 20 weeks  
+		 02 	  20 - 27 weeks  
+		 03 	  28 - 31 weeks  
+		 04 	  32 - 35 weeks  
+		 05 	  36 weeks  
+		 06 	  37 - 39 weeks  
+		 07 	  40 weeks  
+		 08 	  41 weeks  
+		 09 	  42 weeks or more  
+		 10 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V23 	 LMP Gestational Recode 11 
+
+**Value(s):**
+```
+		 *All* 	  All Weeks  
+		 01 	  Under 20 weeks  
+		 02 	  20-27 weeks  
+		 03 	  28-31 weeks  
+		 04 	  32-33 weeks  
+		 05 	  34-36 weeks  
+		 06 	  37-38 weeks  
+		 07 	  39 weeks  
+		 08 	  40 weeks  
+		 09 	  41 weeks  
+		 10 	  42 weeks or more  
+		 11 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V24 	 LMP Gestational Age Weekly 
+
+**Value(s):**
+```
+		 *All* 	  All Weeks  
+		 17 	  17 weeks  
+		 18 	  18 weeks  
+		 19 	  19 weeks  
+		 20 	  20 weeks  
+		 21 	  21 weeks  
+		 22 	  22 weeks  
+		 23 	  23 weeks  
+		 24 	  24 weeks  
+		 25 	  25 weeks  
+		 26 	  26 weeks  
+		 27 	  27 weeks  
+		 28 	  28 weeks  
+		 29 	  29 weeks  
+		 30 	  30 weeks  
+		 31 	  31 weeks  
+		 32 	  32 weeks  
+		 33 	  33 weeks  
+		 34 	  34 weeks  
+		 35 	  35 weeks  
+		 36 	  36 weeks  
+		 37 	  37 weeks  
+		 38 	  38 weeks  
+		 39 	  39 weeks  
+		 40 	  40 weeks  
+		 41 	  41 weeks  
+		 42 	  42 weeks  
+		 43 	  43 weeks  
+		 44 	  44 weeks  
+		 45 	  45 weeks  
+		 46 	  46 weeks  
+		 47 	  47 weeks  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V3 	 Sex of Infant 
+
+**Value(s):**
+```
+		 *All* 	  All Genders  
+		 F 	  Female  
+		 M 	  Male  
+```
+
+**Parameter:**
+V_D149.V7 	 Plurality 
+
+**Value(s):**
+```
+		 *All* 	  All Pluralities  
+		 1 	  Single  
+		 2 	  Twin  
+		 3 	  Triplet  
+		 4 	  Quadruplet  
+		 5 	  Quintuplet or higher  
+		 10 	  Not Available  
+```
+
+**Parameter:**
+V_D149.V115 	 Set Order 
+
+**Value(s):**
+```
+		 *All* 	  All Orders  
+		 1 	  1st  
+		 2 	  2nd  
+		 3 	  3rd  
+		 4 	  4th  
+		 5 	  5th to 16th  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_weight 
+**Values:**	 D149.V9 	 Infant Birth Weight 12 
+
+**Parameter:**
+O_weight 
+**Values:**	 D149.V35 	 Infant Birth Weight 14 
+
+**Parameter:**
+O_weight 
+**Values:**	 D149.V41 	 Infant Birth Weight 100 gram increments 
+
+**Parameter:**
+V_D149.V9 	 Infant Birth Weight 12 
+
+**Value(s):**
+```
+		 *All* 	  All Weights  
+		 01 	  499 grams or less  
+		 02 	  500 - 999 grams  
+		 03 	  1000 - 1499 grams  
+		 04 	  1500 - 1999 grams  
+		 05 	  2000 - 2499 grams  
+		 06 	  2500 - 2999 grams  
+		 07 	  3000 - 3499 grams  
+		 08 	  3500 - 3999 grams  
+		 09 	  4000 - 4499 grams  
+		 10 	  4500 - 4999 grams  
+		 11 	  5000 - 8165 grams  
+		 12 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V35 	 Infant Birth Weight 14 
+
+**Value(s):**
+```
+		 *All* 	  All Weights  
+		 01 	  499 grams or less  
+		 02 	  500 - 749 grams  
+		 03 	  750 - 999 grams  
+		 04 	  1000 - 1249 grams  
+		 05 	  1250 - 1499 grams  
+		 06 	  1500 - 1999 grams  
+		 07 	  2000 - 2499 grams  
+		 08 	  2500 - 2999 grams  
+		 09 	  3000 - 3499 grams  
+		 10 	  3500 - 3999 grams  
+		 11 	  4000 - 4499 grams  
+		 12 	  4500 - 4999 grams  
+		 13 	  5000 - 8165 grams  
+		 14 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V41 	 Infant Birth Weight 100 gram increments 
+
+**Value(s):**
+```
+		 *All* 	  All Weights  
+		 0 	  0 - 99 grams  
+		 1 	  100 - 199 grams  
+		 2 	  200 - 299 grams  
+		 3 	  300 - 399 grams  
+		 4 	  400 - 499 grams  
+		 5 	  500 - 599 grams  
+		 6 	  600 - 699 grams  
+		 7 	  700 - 799 grams  
+		 8 	  800 - 899 grams  
+		 9 	  900 - 999 grams  
+		 10 	  1000 - 1099 grams  
+		 11 	  1100 - 1199 grams  
+		 12 	  1200 - 1299 grams  
+		 13 	  1300 - 1399 grams  
+		 14 	  1400 - 1499 grams  
+		 15 	  1500 - 1599 grams  
+		 16 	  1600 - 1699 grams  
+		 17 	  1700 - 1799 grams  
+		 18 	  1800 - 1899 grams  
+		 19 	  1900 - 1999 grams  
+		 20 	  2000 - 2099 grams  
+		 21 	  2100 - 2199 grams  
+		 22 	  2200 - 2299 grams  
+		 23 	  2300 - 2399 grams  
+		 24 	  2400 - 2499 grams  
+		 25 	  2500 - 2599 grams  
+		 26 	  2600 - 2699 grams  
+		 27 	  2700 - 2799 grams  
+		 28 	  2800 - 2899 grams  
+		 29 	  2900 - 2999 grams  
+		 30 	  3000 - 3099 grams  
+		 31 	  3100 - 3199 grams  
+		 32 	  3200 - 3299 grams  
+		 33 	  3300 - 3399 grams  
+		 34 	  3400 - 3499 grams  
+		 35 	  3500 - 3599 grams  
+		 36 	  3600 - 3699 grams  
+		 37 	  3700 - 3799 grams  
+		 38 	  3800 - 3899 grams  
+		 39 	  3900 - 3999 grams  
+		 40 	  4000 - 4099 grams  
+		 41 	  4100 - 4199 grams  
+		 42 	  4200 - 4299 grams  
+		 43 	  4300 - 4399 grams  
+		 44 	  4400 - 4499 grams  
+		 45 	  4500 - 4599 grams  
+		 46 	  4600 - 4699 grams  
+		 47 	  4700 - 4799 grams  
+		 48 	  4800 - 4899 grams  
+		 49 	  4900 - 4999 grams  
+		 50 	  5000 - 5099 grams  
+		 51 	  5100 - 5199 grams  
+		 52 	  5200 - 5299 grams  
+		 53 	  5300 - 5399 grams  
+		 54 	  5400 - 5499 grams  
+		 55 	  5500 - 5599 grams  
+		 56 	  5600 - 5699 grams  
+		 57 	  5700 - 5799 grams  
+		 58 	  5800 - 5899 grams  
+		 59 	  5900 - 5999 grams  
+		 60 	  6000 - 6099 grams  
+		 61 	  6100 - 6199 grams  
+		 62 	  6200 - 6299 grams  
+		 63 	  6300 - 6399 grams  
+		 64 	  6400 - 6499 grams  
+		 65 	  6500 - 6599 grams  
+		 66 	  6600 - 6699 grams  
+		 67 	  6700 - 6799 grams  
+		 68 	  6800 - 6899 grams  
+		 69 	  6900 - 6999 grams  
+		 70 	  7000 - 7099 grams  
+		 71 	  7100 - 7199 grams  
+		 72 	  7200 - 7299 grams  
+		 73 	  7300 - 7399 grams  
+		 74 	  7400 - 7499 grams  
+		 75 	  7500 - 7599 grams  
+		 76 	  7600 - 7699 grams  
+		 77 	  7700 - 7799 grams  
+		 78 	  7800 - 7899 grams  
+		 79 	  7900 - 7999 grams  
+		 80 	  8000 - 8099 grams  
+		 81 	  8100 - 8165 grams  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_apgar5 
+**Values:**	 D149.V111 	 Five Minute APGAR Score 
+
+**Parameter:**
+O_apgar5 
+**Values:**	 D149.V112 	 Five Minute APGAR Score Recode 
+
+**Parameter:**
+V_D149.V111 	 Five Minute APGAR Score 
+
+**Value(s):**
+```
+		 *All* 	  All Scores  
+		 0 	  0  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8  
+		 9 	  9  
+		 10 	  10  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V112 	 Five Minute APGAR Score Recode 
+
+**Value(s):**
+```
+		 *All* 	  All Scores  
+		 1 	  A score of 0-3  
+		 2 	  A score of 4-6  
+		 3 	  A score of 7-8  
+		 4 	  A score of 9-10  
+		 5 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_apgar10 
+**Values:**	 D149.V113 	 Ten Minute APGAR Score 
+
+**Parameter:**
+O_apgar10 
+**Values:**	 D149.V114 	 Ten Minute APGAR Score Recode 
+
+**Parameter:**
+V_D149.V113 	 Ten Minute APGAR Score 
+
+**Value(s):**
+```
+		 *All* 	  All Scores  
+		 0 	  0  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8  
+		 9 	  9  
+		 10 	  10  
+		 88 	  Not Applicable  
+		 99 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V114 	 Ten Minute APGAR Score Recode 
+
+**Value(s):**
+```
+		 *All* 	  All Scores  
+		 1 	  A score of 0-3  
+		 2 	  A score of 4-6  
+		 3 	  A score of 7-8  
+		 4 	  A score of 9-10  
+		 5 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V136 	 Infant Transferred 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V137 	 Infant Living at Time of Report 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V138 	 Infant Breastfed at Discharge 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+		 10 	  Not Reported  
+```
+
+**Parameter:**
+V_D149.V116 	 Assisted Ventilation 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V117 	 Assisted Ventilation > 6 hrs 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V118 	 NICU Admission 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V119 	 Surfactant Replacement Therapy 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V120 	 Antibiotics for Suspected Neonatal Sepsis 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V121 	 Seizures 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V122 	 Abnormal Conditions Checked 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  At least one checked  
+		 1 	  None checked  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V123 	 Anencephaly 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V124 	 Meningomyelocele / Spina Bifida 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V125 	 Cyanotic Congenital Heart Disease 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V126 	 Congenital Diaphragmatic Hernia 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V127 	 Omphalocele 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V128 	 Gastroschisis 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V129 	 Limb Reduction Defect 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V130 	 Cleft Lip with or without Cleft Palate 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V131 	 Cleft Palate Alone 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V132 	 Down Syndrome 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Confirmed  
+		 2 	  Pending  
+		 3 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V133 	 Suspected Chromosomal Disorder 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Confirmed  
+		 2 	  Pending  
+		 3 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V134 	 Hypospadias 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 1 	  Yes  
+		 2 	  No  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+V_D149.V135 	 Congenital Anomalies Checked 
+
+**Value(s):**
+```
+		 *All* 	  All Values  
+		 0 	  At least one checked  
+		 1 	  None checked  
+		 9 	  Unknown or Not Stated  
+```
+
+**Parameter:**
+O_precision 	 Precision 
+
+**Value(s):**
+```
+		 0 	  0  
+		 1 	  1  
+		 2 	  2  
+		 3 	  3  
+		 4 	  4  
+		 5 	  5  
+		 6 	  6  
+		 7 	  7  
+		 8 	  8  
+		 9 	  9  
+```
+
+**Parameter:**
+O_timeout 	 Data Access Timeout 
+
+**Value(s):**
+```
+		 60 	  1  
+		 120 	  2  
+		 180 	  3  
+		 240 	  4  
+		 300 	  5  
+		 360 	  6  
+		 420 	  7  
+		 480 	  8  
+		 540 	  9  
+		 600 	  10  
+		 660 	  11  
+		 720 	  12  
+		 780 	  13  
+		 840 	  14  
+		 900 	  15  
+```
+
