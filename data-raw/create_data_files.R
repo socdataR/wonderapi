@@ -2,10 +2,10 @@
 
 # create data files and vignette:
 # 1. test new dataset to be added
-# 2. read dbnamelookup (database name lookup)
+# 2. update dbnamelookup (database name lookup)
 # 3. label lookup lists
 # 4. query default lookup lists
-# 5. save above in sysdata.rda
+# 5. save 2., 3., 4. in sysdata.rda
 # 6. codebook vignettes
 
 library(dplyr)
