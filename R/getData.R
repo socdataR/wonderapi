@@ -216,6 +216,8 @@ label_to_code <- function(list_with_labels, dbcode) {
                 )
             list_with_codes[[i]][[1]] <- code
         } else {  # label not found
+            # Starting V_ listed in codebook removed (not sure why there's an inconsistency between label_list and codebook)
+            if (substr(list_with_labels[[i]][[1]], 1, 2) == "V_") list_with_labels[[i]][[1]] <- stringr::str_remove(list_with_labels[[i]][[1]], "V_")
             if (!list_with_labels[[i]][[1]] %in% lookup$code) {
                 # ... and code not found --> problem
                 mymessage <- paste0("Ignoring: \"",
