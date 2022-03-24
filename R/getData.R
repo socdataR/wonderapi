@@ -63,10 +63,17 @@ getData <- function(agree = FALSE, db = "D66", querylist = NULL, add = TRUE) {
                 c("O_location", "VM_D76.M6_D76.V10", "V_D76.V9", "F_D76.V9", "V_D76.V10", "F_D76.V10", "V_D76.V27", "F_D76.V27", "O_urban", "V_D76.V19", "V_D76.V11")))) {
                 stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
             }
+
             if(any(is.element(
                 queryargs,
                 c("Census Region", "Census Division", "HHS Region", "State", "County", "2013 Urbanization", "2006 Urbanization", "D76.V10-level1", "D76.V10-level2", "D76.V27-level1", "D76.V9-level1", "D76.V9-level2", "D76.V19", "D76.V11")))) {
                 stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
+                }
+            if(any(is.element(
+                queryargs,
+                "D176.V24"
+            ))) {
+                stop ("It is no longer possible to limit results by Weekday for database D176 via the WONDER API, although it is in the web application. \nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
             }
             querylist <- label_to_code(querylist, dbcode)
             querylist <- combine_lists(default_list,
