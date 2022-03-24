@@ -15,15 +15,15 @@ library(wondr)
 
 # 1. test that default query list works
 
-# ** TO DO ** if adding a new database, manually update data-raw/dbnamelookup.csv
+# if adding a new database, manually update data-raw/dbnamelookup.csv
 
-# ** TO DO ** Add a default query list to data-raw/  It is very difficult to create one from scratch. The best option is to request one from CDC Wonder Customer Support <cwus@cdc.gov>.
+# Add a default query list to data-raw/  It is very difficult to create one from scratch. The best option is to request one from CDC Wonder Customer Support <cwus@cdc.gov>.
 
 devtools::load_all()
 
 dbcode <- "D176"  # code of new database
 
-ql <- make_query_list(paste0(dbcode,"_Defaults.xml"))
+ql <- make_query_list("Name_of_test_query_list.xml")
 
 agreelist <- list(parameter = list(
     name = "accept_datause_restrictions",
@@ -57,11 +57,11 @@ usethis::use_data(dbnamelookup, label_list, query_defaults,
 # 6. make codebook vignette .Rmd
 purrr::map(databases, make_codebook_vignette)
 
-#  TO DO: manually update IntroVignette.Rmd
+#  Manually update IntroVignette.Rmd
 
 # OPTIONAL: test that the vignettes build. Note that they won't appear in Help unless the package is installed but they can be accessed with browseVignettes(). See ?build_vignettes() for more info.
 
-devtools::build_vignettes()
+# devtools::build_vignettes()
 
 
 

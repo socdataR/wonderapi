@@ -40,7 +40,6 @@ B_1 	 Group Results By
 		 D176.V44 	 Single/Multi Race 31 
 		 D176.V1-level1 	 Year 
 		 D176.V1-level2 	 Month 
-		 D176.V24 	 Weekday 
 		 D176.V100-level1 	 MMWR Year 
 		 D176.V100-level2 	 MMWR Week 
 		 D176.V20 	 Autopsy 
@@ -96,7 +95,6 @@ B_2 	 And By
 		 D176.V44 	 Single/Multi Race 31 
 		 D176.V1-level1 	 Year 
 		 D176.V1-level2 	 Month 
-		 D176.V24 	 Weekday 
 		 D176.V100-level1 	 MMWR Year 
 		 D176.V100-level2 	 MMWR Week 
 		 D176.V20 	 Autopsy 
@@ -152,7 +150,6 @@ B_3 	 And By
 		 D176.V44 	 Single/Multi Race 31 
 		 D176.V1-level1 	 Year 
 		 D176.V1-level2 	 Month 
-		 D176.V24 	 Weekday 
 		 D176.V100-level1 	 MMWR Year 
 		 D176.V100-level2 	 MMWR Week 
 		 D176.V20 	 Autopsy 
@@ -208,7 +205,6 @@ B_4 	 And By
 		 D176.V44 	 Single/Multi Race 31 
 		 D176.V1-level1 	 Year 
 		 D176.V1-level2 	 Month 
-		 D176.V24 	 Weekday 
 		 D176.V100-level1 	 MMWR Year 
 		 D176.V100-level2 	 MMWR Week 
 		 D176.V20 	 Autopsy 
@@ -264,7 +260,6 @@ B_5 	 And By
 		 D176.V44 	 Single/Multi Race 31 
 		 D176.V1-level1 	 Year 
 		 D176.V1-level2 	 Month 
-		 D176.V24 	 Weekday 
 		 D176.V100-level1 	 MMWR Year 
 		 D176.V100-level2 	 MMWR Week 
 		 D176.V20 	 Autopsy 
@@ -995,22 +990,6 @@ F_D176.V1 	 Selected Items
 		 2020 	 + 2020  (2020)   
 		 2021 	 + 2021  (2021 (provisional))   
 		 2022 	 + 2022  (2022 (provisional and partial))   
-```
-
-**Parameter:**
-V_D176.V24 	 Weekday 
-
-**Value(s):**
-```
-		 *All* 	  All Weekdays  
-		 1 	  Sunday  
-		 2 	  Monday  
-		 3 	  Tuesday  
-		 4 	  Wednesday  
-		 5 	  Thursday  
-		 6 	  Friday  
-		 7 	  Saturday  
-		 9 	  Unknown  
 ```
 
 **Parameter:**
