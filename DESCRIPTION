@@ -8,6 +8,8 @@ Authors@R: c(
 Description: Simplifies the process of formulating CDC Wonder API query
     requests and interpreting query responses in order to obtain federal
     health data
+URL: https://github.com/socdataR/wonderapi
+BugReports: https://github.com/socdataR/wonderapi/issues
 Depends:
     R (>= 3.3.2)
 Imports:

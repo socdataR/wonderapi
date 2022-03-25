@@ -15,7 +15,7 @@ githubreadme <- TRUE
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.width = 4, fig.height = 3,
                       fig.align = 'center',
-                      fig.path = "man/figures")
+                      fig.path = "man/figures/")
 ```
 
 <div id="TOC">
@@ -235,7 +235,7 @@ ggplot(births, aes(Year, Births)) + geom_line() +
 
 ### Errors
 
-The main source of errors is improper query requests. The `wonderapi` has limited ability to catch problems before the query request is made. It checks the list of parameter names and will reject the name-value pair if the _name_, either in code or human readable form, is not recognized. (Checking for _value_ problems will be added in the future.) Here is an example of an unrecognized parameter name:  
+The main source of errors is improper query requests. The `wonderapi` package has some ability to catch problems before the query request is made but will not catch everything. It checks the list of parameter names and will reject the name-value pair if the _name_, either in code or human readable form, is not recognized or is a geographic variable not accessible through the API without permission. (Checking for _value_ problems will be added in the future.) Here is an example of an unrecognized parameter name:  
 
 ```{r}
 mydata3 <- getData("Detailed Mortality", 
@@ -250,8 +250,7 @@ mydata3 %>% head()
 mydata3 %>% head() %>% kable()
 ```
 
-Errors due to the constraints of the CDC Wonder API are more difficult to catch since there are many quirky rules and it is currently beyond the scope of this package to check for them. The following, for example, appears to be a reasonable request, but results in an error:  
-
+If the CDC Wonder API returns an error, the message in the response will be displayed. Sometimes the message will provide enough information to fix the problem. Other times, it is not. For example:
 
 ```{r, error = TRUE}
 mylist <- list(list("And By", "Education"), 
@@ -259,7 +258,7 @@ mylist <- list(list("And By", "Education"),
 mydata4 <- getData("Natality for 2007 - 2020", mylist)
 ```
 
-In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong:  
+In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong: 
 
 <center><img src="man/figures/NatalityError.png" width="432px"/></center>
 

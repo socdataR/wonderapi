@@ -366,7 +366,7 @@ ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
     geom_line() + ggtitle("Births by Marital Status")
 ```
 
-<img src="man/figuresBirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
 
 ``` r
 ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
@@ -375,7 +375,7 @@ ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
     ggtitle("Average Age of Mother")
 ```
 
-<img src="man/figuresAverageAgeofMother-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
 
 ``` r
 mydata2 <- mydata2 %>% 
@@ -387,7 +387,7 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
     ylab("Percent of Total Births")
 ```
 
-<img src="man/figuresBirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
 
 ### Combining results from multiple datasets
 
@@ -407,16 +407,18 @@ ggplot(births, aes(Year, Births)) + geom_line() +
     ggtitle("U.S. Births by Year, 1995 - 2020")
 ```
 
-<img src="man/figuresBirthsbyYear1995to2020-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/BirthsbyYear1995to2020-1.png" style="display: block; margin: auto;" />
 
 ### Errors
 
 The main source of errors is improper query requests. The `wonderapi`
-has limited ability to catch problems before the query request is made.
-It checks the list of parameter names and will reject the name-value
-pair if the *name*, either in code or human readable form, is not
-recognized. (Checking for *value* problems will be added in the future.)
-Here is an example of an unrecognized parameter name:
+package has some ability to catch problems before the query request is
+made but will not catch everything. It checks the list of parameter
+names and will reject the name-value pair if the *name*, either in code
+or human readable form, is not recognized or is a geographic variable
+not accessible through the API without permission. (Checking for *value*
+problems will be added in the future.) Here is an example of an
+unrecognized parameter name:
 
 ``` r
 mydata3 <- getData("Detailed Mortality", 
@@ -439,10 +441,9 @@ mydata3 %>% head()
     ## 5 2003  2447946  290107933         844.
     ## 6 2004  2397269  292805298         819.
 
-Errors due to the constraints of the CDC Wonder API are more difficult
-to catch since there are many quirky rules and it is currently beyond
-the scope of this package to check for them. The following, for example,
-appears to be a reasonable request, but results in an error:
+If the CDC Wonder API returns an error, the message in the response will
+be displayed. Sometimes the message will provide enough information to
+fix the problem. Other times, it is not. For example:
 
 ``` r
 mylist <- list(list("And By", "Education"), 
