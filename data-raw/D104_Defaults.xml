@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <request-parameters>
     <parameter>
+        <name>accept_datause_restrictions</name>
+        <value>true</value>
+    </parameter>
+    <parameter>
 		<name>B_1</name>
 		<value>D104.V3</value>
 	</parameter>
@@ -11,7 +15,7 @@
 	<parameter>
 		<name>F_D104.V2</name>
 		<value>*All*</value>
-	</parameter>		
+	</parameter>
 	<parameter>
 		<name>I_D104.V2</name>
 		<value>*All*</value>
@@ -43,7 +47,7 @@
 	<parameter>
 		<name>O_title</name>
 		<value>Number of Heat Wave Days in May-September (1981-2010)</value>
-	</parameter>	
+	</parameter>
 	<parameter>
 		<name>V_D104.V2</name>
 		<value></value>

@@ -2,14 +2,20 @@
 #'
 #' calls the \href{https://wonder.cdc.gov}{CDC Wonder API} and returns a tidy data frame (tibble)
 #'
-#' @param agree Must be set to TRUE to actively agree to the CDC terms (default is FALSE). To see the terms for the particular dataset click on that dataset here: \url{https://wonder.cdc.gov}. \href{https://wonder.cdc.gov/ucd-icd10.html}{sample}
 #' @param db Indicate the database, either by label, name, or code.  To see the complete list of what's available, use `show_databases()`
 #'
 #' @param querylist The query list supplied must be a list of lists of names and values. By default it is combined with the default query list for that database. To supply a full list and bypass the default query list, set \code{add} to \code{TRUE}. See here for instructions on how to create this list.
 #'
 #' @param add If \code{TRUE} (default) \code{querylist} is combined with the default query list. Set to \code{FALSE} to use \code{querylist} as a standalone list of query parameters.
 #'
+#' @param save If \code{TRUE} the query list will be saved, defaults to \code{FALSE}
+#'
+#' @param fn filename for saved query list, defaults to \code{query.xml}.
+#'
+#' @param agree Must be set to TRUE to agree to the CDC terms (default is TRUE). To see the terms for the particular dataset click on that dataset here: \url{https://wonder.cdc.gov}. \href{https://wonder.cdc.gov/ucd-icd10.html}{sample}
+#'
 #' @details
+#'
 #' Queries for mortality and births statistics from the National Vital Statistics System cannot limit or group results by any location field, such as Region, Division, State or County, or Urbanization (urbanization categories map to specific geographic counties).
 #'
 #' For example, in the D76 online database for Detailed Mortality 1999-2013, the location fields are D76.V9, D76.V10 and D76.V27, and the urbanization fields are D76.V11 and D76.V19. These 'sub-national" data fields cannot be grouped by or limited via the API, although these fields are available in the web application.
@@ -22,7 +28,7 @@
 #'   list("Tobacco Use", "1")    # yes
 #' )
 #'
-#' mydata <- getData(TRUE, "D66", mylist)
+#' mydata <- getData("D66", mylist)
 #' mydata
 #'
 #' @section References
@@ -31,18 +37,11 @@
 
 #' @export
 
-getData <- function(agree = FALSE, db = "D66", querylist = NULL, add = TRUE) {
+getData <- function(db = "D66", querylist = NULL, add = TRUE, save = FALSE, fn = "query.xml", agree = TRUE) {
     index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
     if (length(index) == 0) stop ("Database not recognized.")
     dbcode <- dbnamelookup$dbcode[index]
-    if (!agree) {
-        stop("You must agree to CDC terms")
-    } else {
-        agreelist <- list(parameter = list(
-            name = "accept_datause_restrictions",
-            value = "true"
-        ))
-    }
+    if (!agree) stop("You must agree to CDC terms")
     if (add == TRUE) {
         default_list_name <- paste0(dbcode, "querydefaults")
         index <- which(names(query_defaults) == default_list_name)
@@ -82,9 +81,27 @@ getData <- function(agree = FALSE, db = "D66", querylist = NULL, add = TRUE) {
     } else {
         if (is.null(querylist)) stop("if add == F provide a query list")
     }
-    querylist <- c(agreelist, querylist)
-    wondr::make_query(querylist, dbcode) %>%
-        make_query_table()
+
+
+
+ # This section copied from https://github.com/hrbrmstr/wondr/blob/master/R/wondr.r
+    query <- XML::saveXML(list_to_xml(querylist, "request-parameters"),
+                          indent=FALSE,
+                          prefix='<?xml version="1.0" encoding="utf-8"?>')
+    if (save) writeLines(query, fn)
+    res <- httr::POST(sprintf("https://wonder.cdc.gov/controller/datarequest/%s", dbcode), body=list(request_xml=query), encode = "form")
+    out <- httr::content(res, as="text")
+    if (httr::status_code(res) != 200) {
+        cat("Message from query:\n")
+        xml2::read_xml(out) %>%
+            rvest::html_element("message") %>%
+            rvest::html_text() %>%
+            cat()
+        cat("\n")
+        httr::stop_for_status(res)
+    } else{
+        xml2::read_xml(out) %>% make_query_table()
+    }
 }
 
 getrows <- function(thisrow, numcol) {

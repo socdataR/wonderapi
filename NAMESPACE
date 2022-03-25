@@ -3,5 +3,6 @@
 export("%>%")
 export(getBirths)
 export(getData)
+export(send_query)
 export(show_databases)
 importFrom(magrittr,"%>%")

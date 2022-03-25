@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <request-parameters>
+    <parameter>
+        <name>accept_datause_restrictions</name>
+        <value>true</value>
+    </parameter>
 	<parameter>
 		<name>B_1</name>
 		<value>D76.V1-level1</value>

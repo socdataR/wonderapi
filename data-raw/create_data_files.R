@@ -11,7 +11,6 @@
 library(dplyr)
 library(readr)
 library(wonderapi) # update to latest version
-library(wondr)
 
 # 1. test that default query list works
 
@@ -21,15 +20,9 @@ library(wondr)
 
 devtools::load_all()
 
-dbcode <- "D176"  # code of new database
+dbcode <- "D66"  # code of new database
 
-ql <- make_query_list("Name_of_test_query_list.xml")
-
-agreelist <- list(parameter = list(
-    name = "accept_datause_restrictions",
-    value = "true"))
-
-c(agreelist, ql) %>% wondr::make_query(dbcode)
+make_query_list("D66_Defaults.xml") %>% make_query(dbcode)
 
 # 2. if that all works, recreate all files and save to sysdata.rda
 dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")

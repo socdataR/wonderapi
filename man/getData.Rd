@@ -4,16 +4,27 @@
 \alias{getData}
 \title{Request data from the CDC Wonder API}
 \usage{
-getData(agree = FALSE, db = "D66", querylist = NULL, add = TRUE)
+getData(
+  db = "D66",
+  querylist = NULL,
+  add = TRUE,
+  save = FALSE,
+  fn = "query.xml",
+  agree = TRUE
+)
 }
 \arguments{
-\item{agree}{Must be set to TRUE to actively agree to the CDC terms (default is FALSE). To see the terms for the particular dataset click on that dataset here: \url{https://wonder.cdc.gov}. \href{https://wonder.cdc.gov/ucd-icd10.html}{sample}}
-
 \item{db}{Indicate the database, either by label, name, or code.  To see the complete list of what's available, use `show_databases()`}
 
 \item{querylist}{The query list supplied must be a list of lists of names and values. By default it is combined with the default query list for that database. To supply a full list and bypass the default query list, set \code{add} to \code{TRUE}. See here for instructions on how to create this list.}
 
 \item{add}{If \code{TRUE} (default) \code{querylist} is combined with the default query list. Set to \code{FALSE} to use \code{querylist} as a standalone list of query parameters.}
+
+\item{save}{If \code{TRUE} the query list will be saved, defaults to \code{FALSE}}
+
+\item{fn}{filename for saved query list, defaults to \code{query.xml}.}
+
+\item{agree}{Must be set to TRUE to agree to the CDC terms (default is TRUE). To see the terms for the particular dataset click on that dataset here: \url{https://wonder.cdc.gov}. \href{https://wonder.cdc.gov/ucd-icd10.html}{sample}}
 }
 \description{
 calls the \href{https://wonder.cdc.gov}{CDC Wonder API} and returns a tidy data frame (tibble)
@@ -31,7 +42,7 @@ mylist <- list(
   list("Tobacco Use", "1")    # yes
 )
 
-mydata <- getData(TRUE, "D66", mylist)
+mydata <- getData("D66", mylist)
 mydata
 
 }

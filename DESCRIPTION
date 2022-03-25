@@ -3,8 +3,8 @@ Type: Package
 Title: User Friendly Access to CDC Wonder API
 Version: 0.0.0.9000
 Authors@R: c(
-  person("Joyce", "Robbins", email="joycerobbins1@gmail.com", role = "cre"),
-  person("Elin", "Waring", email="elin.waring@gmail.com", role = "aut"))
+  person("Joyce", "Robbins", email="joycerobbins1@gmail.com",
+  role = c("cre", "aut")))
 Description: Simplifies the process of formulating CDC Wonder API query
     requests and interpreting query responses in order to obtain federal
     health data
@@ -12,6 +12,7 @@ Depends:
     R (>= 3.3.2)
 Imports:
     dplyr,
+    httr,
     magrittr,
     purrr,
     readr,
@@ -19,10 +20,8 @@ Imports:
     stats,
     stringr,
     tibble,
-    wondr,
+    XML,
     xml2
-Remotes:
-    hrbrmstr/wondr
 Suggests:
     ggplot2,
     knitr,
@@ -32,4 +31,4 @@ VignetteBuilder: knitr
 License: GPL
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2

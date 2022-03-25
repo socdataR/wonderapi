@@ -2,15 +2,15 @@
 <request-parameters>
     <parameter>
         <name>accept_datause_restrictions</name>
-        <value>true</value>
+        <value>f</value>
     </parameter>
 	<parameter>
 		<name>B_1</name>
-		<value>D66.V20</value>
+		<value>D76.V1-level1</value>
 	</parameter>
 	<parameter>
 		<name>B_2</name>
-		<value>*None*</value>
+		<value>D76.V5</value>
 	</parameter>
 	<parameter>
 		<name>B_3</name>
@@ -25,56 +25,88 @@
 		<value>*None*</value>
 	</parameter>
 	<parameter>
-		<name>F_D66.V21</name>
+		<name>F_D76.V1</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>F_D66.V22</name>
+		<name>F_D76.V10</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>F_D66.V37</name>
+		<name>F_D76.V2</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>I_D66.V21</name>
+		<name>F_D76.V27</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>F_D76.V9</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>I_D76.V1</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>I_D76.V10</name>
 		<value>*All* (The United States)</value>
 	</parameter>
 	<parameter>
-		<name>I_D66.V22</name>
+		<name>I_D76.V2</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>I_D76.V27</name>
 		<value>*All* (The United States)</value>
 	</parameter>
 	<parameter>
-		<name>I_D66.V37</name>
+		<name>I_D76.V9</name>
 		<value>*All* (The United States)</value>
 	</parameter>
 	<parameter>
 		<name>M_1</name>
-		<value>D66.M1</value>
+		<value>D76.M1</value>
+	</parameter>
+		<parameter>
+		<name>M_2</name>
+		<value>D76.M2</value>
+	</parameter>
+		<parameter>
+		<name>M_3</name>
+		<value>D76.M3</value>
 	</parameter>
 	<parameter>
-		<name>O_V21_fmode</name>
+		<name>O_V10_fmode</name>
 		<value>freg</value>
 	</parameter>
 	<parameter>
-		<name>O_V22_fmode</name>
+		<name>O_V1_fmode</name>
 		<value>freg</value>
 	</parameter>
 	<parameter>
-		<name>O_V37_fmode</name>
+		<name>O_V27_fmode</name>
 		<value>freg</value>
+	</parameter>
+	<parameter>
+		<name>O_V2_fmode</name>
+		<value>freg</value>
+	</parameter>
+	<parameter>
+		<name>O_V9_fmode</name>
+		<value>freg</value>
+	</parameter>
+	<parameter>
+		<name>O_aar</name>
+		<value></value>
+	</parameter>
+	<parameter>
+		<name>O_aar_pop</name>
+		<value>0000</value>
 	</parameter>
 	<parameter>
 		<name>O_age</name>
-		<value>D66.V1</value>
-	</parameter>
-		<parameter>
-		<name>O_urban</name>
-		<value>D66.V156</value>
-	</parameter>
-	<parameter>
-		<name>O_gestation</name>
-		<value>D66.V23</value>
+		<value>D76.V5</value>
 	</parameter>
 	<parameter>
 		<name>O_javascript</name>
@@ -82,211 +114,177 @@
 	</parameter>
 	<parameter>
 		<name>O_location</name>
-		<value>D66.V21</value>
-	</parameter>
-	<parameter>
-		<name>O_oc-sect1-request</name>
-		<value>close</value>
-	</parameter>
-	<parameter>
-		<name>O_oe_gestation</name>
-		<value>D66.V33</value>
+		<value>D76.V9</value>
 	</parameter>
 	<parameter>
 		<name>O_precision</name>
-		<value>2</value>
+		<value>1</value>
 	</parameter>
 	<parameter>
 		<name>O_rate_per</name>
-		<value>1000</value>
+		<value>100000</value>
 	</parameter>
 	<parameter>
 		<name>O_show_totals</name>
-		<value>true</value>
+		<value>false</value>
 	</parameter>
 	<parameter>
 		<name>O_timeout</name>
-		<value>600</value>
+		<value>300</value>
 	</parameter>
 	<parameter>
 		<name>O_title</name>
-		<value>Births 2007-2018 by year, all measures checked</value>
+		<value>Default Query List</value>
 	</parameter>
 	<parameter>
-		<name>O_weight</name>
-		<value>D66.V9</value>
+		<name>O_ucd</name>
+		<value>D76.V2</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V1</name>
-		<value>*All*</value>
+		<name>O_urban</name>
+		<value>D76.V19</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V10</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V14</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V16</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V17</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V18</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V2</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V20</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V21</name>
+		<name>VM_D76.M6_D76.V10</name>
 		<value></value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V22</name>
+		<name>VM_D76.M6_D76.V17</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>VM_D76.M6_D76.V1_S</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>VM_D76.M6_D76.V7</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>VM_D76.M6_D76.V8</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V1</name>
 		<value></value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V23</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V24</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V25</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V26</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V27</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V28</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V29</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V3</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V30</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V31</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V32</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V33</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V34</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V35</name>
-		<value>*All*</value>
-	</parameter>
-	<parameter>
-		<name>V_D66.V37</name>
+		<name>V_D76.V10</name>
 		<value></value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V38</name>
+		<name>V_D76.V11</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V39</name>
+		<name>V_D76.V12</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V4</name>
+		<name>V_D76.V17</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V40</name>
+		<name>V_D76.V19</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V41</name>
+		<name>V_D76.V2</name>
+		<value></value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V20</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V5</name>
+		<name>V_D76.V21</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V6</name>
+		<name>V_D76.V22</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V7</name>
+		<name>V_D76.V23</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V8</name>
+		<name>V_D76.V24</name>
 		<value>*All*</value>
 	</parameter>
 	<parameter>
-		<name>V_D66.V9</name>
+		<name>V_D76.V25</name>
 		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V27</name>
+		<value></value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V4</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V5</name>
+		<value>1</value>
+		<value>1-4</value>
+		<value>5-14</value>
+		<value>15-24</value>
+		<value>25-34</value>
+		<value>35-44</value>
+		<value>45-54</value>
+		<value>55-64</value>
+		<value>65-74</value>
+		<value>75-84</value>
+		<value>85+</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V51</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V52</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V6</name>
+		<value>00</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V7</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V8</name>
+		<value>*All*</value>
+	</parameter>
+	<parameter>
+		<name>V_D76.V9</name>
+		<value></value>
 	</parameter>
 	<parameter>
 		<name>action-Send</name>
 		<value>Send</value>
 	</parameter>
 	<parameter>
-		<name>dataset_code</name>
-		<value>D66</value>
-	</parameter>
-	<parameter>
-		<name>dataset_label</name>
-		<value>Natality, 2007-2018</value>
-	</parameter>
-	<parameter>
-		<name>dataset_vintage</name>
-		<value>2018</value>
-	</parameter>
-	<parameter>
-		<name>finder-stage-D66.V21</name>
+		<name>finder-stage-D76.V1</name>
 		<value>codeset</value>
 	</parameter>
 	<parameter>
-		<name>finder-stage-D66.V22</name>
+		<name>finder-stage-D76.V10</name>
 		<value>codeset</value>
 	</parameter>
 	<parameter>
-		<name>finder-stage-D66.V37</name>
+		<name>finder-stage-D76.V2</name>
 		<value>codeset</value>
 	</parameter>
 	<parameter>
-		<name>saved_id</name>
-		<value></value>
+		<name>finder-stage-D76.V27</name>
+		<value>codeset</value>
+	</parameter>
+	<parameter>
+		<name>finder-stage-D76.V9</name>
+		<value>codeset</value>
 	</parameter>
 	<parameter>
 		<name>stage</name>
