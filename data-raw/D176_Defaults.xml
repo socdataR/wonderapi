@@ -1,5 +1,9 @@
 <request-parameters>
 <parameter>
+<name>accept_datause_restrictions</name>
+<value>true</value>
+</parameter>
+<parameter>
 <name>B_1</name>
 <value>D176.V1-level1</value>
 </parameter>
