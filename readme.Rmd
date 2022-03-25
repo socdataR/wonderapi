@@ -1,8 +1,8 @@
 ---
 title: "wonderapi"
 author: "Joyce Robbins"
-date: "March 9, 2022"
-output: rmarkdown::github_document
+date: "2022-03-24"
+output: github_document
 ---
 
 ```{r, echo = FALSE}
@@ -14,7 +14,8 @@ githubreadme <- TRUE
   
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.width = 4, fig.height = 3,
-                      fig.align = 'center')
+                      fig.align = 'center',
+                      fig.path = "man/figures")
 ```
 
 <div id="TOC">
@@ -39,7 +40,7 @@ knitr::opts_chunk$set(fig.width = 4, fig.height = 3,
 </div>
 
 
-```{r, message = FALSE}
+```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(wonderapi)
 ```
@@ -52,7 +53,7 @@ This package makes it easier to use the CDC Wonder API.  It does so by employing
 
 * converts the user's parameter requests to codes  
 * adds these codes to the default query list  
-* calls `wondr::make_query` to obtain query results
+* calls the WONDER API to obtain query results
 * processes the results  
 * returns a tidy data frame  
 
@@ -64,7 +65,7 @@ Note that queries for mortality and births statistics from the National Vital St
 
 ```{r}
 mylist <- list(list("And By", "Gender"))
-mydata0 <- getData(TRUE, "Detailed Mortality", mylist)
+mydata0 <- getData("Detailed Mortality", mylist)
 ```
 
 ```{r eval=githubreadme, echo=githubreadme}
@@ -96,7 +97,7 @@ devtools::install_github("socdataR/wonderapi", build_vignettes = TRUE)
 
 ## Getting started
 
-Queries are composed of parameter name-value pairs.  Setting up a query without assistance is complex because the query must be submitted as an .xml file with a long list of required parameters, such as [here (Example 1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml) and [here (Example 2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml). The point of the package is to prevent your having to create requests in this form.  It relies on the `wondr` package which creates converts R lists to xml and makes the query. The value of this package is in the "pre" and "post" stages of the query, that is, the processes of setting up the query and tidying the results.  
+Queries are composed of parameter name-value pairs.  Setting up a query without assistance is complex because the query must be submitted as an .xml file with a long list of required parameters, such as [here (Example 1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml) and [here (Example 2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml). The point of the package is to prevent your having to create requests in this form.  The code for converting R lists to xml and making the actual query is borrowed from the [`wondr` package](https://github.com/hrbrmstr/wondr). The value of this package is in the "pre" and "post" stages of the query, that is, the processes of setting up the query and tidying the results.  
 
 ### Codebooks
 
@@ -115,16 +116,16 @@ Although some of the parameter names are long and/or awkward, for the sake of co
 To facilitate the process of designing a query list, this package relies on default query lists. Each default query is set to request a single Group By Results parameter, generally set to `"Year"`. It is set to request the Measures that are listed as default Measures on the web interface (i.e. `Births` for [the Births dataset](https://wonder.cdc.gov/controller/datarequest/D76); `Deaths`, `Population` and `Crude Rate` for the [Detailed Mortality dataset](https://wonder.cdc.gov/controller/datarequest/D76).) To see the default settings, perform a query request without specifying a querylist: 
 
 ```{r eval=githubreadme, echo=githubreadme}
-natdata <- getData(TRUE, "Natality for 2007 - 2020")
+natdata <- getData("Natality for 2007 - 2020")
 natdata %>% head()
-dmdata <- getData(TRUE, "Detailed Mortality")
+dmdata <- getData("Detailed Mortality")
 dmdata %>% head()
 ```
 
 ```{r eval=!githubreadme, echo=!githubreadme}
-natdata <- getData(TRUE, "Natality for 2007 - 2020")
+natdata <- getData("Natality for 2007 - 2020")
 natdata %>% head() %>% kable()
-dmdata <- getData(TRUE, "Detailed Mortality")
+dmdata <- getData("Detailed Mortality")
 dmdata %>% head() %>% kable()
 ```
 
@@ -138,7 +139,7 @@ To make changes to the default list, first create a list of lists, wherein each 
 
 ```{r}
 mylist <- list(list("Group Results By", "Weekday"))
-mydata <- getData(TRUE, "Detailed Mortality", mylist)
+mydata <- getData("Detailed Mortality", mylist)
 ```
 
 ```{r eval=githubreadme, echo=githubreadme}
@@ -172,7 +173,7 @@ Measures do not need values; it is sufficient to specify a name only:
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
-mydata2 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
+mydata2 <- getData("Natality for 2007 - 2020", mylist)
 ```
 
 ```{r eval=githubreadme, echo=githubreadme}
@@ -188,7 +189,7 @@ Queries can be constrained with parameters that limit results in the background.
 
 ```{r}
 mylist <- list(list("Month", "2"))
-getData(TRUE, "D66", mylist)
+getData("D66", mylist)
 ```
 
 **Note that values for Limiting Variables must be entered as codes; in this case "2" rather than "February."  We hope to add capability for human readable values in the future.**
@@ -224,9 +225,9 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
 Some of the datasets, such as the Births, are divided into multiple databases by time period. `wonderapi` makes it easy to combine the data into one data frame. (Care needs to be taken as the variables are not identical in all. For example, the 1995 - 2002 dataset does not have any measure options; it only returns number of births. To find out what's available, see the codebooks (**`>??codebook`**) and crosscheck with the [CDC Wonder API web interface](https://wonder.cdc.gov).)  
 
 ```{r BirthsbyYear1995to2020}
-births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
-                getData(TRUE, "Natality for 2003 - 2006"),
-                getData(TRUE, "Natality for 2007 - 2020"))
+births <- rbind(getData("Natality for 1995 - 2002"),
+                getData("Natality for 2003 - 2006"),
+                getData("Natality for 2007 - 2020"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
     ggtitle("U.S. Births by Year, 1995 - 2020")
 
@@ -237,7 +238,7 @@ ggplot(births, aes(Year, Births)) + geom_line() +
 The main source of errors is improper query requests. The `wonderapi` has limited ability to catch problems before the query request is made. It checks the list of parameter names and will reject the name-value pair if the _name_, either in code or human readable form, is not recognized. (Checking for _value_ problems will be added in the future.) Here is an example of an unrecognized parameter name:  
 
 ```{r}
-mydata3 <- getData(TRUE, "Detailed Mortality", 
+mydata3 <- getData("Detailed Mortality", 
         list(list("Suspect", "Mrs. Peacock")))
 ```
 
@@ -255,19 +256,19 @@ Errors due to the constraints of the CDC Wonder API are more difficult to catch 
 ```{r, error = TRUE}
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate", ""))
-mydata4 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
+mydata4 <- getData("Natality for 2007 - 2020", mylist)
 ```
 
 In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong:  
 
-<center><img src="NatalityError.png" width="432px"/></center>
+<center><img src="man/figures/NatalityError.png" width="432px"/></center>
 
 We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Bridged Race" instead of "Education", it works:  
 
 ```{r}
 mylist <- list(list("And By", "Mother's Bridged Race"), 
                list("Birth Rate", ""))
-mydata5 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
+mydata5 <- getData("Natality for 2007 - 2020", mylist)
 ```
 
 ```{r eval=githubreadme, echo=githubreadme}

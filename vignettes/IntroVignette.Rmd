@@ -28,7 +28,8 @@ githubreadme <- FALSE
   
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(fig.width = 4, fig.height = 3,
-                      fig.align = 'center')
+                      fig.align = 'center',
+                      fig.path = "man/figures")
 ```
 
 <div id="TOC">
@@ -53,7 +54,7 @@ knitr::opts_chunk$set(fig.width = 4, fig.height = 3,
 </div>
 
 
-```{r, message = FALSE}
+```{r, message = FALSE, warning = FALSE}
 library(tidyverse)
 library(knitr)
 library(wonderapi)
@@ -275,7 +276,7 @@ mydata4 <- getData("Natality for 2007 - 2020", mylist)
 
 In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong:  
 
-<center><img src="NatalityError.png" width="432px"/></center>
+<center><img src="man/figures/NatalityError.png" width="432px"/></center>
 
 We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Bridged Race" instead of "Education", it works:  
 

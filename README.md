@@ -1,7 +1,7 @@
 wonderapi
 ================
 Joyce Robbins
-March 9, 2022
+2022-03-24
 
 <div id="TOC">
 
@@ -59,15 +59,6 @@ from multiple datasets</a>
 
 ``` r
 library(tidyverse)
-```
-
-    ## Warning: package 'tidyr' was built under R version 4.1.2
-
-    ## Warning: package 'readr' was built under R version 4.1.2
-
-    ## Warning: package 'dplyr' was built under R version 4.1.2
-
-``` r
 library(wonderapi)
 ```
 
@@ -82,7 +73,7 @@ write queries using human readable names rather than numeric codes.
 
 -   converts the user’s parameter requests to codes  
 -   adds these codes to the default query list  
--   calls `wondr::make_query` to obtain query results
+-   calls the WONDER API to obtain query results
 -   processes the results  
 -   returns a tidy data frame
 
@@ -99,7 +90,7 @@ information.
 
 ``` r
 mylist <- list(list("And By", "Gender"))
-mydata0 <- getData(TRUE, "Detailed Mortality", mylist)
+mydata0 <- getData("Detailed Mortality", mylist)
 ```
 
 ``` r
@@ -122,14 +113,16 @@ mydata0 %>% head()
 wonderapi::show_databases()
 ```
 
-    ## # A tibble: 5 × 2
-    ##   label                    name 
-    ##   <chr>                    <chr>
-    ## 1 Natality for 1995 - 2002 D10  
-    ## 2 Natality for 2003 - 2006 D27  
-    ## 3 Natality for 2007 - 2020 D66  
-    ## 4 Detailed Mortality       D76  
-    ## 5 Heat Wave Days           D104
+    ## # A tibble: 7 × 2
+    ##   label                               name 
+    ##   <chr>                               <chr>
+    ## 1 Natality for 1995 - 2002            D10  
+    ## 2 Natality for 2003 - 2006            D27  
+    ## 3 Natality for 2007 - 2020            D66  
+    ## 4 Natality for 2016 - 2020 (expanded) D149 
+    ## 5 Detailed Mortality                  D76  
+    ## 6 Provisional Multiple Cause of Death D176 
+    ## 7 Heat Wave Days                      D104
 
 More databases will be added in the future.
 
@@ -161,10 +154,11 @@ without assistance is complex because the query must be submitted as an
 and [here (Example
 2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml).
 The point of the package is to prevent your having to create requests in
-this form. It relies on the `wondr` package which creates converts R
-lists to xml and makes the query. The value of this package is in the
-“pre” and “post” stages of the query, that is, the processes of setting
-up the query and tidying the results.
+this form. The code for converting R lists to xml and making the actual
+query is borrowed from the [`wondr`
+package](https://github.com/hrbrmstr/wondr). The value of this package
+is in the “pre” and “post” stages of the query, that is, the processes
+of setting up the query and tidying the results.
 
 ### Codebooks
 
@@ -211,7 +205,7 @@ default settings, perform a query request without specifying a
 querylist:
 
 ``` r
-natdata <- getData(TRUE, "Natality for 2007 - 2020")
+natdata <- getData("Natality for 2007 - 2020")
 natdata %>% head()
 ```
 
@@ -226,7 +220,7 @@ natdata %>% head()
     ## 6  2012 3952841
 
 ``` r
-dmdata <- getData(TRUE, "Detailed Mortality")
+dmdata <- getData("Detailed Mortality")
 dmdata %>% head()
 ```
 
@@ -262,7 +256,7 @@ variable to Weekday:
 
 ``` r
 mylist <- list(list("Group Results By", "Weekday"))
-mydata <- getData(TRUE, "Detailed Mortality", mylist)
+mydata <- getData("Detailed Mortality", mylist)
 ```
 
 ``` r
@@ -311,7 +305,7 @@ Measures do not need values; it is sufficient to specify a name only:
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
-mydata2 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
+mydata2 <- getData("Natality for 2007 - 2020", mylist)
 ```
 
 ``` r
@@ -337,7 +331,7 @@ grouping by Month:
 
 ``` r
 mylist <- list(list("Month", "2"))
-getData(TRUE, "D66", mylist)
+getData("D66", mylist)
 ```
 
     ## # A tibble: 14 × 2
@@ -372,7 +366,7 @@ ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
     geom_line() + ggtitle("Births by Marital Status")
 ```
 
-<img src="Readme_files/figure-gfm/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
+<img src="man/figuresBirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
 
 ``` r
 ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
@@ -381,7 +375,7 @@ ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
     ggtitle("Average Age of Mother")
 ```
 
-<img src="Readme_files/figure-gfm/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
+<img src="man/figuresAverageAgeofMother-1.png" style="display: block; margin: auto;" />
 
 ``` r
 mydata2 <- mydata2 %>% 
@@ -393,7 +387,7 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
     ylab("Percent of Total Births")
 ```
 
-<img src="Readme_files/figure-gfm/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
+<img src="man/figuresBirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
 
 ### Combining results from multiple datasets
 
@@ -406,14 +400,14 @@ available, see the codebooks (**`>??codebook`**) and crosscheck with the
 [CDC Wonder API web interface](https://wonder.cdc.gov).)
 
 ``` r
-births <- rbind(getData(TRUE, "Natality for 1995 - 2002"),
-                getData(TRUE, "Natality for 2003 - 2006"),
-                getData(TRUE, "Natality for 2007 - 2020"))
+births <- rbind(getData("Natality for 1995 - 2002"),
+                getData("Natality for 2003 - 2006"),
+                getData("Natality for 2007 - 2020"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
     ggtitle("U.S. Births by Year, 1995 - 2020")
 ```
 
-<img src="Readme_files/figure-gfm/BirthsbyYear1995to2020-1.png" style="display: block; margin: auto;" />
+<img src="man/figuresBirthsbyYear1995to2020-1.png" style="display: block; margin: auto;" />
 
 ### Errors
 
@@ -425,7 +419,7 @@ recognized. (Checking for *value* problems will be added in the future.)
 Here is an example of an unrecognized parameter name:
 
 ``` r
-mydata3 <- getData(TRUE, "Detailed Mortality", 
+mydata3 <- getData("Detailed Mortality", 
         list(list("Suspect", "Mrs. Peacock")))
 ```
 
@@ -453,17 +447,22 @@ appears to be a reasonable request, but results in an error:
 ``` r
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate", ""))
-mydata4 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
+mydata4 <- getData("Natality for 2007 - 2020", mylist)
 ```
 
-    ## Error in wondr::make_query(querylist, dbcode): Internal Server Error (HTTP 500).
+    ## No encoding supplied: defaulting to UTF-8.
+
+    ## Message from query:
+    ## Any by-variables picked from {0} need to appear in the order listed, and other by-variables can't come between them.
+
+    ## Error in getData("Natality for 2007 - 2020", mylist): Internal Server Error (HTTP 500).
 
 In this case, the best approach is to visit the [CDC Wonder API web
 interface](https://wonder.cdc.gov) and try the same query. If all goes
 well, you will receive more detailed information on what went wrong:
 
 <center>
-<img src="NatalityError.png" width="432px"/>
+<img src="man/figures/NatalityError.png" width="432px"/>
 </center>
 
 We learn that we can’t include “Education” if we request the “Birth
@@ -473,7 +472,7 @@ Rate” measure. If we try again with “Bridged Race” instead of
 ``` r
 mylist <- list(list("And By", "Mother's Bridged Race"), 
                list("Birth Rate", ""))
-mydata5 <- getData(TRUE, "Natality for 2007 - 2020", mylist)
+mydata5 <- getData("Natality for 2007 - 2020", mylist)
 ```
 
 ``` r

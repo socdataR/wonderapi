@@ -7,6 +7,7 @@ vignettes/*.R
 vignettes/*.html
 vignettes/IntroVignette_cache/
 vignettes/IntroVignette_files/
+vignettes/man/
 readme.html
 readme_cache/
 inst/doc
@@ -14,3 +15,5 @@ doc
 Meta
 /doc/
 /Meta/
+docs
+*.xml
