@@ -1,0 +1,14 @@
+pandoc: 2.14.0.3
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  D104codebook: D104codebook.html
+  D10codebook: D10codebook.html
+  D149codebook: D149codebook.html
+  D176codebook: D176codebook.html
+  D27codebook: D27codebook.html
+  D66codebook: D66codebook.html
+  D76codebook: D76codebook.html
+  IntroVignette: IntroVignette.html
+last_built: 2022-03-25T03:33Z
+
