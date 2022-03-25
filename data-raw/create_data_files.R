@@ -10,19 +10,23 @@
 
 library(dplyr)
 library(readr)
-library(wonderapi) # update to latest version
+library(devtools)
+load_all()
 
 # 1. test that default query list works
+#
+# Default query lists can now be tested with wonderapi::send_query()
 
 # if adding a new database, manually update data-raw/dbnamelookup.csv
 
 # Add a default query list to data-raw/  It is very difficult to create one from scratch. The best option is to request one from CDC Wonder Customer Support <cwus@cdc.gov>.
 
-devtools::load_all()
+# devtools::load_all()
 
-dbcode <- "D66"  # code of new database
+# dbcode <- "D66"  # code of new database
 
-make_query_list("D66_Defaults.xml") %>% make_query(dbcode)
+# make_query_list("D66_Defaults.xml") %>% make_query(dbcode)
+
 
 # 2. if that all works, recreate all files and save to sysdata.rda
 dbnamelookup <- readr::read_csv("data-raw/dbnamelookup.csv")
