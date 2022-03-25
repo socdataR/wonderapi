@@ -219,13 +219,18 @@ list_2_tib <- function(listof2) {
     tibble::tibble(name, value)
 }
 
-# converts human readable names and (some) values to CDC variable names
+# converts human readable names and (some) values to CDC variable names before sending query
 label_to_code <- function(list_with_labels, dbcode) {
     list_with_codes <- list_with_labels
     label_list_name <- paste0(dbcode, "labellookup")
     index <- which(names(label_list) == label_list_name)
     lookup <- label_list[[index]]
+    # Remove stuff in parentheses
     lookup$label <- gsub("\\s*\\([^\\)]+\\)", "", lookup$label)
+    # Remove weird stuff with some O_ fields (can't remove in the version used by make_codebook_vignette or everything gets screwed up)
+    lookup$code <- stringr::str_extract_all(lookup$code, "O_.*(?=D)|^[^O].*|O_.*[A-Za-z]$") %>%
+        unlist()
+
     for (i in seq_along(list_with_labels)) {
         # taking first one in case there are multiple matches
         # (if no matches, [1] has the effect of turning nameindex to NA)
@@ -243,12 +248,11 @@ label_to_code <- function(list_with_labels, dbcode) {
             # Starting V_ listed in codebook removed (not sure why there's an inconsistency between label_list and codebook)
             if (substr(list_with_labels[[i]][[1]], 1, 2) == "V_") list_with_labels[[i]][[1]] <- stringr::str_remove(list_with_labels[[i]][[1]], "V_")
             if (!list_with_labels[[i]][[1]] %in% lookup$code) {
-                # ... and code not found --> problem
-                mymessage <- paste0("Ignoring: \"",
+                # ... and code not found --> potential problem
+                mymessage <- paste0("Couldn't find: \"",
                                     list_with_labels[[i]][[1]],"\",",
-                                    "...(not recognized)")
-                message(mymessage)
-                list_with_codes[[i]] <- NULL
+                                    "...but including anyway.")
+               message(mymessage)
             } else { # code found
                 code <- list_with_labels[[i]][[1]]
                 precode <- substring(code, 1, 1)

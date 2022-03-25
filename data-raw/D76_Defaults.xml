@@ -98,7 +98,7 @@
 	</parameter>
 	<parameter>
 		<name>O_aar</name>
-		<value></value>
+		<value>aar_none</value>
 	</parameter>
 	<parameter>
 		<name>O_aar_pop</name>

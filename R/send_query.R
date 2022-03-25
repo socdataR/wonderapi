@@ -11,6 +11,10 @@
 send_query <- function(filename, database_id = NULL) {
     query <- xml2::read_xml(filename)
     if (is.null(database_id)) database_id <- stringr::str_extract(filename, "D[0-9]+")
+    if (is.na(database_id)) stop ("The database ID must be contained in the filename or set as the database_id parameter.")
+    index <- purrr::map(dbnamelookup, ~which(.x == database_id)) %>% unlist()
+    if (length(index) == 0) stop (database_id, " is not available.")
+
     res <- httr::POST(sprintf("https://wonder.cdc.gov/controller/datarequest/%s", database_id),
                       body=list(request_xml=query),
                       encode = "form")
