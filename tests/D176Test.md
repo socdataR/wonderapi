@@ -1,7 +1,7 @@
 D176Tests
 ================
 Joyce Robbins
-\`r Sys.Date()
+March 26, 2022
 
 ``` r
 # Test of D176 Group By variables
@@ -10,10 +10,8 @@ library(wonderapi)
 getData("D176", list(list("Group Results By", "D176.V10-level1")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V10-level1
+    ## Location group by variables (B_1 through B_5) were found: D176.V10-level1 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V10-level1"))): Internal Server Error (HTTP 500).
 
@@ -22,10 +20,8 @@ getData("D176", list(list("Group Results By", "D176.V10-level1")))
 getData("D176", list(list("Group Results By", "D176.V10-level2")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V10-level2
+    ## Location group by variables (B_1 through B_5) were found: D176.V10-level2 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V10-level2"))): Internal Server Error (HTTP 500).
 
@@ -34,10 +30,8 @@ getData("D176", list(list("Group Results By", "D176.V10-level2")))
 getData("D176", list(list("Group Results By", "D176.V27-level1")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V27-level1
+    ## Location group by variables (B_1 through B_5) were found: D176.V27-level1 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V27-level1"))): Internal Server Error (HTTP 500).
 
@@ -46,10 +40,8 @@ getData("D176", list(list("Group Results By", "D176.V27-level1")))
 getData("D176", list(list("Group Results By", "D176.V9-level1")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V9-level1
+    ## Location group by variables (B_1 through B_5) were found: D176.V9-level1 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V9-level1"))): Internal Server Error (HTTP 500).
 
@@ -58,10 +50,8 @@ getData("D176", list(list("Group Results By", "D176.V9-level1")))
 getData("D176", list(list("Group Results By", "D176.V9-level2")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V9-level2
+    ## Location group by variables (B_1 through B_5) were found: D176.V9-level2 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V9-level2"))): Internal Server Error (HTTP 500).
 
@@ -70,10 +60,8 @@ getData("D176", list(list("Group Results By", "D176.V9-level2")))
 getData("D176", list(list("Group Results By", "D176.V19")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V19
+    ## Location group by variables (B_1 through B_5) were found: D176.V19 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V19"))): Internal Server Error (HTTP 500).
 
@@ -82,10 +70,8 @@ getData("D176", list(list("Group Results By", "D176.V19")))
 getData("D176", list(list("Group Results By", "D176.V11")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## To Group Results By 'Residence 2006 Urbanization' you must also select the 'Residence 2006 Urbanization' button where found below section #1.
+    ## To Group Results By 'Residence 2006 Urbanization' you must also select the 'Residence 2006 Urbanization' button where found below section #1. Location group by variables (B_1 through B_5) were found: D176.V11 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V11"))): Internal Server Error (HTTP 500).
 
@@ -94,10 +80,8 @@ getData("D176", list(list("Group Results By", "D176.V11")))
 getData("D176", list(list("Group Results By", "D176.V80-level1")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V80-level1
+    ## Location group by variables (B_1 through B_5) were found: D176.V80-level1 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V80-level1"))): Internal Server Error (HTTP 500).
 
@@ -106,10 +90,8 @@ getData("D176", list(list("Group Results By", "D176.V80-level1")))
 getData("D176", list(list("Group Results By", "D176.V80-level2")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V80-level2
+    ## Location group by variables (B_1 through B_5) were found: D176.V80-level2 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V80-level2"))): Internal Server Error (HTTP 500).
 
@@ -118,10 +100,8 @@ getData("D176", list(list("Group Results By", "D176.V80-level2")))
 getData("D176", list(list("Group Results By", "D176.V77-level1")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V77-level1
+    ## Location group by variables (B_1 through B_5) were found: D176.V77-level1 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V77-level1"))): Internal Server Error (HTTP 500).
 
@@ -130,10 +110,8 @@ getData("D176", list(list("Group Results By", "D176.V77-level1")))
 getData("D176", list(list("Group Results By", "D176.V79-level1")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V79-level1
+    ## Location group by variables (B_1 through B_5) were found: D176.V79-level1 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V79-level1"))): Internal Server Error (HTTP 500).
 
@@ -142,10 +120,8 @@ getData("D176", list(list("Group Results By", "D176.V79-level1")))
 getData("D176", list(list("Group Results By", "D176.V79-level2")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Location group by variables (B_1 through B_5) were found: D176.V79-level2
+    ## Location group by variables (B_1 through B_5) were found: D176.V79-level2 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "D176.V79-level2"))): Internal Server Error (HTTP 500).
 
@@ -387,7 +363,7 @@ getData("D176", list(list("Group Results By", "D176.V100-level1"),
                      list("O_dates", "MMWR")))
 ```
 
-    ## Couldn't find: "O_dates",...but including anyway.
+    ## Couldn't find: "O_dates" but including anyway.
 
     ## # A tibble: 5 × 4
     ##   `MMWR Year`                     Deaths Population `Crude Rate`
@@ -404,7 +380,7 @@ getData("D176", list(list("Group Results By", "D176.V100-level2"),
                      list("O_dates", "MMWR")))
 ```
 
-    ## Couldn't find: "O_dates",...but including anyway.
+    ## Couldn't find: "O_dates" but including anyway.
 
     ## # A tibble: 221 × 4
     ##    `MMWR Week`                           Deaths Population     `Crude Rate`  
@@ -479,8 +455,6 @@ getData("D176", list(list("Group Results By", "D176.V28")))
 getData("D176", list(list("Group Results By", "D176.V29")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
     ## Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
@@ -531,20 +505,7 @@ getData("D176", list(list("Group Results By", "D176.V2-level2")))
 getData("D176", list(list("Group Results By", "D176.V2-level3")))
 ```
 
-    ## # A tibble: 2,933 × 4
-    ##    `Underlying Cause of death`                    Deaths Population `Crude Rate`
-    ##    <chr>                                           <dbl>      <dbl> <chr>       
-    ##  1 Salmonella enteritis                               53 1643859326 0.0         
-    ##  2 Salmonella septicaemia                            123 1643859326 0.0         
-    ##  3 Localized salmonella infections                    22 1643859326 0.0         
-    ##  4 Salmonella infection, unspecified                  42 1643859326 0.0         
-    ##  5 Shigellosis, unspecified                           10 1643859326 Unreliable  
-    ##  6 Other intestinal Escherichia coli infections       36 1643859326 0.0         
-    ##  7 Campylobacter enteritis                            29 1643859326 0.0         
-    ##  8 Enterocolitis due to Clostridium difficile      18095 1643859326 1.1         
-    ##  9 Other specified bacterial intestinal infectio…    188 1643859326 0.0         
-    ## 10 Bacterial intestinal infection, unspecified        77 1643859326 0.0         
-    ## # … with 2,923 more rows
+    ## Error: 'NA' does not exist in current working directory ('/Users/joycerobbins/wonderapi/tests').
 
 ``` r
 # UCD - ICD-10 113 Cause List
@@ -698,20 +659,7 @@ getData("D176", list(list("Group Results By", "D176.V13-level2")))
 getData("D176", list(list("Group Results By", "D176.V13-level3")))
 ```
 
-    ## # A tibble: 4,432 × 4
-    ##    `Multiple Cause of death`                      Deaths Population `Crude Rate`
-    ##    <chr>                                           <dbl>      <dbl> <chr>       
-    ##  1 Salmonella enteritis                               95 1643859326 0.0         
-    ##  2 Salmonella septicaemia                            141 1643859326 0.0         
-    ##  3 Localized salmonella infections                    29 1643859326 0.0         
-    ##  4 Salmonella infection, unspecified                 225 1643859326 0.0         
-    ##  5 Shigellosis, unspecified                           22 1643859326 0.0         
-    ##  6 Other intestinal Escherichia coli infections       55 1643859326 0.0         
-    ##  7 Campylobacter enteritis                            67 1643859326 0.0         
-    ##  8 Enterocolitis due to Clostridium difficile      33812 1643859326 2.1         
-    ##  9 Other specified bacterial intestinal infectio…    299 1643859326 0.0         
-    ## 10 Bacterial intestinal infection, unspecified       106 1643859326 0.0         
-    ## # … with 4,422 more rows
+    ## Error: 'NA' does not exist in current working directory ('/Users/joycerobbins/wonderapi/tests').
 
 ``` r
 # MCD - ICD-10 113 Cause List
@@ -737,8 +685,6 @@ getData("D176", list(list("Group Results By", "D176.V15")))
 # MCD - ICD-10 130 Cause List (Infants)
 getData("D176", list(list("Group Results By", "D176.V16")))
 ```
-
-    ## No encoding supplied: defaulting to UTF-8.
 
     ## Message from query:
     ## Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
@@ -780,10 +726,8 @@ getData("D176", list(list("Group Results By", "D176.V26-level2")))
 getData("D176", list(list("Group Results By", "Residence Census Region")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Residence Census Region"))): Internal Server Error (HTTP 500).
 
@@ -791,10 +735,8 @@ getData("D176", list(list("Group Results By", "Residence Census Region")))
 getData("D176", list(list("Group Results By", "Residence Census Division")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Residence Census Division"))): Internal Server Error (HTTP 500).
 
@@ -802,10 +744,8 @@ getData("D176", list(list("Group Results By", "Residence Census Division")))
 getData("D176", list(list("Group Results By", "Residence HHS Region")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Residence HHS Region"))): Internal Server Error (HTTP 500).
 
@@ -813,10 +753,8 @@ getData("D176", list(list("Group Results By", "Residence HHS Region")))
 getData("D176", list(list("Group Results By", "Residence State")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Residence State"))): Internal Server Error (HTTP 500).
 
@@ -824,10 +762,8 @@ getData("D176", list(list("Group Results By", "Residence State")))
 getData("D176", list(list("Group Results By", "Residence County")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Residence County"))): Internal Server Error (HTTP 500).
 
@@ -835,10 +771,8 @@ getData("D176", list(list("Group Results By", "Residence County")))
 getData("D176", list(list("Group Results By", "Residence 2013 Urbanization")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Residence 2013 Urbanization"))): Internal Server Error (HTTP 500).
 
@@ -846,10 +780,8 @@ getData("D176", list(list("Group Results By", "Residence 2013 Urbanization")))
 getData("D176", list(list("Group Results By", "Residence 2006 Urbanization")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Residence 2006 Urbanization"))): Internal Server Error (HTTP 500).
 
@@ -857,10 +789,8 @@ getData("D176", list(list("Group Results By", "Residence 2006 Urbanization")))
 getData("D176", list(list("Group Results By", "Occurrence Census Region")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Occurrence Census Region"))): Internal Server Error (HTTP 500).
 
@@ -868,10 +798,8 @@ getData("D176", list(list("Group Results By", "Occurrence Census Region")))
 getData("D176", list(list("Group Results By", "Occurrence Census Division")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Occurrence Census Division"))): Internal Server Error (HTTP 500).
 
@@ -879,10 +807,8 @@ getData("D176", list(list("Group Results By", "Occurrence Census Division")))
 getData("D176", list(list("Group Results By", "Occurrence HHS Region")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Occurrence HHS Region"))): Internal Server Error (HTTP 500).
 
@@ -890,10 +816,8 @@ getData("D176", list(list("Group Results By", "Occurrence HHS Region")))
 getData("D176", list(list("Group Results By", "Occurrence State")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Occurrence State"))): Internal Server Error (HTTP 500).
 
@@ -901,10 +825,8 @@ getData("D176", list(list("Group Results By", "Occurrence State")))
 getData("D176", list(list("Group Results By", "Occurrence County")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Please select age value '< 1 year' or the Infant Age Groups button when using the 130 Cause or Leading Infants List.
 
     ## Error in getData("D176", list(list("Group Results By", "Occurrence County"))): Internal Server Error (HTTP 500).
 
@@ -912,10 +834,8 @@ getData("D176", list(list("Group Results By", "Occurrence County")))
 getData("D176", list(list("Group Results By", "Occurrence 2013 Urbanization")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## To Group Results By 'Occurrence 2013 Urbanization' you must also select the 'Occurrence 2013 Urbanization' button where found below section #1.
+    ## To Group Results By 'Occurrence 2013 Urbanization' you must also select the 'Occurrence 2013 Urbanization' button where found below section #1. Location group by variables (B_1 through B_5) were found: D176.V89 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Occurrence 2013 Urbanization"))): Internal Server Error (HTTP 500).
 
@@ -923,10 +843,8 @@ getData("D176", list(list("Group Results By", "Occurrence 2013 Urbanization")))
 getData("D176", list(list("Group Results By", "Occurrence 2006 Urbanization")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## To Group Results By 'Occurrence 2006 Urbanization' you must also select the 'Occurrence 2006 Urbanization' button where found below section #1.
+    ## To Group Results By 'Occurrence 2006 Urbanization' you must also select the 'Occurrence 2006 Urbanization' button where found below section #1. To Group Results By 'Occurrence 2006 Urbanization' you must also select the 'Occurrence 2006 Urbanization' button where found below section #1. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Occurrence 2006 Urbanization"))): Internal Server Error (HTTP 500).
 
@@ -934,10 +852,8 @@ getData("D176", list(list("Group Results By", "Occurrence 2006 Urbanization")))
 getData("D176", list(list("Group Results By", "Ten-Year Age Groups")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Ten-Year Age Groups"))): Internal Server Error (HTTP 500).
 
@@ -945,10 +861,8 @@ getData("D176", list(list("Group Results By", "Ten-Year Age Groups")))
 getData("D176", list(list("Group Results By", "Five-Year Age Groups")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Five-Year Age Groups"))): Internal Server Error (HTTP 500).
 
@@ -956,10 +870,8 @@ getData("D176", list(list("Group Results By", "Five-Year Age Groups")))
 getData("D176", list(list("Group Results By", "Single-Year Ages")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Single-Year Ages"))): Internal Server Error (HTTP 500).
 
@@ -967,10 +879,8 @@ getData("D176", list(list("Group Results By", "Single-Year Ages")))
 getData("D176", list(list("Group Results By", "Infant Age Groups")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Infant Age Groups"))): Internal Server Error (HTTP 500).
 
@@ -999,10 +909,8 @@ getData("D176", list(list("Group Results By", "Hispanic Origin")))
 getData("D176", list(list("Group Results By", "Single Race 6")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Single Race 6"))): Internal Server Error (HTTP 500).
 
@@ -1010,10 +918,8 @@ getData("D176", list(list("Group Results By", "Single Race 6")))
 getData("D176", list(list("Group Results By", "Single Race 15")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Single Race 15"))): Internal Server Error (HTTP 500).
 
@@ -1021,18 +927,14 @@ getData("D176", list(list("Group Results By", "Single Race 15")))
 getData("D176", list(list("Group Results By", "Single/Multi Race 31")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Single/Multi Race 31"))): Internal Server Error (HTTP 500).
 
 ``` r
 getData("D176", list(list("Group Results By", "Year")))
 ```
-
-    ## No encoding supplied: defaulting to UTF-8.
 
     ## Message from query:
     ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
@@ -1043,10 +945,8 @@ getData("D176", list(list("Group Results By", "Year")))
 getData("D176", list(list("Group Results By", "Month")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Month"))): Internal Server Error (HTTP 500).
 
@@ -1054,10 +954,8 @@ getData("D176", list(list("Group Results By", "Month")))
 getData("D176", list(list("Group Results By", "MMWR Year")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MMWR Year"))): Internal Server Error (HTTP 500).
 
@@ -1065,10 +963,8 @@ getData("D176", list(list("Group Results By", "MMWR Year")))
 getData("D176", list(list("Group Results By", "MMWR Week")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MMWR Week"))): Internal Server Error (HTTP 500).
 
@@ -1103,10 +999,8 @@ getData("D176", list(list("Group Results By", "Place of Death")))
 getData("D176", list(list("Group Results By", "UCD - 15 Leading Causes of Death")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "UCD - 15 Leading Causes of Death"))): Internal Server Error (HTTP 500).
 
@@ -1114,10 +1008,8 @@ getData("D176", list(list("Group Results By", "UCD - 15 Leading Causes of Death"
 getData("D176", list(list("Group Results By", "UCD - 15 Leading Causes of Death (Infants)")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "UCD - 15 Leading Causes of Death (Infants)"))): Internal Server Error (HTTP 500).
 
@@ -1125,10 +1017,8 @@ getData("D176", list(list("Group Results By", "UCD - 15 Leading Causes of Death 
 getData("D176", list(list("Group Results By", "UCD - ICD Chapter")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "UCD - ICD Chapter"))): Internal Server Error (HTTP 500).
 
@@ -1136,10 +1026,8 @@ getData("D176", list(list("Group Results By", "UCD - ICD Chapter")))
 getData("D176", list(list("Group Results By", "UCD - ICD Sub-Chapter")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "UCD - ICD Sub-Chapter"))): Internal Server Error (HTTP 500).
 
@@ -1147,10 +1035,8 @@ getData("D176", list(list("Group Results By", "UCD - ICD Sub-Chapter")))
 getData("D176", list(list("Group Results By", "Underlying Cause of death")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Underlying Cause of death"))): Internal Server Error (HTTP 500).
 
@@ -1158,10 +1044,8 @@ getData("D176", list(list("Group Results By", "Underlying Cause of death")))
 getData("D176", list(list("Group Results By", "UCD - ICD-10 113 Cause List")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "UCD - ICD-10 113 Cause List"))): Internal Server Error (HTTP 500).
 
@@ -1169,10 +1053,8 @@ getData("D176", list(list("Group Results By", "UCD - ICD-10 113 Cause List")))
 getData("D176", list(list("Group Results By", "UCD - ICD-10 130 Cause List (Infants)")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "UCD - ICD-10 130 Cause List (Infants)"))): Internal Server Error (HTTP 500).
 
@@ -1213,10 +1095,8 @@ getData("D176", list(list("Group Results By", "UCD - Injury Mechanism & All Othe
 getData("D176", list(list("Group Results By", "UCD - Drug/Alcohol Induced")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "UCD - Drug/Alcohol Induced"))): Internal Server Error (HTTP 500).
 
@@ -1224,10 +1104,8 @@ getData("D176", list(list("Group Results By", "UCD - Drug/Alcohol Induced")))
 getData("D176", list(list("Group Results By", "UCD - Drug/Alcohol Induced Cause")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "UCD - Drug/Alcohol Induced Cause"))): Internal Server Error (HTTP 500).
 
@@ -1235,10 +1113,8 @@ getData("D176", list(list("Group Results By", "UCD - Drug/Alcohol Induced Cause"
 getData("D176", list(list("Group Results By", "MCD - ICD Chapter")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MCD - ICD Chapter"))): Internal Server Error (HTTP 500).
 
@@ -1246,10 +1122,8 @@ getData("D176", list(list("Group Results By", "MCD - ICD Chapter")))
 getData("D176", list(list("Group Results By", "MCD - ICD Sub-Chapter")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MCD - ICD Sub-Chapter"))): Internal Server Error (HTTP 500).
 
@@ -1257,10 +1131,8 @@ getData("D176", list(list("Group Results By", "MCD - ICD Sub-Chapter")))
 getData("D176", list(list("Group Results By", "Multiple Cause of death")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "Multiple Cause of death"))): Internal Server Error (HTTP 500).
 
@@ -1268,10 +1140,8 @@ getData("D176", list(list("Group Results By", "Multiple Cause of death")))
 getData("D176", list(list("Group Results By", "MCD - ICD-10 113 Cause List")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MCD - ICD-10 113 Cause List"))): Internal Server Error (HTTP 500).
 
@@ -1279,10 +1149,8 @@ getData("D176", list(list("Group Results By", "MCD - ICD-10 113 Cause List")))
 getData("D176", list(list("Group Results By", "MCD - ICD-10 130 Cause List (Infants)")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MCD - ICD-10 130 Cause List (Infants)"))): Internal Server Error (HTTP 500).
 
@@ -1290,18 +1158,14 @@ getData("D176", list(list("Group Results By", "MCD - ICD-10 130 Cause List (Infa
 getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced"))): Internal Server Error (HTTP 500).
 
 ``` r
 getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced CauseD176.V16    MCD - ICD-10 130 Cause List (Infants)")))
 ```
-
-    ## No encoding supplied: defaulting to UTF-8.
 
     ## Message from query:
     ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
@@ -1312,10 +1176,8 @@ getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced CauseD
 getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced"))): Internal Server Error (HTTP 500).
 
@@ -1323,9 +1185,7 @@ getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced")))
 getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced Cause")))
 ```
 
-    ## No encoding supplied: defaulting to UTF-8.
-
     ## Message from query:
-    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them.
+    ## Any by-variables picked from [MMWR Year, MMWR Week] need to appear in the order listed, and other by-variables can't come between them. Location group by variables (B_1 through B_5) were found: D176.V81 Only national data are available for this dataset when using the WONDER web service. Please check that your query does not group results by region, division, state, county or urbanization, (B_1 through B_5), nor limit these location variables to any specific values. For more information please contact CDC WONDER customer support at cwus@cdc.gov or (888) 496-8347.
 
     ## Error in getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced Cause"))): Internal Server Error (HTTP 500).

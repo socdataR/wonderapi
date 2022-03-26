@@ -88,14 +88,14 @@ getData <- function(db = "D66", querylist = NULL, add = TRUE, save = FALSE, fn =
  # This section copied from https://github.com/hrbrmstr/wondr/blob/master/R/wondr.r
     query <- XML::saveXML(list_to_xml(querylist, "request-parameters"),
                           indent=FALSE,
-                          prefix='<?xml version="1.0" encoding="utf-8"?>')
+                          prefix='<?xml version="1.0" encoding="utf-8"?>\n')
     if (save) writeLines(query, fn)
     res <- httr::POST(sprintf("https://wonder.cdc.gov/controller/datarequest/%s", dbcode), body=list(request_xml=query), encode = "form")
-    out <- httr::content(res, as="text")
+    out <- httr::content(res, as="text", encoding = "utf-8")
     if (httr::status_code(res) != 200) {
         cat("Message from query:\n")
         xml2::read_xml(out) %>%
-            rvest::html_element("message") %>%
+            rvest::html_elements("message") %>%
             rvest::html_text() %>%
             cat()
         cat("\n")
