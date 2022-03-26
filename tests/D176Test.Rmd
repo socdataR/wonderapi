@@ -2,10 +2,12 @@
 title: "D176Tests"
 author: "Joyce Robbins"
 date: "March 26, 2022"
-output: github_document
+output: 
+  github_document:
+    df_print: kable
 ---
 
-```{r, error=TRUE}
+```{r, error=TRUE, results='asis'}
 # Test of D176 Group By variables
 # Residence Census Region
 library(wonderapi)
