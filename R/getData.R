@@ -38,6 +38,7 @@
 #' @export
 
 getData <- function(db = "D66", querylist = NULL, add = TRUE, save = FALSE, fn = "query.xml", agree = TRUE) {
+    # PREPARE QUERY
     index <- purrr::map(dbnamelookup, ~which(.x == db)) %>% unlist()
     if (length(index) == 0) stop ("Database not recognized.")
     dbcode <- dbnamelookup$dbcode[index]
@@ -82,7 +83,7 @@ getData <- function(db = "D66", querylist = NULL, add = TRUE, save = FALSE, fn =
         if (is.null(querylist)) stop("if add == F provide a query list")
     }
 
-
+    # SEND QUERY
 
  # This section copied from https://github.com/hrbrmstr/wondr/blob/master/R/wondr.r
     query <- XML::saveXML(list_to_xml(querylist, "request-parameters"),
@@ -104,6 +105,9 @@ getData <- function(db = "D66", querylist = NULL, add = TRUE, save = FALSE, fn =
     }
 }
 
+# PARSE RESPONSE
+
+# RESPONSE
 getrows <- function(thisrow, numcol) {
     cells <- thisrow %>% rvest::html_elements("c")
     # assuming all the labels ("l") are to the left of all
@@ -126,6 +130,7 @@ getrows <- function(thisrow, numcol) {
     return(c(rep(NA, numcol - len), l, v))
 }
 
+# RESPONSE
 # tidyr::fill might do the same thing
 replaceNAs <- function (x) {
     for (i in seq_along(rownames(x))) {
@@ -136,6 +141,7 @@ replaceNAs <- function (x) {
     return(x)
 }
 
+# RESPONSE
 conditional_as.numeric <- function(.x) {
     if(sum(nchar(stringr::str_replace_all(.x, "[0-9|.|,]", ""))) == 0) {
         readr::parse_number(.x)
@@ -144,6 +150,7 @@ conditional_as.numeric <- function(.x) {
     }
 }
 
+# RESPONSE
 make_query_table <- function(query_result) {
     allrows <- query_result %>%
         xml2::xml_find_all("//r")
@@ -219,6 +226,7 @@ list_2_tib <- function(listof2) {
     tibble::tibble(name, value)
 }
 
+# PREPARE
 # converts human readable names and (some) values to CDC variable names before sending query
 label_to_code <- function(list_with_labels, dbcode) {
     list_with_codes <- list_with_labels
@@ -228,8 +236,7 @@ label_to_code <- function(list_with_labels, dbcode) {
     # Remove stuff in parentheses
     lookup$label <- gsub("\\s*\\([^\\)]+\\)", "", lookup$label)
     # Remove weird stuff with some O_ fields (can't remove in the version used by make_codebook_vignette or everything gets screwed up)
-    lookup$code <- stringr::str_extract_all(lookup$code, "O_.*(?=D)|^[^O].*|O_.*[A-Za-z]$") %>%
-        unlist()
+    lookup$code <- stringr::str_remove_all(lookup$code, "(?<=[a-z])D.*$")
 
     for (i in seq_along(list_with_labels)) {
         # taking first one in case there are multiple matches
@@ -250,8 +257,8 @@ label_to_code <- function(list_with_labels, dbcode) {
             if (!list_with_labels[[i]][[1]] %in% lookup$code) {
                 # ... and code not found --> potential problem
                 mymessage <- paste0("Couldn't find: \"",
-                                    list_with_labels[[i]][[1]],"\",",
-                                    "...but including anyway.")
+                                    list_with_labels[[i]][[1]],"\"",
+                                    " but including anyway.")
                message(mymessage)
             } else { # code found
                 code <- list_with_labels[[i]][[1]]

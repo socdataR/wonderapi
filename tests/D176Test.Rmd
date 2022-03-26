@@ -1,0 +1,169 @@
+---
+title: "D176Tests"
+author: "Joyce Robbins"
+date: "`r Sys.Date()"
+output: html_document
+---
+
+```{r, error=TRUE}
+# Test of D176 Group By variables
+# Residence Census Region
+library(wonderapi)
+getData("D176", list(list("Group Results By", "D176.V10-level1")))
+# Residence Census Division
+getData("D176", list(list("Group Results By", "D176.V10-level2")))
+# Residence HHS Region
+getData("D176", list(list("Group Results By", "D176.V27-level1")))
+# Residence State
+getData("D176", list(list("Group Results By", "D176.V9-level1")))
+# Residence County
+getData("D176", list(list("Group Results By", "D176.V9-level2")))
+# Residence 2013 Urbanization
+getData("D176", list(list("Group Results By", "D176.V19")))
+# Residence 2006 Urbanization
+getData("D176", list(list("Group Results By", "D176.V11")))
+# Occurrence Census Region
+getData("D176", list(list("Group Results By", "D176.V80-level1")))
+# Occurrence Census Division
+getData("D176", list(list("Group Results By", "D176.V80-level2")))
+# Occurrence HHS Region
+getData("D176", list(list("Group Results By", "D176.V77-level1")))
+# Occurrence State
+getData("D176", list(list("Group Results By", "D176.V79-level1")))
+# Occurrence County
+getData("D176", list(list("Group Results By", "D176.V79-level2")))
+# Occurrence 2013 Urbanization
+getData("D176", list(list("Group Results By", "D176.V89"),
+                     list("O_urban", "D176.V19")))
+# Occurrence 2006 Urbanization
+getData("D176", list(list("Group Results By", "D176.V81"),
+                     list("O_urban", "D176.V11")))
+# Ten-Year Age Groups
+getData("D176", list(list("Group Results By", "D176.V5")))
+# Five-Year Age Groups
+getData("D176", list(list("Group Results By", "D176.V51"),
+                     list("O_age", "D176.V51")))
+# Single-Year Age Groups
+getData("D176", list(list("Group Results By", "D176.V51"),
+                     list("O_age", "D176.V51")))
+# Single-Year Ages
+getData("D176", list(list("Group Results By", "D176.V52"),
+                     list("O_age", "D176.V52")))
+# Infant Age Groups
+getData("D176", list(list("Group Results By", "D176.V6"),
+                     list("O_age", "D176.V6")))
+# Gender
+getData("D176", list(list("Group Results By", "D176.V7")))
+# Hispanic Origin
+getData("D176", list(list("Group Results By", "D176.V17")))
+# Single Race 6
+getData("D176", list(list("Group Results By", "D176.V42")))
+# Single Race 15
+getData("D176", list(list("Group Results By", "D176.V43")))
+# Single/Multi Race 31
+getData("D176", list(list("Group Results By", "D176.V44")))
+# Year
+getData("D176", list(list("Group Results By", "D176.V1-level1")))
+# Month
+getData("D176", list(list("Group Results By", "D176.V1-level2")))
+# MMWR Year
+getData("D176", list(list("Group Results By", "D176.V100-level1"),
+                     list("O_dates", "MMWR")))
+# MMWR Week
+getData("D176", list(list("Group Results By", "D176.V100-level2"),
+                     list("O_dates", "MMWR")))
+# Autopsy
+getData("D176", list(list("Group Results By", "D176.V20")))
+# Place of Death
+getData("D176", list(list("Group Results By", "D176.V21")))
+# UCD - 15 Leading Causes of Death
+getData("D176", list(list("Group Results By", "D176.V28")))
+# UCD - 15 Leading Causes of Death (Infants)
+getData("D176", list(list("Group Results By", "D176.V29")))
+# UCD - ICD Chapter
+getData("D176", list(list("Group Results By", "D176.V2-level1")))
+# UCD - ICD Sub-Chapter
+getData("D176", list(list("Group Results By", "D176.V2-level2")))
+# Underlying Cause of death
+getData("D176", list(list("Group Results By", "D176.V2-level3")))
+# UCD - ICD-10 113 Cause List
+getData("D176", list(list("Group Results By", "D176.V4")))
+# UCD - ICD-10 130 Cause List (Infants)
+getData("D176", list(list("Group Results By", "D176.V12"),
+                     list("V_D176.V5", "1")))
+# UCD - Injury Intent
+getData("D176", list(list("Group Results By", "D176.V22")))
+# UCD - Injury Mechanism & All Other Leading Causes
+getData("D176", list(list("Group Results By", "D176.V23")))
+# UCD - Drug/Alcohol Induced
+getData("D176", list(list("Group Results By", "D176.V25-level1")))
+# UCD - Drug/Alcohol Induced Cause
+getData("D176", list(list("Group Results By", "D176.V25-level2")))
+# MCD - ICD Chapter
+getData("D176", list(list("Group Results By", "D176.V13-level1")))
+# MCD - ICD Sub-Chapter
+getData("D176", list(list("Group Results By", "D176.V13-level2")))
+# Multiple Cause of death
+getData("D176", list(list("Group Results By", "D176.V13-level3")))
+# MCD - ICD-10 113 Cause List
+getData("D176", list(list("Group Results By", "D176.V15")))
+# MCD - ICD-10 130 Cause List (Infants)
+getData("D176", list(list("Group Results By", "D176.V16")))
+# MCD - Drug/Alcohol Induced
+getData("D176", list(list("Group Results By", "D176.V26-level1")))
+# MCD - Drug/Alcohol Induced Cause
+getData("D176", list(list("Group Results By", "D176.V26-level2")))
+
+
+getData("D176", list(list("Group Results By", "Residence Census Region")))
+getData("D176", list(list("Group Results By", "Residence Census Division")))
+getData("D176", list(list("Group Results By", "Residence HHS Region")))
+getData("D176", list(list("Group Results By", "Residence State")))
+getData("D176", list(list("Group Results By", "Residence County")))
+getData("D176", list(list("Group Results By", "Residence 2013 Urbanization")))
+getData("D176", list(list("Group Results By", "Residence 2006 Urbanization")))
+getData("D176", list(list("Group Results By", "Occurrence Census Region")))
+getData("D176", list(list("Group Results By", "Occurrence Census Division")))
+getData("D176", list(list("Group Results By", "Occurrence HHS Region")))
+getData("D176", list(list("Group Results By", "Occurrence State")))
+getData("D176", list(list("Group Results By", "Occurrence County")))
+getData("D176", list(list("Group Results By", "Occurrence 2013 Urbanization")))
+getData("D176", list(list("Group Results By", "Occurrence 2006 Urbanization")))
+getData("D176", list(list("Group Results By", "Ten-Year Age Groups")))
+getData("D176", list(list("Group Results By", "Five-Year Age Groups")))
+getData("D176", list(list("Group Results By", "Single-Year Ages")))
+getData("D176", list(list("Group Results By", "Infant Age Groups")))
+getData("D176", list(list("Group Results By", "Gender")))
+getData("D176", list(list("Group Results By", "Hispanic Origin")))
+getData("D176", list(list("Group Results By", "Single Race 6")))
+getData("D176", list(list("Group Results By", "Single Race 15")))
+getData("D176", list(list("Group Results By", "Single/Multi Race 31")))
+getData("D176", list(list("Group Results By", "Year")))
+getData("D176", list(list("Group Results By", "Month")))
+getData("D176", list(list("Group Results By", "MMWR Year")))
+getData("D176", list(list("Group Results By", "MMWR Week")))
+getData("D176", list(list("Group Results By", "Autopsy")))
+getData("D176", list(list("Group Results By", "Place of Death")))
+getData("D176", list(list("Group Results By", "UCD - 15 Leading Causes of Death")))
+getData("D176", list(list("Group Results By", "UCD - 15 Leading Causes of Death (Infants)")))
+getData("D176", list(list("Group Results By", "UCD - ICD Chapter")))
+getData("D176", list(list("Group Results By", "UCD - ICD Sub-Chapter")))
+getData("D176", list(list("Group Results By", "Underlying Cause of death")))
+getData("D176", list(list("Group Results By", "UCD - ICD-10 113 Cause List")))
+getData("D176", list(list("Group Results By", "UCD - ICD-10 130 Cause List (Infants)")))
+getData("D176", list(list("Group Results By", "UCD - Injury Intent")))
+getData("D176", list(list("Group Results By", "UCD - Injury Mechanism & All Other Leading Causes")))
+getData("D176", list(list("Group Results By", "UCD - Drug/Alcohol Induced")))
+getData("D176", list(list("Group Results By", "UCD - Drug/Alcohol Induced Cause")))
+getData("D176", list(list("Group Results By", "MCD - ICD Chapter")))
+getData("D176", list(list("Group Results By", "MCD - ICD Sub-Chapter")))
+getData("D176", list(list("Group Results By", "Multiple Cause of death")))
+getData("D176", list(list("Group Results By", "MCD - ICD-10 113 Cause List")))
+getData("D176", list(list("Group Results By", "MCD - ICD-10 130 Cause List (Infants)")))
+getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced")))
+getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced CauseD176.V16    MCD - ICD-10 130 Cause List (Infants)")))
+getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced")))
+getData("D176", list(list("Group Results By", "MCD - Drug/Alcohol Induced Cause")))
+
+```
+
