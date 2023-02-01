@@ -1,7 +1,14 @@
+**2023-01-31**
+**Note: Much of the functionality of this package is not currently working, including obtaining natality data (D66). Calls to the mortality database (D76) appearing to be working, but have not been fully tested. If I haven't deterred you from trying, ignore the info below about building the vignettes and install with**
+
 wonderapi
 ================
 Joyce Robbins
 2022-03-24
+
+```
+remotes::install_github("socdataR/wonderapi")
+```
 
 <div id="TOC">
 
