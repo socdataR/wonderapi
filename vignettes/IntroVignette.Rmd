@@ -137,7 +137,7 @@ dmdata %>% head()
 ```
 
 ```{r eval=!githubreadme, echo=!githubreadme}
-natdata <- getData("Natality for 2007 - 2020")
+natdata <- getData("Natality for 2007 - 2022")
 natdata %>% head() %>% kable()
 dmdata <- getData("Detailed Mortality")
 dmdata %>% head() %>% kable()
