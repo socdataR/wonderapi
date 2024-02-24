@@ -1,10 +1,10 @@
 ---
-title: " D10 Natality for 1995 - 2002 Dataset Codebook"
+title: "D10 Natality for 1995 - 2002 Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D10 Natality for 1995 - 2002 }
+  %\VignetteIndexEntry{ D10 Natality for 1995 - 2002 Dataset Codebook }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -404,10 +404,7 @@ V_D10.V7 	 Plurality or Multiple Birth
 		 *All* 	  All Pluralities  
 		 1 	  Single  
 		 2 	  Twin  
-		 3 	  Triplet  
-		 4 	  Quadruplet  
-		 5 	  Quintuplet or higher  
-		 10 	  Not Available  
+		 3 	  Triplet or higher  
 ```
 
 **Parameter:**

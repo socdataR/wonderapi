@@ -36,13 +36,8 @@ For example, in the D76 online database for Detailed Mortality 1999-2013, the lo
 
 See \url{https://wonder.cdc.gov/wonder/help/WONDER-API.html} for more information.
 }
-\examples{
-mylist <- list(
-  list("Group Results By", "Race"),
-  list("Tobacco Use", "1")    # yes
-)
+\section{References}{
 
-mydata <- getData("D66", mylist)
-mydata
-
+Inspired by this script from the \code{wondr} package, but provides more user-friendly options and better table display: /url{https://github.com/hrbrmstr/wondr/blob/master/README.md}
 }
+

@@ -89,7 +89,7 @@
 	</parameter>
 	<parameter>
 		<name>O_title</name>
-		<value>Births 1995-2002 by year </value>
+		<value/>
 	</parameter>
 	<parameter>
 		<name>V_D10.V1</name>
@@ -187,6 +187,19 @@
 		<name>action-Send</name>
 		<value>Send</value>
 	</parameter>
+	<parameter>
+		<name>dataset_code</name>
+		<value>D10</value>
+	</parameter>
+	<parameter>
+		<name>dataset_label</name>
+		<value>Natality, 1995-2002</value>
+	</parameter>
+	<parameter>
+		<name>dataset_vintage</name>
+		<value>Pre Expansion</value>
+	</parameter>
+
 	<parameter>
 		<name>finder-stage-D10.V21</name>
 		<value>codeset</value>

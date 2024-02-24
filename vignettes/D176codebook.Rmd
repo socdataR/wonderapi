@@ -1,10 +1,10 @@
 ---
-title: " D176 Provisional Multiple Cause of Death Dataset Codebook"
+title: "D176 Provisional Multiple Cause of Death Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D176 Provisional Multiple Cause of Death }
+  %\VignetteIndexEntry{ D176 Provisional Multiple Cause of Death Dataset Codebook }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -325,6 +325,8 @@ O_aar_pop 	 Standard Population
 		 1940 	  1940 U.S. Std. Million  
 		 1970 	  1970 U.S. Std. Million  
 		 2000 	  2000 U.S. Std. Million  
+		 1111 	  World Std. Million (WHO 2000-2025)  
+		 2222 	  World Std. Million (SEGI 1960)  
 ```
 
 **Parameter:**
@@ -338,6 +340,8 @@ VM_D176.M6_D176.V1_S
 		 2020 	  2020  
 		 2021 	  2021  
 		 2022 	  2022  
+		 2023 	  2023  
+		 2024 	  2024  
 ```
 
 **Parameter:**
@@ -988,8 +992,10 @@ F_D176.V1 	 Selected Items
 		 2018 	 + 2018  (2018)   
 		 2019 	 + 2019  (2019)   
 		 2020 	 + 2020  (2020)   
-		 2021 	 + 2021  (2021 (provisional))   
-		 2022 	 + 2022  (2022 (provisional and partial))   
+		 2021 	 + 2021  (2021)   
+		 2022 	 + 2022  (2022 (provisional))   
+		 2023 	 + 2023  (2023 (provisional))   
+		 2024 	 + 2024  (2024 (provisional and partial))   
 ```
 
 **Parameter:**
@@ -1004,8 +1010,10 @@ F_D176.V100 	 Selected Items
 		 2018 	 + 2018  (2018)   
 		 2019 	 + 2019  (2019)   
 		 2020 	 + 2020  (2020)   
-		 2021 	 + 2021  (2021 (provisional))   
-		 2022 	 + 2022  (2022 (provisional and partial))   
+		 2021 	 + 2021  (2021)   
+		 2022 	 + 2022  (2022 (provisional))   
+		 2023 	 + 2023  (2023 (provisional))   
+		 2024 	 + 2024  (2024 (provisional and partial))   
 ```
 
 **Parameter:**
@@ -1594,7 +1602,7 @@ L_D176.V15
 		 GR113-015 	  Viral hepatitis (B15-B19)  
 		 GR113-016 	  Human immunodeficiency virus (HIV) disease (B20-B24)  
 		 GR113-017 	  Malaria (B50-B54)  
-		 GR113-018 	  Other and unspecified infectious and parasitic diseases and their sequelae (A00,A05,A20-A36,A42-A44,A48-A49,A54-A79,A81-A82,A85.0-A85.1,A85.8,A86-B04,B06-B09,B25-B49,B55-B99,U07.1)  
+		 GR113-018 	  Other and unspecified infectious and parasitic diseases and their sequelae (A00,A05,A20-A36,A42-A44,A48-A49,A54-A79,A81-A82,A85.0-A85.1,A85.8,A86-B04,B06-B09,B25-B49,B55-B99,U07.1,U09.9)  
 		 GR113-019 	  Malignant neoplasms (C00-C97)  
 		 GR113-020 	     Malignant neoplasms of lip, oral cavity and pharynx (C00-C14)  
 		 GR113-021 	     Malignant neoplasm of esophagus (C15)  
@@ -1730,7 +1738,7 @@ L_D176.V16
 **Value(s):**
 ```
 		 *All* 	  All Causes of Death  
-		 GR130-001 	  Certain infectious and parasitic diseases (A00-B99,U07.1)  
+		 GR130-001 	  Certain infectious and parasitic diseases (A00-B99,U07.1,U09.9)  
 		 GR130-002 	     Certain intestinal infectious diseases (A00-A08)  
 		 GR130-003 	     Diarrhea and gastroenteritis of infectious origin (A09)  
 		 GR130-004 	     Tuberculosis (A16-A19)  

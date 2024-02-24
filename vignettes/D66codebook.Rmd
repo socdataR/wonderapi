@@ -1,10 +1,10 @@
 ---
-title: " D66 Natality for 2007 - 2020 Dataset Codebook"
+title: "D66 Natality for 2007 - 2022 Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D66 Natality for 2007 - 2020 }
+  %\VignetteIndexEntry{ D66 Natality for 2007 - 2022 Dataset Codebook }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -32,7 +32,6 @@ B_1 	 Group Results By
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
 		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
@@ -83,7 +82,6 @@ B_2 	 And By
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
 		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
@@ -134,7 +132,6 @@ B_3 	 And By
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
 		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
@@ -185,7 +182,6 @@ B_4 	 And By
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
 		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
@@ -236,7 +232,6 @@ B_5 	 And By
 		 D66.V1 	 Age of Mother 9 
 		 D66.V38 	 Age of Mother 10 
 		 D66.V39 	 Age of Mother 13 
-		 D66.V40 	 Age of Mother Year 
 		 D66.V5 	 Mother's Education 
 		 D66.V20 	 Year 
 		 D66.V25 	 Month 
@@ -501,10 +496,6 @@ O_age
 **Values:**	 D66.V39 	 Age of Mother 13 
 
 **Parameter:**
-O_age 
-**Values:**	 D66.V40 	 Age of Mother Year 
-
-**Parameter:**
 V_D66.V1 	 Age of Mother 9 
 
 **Value(s):**
@@ -557,53 +548,6 @@ V_D66.V39 	 Age of Mother 13
 		 35-39 	  35-39 years  
 		 40-44 	  40-44 years  
 		 45-49 	  45-49 years  
-		 50+ 	  50 years and over  
-```
-
-**Parameter:**
-V_D66.V40 	 Age of Mother Year 
-
-**Value(s):**
-```
-		 *All* 	  All Ages  
-		 12 	  12 years and under  
-		 13 	  13 years  
-		 14 	  14 years  
-		 15 	  15 years  
-		 16 	  16 years  
-		 17 	  17 years  
-		 18 	  18 years  
-		 19 	  19 years  
-		 20 	  20 years  
-		 21 	  21 years  
-		 22 	  22 years  
-		 23 	  23 years  
-		 24 	  24 years  
-		 25 	  25 years  
-		 26 	  26 years  
-		 27 	  27 years  
-		 28 	  28 years  
-		 29 	  29 years  
-		 30 	  30 years  
-		 31 	  31 years  
-		 32 	  32 years  
-		 33 	  33 years  
-		 34 	  34 years  
-		 35 	  35 years  
-		 36 	  36 years  
-		 37 	  37 years  
-		 38 	  38 years  
-		 39 	  39 years  
-		 40 	  40 years  
-		 41 	  41 years  
-		 42 	  42 years  
-		 43 	  43 years  
-		 44 	  44 years  
-		 45 	  45 years  
-		 46 	  46 years  
-		 47 	  47 years  
-		 48 	  48 years  
-		 49 	  49 years  
 		 50+ 	  50 years and over  
 ```
 
@@ -717,6 +661,8 @@ V_D66.V20 	 Year
 		 2018 	  2018  
 		 2019 	  2019  
 		 2020 	  2020  
+		 2021 	  2021  
+		 2022 	  2022  
 ```
 
 **Parameter:**
@@ -745,13 +691,8 @@ V_D66.V26 	 Weekday
 **Value(s):**
 ```
 		 *All* 	  All Days  
-		 1 	  Sunday  
-		 2 	  Monday  
-		 3 	  Tuesday  
-		 4 	  Wednesday  
-		 5 	  Thursday  
-		 6 	  Friday  
-		 7 	  Saturday  
+		 1 	  Weekend  
+		 2 	  Weekday  
 ```
 
 **Parameter:**
@@ -928,6 +869,7 @@ V_D66.V41 	 Infant Birth Weight 100 gram increments
 		 80 	  8000 - 8099 grams  
 		 81 	  8100 - 8165 grams  
 		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -953,10 +895,7 @@ V_D66.V7 	 Plurality or Multiple Birth
 		 *All* 	  All Pluralities  
 		 1 	  Single  
 		 2 	  Twin  
-		 3 	  Triplet  
-		 4 	  Quadruplet  
-		 5 	  Quintuplet or higher  
-		 10 	  Not Available  
+		 3 	  Triplet or higher  
 ```
 
 **Parameter:**

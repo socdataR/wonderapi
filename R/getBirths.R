@@ -35,11 +35,11 @@
 
 #' @examples
 #'
-#' mydata <- getBirths(age, educcation, wieght, gender)
+#' mydata <- getBirths(age, education, weight, gender)
 #'
 #' mydata
-#'
-#' @section Notes
+
+#' @section Notes:
 #' `getBirths()` is designed to be easier to use than `getData()` for simple queries. For more options, use `getData()`.
 #'
 
