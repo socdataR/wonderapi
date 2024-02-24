@@ -41,3 +41,13 @@ See \url{https://wonder.cdc.gov/wonder/help/WONDER-API.html} for more informatio
 Inspired by this script from the \code{wondr} package, but provides more user-friendly options and better table display: /url{https://github.com/hrbrmstr/wondr/blob/master/README.md}
 }
 
+\examples{
+mylist <- list(
+  list("And By", "Race"),
+  list("And By", "Tobacco Use")
+)
+
+mydata <- getData("D66", mylist)
+mydata
+
+}

@@ -1,6 +1,6 @@
 #' Request birth data from the CDC Wonder API
 #'
-#' wrapper to `getData()` which calls the \href{https://wonder.cdc.gov}{CDC Wonder API} and returns a tidy data frame (tibble)
+#' NOT CURRENTLY IMPLEMENTED wrapper to `getData()` which calls the \href{https://wonder.cdc.gov}{CDC Wonder API} and returns a tidy data frame (tibble)
 #'
 #' @param ... list of words to indicate the group_by variables desired in the query. Words will be interpreted according to the first letter (not case-sensitive):
 #'
@@ -35,12 +35,12 @@
 
 #' @examples
 #'
-#' mydata <- getBirths(age, education, weight, gender)
+#' mydata <- getBirths(age, educcation, wieght, gender)
 #'
 #' mydata
 
 #' @section Notes:
-#' `getBirths()` is designed to be easier to use than `getData()` for simple queries. For more options, use `getData()`.
+#' `getBirths()` is designed to be easier to use than `getData()` for simple queries. Only the first letter needs to be correct. For more options, use `getData()`.
 #'
 
 #' @export

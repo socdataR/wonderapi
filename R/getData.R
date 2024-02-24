@@ -22,10 +22,10 @@
 #'
 #' See \url{https://wonder.cdc.gov/wonder/help/WONDER-API.html} for more information.
 #'
-#'@examples
+#' @examples
 #' mylist <- list(
 #'   list("And By", "Race"),
-#'   list("And By", "Tobacco Use)
+#'   list("And By", "Tobacco Use")
 #' )
 #'
 #' mydata <- getData("D66", mylist)

@@ -238,7 +238,7 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
 ### Combining results from multiple datasets
 Some of the datasets, such as the Births, are divided into multiple databases by time period. `wonderapi` makes it easy to combine the data into one data frame. (Care needs to be taken as the variables are not identical in all. For example, the 1995 - 2002 dataset does not have any measure options; it only returns number of births. To find out what's available, see the codebooks (**`>??codebook`**) and crosscheck with the [CDC Wonder API web interface](https://wonder.cdc.gov).)  
 
-```{r BirthsbyYear1995to2020}
+```{r BirthsbyYear}
 births <- rbind(getData("Natality for 1995 - 2002"),
                 getData("Natality for 2003 - 2006"),
                 getData("Natality for 2007 - 2022"))
@@ -274,7 +274,7 @@ mydata4 <- getData("Natality for 2007 - 2022", mylist)
 
 In this case, the best approach is to visit the [CDC Wonder API web interface](https://wonder.cdc.gov) and try the same query. If all goes well, you will receive more detailed information on what went wrong:  
 
-<center><img src="NatalityError.png" width="432px"/></center>
+<center><img src="man/figures/NatalityError.png" width="432px"/></center>
 
 We learn that we can't include "Education" if we request the "Birth Rate" measure. If we try again with "Bridged Race" instead of "Education", it works:  
 
