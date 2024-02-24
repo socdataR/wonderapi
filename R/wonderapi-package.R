@@ -5,7 +5,7 @@
 #'  prepare data for either reports or further analysis.
 #' @name wonderapi-package
 #' @aliases wonderapi
-#' @docType package
+#' @docType _PACKAGE
 #' @keywords package
 
 NULL

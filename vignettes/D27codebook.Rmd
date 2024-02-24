@@ -1,10 +1,10 @@
 ---
-title: " D27 Natality for 2003 - 2006 Dataset Codebook"
+title: "D27 Natality for 2003 - 2006 Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D27 Natality for 2003 - 2006 }
+  %\VignetteIndexEntry{ D27 Natality for 2003 - 2006 Dataset Codebook }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -27,7 +27,6 @@ B_1 	 Group Results By
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
-		 D27.V40 	 Age of Mother Year 
 		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
@@ -75,7 +74,6 @@ B_2 	 And By
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
-		 D27.V40 	 Age of Mother Year 
 		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
@@ -123,7 +121,6 @@ B_3 	 And By
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
-		 D27.V40 	 Age of Mother Year 
 		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
@@ -171,7 +168,6 @@ B_4 	 And By
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
-		 D27.V40 	 Age of Mother Year 
 		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
@@ -219,7 +215,6 @@ B_5 	 And By
 		 D27.V1 	 Age of Mother 9 
 		 D27.V38 	 Age of Mother 10 
 		 D27.V39 	 Age of Mother 13 
-		 D27.V40 	 Age of Mother Year 
 		 D27.V5 	 Mother's Education 
 		 D27.V20 	 Year 
 		 D27.V25 	 Month 
@@ -416,10 +411,6 @@ O_age
 **Values:**	 D27.V39 	 Age of Mother 13 
 
 **Parameter:**
-O_age 
-**Values:**	 D27.V40 	 Age of Mother Year 
-
-**Parameter:**
 V_D27.V1 	 Age of Mother 9 
 
 **Value(s):**
@@ -472,51 +463,6 @@ V_D27.V39 	 Age of Mother 13
 		 35-39 	  35-39 years  
 		 40-44 	  40-44 years  
 		 45-49 	  45-49 years  
-		 50+ 	  50 years and over  
-```
-
-**Parameter:**
-V_D27.V40 	 Age of Mother Year 
-
-**Value(s):**
-```
-		 *All* 	  All Ages  
-		 14 	  Under 15 years  
-		 15 	  15 years  
-		 16 	  16 years  
-		 17 	  17 years  
-		 18 	  18 years  
-		 19 	  19 years  
-		 20 	  20 years  
-		 21 	  21 years  
-		 22 	  22 years  
-		 23 	  23 years  
-		 24 	  24 years  
-		 25 	  25 years  
-		 26 	  26 years  
-		 27 	  27 years  
-		 28 	  28 years  
-		 29 	  29 years  
-		 30 	  30 years  
-		 31 	  31 years  
-		 32 	  32 years  
-		 33 	  33 years  
-		 34 	  34 years  
-		 35 	  35 years  
-		 36 	  36 years  
-		 37 	  37 years  
-		 38 	  38 years  
-		 39 	  39 years  
-		 40 	  40 years  
-		 41 	  41 years  
-		 42 	  42 years  
-		 43 	  43 years  
-		 44 	  44 years  
-		 45 	  45 years  
-		 46 	  46 years  
-		 47 	  47 years  
-		 48 	  48 years  
-		 49 	  49 years  
 		 50+ 	  50 years and over  
 ```
 
@@ -624,13 +570,8 @@ V_D27.V26 	 Weekday
 **Value(s):**
 ```
 		 *All* 	  All Days  
-		 1 	  Sunday  
-		 2 	  Monday  
-		 3 	  Tuesday  
-		 4 	  Wednesday  
-		 5 	  Thursday  
-		 6 	  Friday  
-		 7 	  Saturday  
+		 1 	  Weekend  
+		 2 	  Weekday  
 ```
 
 **Parameter:**
@@ -807,6 +748,7 @@ V_D27.V41 	 Infant Birth Weight 100 gram increments
 		 80 	  8000 - 8099 grams  
 		 81 	  8100 - 8165 grams  
 		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -832,10 +774,7 @@ V_D27.V7 	 Plurality or Multiple Birth
 		 *All* 	  All Pluralities  
 		 1 	  Single  
 		 2 	  Twin  
-		 3 	  Triplet  
-		 4 	  Quadruplet  
-		 5 	  Quintuplet or higher  
-		 10 	  Not Available  
+		 3 	  Triplet or higher  
 ```
 
 **Parameter:**

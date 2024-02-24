@@ -1,15 +1,7 @@
-**2023-01-31**
-**Note: Much of the functionality of this package is not currently working, including obtaining natality data (D66). Calls to the mortality database (D76) appearing to be working, but have not been fully tested. If I haven't deterred you from trying, ignore the info below about building the vignettes and install with**
-
-
-```
-remotes::install_github("socdataR/wonderapi")
-```
-
-wonderapi
+Introduction to wonderapi
 ================
 Joyce Robbins
-2022-03-24
+2024-02-24
 
 <div id="TOC">
 
@@ -79,11 +71,11 @@ write queries using human readable names rather than numeric codes.
 
 `getData()`
 
--   converts the user’s parameter requests to codes  
--   adds these codes to the default query list  
--   calls the WONDER API to obtain query results
--   processes the results  
--   returns a tidy data frame
+- converts the user’s parameter requests to codes  
+- adds these codes to the default query list  
+- calls the WONDER API to obtain query results
+- processes the results  
+- returns a tidy data frame
 
 ## Limitations of the CDC WONDER API
 
@@ -126,8 +118,8 @@ wonderapi::show_databases()
     ##   <chr>                               <chr>
     ## 1 Natality for 1995 - 2002            D10  
     ## 2 Natality for 2003 - 2006            D27  
-    ## 3 Natality for 2007 - 2020            D66  
-    ## 4 Natality for 2016 - 2020 (expanded) D149 
+    ## 3 Natality for 2007 - 2022            D66  
+    ## 4 Natality for 2016 - 2022 (expanded) D149 
     ## 5 Detailed Mortality                  D76  
     ## 6 Provisional Multiple Cause of Death D176 
     ## 7 Heat Wave Days                      D104
@@ -213,7 +205,7 @@ default settings, perform a query request without specifying a
 querylist:
 
 ``` r
-natdata <- getData("Natality for 2007 - 2020")
+natdata <- getData("Natality for 2007 - 2022")
 natdata %>% head()
 ```
 
@@ -313,7 +305,7 @@ Measures do not need values; it is sufficient to specify a name only:
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
-mydata2 <- getData("Natality for 2007 - 2020", mylist)
+mydata2 <- getData("Natality for 2007 - 2022", mylist)
 ```
 
 ``` r
@@ -342,7 +334,7 @@ mylist <- list(list("Month", "2"))
 getData("D66", mylist)
 ```
 
-    ## # A tibble: 14 × 2
+    ## # A tibble: 16 × 2
     ##     Year Births
     ##    <dbl>  <dbl>
     ##  1  2007 326891
@@ -359,6 +351,8 @@ getData("D66", mylist)
     ## 12  2018 284250
     ## 13  2019 279963
     ## 14  2020 282654
+    ## 15  2021 266355
+    ## 16  2022 275727
 
 **Note that values for Limiting Variables must be entered as codes; in
 this case “2” rather than “February.” We hope to add capability for
@@ -374,7 +368,7 @@ ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
     geom_line() + ggtitle("Births by Marital Status")
 ```
 
-<img src="man/figures/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-gfm/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
 
 ``` r
 ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
@@ -383,7 +377,7 @@ ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
     ggtitle("Average Age of Mother")
 ```
 
-<img src="man/figures/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-gfm/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
 
 ``` r
 mydata2 <- mydata2 %>% 
@@ -395,7 +389,7 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
     ylab("Percent of Total Births")
 ```
 
-<img src="man/figures/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-gfm/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
 
 ### Combining results from multiple datasets
 
@@ -410,12 +404,12 @@ available, see the codebooks (**`>??codebook`**) and crosscheck with the
 ``` r
 births <- rbind(getData("Natality for 1995 - 2002"),
                 getData("Natality for 2003 - 2006"),
-                getData("Natality for 2007 - 2020"))
+                getData("Natality for 2007 - 2022"))
 ggplot(births, aes(Year, Births)) + geom_line() + 
-    ggtitle("U.S. Births by Year, 1995 - 2020")
+    ggtitle("U.S. Births by Year, 1995 - 2022")
 ```
 
-<img src="man/figures/BirthsbyYear1995to2020-1.png" style="display: block; margin: auto;" />
+<img src="readme_files/figure-gfm/BirthsbyYear-1.png" style="display: block; margin: auto;" />
 
 ### Errors
 
@@ -433,7 +427,7 @@ mydata3 <- getData("Detailed Mortality",
         list(list("Suspect", "Mrs. Peacock")))
 ```
 
-    ## Ignoring: "Suspect",...(not recognized)
+    ## Couldn't find: "Suspect" but including anyway.
 
 ``` r
 mydata3 %>% head()
@@ -456,15 +450,13 @@ fix the problem. Other times, it is not. For example:
 ``` r
 mylist <- list(list("And By", "Education"), 
                list("Birth Rate", ""))
-mydata4 <- getData("Natality for 2007 - 2020", mylist)
+mydata4 <- getData("Natality for 2007 - 2022", mylist)
 ```
-
-    ## No encoding supplied: defaulting to UTF-8.
 
     ## Message from query:
     ## Any by-variables picked from {0} need to appear in the order listed, and other by-variables can't come between them.
 
-    ## Error in getData("Natality for 2007 - 2020", mylist): Internal Server Error (HTTP 500).
+    ## Error in getData("Natality for 2007 - 2022", mylist): Internal Server Error (HTTP 500).
 
 In this case, the best approach is to visit the [CDC Wonder API web
 interface](https://wonder.cdc.gov) and try the same query. If all goes
@@ -481,7 +473,7 @@ Rate” measure. If we try again with “Bridged Race” instead of
 ``` r
 mylist <- list(list("And By", "Mother's Bridged Race"), 
                list("Birth Rate", ""))
-mydata5 <- getData("Natality for 2007 - 2020", mylist)
+mydata5 <- getData("Natality for 2007 - 2022", mylist)
 ```
 
 ``` r

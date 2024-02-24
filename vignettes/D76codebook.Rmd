@@ -1,10 +1,10 @@
 ---
-title: " D76 Detailed Mortality Dataset Codebook"
+title: "D76 Detailed Mortality Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D76 Detailed Mortality }
+  %\VignetteIndexEntry{ D76 Detailed Mortality Dataset Codebook }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -240,6 +240,8 @@ O_aar_pop 	 Standard Population
 		 1940 	  1940 U.S. Std. Million  
 		 1970 	  1970 U.S. Std. Million  
 		 2000 	  2000 U.S. Std. Million  
+		 1111 	  World Std. Million (WHO 2000-2025)  
+		 2222 	  World Std. Million (SEGI 1960)  
 ```
 
 **Parameter:**

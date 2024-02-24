@@ -1,10 +1,10 @@
 ---
-title: " D149 Natality for 2016 - 2020 (expanded) Dataset Codebook"
+title: "D149 Natality for 2016 - 2022 (expanded) Dataset Codebook"
 author: "Joyce Robbins "
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{ D149 Natality for 2016 - 2020 (expanded) }
+  %\VignetteIndexEntry{ D149 Natality for 2016 - 2022 (expanded) Dataset Codebook }
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -32,7 +32,6 @@ B_1 	 Group Results By
 		 D149.V1 	 Age of Mother 9 
 		 D149.V38 	 Age of Mother 10 
 		 D149.V39 	 Age of Mother 13 
-		 D149.V40 	 Age of Mother Year 
 		 D149.V5 	 Mother's Education 
 		 D149.V27 	 Marital Status 
 		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
@@ -64,7 +63,6 @@ B_1 	 Group Results By
 		 D149.V70 	 Mother's Height in Inches 
 		 D149.V71 	 Mother's Pre-pregnancy BMI 
 		 D149.V73 	 Mother's Weight Gain Recode 
-		 D149.V72 	 Mother's Weight Gain 
 		 D149.V149 	 Mother's Pre-pregnancy Weight 
 		 D149.V150 	 Mother's Delivery Weight 
 		 D149.V10 	 Tobacco Use 
@@ -187,7 +185,6 @@ B_2 	 And By
 		 D149.V1 	 Age of Mother 9 
 		 D149.V38 	 Age of Mother 10 
 		 D149.V39 	 Age of Mother 13 
-		 D149.V40 	 Age of Mother Year 
 		 D149.V5 	 Mother's Education 
 		 D149.V27 	 Marital Status 
 		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
@@ -219,7 +216,6 @@ B_2 	 And By
 		 D149.V70 	 Mother's Height in Inches 
 		 D149.V71 	 Mother's Pre-pregnancy BMI 
 		 D149.V73 	 Mother's Weight Gain Recode 
-		 D149.V72 	 Mother's Weight Gain 
 		 D149.V149 	 Mother's Pre-pregnancy Weight 
 		 D149.V150 	 Mother's Delivery Weight 
 		 D149.V10 	 Tobacco Use 
@@ -342,7 +338,6 @@ B_3 	 And By
 		 D149.V1 	 Age of Mother 9 
 		 D149.V38 	 Age of Mother 10 
 		 D149.V39 	 Age of Mother 13 
-		 D149.V40 	 Age of Mother Year 
 		 D149.V5 	 Mother's Education 
 		 D149.V27 	 Marital Status 
 		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
@@ -374,7 +369,6 @@ B_3 	 And By
 		 D149.V70 	 Mother's Height in Inches 
 		 D149.V71 	 Mother's Pre-pregnancy BMI 
 		 D149.V73 	 Mother's Weight Gain Recode 
-		 D149.V72 	 Mother's Weight Gain 
 		 D149.V149 	 Mother's Pre-pregnancy Weight 
 		 D149.V150 	 Mother's Delivery Weight 
 		 D149.V10 	 Tobacco Use 
@@ -497,7 +491,6 @@ B_4 	 And By
 		 D149.V1 	 Age of Mother 9 
 		 D149.V38 	 Age of Mother 10 
 		 D149.V39 	 Age of Mother 13 
-		 D149.V40 	 Age of Mother Year 
 		 D149.V5 	 Mother's Education 
 		 D149.V27 	 Marital Status 
 		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
@@ -529,7 +522,6 @@ B_4 	 And By
 		 D149.V70 	 Mother's Height in Inches 
 		 D149.V71 	 Mother's Pre-pregnancy BMI 
 		 D149.V73 	 Mother's Weight Gain Recode 
-		 D149.V72 	 Mother's Weight Gain 
 		 D149.V149 	 Mother's Pre-pregnancy Weight 
 		 D149.V150 	 Mother's Delivery Weight 
 		 D149.V10 	 Tobacco Use 
@@ -652,7 +644,6 @@ B_5 	 And By
 		 D149.V1 	 Age of Mother 9 
 		 D149.V38 	 Age of Mother 10 
 		 D149.V39 	 Age of Mother 13 
-		 D149.V40 	 Age of Mother Year 
 		 D149.V5 	 Mother's Education 
 		 D149.V27 	 Marital Status 
 		 D149.V51 	 Paternity Acknowledgment (if mother unmarried) 
@@ -684,7 +675,6 @@ B_5 	 And By
 		 D149.V70 	 Mother's Height in Inches 
 		 D149.V71 	 Mother's Pre-pregnancy BMI 
 		 D149.V73 	 Mother's Weight Gain Recode 
-		 D149.V72 	 Mother's Weight Gain 
 		 D149.V149 	 Mother's Pre-pregnancy Weight 
 		 D149.V150 	 Mother's Delivery Weight 
 		 D149.V10 	 Tobacco Use 
@@ -1178,10 +1168,6 @@ O_age
 **Values:**	 D149.V39 	 Age of Mother 13 
 
 **Parameter:**
-O_age 
-**Values:**	 D149.V40 	 Age of Mother Year 
-
-**Parameter:**
 V_D149.V1 	 Age of Mother 9 
 
 **Value(s):**
@@ -1234,53 +1220,6 @@ V_D149.V39 	 Age of Mother 13
 		 35-39 	  35-39 years  
 		 40-44 	  40-44 years  
 		 45-49 	  45-49 years  
-		 50+ 	  50 years and over  
-```
-
-**Parameter:**
-V_D149.V40 	 Age of Mother Year 
-
-**Value(s):**
-```
-		 *All* 	  All Ages  
-		 12 	  12 years and under  
-		 13 	  13 years  
-		 14 	  14 years  
-		 15 	  15 years  
-		 16 	  16 years  
-		 17 	  17 years  
-		 18 	  18 years  
-		 19 	  19 years  
-		 20 	  20 years  
-		 21 	  21 years  
-		 22 	  22 years  
-		 23 	  23 years  
-		 24 	  24 years  
-		 25 	  25 years  
-		 26 	  26 years  
-		 27 	  27 years  
-		 28 	  28 years  
-		 29 	  29 years  
-		 30 	  30 years  
-		 31 	  31 years  
-		 32 	  32 years  
-		 33 	  33 years  
-		 34 	  34 years  
-		 35 	  35 years  
-		 36 	  36 years  
-		 37 	  37 years  
-		 38 	  38 years  
-		 39 	  39 years  
-		 40 	  40 years  
-		 41 	  41 years  
-		 42 	  42 years  
-		 43 	  43 years  
-		 44 	  44 years  
-		 45 	  45 years  
-		 46 	  46 years  
-		 47 	  47 years  
-		 48 	  48 years  
-		 49 	  49 years  
 		 50+ 	  50 years and over  
 ```
 
@@ -1347,6 +1286,7 @@ V_D149.V147 	 Mother's Birth Country
 ```
 		 *All* 	  All Countries  
 		 AF 	  AFGHANISTAN (AF)  
+		 AX 	  AKROTIRI (AX)  
 		 AL 	  ALBANIA (AL)  
 		 AG 	  ALGERIA (AG)  
 		 AQ 	  AMERICAN SAMOA (AQ)  
@@ -1980,28 +1920,8 @@ V_D149.V151 	 Prior Births Now Living
 		 8 	  8  
 		 9 	  9  
 		 10 	  10  
-		 11 	  11  
-		 12 	  12  
-		 13 	  13  
-		 14 	  14  
-		 15 	  15  
-		 16 	  16  
-		 17 	  17  
-		 18 	  18  
-		 19 	  19  
-		 20 	  20  
-		 21 	  21  
-		 22 	  22  
-		 23 	  23  
-		 24 	  24  
-		 25 	  25  
-		 26 	  26  
-		 27 	  27  
-		 28 	  28  
-		 29 	  29  
-		 30 	  30  
+		 11 	  11 or more  
 		 99 	  Unknown or Not Stated  
-		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -2013,36 +1933,8 @@ V_D149.V152 	 Prior Births Now Dead
 		 0 	  0  
 		 1 	  1  
 		 2 	  2  
-		 3 	  3  
-		 4 	  4  
-		 5 	  5  
-		 6 	  6  
-		 7 	  7  
-		 8 	  8  
-		 9 	  9  
-		 10 	  10  
-		 11 	  11  
-		 12 	  12  
-		 13 	  13  
-		 14 	  14  
-		 15 	  15  
-		 16 	  16  
-		 17 	  17  
-		 18 	  18  
-		 19 	  19  
-		 20 	  20  
-		 21 	  21  
-		 22 	  22  
-		 23 	  23  
-		 24 	  24  
-		 25 	  25  
-		 26 	  26  
-		 27 	  27  
-		 28 	  28  
-		 29 	  29  
-		 30 	  30  
+		 3 	  3 or more  
 		 99 	  Unknown or Not Stated  
-		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -2057,33 +1949,8 @@ V_D149.V153 	 Prior Other Pregnancy Outcomes
 		 3 	  3  
 		 4 	  4  
 		 5 	  5  
-		 6 	  6  
-		 7 	  7  
-		 8 	  8  
-		 9 	  9  
-		 10 	  10  
-		 11 	  11  
-		 12 	  12  
-		 13 	  13  
-		 14 	  14  
-		 15 	  15  
-		 16 	  16  
-		 17 	  17  
-		 18 	  18  
-		 19 	  19  
-		 20 	  20  
-		 21 	  21  
-		 22 	  22  
-		 23 	  23  
-		 24 	  24  
-		 25 	  25  
-		 26 	  26  
-		 27 	  27  
-		 28 	  28  
-		 29 	  29  
-		 30 	  30  
+		 6 	  6 or more  
 		 99 	  Unknown or Not Stated  
-		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -2338,33 +2205,7 @@ V_D149.V70 	 Mother's Height in Inches
 **Value(s):**
 ```
 		 *All* 	  All Heights  
-		 30 	  30 inches  
-		 31 	  31 inches  
-		 32 	  32 inches  
-		 33 	  33 inches  
-		 34 	  34 inches  
-		 35 	  35 inches  
-		 36 	  36 inches  
-		 37 	  37 inches  
-		 38 	  38 inches  
-		 39 	  39 inches  
-		 40 	  40 inches  
-		 41 	  41 inches  
-		 42 	  42 inches  
-		 43 	  43 inches  
-		 44 	  44 inches  
-		 45 	  45 inches  
-		 46 	  46 inches  
-		 47 	  47 inches  
-		 48 	  48 inches  
-		 49 	  49 inches  
-		 50 	  50 inches  
-		 51 	  51 inches  
-		 52 	  52 inches  
-		 53 	  53 inches  
-		 54 	  54 inches  
-		 55 	  55 inches  
-		 56 	  56 inches  
+		 56 	  Under 57 inches  
 		 57 	  57 inches  
 		 58 	  58 inches  
 		 59 	  59 inches  
@@ -2381,14 +2222,8 @@ V_D149.V70 	 Mother's Height in Inches
 		 70 	  70 inches  
 		 71 	  71 inches  
 		 72 	  72 inches  
-		 73 	  73 inches  
-		 74 	  74 inches  
-		 75 	  75 inches  
-		 76 	  76 inches  
-		 77 	  77 inches  
-		 78 	  78 inches  
+		 73 	  73 or more inches  
 		 99 	  Unknown or Not Stated  
-		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -2405,122 +2240,6 @@ V_D149.V71 	 Mother's Pre-pregnancy BMI
 		 6 	  Extreme Obesity III > 39.9  
 		 9 	  Unknown or Not Stated  
 		 100 	  Not Reported  
-```
-
-**Parameter:**
-O_gain 
-**Values:**	 D149.V72 	 Mother's Weight Gain 
-
-**Parameter:**
-O_gain 
-**Values:**	 D149.V73 	 Mother's Weight Gain Recode 
-
-**Parameter:**
-V_D149.V72 	 Mother's Weight Gain 
-
-**Value(s):**
-```
-		 *All* 	  All Weights  
-		 0 	  0 lbs  
-		 1 	  1 lbs  
-		 2 	  2 lbs  
-		 3 	  3 lbs  
-		 4 	  4 lbs  
-		 5 	  5 lbs  
-		 6 	  6 lbs  
-		 7 	  7 lbs  
-		 8 	  8 lbs  
-		 9 	  9 lbs  
-		 10 	  10 lbs  
-		 11 	  11 lbs  
-		 12 	  12 lbs  
-		 13 	  13 lbs  
-		 14 	  14 lbs  
-		 15 	  15 lbs  
-		 16 	  16 lbs  
-		 17 	  17 lbs  
-		 18 	  18 lbs  
-		 19 	  19 lbs  
-		 20 	  20 lbs  
-		 21 	  21 lbs  
-		 22 	  22 lbs  
-		 23 	  23 lbs  
-		 24 	  24 lbs  
-		 25 	  25 lbs  
-		 26 	  26 lbs  
-		 27 	  27 lbs  
-		 28 	  28 lbs  
-		 29 	  29 lbs  
-		 30 	  30 lbs  
-		 31 	  31 lbs  
-		 32 	  32 lbs  
-		 33 	  33 lbs  
-		 34 	  34 lbs  
-		 35 	  35 lbs  
-		 36 	  36 lbs  
-		 37 	  37 lbs  
-		 38 	  38 lbs  
-		 39 	  39 lbs  
-		 40 	  40 lbs  
-		 41 	  41 lbs  
-		 42 	  42 lbs  
-		 43 	  43 lbs  
-		 44 	  44 lbs  
-		 45 	  45 lbs  
-		 46 	  46 lbs  
-		 47 	  47 lbs  
-		 48 	  48 lbs  
-		 49 	  49 lbs  
-		 50 	  50 lbs  
-		 51 	  51 lbs  
-		 52 	  52 lbs  
-		 53 	  53 lbs  
-		 54 	  54 lbs  
-		 55 	  55 lbs  
-		 56 	  56 lbs  
-		 57 	  57 lbs  
-		 58 	  58 lbs  
-		 59 	  59 lbs  
-		 60 	  60 lbs  
-		 61 	  61 lbs  
-		 62 	  62 lbs  
-		 63 	  63 lbs  
-		 64 	  64 lbs  
-		 65 	  65 lbs  
-		 66 	  66 lbs  
-		 67 	  67 lbs  
-		 68 	  68 lbs  
-		 69 	  69 lbs  
-		 70 	  70 lbs  
-		 71 	  71 lbs  
-		 72 	  72 lbs  
-		 73 	  73 lbs  
-		 74 	  74 lbs  
-		 75 	  75 lbs  
-		 76 	  76 lbs  
-		 77 	  77 lbs  
-		 78 	  78 lbs  
-		 79 	  79 lbs  
-		 80 	  80 lbs  
-		 81 	  81 lbs  
-		 82 	  82 lbs  
-		 83 	  83 lbs  
-		 84 	  84 lbs  
-		 85 	  85 lbs  
-		 86 	  86 lbs  
-		 87 	  87 lbs  
-		 88 	  88 lbs  
-		 89 	  89 lbs  
-		 90 	  90 lbs  
-		 91 	  91 lbs  
-		 92 	  92 lbs  
-		 93 	  93 lbs  
-		 94 	  94 lbs  
-		 95 	  95 lbs  
-		 96 	  96 lbs  
-		 97 	  97 lbs  
-		 98 	  98 or more  
-		 99 	  Unknown or Not Stated  
 ```
 
 **Parameter:**
@@ -3232,17 +2951,8 @@ V_D149.V81 	 Number of Previous Cesareans
 		 1 	  1 previous cesareans  
 		 2 	  2 previous cesareans  
 		 3 	  3 previous cesareans  
-		 4 	  4 previous cesareans  
-		 5 	  5 previous cesareans  
-		 6 	  6 previous cesareans  
-		 7 	  7 previous cesareans  
-		 8 	  8 previous cesareans  
-		 9 	  9 previous cesareans  
-		 10 	  10 previous cesareans  
-		 11 	  11 previous cesareans  
-		 12 	  12 previous cesareans  
+		 4 	  4 or more previous cesareans  
 		 99 	  Unknown or Not Stated  
-		 100 	  Not Reported  
 ```
 
 **Parameter:**
@@ -3410,6 +3120,8 @@ V_D149.V20 	 Year
 		 2018 	  2018  
 		 2019 	  2019  
 		 2020 	  2020  
+		 2021 	  2021  
+		 2022 	  2022  
 ```
 
 **Parameter:**
@@ -3438,13 +3150,8 @@ V_D149.V26 	 Weekday
 **Value(s):**
 ```
 		 *All* 	  All Days  
-		 1 	  Sunday  
-		 2 	  Monday  
-		 3 	  Tuesday  
-		 4 	  Wednesday  
-		 5 	  Thursday  
-		 6 	  Friday  
-		 7 	  Saturday  
+		 1 	  Weekend  
+		 2 	  Weekday  
 ```
 
 **Parameter:**
@@ -3919,10 +3626,7 @@ V_D149.V7 	 Plurality
 		 *All* 	  All Pluralities  
 		 1 	  Single  
 		 2 	  Twin  
-		 3 	  Triplet  
-		 4 	  Quadruplet  
-		 5 	  Quintuplet or higher  
-		 10 	  Not Available  
+		 3 	  Triplet or higher  
 ```
 
 **Parameter:**
@@ -3933,9 +3637,7 @@ V_D149.V115 	 Set Order
 		 *All* 	  All Orders  
 		 1 	  1st  
 		 2 	  2nd  
-		 3 	  3rd  
-		 4 	  4th  
-		 5 	  5th to 16th  
+		 3 	  3rd or higher  
 		 9 	  Unknown or Not Stated  
 ```
 
@@ -4082,6 +3784,7 @@ V_D149.V41 	 Infant Birth Weight 100 gram increments
 		 80 	  8000 - 8099 grams  
 		 81 	  8100 - 8165 grams  
 		 99 	  Unknown or Not Stated  
+		 100 	  Not Reported  
 ```
 
 **Parameter:**

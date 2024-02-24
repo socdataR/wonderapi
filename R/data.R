@@ -11,4 +11,5 @@
 #'   ...
 #' }
 #' @source \code{data-raw/create_data_files.R}
+#' @export dbnamelookup
 "dbnamelookup"

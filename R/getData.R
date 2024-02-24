@@ -24,14 +24,14 @@
 #'
 #' @examples
 #' mylist <- list(
-#'   list("Group Results By", "Race"),
-#'   list("Tobacco Use", "1")    # yes
+#'   list("And By", "Race"),
+#'   list("And By", "Tobacco Use")
 #' )
 #'
 #' mydata <- getData("D66", mylist)
 #' mydata
 #'
-#' @section References
+#' @section References:
 #' Inspired by this script from the \code{wondr} package, but provides more user-friendly options and better table display: /url{https://github.com/hrbrmstr/wondr/blob/master/README.md}
 #'
 

@@ -36,12 +36,16 @@ getBirths(...)
     W = "Weekday"}
 }
 \description{
-wrapper to `getData()` which calls the \href{https://wonder.cdc.gov}{CDC Wonder API} and returns a tidy data frame (tibble)
+NOT CURRENTLY IMPLEMENTED wrapper to `getData()` which calls the \href{https://wonder.cdc.gov}{CDC Wonder API} and returns a tidy data frame (tibble)
 }
+\section{Notes}{
+
+`getBirths()` is designed to be easier to use than `getData()` for simple queries. Only the first letter needs to be correct. For more options, use `getData()`.
+}
+
 \examples{
 
 mydata <- getBirths(age, educcation, wieght, gender)
 
 mydata
-
 }
