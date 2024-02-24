@@ -104,7 +104,7 @@ The best way to become familiar with CDC Wonder API options is to use the web in
 
 This package is not on CRAN. It can be installed from Github with the `devtools` package:
 ```{r, eval = FALSE}
-# devtools::install_github("socdataR/wonderapi", build_vignettes = TRUE)
+devtools::install_github("socdataR/wonderapi", build_vignettes = TRUE)
 ``` 
 
 (The vignettes are an important component of the package as the codebooks are stored as vignettes, so be sure to include `build_vignettes = TRUE`.)  
@@ -134,6 +134,13 @@ natdata <- getData("Natality for 2007 - 2022")
 natdata %>% head()
 dmdata <- getData("Detailed Mortality")
 dmdata %>% head()
+```
+
+```{r eval=!githubreadme, echo=!githubreadme}
+natdata <- getData("Natality for 2007 - 2020")
+natdata %>% head() %>% kable()
+dmdata <- getData("Detailed Mortality")
+dmdata %>% head() %>% kable()
 ```
 
 The default lists were prepared based on CDC examples, but we make no claim that they are error free. If you have any suggestions for improving them, please make a pull request on Github or [send an email to Joyce Robbins](mailto:joycerobbins1@gmail.com). The default lists are available [here](https://github.com/socdataR/wonderapi/tree/master/data-raw).
@@ -176,7 +183,7 @@ See the appropriate codebook for all Group By options.
 ### Measures
 Measures do not need values; it is sufficient to specify a name only:
 
-```{r eval=githubreadme, echo=githubreadme}
+```{r}
 mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
@@ -187,10 +194,14 @@ mydata2 <- getData("Natality for 2007 - 2022", mylist)
 mydata2 %>% head()
 ```
 
+```{r eval=!githubreadme, echo=!githubreadme}
+mydata2 %>% head() %>% kable()
+```
+
 ### Limiting variables
 Queries can be constrained with parameters that limit results in the background.  For example, if you're only interested in February births, you may choose to limit results to February as follows, rather than grouping by Month:
 
-```{r eval=githubreadme, echo=githubreadme}
+```{r}
 mylist <- list(list("Month", "2"))
 getData("D66", mylist)
 ```
