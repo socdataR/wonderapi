@@ -237,7 +237,7 @@ dmdata %>% head()
 The default lists were prepared based on CDC examples, but we make no
 claim that they are error free. If you have any suggestions for
 improving them, please make a pull request on Github or [send an email
-to Joyce Robbins](mailto:joycerobbins1@gmail.com). The default lists are
+to Joyce Robbins](mailto:jtr13@columbia.edu). The default lists are
 available
 [here](https://github.com/socdataR/wonderapi/tree/master/data-raw).
 
