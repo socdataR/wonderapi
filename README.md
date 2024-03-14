@@ -239,7 +239,7 @@ claim that they are error free. If you have any suggestions for
 improving them, please make a pull request on Github or [send an email
 to Joyce Robbins](mailto:jtr13@columbia.edu). The default lists are
 available
-[here](https://github.com/socdataR/wonderapi/tree/master/data-raw).
+[here](https://github.com/socdataR/wonderapi/tree/main/data-raw).
 
 ## Creating customized queries
 
