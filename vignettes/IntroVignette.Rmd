@@ -16,7 +16,7 @@ vignette: >
 # 3. Change output to: github_document
 # 4. Delete Vignette: info
 # 5. Change path (add vignettes/) in send_query (line 102) & image (line 255)
-# 6. Knit
+# 6. Knit twice, with fig.path = docs/articles and then articles/
 ```
 
 ```{r, echo = FALSE}

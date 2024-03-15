@@ -384,7 +384,7 @@ ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
   labs(title = "Births by Marital Status")
 ```
 
-<img src="readme_files/figure-gfm/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
+<img src="articles/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
 
 ``` r
 ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`, color = `Marital Status`)) +
@@ -393,7 +393,7 @@ ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`, color = `Marital Stat
   labs(title = "Average Age of Mother", y = "age (in years)")
 ```
 
-<img src="readme_files/figure-gfm/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
+<img src="articles/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
 
 ``` r
 mydata2 <- mydata2 |> 
@@ -407,7 +407,7 @@ ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) +
        y = "Percent of Total Births")
 ```
 
-<img src="readme_files/figure-gfm/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
+<img src="articles/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
 
 ### Combining results from multiple datasets
 
@@ -428,7 +428,7 @@ ggplot(births, aes(Year, Births)) +
   labs(title = "U.S. Births by Year, 1995 - 2022")
 ```
 
-<img src="readme_files/figure-gfm/BirthsbyYear-1.png" style="display: block; margin: auto;" />
+<img src="articles/BirthsbyYear-1.png" style="display: block; margin: auto;" />
 
 ### Errors
 

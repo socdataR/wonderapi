@@ -61,25 +61,31 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">send_query</span><span class="op">(</span><span class="va">filename</span>, database_id <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">send_query</span><span class="op">(</span>db <span class="op">=</span> <span class="st">"D66"</span>, <span class="va">fn</span>, agree <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>filename</dt>
-<dd><p>.xml query list</p></dd>
+    <dl><dt>db</dt>
+<dd><p>Indicate the database, either by label, name, or code.  To see the complete list of what's available, use `show_databases()`</p></dd>
 
 
-<dt>database_id</dt>
-<dd><p>CDC WONDER database ID, if NULL parsed from filename</p></dd>
+<dt>fn</dt>
+<dd><p>.xml query list exported from CDC Wonder web interface</p></dd>
+
+
+<dt>agree</dt>
+<dd><p>if <code>TRUE</code> (default) accept CDC Wonder API data use restrictions</p></dd>
 
 </dl></div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>   <span class="fu">send_query</span><span class="op">(</span><span class="st">"data-raw/D66_Defaults.xml"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">send_query</span><span class="op">(</span><span class="st">"D66"</span>, <span class="st">"data-raw/D66_Defaults.xml"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="fu">send_query</span><span class="op">(</span><span class="st">"D76"</span>, <span class="st">"testquery.xml"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
