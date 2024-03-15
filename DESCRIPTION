@@ -3,7 +3,7 @@ Type: Package
 Title: User Friendly Access to CDC Wonder API
 Version: 0.0.0.9000
 Authors@R: c(
-  person("Joyce", "Robbins", email="joycerobbins1@gmail.com",
+  person("Joyce", "Robbins", email="jtr13@columbia.edu",
   role = c("cre", "aut")))
 Description: Simplifies the process of formulating CDC Wonder API query
     requests and interpreting query responses in order to obtain federal
