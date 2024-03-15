@@ -4,12 +4,19 @@
 #'
 #' @param filename .xml query list
 #' @param database_id CDC WONDER database ID, if NULL parsed from filename
+#' @param add_accept if \code{TRUE} (default) accept CDC Wonder API data use restrictions
 #' @export
 #' @examples \dontrun{
 #'    send_query("data-raw/D66_Defaults.xml")
+#'    send_query("testquery.xml", database_id = "D76")
 #' }
-send_query <- function(filename, database_id = NULL) {
+send_query <- function(filename, database_id = NULL, add_accept = TRUE) {
     query <- xml2::read_xml(filename)
+    if (add_accept) {
+        accept <- read_xml("<parameter> <name>accept_datause_restrictions
+                           </name> <value>true</value> </parameter>")
+        xml2::xml_add_child(query, accept, .where = 0)
+    }
     if (is.null(database_id)) database_id <- stringr::str_extract(filename, "D[0-9]+")
     if (is.na(database_id)) stop ("The database ID must be contained in the filename or set as the database_id parameter.")
     index <- purrr::map(dbnamelookup, ~which(.x == database_id)) %>% unlist()
