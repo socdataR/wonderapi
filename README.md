@@ -1,24 +1,27 @@
 Introduction to wonderapi
 ================
 Joyce Robbins
-2024-02-24
+2024-03-15
 
 <div id="TOC">
-
 <ul>
 <li>
 <a href="#overview">Overview</a>
-<ul>
-<li>
-<a href="#example">Example</a>
-</li>
-</ul>
 </li>
 <li>
 <a href="#installation">Installation</a>
 </li>
 <li>
-<a href="#getting-started">Getting started</a>
+<a href="#main-functions">Main functions</a>
+</li>
+<li>
+<a href="#getting-started-with-send_query">Getting started with
+`send_query()`</a>
+</li>
+<li>
+<a href="#getting-started-with-getdata">Getting started with
+`getData()`</a>
+</li>
 <ul>
 <li>
 <a href="#codebooks">Codebooks</a>
@@ -27,11 +30,8 @@ Joyce Robbins
 <a href="#default-query-lists-and-requests">Default query lists and
 requests</a>
 </li>
-</ul>
-</li>
 <li>
 <a href="#creating-customized-queries">Creating customized queries</a>
-<ul>
 <li>
 <a href="#group-by-variables">Group By variables</a>
 </li>
@@ -52,9 +52,7 @@ from multiple datasets</a>
 <a href="#errors">Errors</a>
 </li>
 </ul>
-</li>
 </ul>
-
 </div>
 
 ``` r
@@ -64,48 +62,39 @@ library(wonderapi)
 
 ## Overview
 
-This package makes it easier to use the CDC Wonder API. It does so by
-employing hidden default query lists and lookup tables, allowing users
-to focus only on the variables they’re interested in obtaining, and to
-write queries using human readable names rather than numeric codes.
+This package makes it easier to use the [CDC WONDER
+API](https://wonder.cdc.gov/wonder/help/WONDER-API.html): 1) users can
+write simple queries using human readable names rather than numeric
+codes, and 2) users receive data in a tidy data frame that is easy to
+work with.
 
-`getData()`
+NOTE, HOWEVER, THAT THE CDC DOES NOT ALLOW QUERIES WITH LOCATION FIELDS
+THROUGH THE API. If you wish to limit or group results by Region,
+Division, State or County, or Urbanization, use the [CDC
+Wonder](https://wonder.cdc.gov/) web interface rather than the API –
+either with or without this package. For more information on this
+limitation, see: <https://wonder.cdc.gov/wonder/help/WONDER-API.html>.
 
-- converts the user’s parameter requests to codes  
-- adds these codes to the default query list  
-- calls the WONDER API to obtain query results
-- processes the results  
-- returns a tidy data frame
+## Installation
 
-## Limitations of the CDC WONDER API
-
-Note that queries for mortality and births statistics from the National
-Vital Statistics System cannot limit or group results by any location
-field, such as Region, Division, State or County, or Urbanization
-(urbanization categories map to specific geographic counties). See:
-<https://wonder.cdc.gov/wonder/help/WONDER-API.html> for more
-information.
-
-### Example
+This package is not on CRAN. It can be installed from Github with the
+`remotes` package:
 
 ``` r
-mylist <- list(list("And By", "Gender"))
-mydata0 <- getData("Detailed Mortality", mylist)
+remotes::install_github("socdataR/wonderapi", build_vignettes = TRUE)
 ```
 
-``` r
-mydata0 %>% head()
-```
+(If you have trouble installing the vignettes, or prefer not to, you can
+access them on [the package
+website](https://socdatar.github.io/wonderapi/) under the Articles tab
+instead.)
 
-    ## # A tibble: 6 × 5
-    ##   Year  Gender  Deaths Population `Crude Rate`
-    ##   <chr> <chr>    <dbl>      <dbl>        <dbl>
-    ## 1 1999  Female 1215860  142237295         855.
-    ## 2 1999  Male   1175183  136802873         859 
-    ## 3 2000  Female 1225706  143368343         855.
-    ## 4 2000  Male   1177289  138053563         853.
-    ## 5 2001  Female 1232913  145077463         850.
-    ## 6 2001  Male   1183090  139891492         846.
+## Main functions
+
+`send_query()` – takes as input an `.xml` file exported from the CDC
+Wonder web interface
+
+`getData()` – takes as input an R list of query options
 
 `show_databases()` displays available databases by name and code:
 
@@ -124,41 +113,68 @@ wonderapi::show_databases()
     ## 6 Provisional Multiple Cause of Death D176 
     ## 7 Heat Wave Days                      D104
 
+(Applies only to `getData()`. Any database can be used with
+`send_query()`.)
+
 More databases will be added in the future.
 
-The best way to become familiar with CDC Wonder API options is to use
-the web interface: <https://wonder.cdc.gov>, as the options available
-through the API are nearly identical. The greatest difference is that
-location variables are not available through the API.
+The best way to become familiar with [CDC WONDER
+API](https://wonder.cdc.gov/wonder/help/WONDER-API.html) options is to
+use the [CDC WONDER](https://wonder.cdc.gov) web interface, as the
+options available through the API are nearly identical (except for the
+location variable limitation – see above).
 
-## Installation
+## Getting started with `send_query()`
 
-This package is not on CRAN. It can be installed from Github with the
-`devtools` package:
+This function requires an `.xml` query request file. To obtain this
+file, create a query on [CDC WONDER](https://wonder.cdc.gov/). Before
+clicking “Send”, uncheck the “Show totals” button at the bottom, and
+take note of the database code starting with “D” at the end of the URL.
+
+After sending the query, click the “API Options” tab and then the
+“Export API” button to download the query `.xml`.
+
+Once you have this file, you can use it with the `send_query()`
+function:
 
 ``` r
-devtools::install_github("socdataR/wonderapi", build_vignettes = TRUE)
+send_query("D76", "vignettes/Underlying Cause of Death, 1999-2020_1710519087439-req.xml")
 ```
 
-(The vignettes are an important component of the package as the
-codebooks are stored as vignettes, so be sure to include
-`build_vignettes = TRUE`.)
+    ## # A tibble: 44 × 5
+    ##    Year  Gender Deaths Population `Crude Rate`
+    ##    <chr> <chr>   <dbl>      <dbl>        <dbl>
+    ##  1 1999  Female  12291    1932563          6.4
+    ##  2 1999  Male    15646    2026854          7.7
+    ##  3 2000  Female  12317    1981845          6.2
+    ##  4 2000  Male    15718    2076969          7.6
+    ##  5 2001  Female  12091    1968011          6.1
+    ##  6 2001  Male    15477    2057922          7.5
+    ##  7 2002  Female  12317    1963747          6.3
+    ##  8 2002  Male    15717    2057979          7.6
+    ##  9 2003  Female  12123    1996415          6.1
+    ## 10 2003  Male    15902    2093535          7.6
+    ## # ℹ 34 more rows
 
-## Getting started
+## Getting started with `getData()`
 
-Queries are composed of parameter name-value pairs. Setting up a query
-without assistance is complex because the query must be submitted as an
-.xml file with a long list of required parameters, such as [here
-(Example
-1)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example1-req.xml)
-and [here (Example
-2)](https://wonder.cdc.gov/wonder/help/API-Examples/D76_Example2-req.xml).
-The point of the package is to prevent your having to create requests in
-this form. The code for converting R lists to xml and making the actual
-query is borrowed from the [`wondr`
-package](https://github.com/hrbrmstr/wondr). The value of this package
-is in the “pre” and “post” stages of the query, that is, the processes
-of setting up the query and tidying the results.
+Queries are composed of parameter name-value pairs:
+
+``` r
+mylist <- list(list("And By", "Gender"))
+mydata0 <- getData("Detailed Mortality", mylist)
+head(mydata0)
+```
+
+    ## # A tibble: 6 × 5
+    ##   Year  Gender  Deaths Population `Crude Rate`
+    ##   <chr> <chr>    <dbl>      <dbl>        <dbl>
+    ## 1 1999  Female 1215860  142237295         855.
+    ## 2 1999  Male   1175183  136802873         859 
+    ## 3 2000  Female 1225706  143368343         855.
+    ## 4 2000  Male   1177289  138053563         853.
+    ## 5 2001  Female 1232913  145077463         850.
+    ## 6 2001  Male   1183090  139891492         846.
 
 ### Codebooks
 
@@ -170,19 +186,22 @@ each dataset. They may be accessed quickly by typing:
 > ??codebook
 ```
 
-in the console, or searching for “`codebook`” in the Help window. The
-codebooks are an important contribution of the package and are not
+in the console, or searching for “`codebook`” in the Help window. They
+are also available under the “Articles” tab of the [package
+website](https://socdatar.github.io/wonderapi/).
+
+The codebooks are an important contribution of the package and are not
 provided by the CDC. They are generated automatically by [this
-script](https://github.com/socdataR/wonderapi/blob/develop/R/make_codebook_vignette.R),
-which scrapes the CDC Wonder web interface form, and displays parameter
-names and values in human readable form. The benefit of this method is
-the ability to quickly produce and update codebook vignettes that
-closely follow the web interface, with parameters appearing in the same
-order. It also means, however, that the codebooks contain more
-information than the typical user needs to submit a query. Most users
-will only need Group By variables (codes beginning with “B\_”), Measures
-(codes beginning with “M\_”), and Limiting Variables (codes beginning
-with “V\_”).
+script](https://github.com/socdataR/wonderapi/blob/main/R/make_codebook_vignette.R),
+which scrapes the [CDC WONDER](https://wonder.cdc.gov/) web interface
+form, and displays parameter names and values in human readable form.
+The benefit of this method is the ability to quickly produce and update
+codebook vignettes that closely follow the web interface, with
+parameters appearing in the same order. It also means, however, that the
+codebooks contain more information than the typical user needs to submit
+a query. Most users will only need Group By variables (codes beginning
+with “B\_”), Measures (codes beginning with “M\_”), and Limiting
+Variables (codes beginning with “V\_”).
 
 Although some of the parameter names are long and/or awkward, for the
 sake of consistency, we follow the CDC names exactly. **The only
@@ -206,7 +225,7 @@ querylist:
 
 ``` r
 natdata <- getData("Natality for 2007 - 2022")
-natdata %>% head()
+head(natdata)
 ```
 
     ## # A tibble: 6 × 2
@@ -221,7 +240,7 @@ natdata %>% head()
 
 ``` r
 dmdata <- getData("Detailed Mortality")
-dmdata %>% head()
+head(dmdata)
 ```
 
     ## # A tibble: 6 × 4
@@ -236,12 +255,11 @@ dmdata %>% head()
 
 The default lists were prepared based on CDC examples, but we make no
 claim that they are error free. If you have any suggestions for
-improving them, please make a pull request on Github or [send an email
-to Joyce Robbins](mailto:jtr13@columbia.edu). The default lists are
-available
-[here](https://github.com/socdataR/wonderapi/tree/main/data-raw).
+improving them, please make a pull request on Github or open an issue.
+The default lists are available in the [/data-raw
+folder](https://github.com/socdataR/wonderapi/tree/main/data-raw).
 
-## Creating customized queries
+### Creating customized queries
 
 There are different types of parameters. Most critical are Group Results
 By and Measures. The Group Results By parameters serve as keys for
@@ -260,7 +278,7 @@ mydata <- getData("Detailed Mortality", mylist)
 ```
 
 ``` r
-mydata %>% head()
+head(mydata)
 ```
 
     ## # A tibble: 6 × 4
@@ -306,10 +324,7 @@ mylist <- list(list("Group Results By", "Marital Status"),
                list("And By", "Year"),
                list("Average Age of Mother", ""))
 mydata2 <- getData("Natality for 2007 - 2022", mylist)
-```
-
-``` r
-mydata2 %>% head()
+head(mydata2)
 ```
 
     ## # A tibble: 6 × 4
@@ -365,28 +380,31 @@ plotted without any additional data manipulation:
 
 ``` r
 ggplot(mydata2, aes(x = Year, y = Births, color = `Marital Status`)) +
-    geom_line() + ggtitle("Births by Marital Status")
+  geom_line() +
+  labs(title = "Births by Marital Status")
 ```
 
 <img src="readme_files/figure-gfm/BirthsByMaritalStatus-1.png" style="display: block; margin: auto;" />
 
 ``` r
-ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`,
-                   color = `Marital Status`)) + geom_line() +
-    geom_point() + ylab("age (in years)") + 
-    ggtitle("Average Age of Mother")
+ggplot(mydata2, aes(x = Year, y = `Average Age of Mother`, color = `Marital Status`)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Average Age of Mother", y = "age (in years)")
 ```
 
 <img src="readme_files/figure-gfm/AverageAgeofMother-1.png" style="display: block; margin: auto;" />
 
 ``` r
-mydata2 <- mydata2 %>% 
-    select(-`Average Age of Mother`) %>% 
-    spread(key = `Marital Status`, value = `Births`) %>% 
+mydata2 <- mydata2 |> 
+    select(-`Average Age of Mother`) |> 
+    spread(key = `Marital Status`, value = `Births`) |> 
     mutate(Total = Married + Unmarried)
-ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) + geom_line() +
-    geom_point() + ggtitle("Births to Unmarried Mothers") +
-    ylab("Percent of Total Births")
+ggplot(mydata2, aes(x = Year, y = Unmarried / Total)) +
+  geom_line() +
+  geom_point() +
+  labs(title = "Births to Unmarried Mothers",
+       y = "Percent of Total Births")
 ```
 
 <img src="readme_files/figure-gfm/BirthstoUnmarriedMothers-1.png" style="display: block; margin: auto;" />
@@ -399,14 +417,15 @@ into one data frame. (Care needs to be taken as the variables are not
 identical in all. For example, the 1995 - 2002 dataset does not have any
 measure options; it only returns number of births. To find out what’s
 available, see the codebooks (**`>??codebook`**) and crosscheck with the
-[CDC Wonder API web interface](https://wonder.cdc.gov).)
+[CDC Wonder](https://wonder.cdc.gov) web interface.)
 
 ``` r
 births <- rbind(getData("Natality for 1995 - 2002"),
                 getData("Natality for 2003 - 2006"),
                 getData("Natality for 2007 - 2022"))
-ggplot(births, aes(Year, Births)) + geom_line() + 
-    ggtitle("U.S. Births by Year, 1995 - 2022")
+ggplot(births, aes(Year, Births)) +
+  geom_line() +
+  labs(title = "U.S. Births by Year, 1995 - 2022")
 ```
 
 <img src="readme_files/figure-gfm/BirthsbyYear-1.png" style="display: block; margin: auto;" />
@@ -430,7 +449,7 @@ mydata3 <- getData("Detailed Mortality",
     ## Couldn't find: "Suspect" but including anyway.
 
 ``` r
-mydata3 %>% head()
+head(mydata3)
 ```
 
     ## # A tibble: 6 × 4
@@ -443,9 +462,11 @@ mydata3 %>% head()
     ## 5 2003  2447946  290107933         844.
     ## 6 2004  2397269  292805298         819.
 
-If the CDC Wonder API returns an error, the message in the response will
-be displayed. Sometimes the message will provide enough information to
-fix the problem. Other times, it is not. For example:
+If the [CDC WONDER
+API](https://wonder.cdc.gov/wonder/help/WONDER-API.html) returns an
+error, the message in the response will be displayed. Sometimes the
+message will provide enough information to fix the problem. Other times,
+it is not. For example:
 
 ``` r
 mylist <- list(list("And By", "Education"), 
@@ -458,12 +479,12 @@ mydata4 <- getData("Natality for 2007 - 2022", mylist)
 
     ## Error in getData("Natality for 2007 - 2022", mylist): Internal Server Error (HTTP 500).
 
-In this case, the best approach is to visit the [CDC Wonder API web
-interface](https://wonder.cdc.gov) and try the same query. If all goes
+In this case, the best approach is to visit [CDC
+WONDER](https://wonder.cdc.gov) and try the same query. If all goes
 well, you will receive more detailed information on what went wrong:
 
 <center>
-<img src="man/figures/NatalityError.png" width="432px"/>
+<img src="vignettes/NatalityError.png" width="432px"/>
 </center>
 
 We learn that we can’t include “Education” if we request the “Birth
@@ -477,7 +498,7 @@ mydata5 <- getData("Natality for 2007 - 2022", mylist)
 ```
 
 ``` r
-mydata5 %>% head()
+head(mydata5)
 ```
 
     ## # A tibble: 6 × 5

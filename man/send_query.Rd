@@ -4,18 +4,22 @@
 \alias{send_query}
 \title{Send XML query}
 \usage{
-send_query(filename, database_id = NULL)
+send_query(db = "D66", fn, agree = TRUE)
 }
 \arguments{
-\item{filename}{.xml query list}
+\item{db}{Indicate the database, either by label, name, or code.  To see the complete list of what's available, use `show_databases()`}
 
-\item{database_id}{CDC WONDER database ID, if NULL parsed from filename}
+\item{fn}{.xml query list exported from CDC Wonder web interface}
+
+\item{agree}{if \code{TRUE} (default) accept CDC Wonder API data use restrictions}
 }
 \description{
 Based on https://github.com/hrbrmstr/wondr/blob/master/R/wondr.r
 }
 \examples{
 \dontrun{
-   send_query("data-raw/D66_Defaults.xml")
+   send_query("D66", "data-raw/D66_Defaults.xml")
+   send_query("D76", "testquery.xml")
 }
+
 }
