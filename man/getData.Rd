@@ -34,14 +34,15 @@ Queries for mortality and births statistics from the National Vital Statistics S
 
 For example, in the D76 online database for Detailed Mortality 1999-2013, the location fields are D76.V9, D76.V10 and D76.V27, and the urbanization fields are D76.V11 and D76.V19. These 'sub-national" data fields cannot be grouped by or limited via the API, although these fields are available in the web application.
 
-See \url{https://wonder.cdc.gov/wonder/help/WONDER-API.html} for more information.
+See \url{https://wonder.cdc.gov/wonder/help/wonder-api.html} for more information.
 }
 \section{References}{
 
-Inspired by this script from the \code{wondr} package, but provides more user-friendly options and better table display: /url{https://github.com/hrbrmstr/wondr/blob/master/README.md}
+Inspired by this script from the \code{wondr} package, but provides more user-friendly options and better table display: \url{https://github.com/hrbrmstr/wondr/blob/master/README.md}
 }
 
 \examples{
+\dontrun{
 mylist <- list(
   list("And By", "Race"),
   list("And By", "Tobacco Use")
@@ -49,5 +50,6 @@ mylist <- list(
 
 mydata <- getData("D66", mylist)
 mydata
+}
 
 }

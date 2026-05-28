@@ -144,6 +144,7 @@ head(dmdata)
 
 The default lists were prepared based on CDC examples, but we make no claim that they are error free. If you have any suggestions for improving them, please make a pull request on Github or open an issue. The default lists are available in the  [/data-raw folder](https://github.com/socdataR/wonderapi/tree/main/data-raw).
 
+
 ### Creating customized queries  
 
 There are different types of parameters.  Most critical are Group Results By and Measures. The Group Results By parameters serve as keys for grouping the data; the maximum number of Group Results By parameters is five. Limiting Variables may also be used to constrain results behind the scenes.

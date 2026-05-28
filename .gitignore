@@ -3,6 +3,10 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
+**/.DS_Store
+*.Rcheck/
+*.tar.gz
 vignettes/*.R
 vignettes/*.html
 vignettes/IntroVignette_cache/

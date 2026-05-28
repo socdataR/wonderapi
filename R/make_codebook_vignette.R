@@ -10,8 +10,8 @@ make_codebook_vignette <- function(dbcode = "D66") {
     webform <- webdata %>% rvest::html_form()
     form_df <- purrr::map_df(webform[[2]]$fields, unpack)
     form_df <- form_df %>%
-        dplyr::filter(!(type %in% c("button", "submit", "hidden"))) %>%
-        dplyr::filter(!(stringr::str_detect(name, "O_") & type == "checkbox")) %>%
+        dplyr::filter(!(.data$type %in% c("button", "submit", "hidden"))) %>%
+        dplyr::filter(!(stringr::str_detect(.data$name, "O_") & .data$type == "checkbox")) %>%
         dplyr::mutate(dbcode = dbcode)
     # create vignette
     sink(paste0("vignettes/", dbcode, "codebook.Rmd"))

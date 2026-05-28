@@ -1,7 +1,15 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.DS_Store$
+^\.gitignore$
+^\.github$
+^LICENSE\.md$
+^D76\.xml$
+^data-raw$
+^readme\.Rmd$
+^readme_files$
+^vignettes-archive$
 images/
-vignettes/IntroVignette_cache/
 readme.html
 readme_cache/
 ^doc$
@@ -9,3 +17,4 @@ readme_cache/
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^cran-comments\.md$

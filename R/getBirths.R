@@ -69,7 +69,7 @@ getBirths <- function(...) {
 
 convert_byvar <- function(user_text) {
   user_text <- as.character(user_text)
-  correct_text <- switch(toupper(substr(user_text, 1, 1)),
+  correct_text <- switch(EXPR = toupper(substr(user_text, 1, 1)),
                          A = "Age of Mother Year",
                          B = "Birth Weight 100 gram increments",
                          D = "Delivery Method",

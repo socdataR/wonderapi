@@ -4,12 +4,12 @@
 \alias{send_query}
 \title{Send XML query}
 \usage{
-send_query(db = "D66", fn, agree = TRUE)
+send_query(db, fn, agree = TRUE)
 }
 \arguments{
-\item{db}{Indicate the database, either by label, name, or code.  To see the complete list of what's available, use `show_databases()`}
+\item{db}{Indicate the database by code}
 
-\item{fn}{.xml query list exported from CDC Wonder web interface}
+\item{fn}{\code{.xml} query list exported from CDC Wonder web interface}
 
 \item{agree}{if \code{TRUE} (default) accept CDC Wonder API data use restrictions}
 }

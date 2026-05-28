@@ -20,9 +20,10 @@
 #'
 #' For example, in the D76 online database for Detailed Mortality 1999-2013, the location fields are D76.V9, D76.V10 and D76.V27, and the urbanization fields are D76.V11 and D76.V19. These 'sub-national" data fields cannot be grouped by or limited via the API, although these fields are available in the web application.
 #'
-#' See \url{https://wonder.cdc.gov/wonder/help/WONDER-API.html} for more information.
+#' See \url{https://wonder.cdc.gov/wonder/help/wonder-api.html} for more information.
 #'
 #' @examples
+#' \dontrun{
 #' mylist <- list(
 #'   list("And By", "Race"),
 #'   list("And By", "Tobacco Use")
@@ -30,9 +31,10 @@
 #'
 #' mydata <- getData("D66", mylist)
 #' mydata
+#' }
 #'
 #' @section References:
-#' Inspired by this script from the \code{wondr} package, but provides more user-friendly options and better table display: /url{https://github.com/hrbrmstr/wondr/blob/master/README.md}
+#' Inspired by this script from the \code{wondr} package, but provides more user-friendly options and better table display: \url{https://github.com/hrbrmstr/wondr/blob/master/README.md}
 #'
 
 #' @export
@@ -61,19 +63,19 @@ getData <- function(db = "D66", querylist = NULL, add = TRUE, save = FALSE, fn =
             if(any(is.element(
                 queryparams,
                 c("O_location", "VM_D76.M6_D76.V10", "V_D76.V9", "F_D76.V9", "V_D76.V10", "F_D76.V10", "V_D76.V27", "F_D76.V27", "O_urban", "V_D76.V19", "V_D76.V11")))) {
-                stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
+                stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/wonder-api.html for more information.")
             }
 
             if(any(is.element(
                 queryargs,
                 c("Census Region", "Census Division", "HHS Region", "State", "County", "2013 Urbanization", "2006 Urbanization", "D76.V10-level1", "D76.V10-level2", "D76.V27-level1", "D76.V9-level1", "D76.V9-level2", "D76.V19", "D76.V11")))) {
-                stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
+                stop("It is not possible to limit results by a location field or urbanization via the WONDER API, although it is in the web application.\nSee https://wonder.cdc.gov/wonder/help/wonder-api.html for more information.")
                 }
             if(any(is.element(
                 queryargs,
                 "D176.V24"
             ))) {
-                stop ("It is no longer possible to limit results by Weekday for database D176 via the WONDER API, although it is in the web application. \nSee https://wonder.cdc.gov/wonder/help/WONDER-API.html for more information.")
+                stop ("It is no longer possible to limit results by Weekday for database D176 via the WONDER API, although it is in the web application. \nSee https://wonder.cdc.gov/wonder/help/wonder-api.html for more information.")
             }
             querylist <- label_to_code(querylist, dbcode)
             querylist <- combine_lists(default_list,
@@ -239,9 +241,14 @@ label_to_code <- function(list_with_labels, dbcode) {
     lookup$code <- stringr::str_remove_all(lookup$code, "(?<=[a-z])D.*$")
 
     for (i in seq_along(list_with_labels)) {
-        # taking first one in case there are multiple matches
-        # (if no matches, [1] has the effect of turning nameindex to NA)
-        nameindex <- which(lookup$label == list_with_labels[[i]][[1]])[1]
+        # When a label matches multiple rows, prefer limit variables (D...)
+        # or measures (M...) over output options (O_...). Fixes issue #2:
+        # e.g. "ICD-10 113 Cause List" matches both O_ucd and D76.V4 — the
+        # latter is the actual filter parameter the user intended.
+        matches <- which(lookup$label == list_with_labels[[i]][[1]])
+        preferred <- matches[grepl("^[DM]", lookup$code[matches])]
+        nameindex <- if (length(preferred) > 0) preferred[1] else matches[1]
+        if (length(nameindex) == 0) nameindex <- NA  # no matches
         if (!is.na(nameindex)) {   # label found for parameter name
                 code <- lookup$code[nameindex]
                 precode <- substring(code, 1, 1)
