@@ -8,7 +8,7 @@ Authors@R: c(
          role = c("cre", "aut")),
   person("Joyce", "Robbins",
          email = "joycerobbins1@gmail.com",
-         role = "ctb"))
+         role = "aut"))
 Description: Simplifies the process of formulating CDC Wonder API query
     requests and interpreting query responses in order to obtain federal
     health data.
