@@ -288,18 +288,29 @@ label_to_code <- function(list_with_labels, dbcode) {
 
 
 # Some CDC WONDER filters require a companion output-option parameter or
-# they are silently ignored, leaving the request unfiltered. This injects
-# those companions when the user hasn't set them explicitly.
+# they are silently ignored (or the request is rejected). This injects
+# those companions when the user has not set them explicitly. See #2.
 apply_param_dependencies <- function(querylist, dbcode) {
     param_names <- vapply(querylist, function(x) x[[1]], character(1))
 
-    # D76: filtering by ICD-10 113 Cause List (V_D76.V4) requires
-    # O_ucd = D76.V4. Default O_ucd is D76.V2 (detailed ICD-10 codes),
-    # under which V_D76.V4 is not honored. See issue #2.
-    if (dbcode == "D76" &&
-        "V_D76.V4" %in% param_names &&
-        !("O_ucd" %in% param_names)) {
-        querylist <- c(querylist, list(list("O_ucd", "D76.V4")))
+    if (dbcode == "D76") {
+        # ICD-10 113 Cause List: needs O_ucd = D76.V4 (default is D76.V2,
+        # under which V_D76.V4 is silently dropped).
+        if ("V_D76.V4" %in% param_names && !("O_ucd" %in% param_names)) {
+            querylist <- c(querylist, list(list("O_ucd", "D76.V4")))
+        }
+
+        # ICD-10 130 Cause List (Infants): needs O_ucd = D76.V12 plus
+        # O_age = D76.V6 to switch into infant-age-groups mode. Without
+        # the latter, CDC rejects with an age-restriction error.
+        if ("V_D76.V12" %in% param_names) {
+            if (!("O_ucd" %in% param_names)) {
+                querylist <- c(querylist, list(list("O_ucd", "D76.V12")))
+            }
+            if (!("O_age" %in% param_names)) {
+                querylist <- c(querylist, list(list("O_age", "D76.V6")))
+            }
+        }
     }
 
     querylist
