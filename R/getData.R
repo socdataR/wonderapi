@@ -78,6 +78,7 @@ getData <- function(db = "D66", querylist = NULL, add = TRUE, save = FALSE, fn =
                 stop ("It is no longer possible to limit results by Weekday for database D176 via the WONDER API, although it is in the web application. \nSee https://wonder.cdc.gov/wonder/help/wonder-api.html for more information.")
             }
             querylist <- label_to_code(querylist, dbcode)
+            querylist <- apply_param_dependencies(querylist, dbcode)
             querylist <- combine_lists(default_list,
                                        querylist)
         }
@@ -284,6 +285,25 @@ label_to_code <- function(list_with_labels, dbcode) {
     } # for loop
     list_with_codes
 } # end of function
+
+
+# Some CDC WONDER filters require a companion output-option parameter or
+# they are silently ignored, leaving the request unfiltered. This injects
+# those companions when the user hasn't set them explicitly.
+apply_param_dependencies <- function(querylist, dbcode) {
+    param_names <- vapply(querylist, function(x) x[[1]], character(1))
+
+    # D76: filtering by ICD-10 113 Cause List (V_D76.V4) requires
+    # O_ucd = D76.V4. Default O_ucd is D76.V2 (detailed ICD-10 codes),
+    # under which V_D76.V4 is not honored. See issue #2.
+    if (dbcode == "D76" &&
+        "V_D76.V4" %in% param_names &&
+        !("O_ucd" %in% param_names)) {
+        querylist <- c(querylist, list(list("O_ucd", "D76.V4")))
+    }
+
+    querylist
+}
 
 
 combine_lists <- function(list1, list2) {
